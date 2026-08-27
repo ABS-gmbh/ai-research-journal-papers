@@ -1,0 +1,216 @@
+# Preregistration
+
+> 🤖 This record was written by the autonomous pipeline at the DESIGN stage,
+> BEFORE the experiment was executed, and committed unchanged. It fixes the
+> hypothesis, the predicted effect, the metrics, and the analysis plan in advance
+> so the reported findings cannot be retrofitted to the results (HARKing).
+
+- **Registered at:** 2026-08-27T03:23:08.059015+00:00
+- **Experiment:** Entropy-Maximized Multiplicative Weight Noise for Subject-Disjoint Robustness
+- **Research question:** Does explicit entropy maximization of weight uncertainty parameters during training improve out-of-distribution accuracy on subject-disjoint time-series data compared to standard deterministic training?
+- **Primary metric:** held-out classification accuracy
+- **Metrics:** held-out classification accuracy
+- **Baselines:** Deterministic Training (Identity Control)
+- **Publication policy:** publish_all_valid_outcomes
+- **Publishable valid outcomes:** direction_supported, direction_refuted, inconclusive
+- **Seeds per condition:** 43
+- **Primary seed IDs:** 497360171578835126, 619747419151856849, 4359311500859520721, 3900812323465083926, 1516445550462428226, 1630043136886007277, 1835401958502649079, 4224212089476219622, 2975544019134720152, 3507764674343915068, 4004663391355442268, 1509823930515868492, 3483967100743641674, 2225936250788509260, 1957754086644492888, 4154286735266072875, 3813494016017719200, 690472406820790188, 3813916678459859089, 4090465763900842853, 1844212296145829516, 3081923774287884327, 3477292413922411937, 726925812904865219, 4400454224498690158, 1309720931756809616, 3670000523134785215, 1572470746349086798, 5569990145947559, 2855297384752490100, 3166602034212987559, 4221459448664290905, 2934143650096726109, 1462463051419223747, 4363375170763905339, 3648570110071838823, 258115887333994485, 2427086170940110629, 4084426303853737760, 2996901096067535381, 2815367292871095378, 4593572677630054665, 3754669615394449950
+- **Executed confirmatory-replication seed IDs:** 460845256865125083, 168360166801404394, 4330504984584448312, 2288886165882978077, 1436023229729468928, 3075137203164680509, 1264378101010998013, 2924740817759706416, 1407030776384369816, 3476452012804091485, 413443216560218742, 3744310097398416000, 611732904494353021, 3048141337216032385, 3348171016926346274, 182544617978886718, 2236541698554417841, 316787348038406038, 2542361651984418572, 2578784020613117302, 2827919878303280846, 50058912656477012, 2277661776842494339, 4538007595258168616, 2319057271103286511, 2045154589577734854, 2155395884799988780, 4226716155317983348, 1618031700484817618, 2260344274002574536, 2384851163006458576, 926629052757699259, 3894402378906575006, 299845134544061382, 460921128077554766, 3639277473403927291, 370580726517054298, 3492117404588741396, 3679724535907974316, 808192457140985599, 4061812732870876608, 820537500989758760, 2718212184032681684
+
+## Hypothesis
+
+The intervention is predicted to yield higher held-out classification accuracy than the comparator, with mean hypothesis-positive paired contrast H_s exceeding the fixed worthwhile margin of 0.0125098 proportion.
+
+## Predicted direction / effect
+
+The intervention is predicted to yield higher held-out classification accuracy than the comparator, with mean hypothesis-positive paired contrast H_s exceeding the fixed worthwhile margin of 0.0125098 proportion. Specifically, we predict: The intervention is predicted to yield higher held-out classification accuracy than the comparator, with mean hypothesis-positive paired contrast H_s exceeding the fixed worthwhile margin of 0.0125098 proportion.
+
+## Fixed operational specification
+
+```json
+{
+  "alternative_hypotheses": [
+    "Noise injection helps regardless of entropy objective",
+    "Entropy maximization destabilizes training and reduces accuracy",
+    "Transformer attention mechanisms are insensitive to weight noise entropy"
+  ],
+  "boundary_conditions": [
+    "Subject-disjoint test split (covariate shift)",
+    "Small transformer architecture (2 blocks)",
+    "Inertial sensor data modality",
+    "Scope (server-owned): single calibrated testbed uci_har_small_transformer_v1 \u2014 UCI Human Activity Recognition Using Smartphones (DOI 10.24432/C54S4K; raw inertial signals, 128-timestep windows over 9 channels; official subject-disjoint split of 7,352 training and 2,947 held-out windows); model PreNormTransformerEncoder(Linear(9,64) + learned positional embedding(128,64); 2 blocks, each LayerNorm(64) -> 4-head self-attention over 128 timesteps with q/k/v/out Linear(64,64) -> residual -> LayerNorm(64) -> Linear(64,128) -> ReLU -> Linear(128,64) -> residual; final LayerNorm(64), mean-pool over time, Linear(64,6)); evaluated as the official UCI HAR test split \u2014 2,947 windows recorded from 9 subjects who appear in no training window, so the held-out cohort is subject-disjoint rather than a random row split, and is never used for training or tuning",
+    "For each seed, both conditions use identical initialization, data split/order, stochastic draws, hyperparameters, tuning, update count, and compute budget.",
+    "Model and optimizer state are reset independently for each condition; no trained state is carried between paired runs."
+  ],
+  "calibration_record_id": "ef4188ff-a4a8-4720-a3a7-f59d889d0c94",
+  "canonical_hypothesis": "The intervention is predicted to yield higher held-out classification accuracy than the comparator, with mean hypothesis-positive paired contrast H_s exceeding the fixed worthwhile margin of 0.0125098 proportion.",
+  "comparator": "Identity no-op control: the same program with EntropyMaxWeightNoise not applied. Training proceeds exactly as in the intervention arm \u2014 same data, same batch order, same standard optimizer update at every step \u2014 and at EntropyMaxWeightNoise's endpoint the control keeps the parameters and optimizer state exactly as that standard update left them instead of applying EntropyMaxWeightNoise. Per-step compute and the random-number stream therefore match the intervention exactly, and only the studied factor is neutralised.",
+  "decision_consequence": "If supported, adopt entropy-maximization for robustness tasks; if refuted, prioritize standard KL-based variational methods or deterministic training. Scope (server-owned): this decision is licensed only for the calibrated testbed uci_har_small_transformer_v1 measured by its own held-out classification accuracy on its held-out cohort, and is not evidence about any other dataset, model family, or setting.",
+  "decision_value": "Using the two-sided paired-bootstrap 95% CI for mean(H_s), support the preregistered directional effect only when CI_low > 0.0125098; refute that directional effect when CI_high <= 0; otherwise report inconclusive. The paired sign-flip p-value is descriptive and does not replace this decision rule. Decision consequence: If supported, adopt entropy-maximization for robustness tasks; if refuted, prioritize standard KL-based variational methods or deterministic training. Scope (server-owned): this decision is licensed only for the calibrated testbed uci_har_small_transformer_v1 measured by its own held-out classification accuracy on its held-out cohort, and is not evidence about any other dataset, model family, or setting.",
+  "estimand": "Hypothesis-positive paired contrast H_s = outcome_intervention - outcome_comparator; estimand = arithmetic mean of H_s over the preregistered primary seed IDs.",
+  "failure_handling": "A non-finite outcome is never a data point: the harness raises on any non-finite value for either condition in that seed pair, so the job fails and reports nothing rather than a value it did not measure. No preregistered seed is discarded, skipped, or rerun, and no outcome is imputed.",
+  "falsification_criteria": [
+    "Refute the preregistered directional effect when the two-sided paired-bootstrap 95% CI upper endpoint for mean(H_s) is <= 0.",
+    "Do not claim a worthwhile directional effect unless that CI's lower endpoint exceeds the fixed margin 0.0125098 proportion."
+  ],
+  "hypothesis_positive_multiplier": 1,
+  "hypothesized_direction": "intervention_better",
+  "intervention": "Server-bound target blocks.0.attn.q_proj.weight has stored tensor shape (64, 64). Entropy-Regularized Multiplicative Weight Noise on Query Projection",
+  "intervention_protocol": {
+    "application_timing": "During training forward pass and loss computation",
+    "invariants": [
+      "Evaluation uses deterministic weights (no noise)",
+      "Random seed fixes epsilon sequence per run",
+      "Optimizer state tracks rho separately from W"
+    ],
+    "normalization_rule": "sigma clipped to [exp(-5), exp(1)]; rho initialized to -3.0",
+    "numerical_safeguards": "Clip rho gradients to [-1.0, 1.0]; use epsilon=1e-8 in sigma calculation if needed",
+    "operator_name": "EntropyMaxWeightNoise",
+    "ordering_rule": "Noise sampling occurs before forward pass; loss augmentation occurs after task loss computation",
+    "pseudocode": [
+      "1. Initialize learnable parameter rho (log_sigma) to -3.0 for target weight tensor W.",
+      "2. At each training step, sample epsilon ~ Normal(0, 1) with shape matching W.",
+      "3. Compute sigma = exp(rho).",
+      "4. Compute perturbed weights W_tilde = W + W * sigma * epsilon.",
+      "5. Execute forward pass using W_tilde in place of W for the target layer.",
+      "6. Compute task loss L_task (Cross-Entropy).",
+      "7. Compute entropy bonus L_ent = rho (proportional to log(sigma)).",
+      "8. Compute total loss L = L_task - lambda * L_ent with lambda=0.01.",
+      "9. Backpropagate L to update W and rho.",
+      "10. Clip rho to [-5.0, 1.0] to prevent numerical explosion.",
+      "11. Update optimizer state for W and rho using SGD(momentum=0.9).",
+      "12. Proceed to next batch.",
+      "13. At evaluation, use deterministic weights W (sigma=0).",
+      "14. Log final held-out accuracy.",
+      "Scope (server-owned): comparator arm \u2014 the standard optimizer update runs at every step exactly as in the intervention arm. EntropyMaxWeightNoise is invoked at the same endpoint on the same inputs but applies no modification, so the parameters and optimizer state (including any momentum buffer) keep the values that standard update produced. Per-step compute and the random-number stream therefore evolve identically to the intervention arm, and only the studied factor is neutralised."
+    ],
+    "tensor_axis_or_scope": "Element-wise multiplicative noise on target weight tensor"
+  },
+  "intervention_target": "blocks.0.attn.q_proj.weight",
+  "intervention_target_shape": [
+    64,
+    64
+  ],
+  "leakage_risks": [
+    "Test statistics used in preprocessing (mitigated by recipe)",
+    "Random seed correlation between conditions (mitigated by paired design)"
+  ],
+  "mechanistic_rationale": "Higher entropy in weight noise increases diversity of implicit data corruptions, simulating broader covariate shift during training and improving generalization to unseen subjects.",
+  "negative_controls": [
+    "Entropy-Minimization: Same operator but L = L_task + lambda * L_ent (penalize high entropy)",
+    "Fixed-Noise: Same operator but rho is fixed (no gradient updates)"
+  ],
+  "outcome_formula": "number of correct activity predictions / 2947 windows in the official subject-disjoint UCI HAR test split",
+  "outcome_higher_is_better": true,
+  "outcome_name": "held-out classification accuracy",
+  "outcome_range_max": 1.0,
+  "outcome_range_min": 0.0,
+  "outcome_unit": "proportion",
+  "planning_sd": 0.025019595493970412,
+  "planning_sd_basis": "Immutable calibration record ef4188ff-a4a8-4720-a3a7-f59d889d0c94; baseline-only paired-null bootstrap UCL80 under recipe sha256:94f3ad0aa281d8b6845da79f0abcea1cd604a36c8b00ffcce5861e16cc4ff155.",
+  "population": "Training runs of PreNormTransformerEncoder on UCI HAR with subject-disjoint evaluation",
+  "primary_outcome": "held-out classification accuracy: number of correct activity predictions / 2947 windows in the official subject-disjoint UCI HAR test split; unit=proportion; range=[0, 1]; computed once per seeded run; higher is better; failure handling: A non-finite outcome is never a data point: the harness raises on any non-finite value for either condition in that seed pair, so the job fails and reports nothing rather than a value it did not measure. No preregistered seed is discarded, skipped, or rerun, and no outcome is imputed.",
+  "replication_plan": "Independently repeat the same paired protocol using both conditions for every disjoint replication seed ID [460845256865125083, 168360166801404394, 4330504984584448312, 2288886165882978077, 1436023229729468928, 3075137203164680509, 1264378101010998013, 2924740817759706416, 1407030776384369816, 3476452012804091485, 413443216560218742, 3744310097398416000, 611732904494353021, 3048141337216032385, 3348171016926346274, 182544617978886718, 2236541698554417841, 316787348038406038, 2542361651984418572, 2578784020613117302, 2827919878303280846, 50058912656477012, 2277661776842494339, 4538007595258168616, 2319057271103286511, 2045154589577734854, 2155395884799988780, 4226716155317983348, 1618031700484817618, 2260344274002574536, 2384851163006458576, 926629052757699259, 3894402378906575006, 299845134544061382, 460921128077554766, 3639277473403927291, 370580726517054298, 3492117404588741396, 3679724535907974316, 808192457140985599, 4061812732870876608, 820537500989758760, 2718212184032681684]; reset all state and apply the identical hypothesis-positive contrast and fixed CI decision rule.",
+  "replication_seed_ids": [
+    460845256865125083,
+    168360166801404394,
+    4330504984584448312,
+    2288886165882978077,
+    1436023229729468928,
+    3075137203164680509,
+    1264378101010998013,
+    2924740817759706416,
+    1407030776384369816,
+    3476452012804091485,
+    413443216560218742,
+    3744310097398416000,
+    611732904494353021,
+    3048141337216032385,
+    3348171016926346274,
+    182544617978886718,
+    2236541698554417841,
+    316787348038406038,
+    2542361651984418572,
+    2578784020613117302,
+    2827919878303280846,
+    50058912656477012,
+    2277661776842494339,
+    4538007595258168616,
+    2319057271103286511,
+    2045154589577734854,
+    2155395884799988780,
+    4226716155317983348,
+    1618031700484817618,
+    2260344274002574536,
+    2384851163006458576,
+    926629052757699259,
+    3894402378906575006,
+    299845134544061382,
+    460921128077554766,
+    3639277473403927291,
+    370580726517054298,
+    3492117404588741396,
+    3679724535907974316,
+    808192457140985599,
+    4061812732870876608,
+    820537500989758760,
+    2718212184032681684
+  ],
+  "sample_size_rationale": "Prospective paired normal approximation with two-sided alpha=0.05: planning SD(H_s)=0.0250196 proportion, worthwhile effect=0.0125098, target power=0.90, required n=43; fixed n=43. Planning-SD basis: Immutable calibration record ef4188ff-a4a8-4720-a3a7-f59d889d0c94; baseline-only paired-null bootstrap UCL80 under recipe sha256:94f3ad0aa281d8b6845da79f0abcea1cd604a36c8b00ffcce5861e16cc4ff155. Worthwhile-effect basis: Versioned policy accuracy_fraction_v1 in proportion: max(absolute floor 0.005, fixed SD multiplier).",
+  "seed_ids": [
+    497360171578835126,
+    619747419151856849,
+    4359311500859520721,
+    3900812323465083926,
+    1516445550462428226,
+    1630043136886007277,
+    1835401958502649079,
+    4224212089476219622,
+    2975544019134720152,
+    3507764674343915068,
+    4004663391355442268,
+    1509823930515868492,
+    3483967100743641674,
+    2225936250788509260,
+    1957754086644492888,
+    4154286735266072875,
+    3813494016017719200,
+    690472406820790188,
+    3813916678459859089,
+    4090465763900842853,
+    1844212296145829516,
+    3081923774287884327,
+    3477292413922411937,
+    726925812904865219,
+    4400454224498690158,
+    1309720931756809616,
+    3670000523134785215,
+    1572470746349086798,
+    5569990145947559,
+    2855297384752490100,
+    3166602034212987559,
+    4221459448664290905,
+    2934143650096726109,
+    1462463051419223747,
+    4363375170763905339,
+    3648570110071838823,
+    258115887333994485,
+    2427086170940110629,
+    4084426303853737760,
+    2996901096067535381,
+    2815367292871095378,
+    4593572677630054665,
+    3754669615394449950
+  ],
+  "smallest_worthwhile_effect": "0.0125098 proportion on H_s",
+  "smallest_worthwhile_effect_basis": "Versioned policy accuracy_fraction_v1 in proportion: max(absolute floor 0.005, fixed SD multiplier).",
+  "smallest_worthwhile_effect_value": 0.012509797746985206,
+  "target_power": 0.9,
+  "testbed_id": "uci_har_small_transformer_v1",
+  "unit_of_analysis": "Seeded training run"
+}
+```
+
+## Analysis plan (statistics + seeds)
+
+Each condition (the proposed method vs the baseline(s): Deterministic Training (Identity Control)) is first run across the 43 primary random seeds fixed in advance with exact IDs [497360171578835126, 619747419151856849, 4359311500859520721, 3900812323465083926, 1516445550462428226, 1630043136886007277, 1835401958502649079, 4224212089476219622, 2975544019134720152, 3507764674343915068, 4004663391355442268, 1509823930515868492, 3483967100743641674, 2225936250788509260, 1957754086644492888, 4154286735266072875, 3813494016017719200, 690472406820790188, 3813916678459859089, 4090465763900842853, 1844212296145829516, 3081923774287884327, 3477292413922411937, 726925812904865219, 4400454224498690158, 1309720931756809616, 3670000523134785215, 1572470746349086798, 5569990145947559, 2855297384752490100, 3166602034212987559, 4221459448664290905, 2934143650096726109, 1462463051419223747, 4363375170763905339, 3648570110071838823, 258115887333994485, 2427086170940110629, 4084426303853737760, 2996901096067535381, 2815367292871095378, 4593572677630054665, 3754669615394449950], then independently rerun across the disjoint confirmatory-replication IDs [460845256865125083, 168360166801404394, 4330504984584448312, 2288886165882978077, 1436023229729468928, 3075137203164680509, 1264378101010998013, 2924740817759706416, 1407030776384369816, 3476452012804091485, 413443216560218742, 3744310097398416000, 611732904494353021, 3048141337216032385, 3348171016926346274, 182544617978886718, 2236541698554417841, 316787348038406038, 2542361651984418572, 2578784020613117302, 2827919878303280846, 50058912656477012, 2277661776842494339, 4538007595258168616, 2319057271103286511, 2045154589577734854, 2155395884799988780, 4226716155317983348, 1618031700484817618, 2260344274002574536, 2384851163006458576, 926629052757699259, 3894402378906575006, 299845134544061382, 460921128077554766, 3639277473403927291, 370580726517054298, 3492117404588741396, 3679724535907974316, 808192457140985599, 4061812732870876608, 820537500989758760, 2718212184032681684]. For every metric (held-out classification accuracy) we report the per-condition mean with a bootstrap 95% confidence interval separately in each block. The proposed-vs-baseline difference on the primary metric ('held-out classification accuracy') is tested with a two-sided paired sign-flip randomisation test and a paired bootstrap confidence interval, together with Cohen's dz, applying the identical preregistered decision rule independently to primary and replication without pooling. Secondary-metric p-values use Holm family-wise-error correction. Every declared negative control is executed in both seed blocks under its registered condition ID and reported descriptively, but is excluded from the primary decision. The seed identities, metrics, and comparisons are fixed now; none are added after seeing the results. Smallest worthwhile effect: 0.0125098 proportion on H_s. Power justification: Prospective paired normal approximation with two-sided alpha=0.05: planning SD(H_s)=0.0250196 proportion, worthwhile effect=0.0125098, target power=0.90, required n=43; fixed n=43. Planning-SD basis: Immutable calibration record ef4188ff-a4a8-4720-a3a7-f59d889d0c94; baseline-only paired-null bootstrap UCL80 under recipe sha256:94f3ad0aa281d8b6845da79f0abcea1cd604a36c8b00ffcce5861e16cc4ff155. Worthwhile-effect basis: Versioned policy accuracy_fraction_v1 in proportion: max(absolute floor 0.005, fixed SD multiplier).. Stopping rule: Run every preregistered primary and replication seed exactly once per condition for the fixed training/evaluation budget; analyze the two blocks separately with no outcome-dependent stopping, pooling, or seed replacement.. Multiplicity: Primary decision based on 95% CI for mean(H_s). Replication block analyzed separately with same rule. No pooling. Bonferroni adjustment applied if testing multiple negative controls against baseline (alpha/3)..
