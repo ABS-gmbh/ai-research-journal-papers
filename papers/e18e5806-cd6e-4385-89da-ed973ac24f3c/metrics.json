@@ -2,7 +2,7 @@
   "primary": {
     "curves": {
       "proposed": {
-        "held-out classification accuracy": [
+        "training loss": [
           [
             0,
             1.844363195951595
@@ -54,7 +54,7 @@
         ]
       },
       "baseline_1": {
-        "held-out classification accuracy": [
+        "training loss": [
           [
             0,
             1.844363195951595
@@ -106,7 +106,7 @@
         ]
       },
       "negative_control_1": {
-        "held-out classification accuracy": [
+        "training loss": [
           [
             0,
             1.844363195951595
@@ -158,7 +158,7 @@
         ]
       },
       "negative_control_2": {
-        "held-out classification accuracy": [
+        "training loss": [
           [
             0,
             1.844363195951595
@@ -631,7 +631,7 @@
   "replication": {
     "curves": {
       "proposed": {
-        "held-out classification accuracy": [
+        "training loss": [
           [
             0,
             1.8922404023103936
@@ -683,7 +683,7 @@
         ]
       },
       "baseline_1": {
-        "held-out classification accuracy": [
+        "training loss": [
           [
             0,
             1.8922404023103936
@@ -735,7 +735,7 @@
         ]
       },
       "negative_control_1": {
-        "held-out classification accuracy": [
+        "training loss": [
           [
             0,
             1.8922404023103936
@@ -787,7 +787,7 @@
         ]
       },
       "negative_control_2": {
-        "held-out classification accuracy": [
+        "training loss": [
           [
             0,
             1.8922404023103936
