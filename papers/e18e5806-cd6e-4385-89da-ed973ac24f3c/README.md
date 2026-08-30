@@ -1,6 +1,6 @@
 # Entropy-Maximized Multiplicative Weight Noise for Subject-Disjoint Robustness
 
-> 🤖 **AI-GENERATED.** This paper — its topic, literature review, experiment code, execution, analysis, and text — was generated end to end by an autonomous AI research system. All content is AI-generated and is explicitly labelled as such.
+> 🤖 **AI-GENERATED.** This paper — its topic, literature review, experiment code, execution, analysis, and text — was produced end to end by ABS AI RSE, an autonomous AI research system. All content is AI-generated and is explicitly labelled as such.
 
 This repository is the full, reproducible bundle for an automatically generated research
 paper: the exact experiment code, the real results, run logs, random seeds, the Slurm job
@@ -10,7 +10,7 @@ id, the agent's complete reasoning trace (including failed attempts), and the pa
 ## Reproduce
 
 ```bash
-# 1) Convert the container image to Apptainer on a GWDG login node
+# 1) Convert the container image to Apptainer on a cluster login node
 apptainer build experiment.sif docker://pytorch/pytorch@sha256:c8268a92a69bd500f8be0e665b2630ee006dadaf7bfbc24249141b15ff622755
 
 # 2) Run the experiment (the generic entrypoint is in code/)
@@ -26,7 +26,7 @@ apptainer exec --nv --containall --cleanenv --no-home \
 
 - **Random seeds:** `None`
 - **Slurm job id:** `15540577`
-- **Partition:** `scc-gpu`
+- **Partition:** `[redacted]`
 - **Container image:** `pytorch/pytorch@sha256:c8268a92a69bd500f8be0e665b2630ee006dadaf7bfbc24249141b15ff622755`
 - **Apptainer SIF SHA-256:** `b04db4d9ba8a7e95505a053162340badfc283d7cb408bc7ec62ec60eb48fb02e`
 - **Preregistration SHA-256:** `1158469e650cb006fca4a8faea52c17fa22a422927a852c09eb291716afadca1`

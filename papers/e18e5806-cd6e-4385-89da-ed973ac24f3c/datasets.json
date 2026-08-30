@@ -6,7 +6,7 @@
     "source": "https://archive.ics.uci.edu/static/public/240/human+activity+recognition+using+smartphones.zip",
     "license": "CC BY 4.0",
     "size_bytes": 61005872,
-    "remote_path": "/projects/scc/UGOE/UXEI/UMIN/scc_umin_wieder/project_pwieder_ocr/dir.project/ai-journal/datasets/c00b803081a5c797cd5e4b83700a9810b38d53d9d84e01917e090e1fdbc81031/uci-har-smartphones.zip",
+    "remote_path": "[redacted]/datasets/c00b803081a5c797cd5e4b83700a9810b38d53d9d84e01917e090e1fdbc81031/uci-har-smartphones.zip",
     "container_path": "/work/datasets/c00b803081a5c797cd5e4b83700a9810b38d53d9d84e01917e090e1fdbc81031/uci-har-smartphones.zip"
   }
 ]
