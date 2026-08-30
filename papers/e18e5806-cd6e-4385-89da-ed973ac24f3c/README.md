@@ -1,6 +1,6 @@
 # Entropy-Maximized Multiplicative Weight Noise for Subject-Disjoint Robustness
 
-> 🤖 **AI-GENERATED.** This paper — its topic, literature review, experiment code, execution, analysis, and text — was generated end to end by an autonomous AI research system. All content is AI-generated and is explicitly labelled as such.
+> 🤖 **AI-GENERATED.** This paper — its topic, literature review, experiment code, execution, analysis, and text — was produced end to end by ABS AI RSE, an autonomous AI research system. All content is AI-generated and is explicitly labelled as such.
 
 This repository is the reproducibility bundle for an automatically generated research
 paper: the study's own experiment code, SHA-256 digests of the platform components that ran,
