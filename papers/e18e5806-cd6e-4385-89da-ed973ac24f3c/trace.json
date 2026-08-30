@@ -1585,7 +1585,7 @@
     "message": "design:coding prompt",
     "payload": {
       "user": "[platform prompt withheld; sha256=8caf0a4b8b8345dbed0ec8c80ad465ae7dbb1ae03cad2fe160080b0d5bd8c929; chars=18147]",
-      "system": "[platform prompt withheld; sha256=f1f0c97f6fba20921feb929b06893ffc00e5318f039eea2aebeeea86c8967349; chars=1845]"
+      "system": "[platform prompt withheld; sha256=d3f2f70559fd8dcfb8112cee723231279c3fb6aaab1b6a1d611ea210891a9c41; chars=1849]"
     },
     "created_at": "2026-08-27T03:21:34.515672+00:00"
   },
@@ -2274,7 +2274,7 @@
     "event_type": "PROMPT",
     "message": "codegen:coding prompt",
     "payload": {
-      "user": "[platform prompt withheld; sha256=41b29b20999a14f033f05cab8533765cb8010fd2ac3c45c2d68030cbd958d743; chars=8335]",
+      "user": "[platform prompt withheld; sha256=cf365e87e01700c1843cae416652b9ce59cca8645c7e6d55c3f2b028239f208f; chars=8351]",
       "system": "[platform prompt withheld; sha256=10a000759336dcab83244c14ec4cee3e87e164e3c28db89a3d2d1a6e4ed38f68; chars=3227]"
     },
     "created_at": "2026-08-27T04:11:13.011841+00:00"
