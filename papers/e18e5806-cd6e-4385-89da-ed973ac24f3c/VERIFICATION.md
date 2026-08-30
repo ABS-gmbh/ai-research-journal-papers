@@ -9,7 +9,7 @@
 - **Status:** `verified`
 - **Metrics matched:** 8 / 8
 - **Relative tolerance:** 0.05
-- **Verification Slurm job id:** `15547227`
+- **Verification compute job id:** `15547227`
 - **Verified at:** 2026-08-27T10:58:20.536076+00:00
 
 Independent re-run reproduced all 8 reported metric(s) within tolerance (relative tolerance 0.05; reproduced means inside the published 95% CI or within tolerance).

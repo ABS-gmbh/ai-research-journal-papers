@@ -5,7 +5,7 @@ preregistered seed lists, one RNG per seed with precomputed epoch permutations, 
 registered condition, curve logging, the smoke path, the non-finite policy and the results
 schema. The generated code contributes exactly one function, ``apply_operator(ctx)``.
 
-Why: two A100 jobs (Slurm 15504724 / 15504898) and sixteen codegen attempts were lost to code
+Why: two A100 jobs (the scheduler 15504724 / 15504898) and sixteen codegen attempts were lost to code
 that had to re-derive this scaffolding from prose — a tensor name, an archive member, a
 writable directory. None of that is science, and all of it is already known here.
 
@@ -44,7 +44,7 @@ class OperatorContext:
     # Tensor-valued randomness MUST come from these, not from ``rng``. The target lives on the
     # GPU during a real run and on the CPU in the preflight sandbox, so a numpy array folded
     # into a CUDA tensor raises "can't convert cuda:0 device type tensor to numpy" — on the
-    # GPU only. That is invisible to the dry-run by construction, and it killed Slurm job
+    # GPU only. That is invisible to the dry-run by construction, and it killed compute job
     # 15539746. These draw from the operator's own generator on the tensor's own device, so
     # the paired contract holds and the device is right without the author thinking about it.
     def randn_like(self, tensor):

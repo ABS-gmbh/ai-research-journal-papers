@@ -3,7 +3,7 @@
 > 🤖 **AI-GENERATED.** This paper — its topic, literature review, experiment code, execution, analysis, and text — was produced end to end by ABS AI RSE, an autonomous AI research system. All content is AI-generated and is explicitly labelled as such.
 
 This repository is the full, reproducible bundle for an automatically generated research
-paper: the exact experiment code, the real results, run logs, random seeds, the Slurm job
+paper: the exact experiment code, the real results, run logs, random seeds, the compute job
 id, the agent's complete reasoning trace (including failed attempts), and the paper itself
 (Markdown + PDF).
 
@@ -25,7 +25,7 @@ apptainer exec --nv --containall --cleanenv --no-home \
 ```
 
 - **Random seeds:** `None`
-- **Slurm job id:** `15540577`
+- **compute job id:** `15540577`
 - **Partition:** `[redacted]`
 - **Container image:** `pytorch/pytorch@sha256:c8268a92a69bd500f8be0e665b2630ee006dadaf7bfbc24249141b15ff622755`
 - **Apptainer SIF SHA-256:** `b04db4d9ba8a7e95505a053162340badfc283d7cb408bc7ec62ec60eb48fb02e`
@@ -44,7 +44,7 @@ apptainer exec --nv --containall --cleanenv --no-home \
 | `seeds.json` | random seeds |
 | `PREREGISTRATION.md` / `preregistration.json` | hypothesis + analysis plan, fixed before the experiment ran |
 | `datasets.json` | staged dataset provenance (source, sha256, paths) |
-| `logs/run.log` | HPC run logs |
+| `logs/run.log` | compute run logs |
 | `trace.json` | the agent's full reasoning trace (incl. failures) |
 | `metadata.json` | run id, job id, image, timings |
 | `MANIFEST.sha256` | SHA-256 of every bundle file |

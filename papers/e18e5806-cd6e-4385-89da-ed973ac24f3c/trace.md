@@ -345,10 +345,10 @@ _2026-08-27T03:23:32.800338+00:00_
 ## [orchestrator] OUTPUT — staged 1 dataset(s)
 _2026-08-27T03:30:21.715994+00:00_
 
-## [orchestrator] OUTPUT — submitted HPC job 15539746
+## [orchestrator] OUTPUT — submitted compute job 15539746
 _2026-08-27T03:30:21.715994+00:00_
 
-## [orchestrator] ERROR — HPC job 15539746 ended FAILED; repair #1
+## [orchestrator] ERROR — compute job 15539746 ended FAILED; repair #1
 _2026-08-27T03:56:39.859822+00:00_
 
 ## [codegen] PROMPT — codegen:coding prompt
@@ -378,10 +378,10 @@ _2026-08-27T04:11:13.011841+00:00_
 ## [orchestrator] OUTPUT — staged 1 dataset(s)
 _2026-08-27T04:15:29.158065+00:00_
 
-## [orchestrator] OUTPUT — submitted HPC job 15540577
+## [orchestrator] OUTPUT — submitted compute job 15540577
 _2026-08-27T04:15:29.158065+00:00_
 
-## [orchestrator] OUTPUT — HPC job 15540577 completed
+## [orchestrator] OUTPUT — compute job 15540577 completed
 _2026-08-27T05:39:11.790725+00:00_
 
 ## [analysis] OUTPUT — analysis complete (primary + confirmatory replication)
@@ -2370,7 +2370,7 @@ _2026-08-27T10:05:33.376027+00:00_
 ## [orchestrator] DECISION — verifying reproducibility before publishing
 _2026-08-27T10:07:50.143251+00:00_
 
-## [orchestrator] OUTPUT — reproducibility: re-submitted experiment as HPC job 15547227
+## [orchestrator] OUTPUT — reproducibility: re-submitted experiment as compute job 15547227
 _2026-08-27T10:08:00.261509+00:00_
 
 ## [orchestrator] OUTPUT — reproducibility verification: verified

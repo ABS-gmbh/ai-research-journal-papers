@@ -18,8 +18,8 @@ from operator_hook import apply_operator
 def _verify_parameter_inventory() -> None:
     """Fail here, precisely, rather than as a KeyError inside a queued GPU job.
 
-    Slurm job 15504898 died deep in training on a tensor name that did not exist. The dry-run
-    builds this same model, so the check runs in preflight and that class cannot reach HPC.
+    compute job 15504898 died deep in training on a tensor name that did not exist. The dry-run
+    builds this same model, so the check runs in preflight and that class cannot reach compute.
     """
 
     state = _testbed.build_model().state_dict()

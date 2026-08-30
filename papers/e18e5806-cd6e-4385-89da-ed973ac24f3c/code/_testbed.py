@@ -1,7 +1,7 @@
 """Server-owned data + model for ``uci_har_small_transformer_v1``.
 
 Ported from the committed, human-reviewed ``CALIBRATION_SOURCES`` entry that produced this
-testbed's registered baseline on an A100 (Slurm 15446009). Keeping it here — rather than asking
+testbed's registered baseline on an A100 (the scheduler 15446009). Keeping it here — rather than asking
 the generator to re-derive it from the recipe's prose — is the whole point of the harness: the
 archive's member layout, the per-channel standardisation axis and the parameter names in
 ``operator_targets`` are facts this server already knows, and every one of them has cost either
@@ -57,7 +57,7 @@ def load_cohorts(dataset_path):
     """Read the official subject-disjoint split straight out of the staged archive.
 
     The container mounts the dataset read-only, so the nested zip is read through BytesIO
-    rather than unpacked — the failure that killed Slurm job 15504724.
+    rather than unpacked — the failure that killed compute job 15504724.
     """
 
     import io
