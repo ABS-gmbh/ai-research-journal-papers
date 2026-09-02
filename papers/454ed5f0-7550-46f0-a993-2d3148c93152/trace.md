@@ -554,3 +554,186 @@ _2026-09-01T21:23:49.596494+00:00_
 
 ## [orchestrator] OUTPUT — reproducibility verification: verified
 _2026-09-01T22:13:45.275741+00:00_
+
+## [orchestrator] OUTPUT — published to GitHub
+_2026-09-01T22:13:58.740682+00:00_
+
+## [orchestrator] INFO — published
+_2026-09-01T22:13:58.740682+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-09-02T17:59:37.086268+00:00_
+
+## [writing] OUTPUT — writing:writing text output
+_2026-09-02T17:59:37.086268+00:00_
+
+## [writing] OUTPUT — paper written
+_2026-09-02T17:59:37.086268+00:00_
+
+## [orchestrator] DECISION — writing a corrected version of record (v2)
+_2026-09-02T17:59:37.086268+00:00_
+
+## [orchestrator] INFO — paper written
+_2026-09-02T17:59:37.086268+00:00_
+
+## [citation_check] PROMPT — citation_check:review prompt
+_2026-09-02T18:06:31.849583+00:00_
+
+## [citation_check] OUTPUT — citation_check:review text output
+_2026-09-02T18:06:31.849583+00:00_
+
+## [citation_check] OUTPUT — citation audit: 5 error(s), 6 warning(s) in citations.
+_2026-09-02T18:06:31.849583+00:00_
+
+## [plagiarism_check] OUTPUT — plagiarism/text-overlap check: Text overlap 2% is within the 18% threshold; no plagiarism detected.
+_2026-09-02T18:06:31.849583+00:00_
+
+## [preregistration_check] PROMPT — preregistration_check:review prompt
+_2026-09-02T18:06:31.849583+00:00_
+
+## [preregistration_check] OUTPUT — preregistration_check:review text output
+_2026-09-02T18:06:31.849583+00:00_
+
+## [preregistration_check] OUTPUT — preregistration audit: The paper is faithful to its preregistration.
+_2026-09-02T18:06:31.849583+00:00_
+
+## [review] PROMPT — review:review prompt
+_2026-09-02T18:06:31.849583+00:00_
+
+## [review] OUTPUT — review:review text output
+_2026-09-02T18:06:31.849583+00:00_
+
+## [review] DECISION — review decision: revise (target=writing; citations_ok=False; overlap_ok=True; prereg_ok=True)
+_2026-09-02T18:06:31.849583+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-09-02T18:21:52.502138+00:00_
+
+## [writing] ERROR — writer LLM failed: LLMProviderError
+_2026-09-02T18:21:52.502138+00:00_
+
+## [writing] OUTPUT — paper written
+_2026-09-02T18:21:52.502138+00:00_
+
+## [orchestrator] INFO — paper written
+_2026-09-02T18:21:52.502138+00:00_
+
+## [citation_check] PROMPT — citation_check:review prompt
+_2026-09-02T18:22:10.738272+00:00_
+
+## [citation_check] OUTPUT — citation_check:review text output
+_2026-09-02T18:22:10.738272+00:00_
+
+## [citation_check] OUTPUT — citation audit: 3 error(s), 14 warning(s) in citations.
+_2026-09-02T18:22:10.738272+00:00_
+
+## [plagiarism_check] OUTPUT — plagiarism/text-overlap check: Text overlap 4% is within the 18% threshold; no plagiarism detected.
+_2026-09-02T18:22:10.738272+00:00_
+
+## [preregistration_check] PROMPT — preregistration_check:review prompt
+_2026-09-02T18:22:10.738272+00:00_
+
+## [preregistration_check] OUTPUT — preregistration_check:review text output
+_2026-09-02T18:22:10.738272+00:00_
+
+## [preregistration_check] OUTPUT — preregistration audit: The paper is faithful to its preregistration.
+_2026-09-02T18:22:10.738272+00:00_
+
+## [review] PROMPT — review:review prompt
+_2026-09-02T18:22:10.738272+00:00_
+
+## [review] OUTPUT — review:review text output
+_2026-09-02T18:22:10.738272+00:00_
+
+## [review] DECISION — review decision: revise (target=writing; citations_ok=False; overlap_ok=True; prereg_ok=True)
+_2026-09-02T18:22:10.738272+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-09-02T18:24:49.652548+00:00_
+
+## [writing] OUTPUT — writing:writing text output
+_2026-09-02T18:24:49.652548+00:00_
+
+## [writing] OUTPUT — paper written
+_2026-09-02T18:24:49.652548+00:00_
+
+## [orchestrator] INFO — paper written
+_2026-09-02T18:24:49.652548+00:00_
+
+## [citation_check] PROMPT — citation_check:review prompt
+_2026-09-02T18:26:14.520008+00:00_
+
+## [citation_check] OUTPUT — citation_check:review text output
+_2026-09-02T18:26:14.520008+00:00_
+
+## [citation_check] OUTPUT — citation audit: 1 error(s), 3 warning(s) in citations.
+_2026-09-02T18:26:14.520008+00:00_
+
+## [plagiarism_check] OUTPUT — plagiarism/text-overlap check: Text overlap 8% is within the 18% threshold; no plagiarism detected.
+_2026-09-02T18:26:14.520008+00:00_
+
+## [preregistration_check] PROMPT — preregistration_check:review prompt
+_2026-09-02T18:26:14.520008+00:00_
+
+## [preregistration_check] OUTPUT — preregistration_check:review text output
+_2026-09-02T18:26:14.520008+00:00_
+
+## [preregistration_check] OUTPUT — preregistration audit: The paper is faithful to its preregistration.
+_2026-09-02T18:26:14.520008+00:00_
+
+## [review] PROMPT — review:review prompt
+_2026-09-02T18:26:14.520008+00:00_
+
+## [review] OUTPUT — review:review text output
+_2026-09-02T18:26:14.520008+00:00_
+
+## [review] DECISION — review decision: revise (target=writing; citations_ok=False; overlap_ok=True; prereg_ok=True)
+_2026-09-02T18:26:14.520008+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-09-02T18:28:25.359013+00:00_
+
+## [writing] OUTPUT — writing:writing text output
+_2026-09-02T18:28:25.359013+00:00_
+
+## [writing] OUTPUT — paper written
+_2026-09-02T18:28:25.359013+00:00_
+
+## [orchestrator] INFO — paper written
+_2026-09-02T18:28:25.359013+00:00_
+
+## [citation_check] PROMPT — citation_check:review prompt
+_2026-09-02T18:44:07.048449+00:00_
+
+## [citation_check] OUTPUT — citation_check:review text output
+_2026-09-02T18:44:07.048449+00:00_
+
+## [citation_check] OUTPUT — citation audit: 0 error(s), 5 warning(s) in citations.
+_2026-09-02T18:44:07.048449+00:00_
+
+## [plagiarism_check] OUTPUT — plagiarism/text-overlap check: Text overlap 3% is within the 18% threshold; no plagiarism detected.
+_2026-09-02T18:44:07.048449+00:00_
+
+## [preregistration_check] PROMPT — preregistration_check:review prompt
+_2026-09-02T18:44:07.048449+00:00_
+
+## [preregistration_check] OUTPUT — preregistration_check:review text output
+_2026-09-02T18:44:07.048449+00:00_
+
+## [preregistration_check] OUTPUT — preregistration audit: The paper is faithful to its preregistration.
+_2026-09-02T18:44:07.048449+00:00_
+
+## [review] PROMPT — review:review prompt
+_2026-09-02T18:44:07.048449+00:00_
+
+## [review] OUTPUT — review:review text output
+_2026-09-02T18:44:07.048449+00:00_
+
+## [review] DECISION — review decision: revise (target=writing; citations_ok=True; overlap_ok=True; prereg_ok=True)
+_2026-09-02T18:44:07.048449+00:00_
+
+## [orchestrator] DECISION — registered report: every integrity check passed, so a subjective revise request is recorded as an editorial note rather than blocking publication
+_2026-09-02T18:44:07.048449+00:00_
+
+## [orchestrator] DECISION — copy-edited the manuscript before publication
+_2026-09-02T18:47:05.582906+00:00_
