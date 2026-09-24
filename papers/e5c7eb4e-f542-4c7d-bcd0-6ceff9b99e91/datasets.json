@@ -1,0 +1,12 @@
+[
+  {
+    "name": "uci_har_smartphones",
+    "source": "https://archive.ics.uci.edu/static/public/240/human+activity+recognition+using+smartphones.zip",
+    "sha256": "c00b803081a5c797cd5e4b83700a9810b38d53d9d84e01917e090e1fdbc81031",
+    "size_bytes": 61005872,
+    "license": "CC BY 4.0",
+    "filename": "uci-har-smartphones.zip",
+    "notes": "UCI dataset DOI 10.24432/C54S4K; 10,299 windows, 6 activity classes, 30 subjects. Outer zip contains 'UCI HAR Dataset.zip'; raw per-channel inertial signals live under '<split>/Inertial Signals/<channel>_<split>.txt'.",
+    "container_path": "/work/datasets/c00b803081a5c797cd5e4b83700a9810b38d53d9d84e01917e090e1fdbc81031/uci-har-smartphones.zip"
+  }
+]
