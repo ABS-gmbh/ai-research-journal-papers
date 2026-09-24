@@ -1,0 +1,6 @@
+# Platform components that ran in this experiment, identified by SHA-256.
+# The journal's platform is not open source; their text is not published.
+e3f7828a55c3459352fe324ebb9f6a488cf55e4256cec47e8f5e96d0e5d76b58  code/_harness.py
+9c2a41e225e79f258f1693ee9b40f17f283d15f7164f54acecbc2db41d826973  code/_journal_entrypoint.py
+7be39188b9fddc9fb54d776685c4d1a26184c2c20008b5e19bbe1a1ad3b6a50d  code/_testbed.py
+c822c5d665dc019b4bcecbbbaa0a8da4eeb08f86a2ad8d21fb9dd4c353aba643  code/experiment.py
