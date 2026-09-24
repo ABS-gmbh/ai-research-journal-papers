@@ -1,0 +1,3034 @@
+{
+  "analysis_stats": {
+    "figure_metadata": [
+      {
+        "axis_reason": "a bar encodes magnitude by length, so the axis starts at zero; the point estimates are printed above the bars instead of truncating the axis",
+        "baseline_zero": true,
+        "cohort": "Primary",
+        "comparison": "the proposed condition against the baseline",
+        "dataset": "UCI Human Activity Recognition Using Smartphones",
+        "encoding": "axis",
+        "encoding_note": "",
+        "evaluation": "",
+        "figure_role": "outcome levels",
+        "filename": "primary_results_bars.png",
+        "has_error_bars": true,
+        "kind": "bar",
+        "legend": false,
+        "n_points": null,
+        "n_units": 43,
+        "observation_level": "seed",
+        "origin_included": false,
+        "overlapping_series": [
+          "Proposed",
+          "Baseline",
+          "Negative control 1"
+        ],
+        "paired": true,
+        "reference_line": "baseline mean",
+        "series": [
+          "Proposed",
+          "Baseline",
+          "Negative control 1"
+        ],
+        "title": "Primary cohort: held-out classification accuracy by condition (mean \u00b1 95% CI)",
+        "uncertainty": "95% bootstrap confidence interval",
+        "uncertainty_level": 0.95,
+        "uncertainty_method": "bootstrap",
+        "uncertainty_type": "confidence interval",
+        "unit_name": "paired seed",
+        "value_annotations": true,
+        "x_label": "",
+        "x_quantity": "",
+        "x_spec": null,
+        "y_label": "Mean Held-Out Classification Accuracy",
+        "y_limits": [
+          0.0,
+          1.0
+        ],
+        "y_quantity": "held-out classification accuracy",
+        "y_spec": {
+          "aggregation": "mean",
+          "domain_high": 1.0,
+          "domain_low": 0.0,
+          "evaluation_split": "held-out",
+          "higher_is_better": true,
+          "is_difference": false,
+          "name": "held-out classification accuracy",
+          "quantity_type": "accuracy",
+          "unit": "proportion",
+          "zero_meaningful": true
+        },
+        "y_unit": "proportion"
+      },
+      {
+        "axis_reason": "a difference is read against zero, which is drawn",
+        "baseline_zero": false,
+        "cohort": "Primary",
+        "comparison": "the proposed condition against the baseline",
+        "dataset": "UCI Human Activity Recognition Using Smartphones",
+        "encoding": "axis",
+        "encoding_note": "",
+        "evaluation": "",
+        "figure_role": "paired effect",
+        "filename": "primary_effect_sizes.png",
+        "has_error_bars": true,
+        "kind": "effect",
+        "legend": false,
+        "n_points": 43,
+        "n_units": 43,
+        "observation_level": "seed",
+        "origin_included": false,
+        "overlapping_series": [],
+        "paired": true,
+        "reference_line": "",
+        "series": [
+          "Proposed",
+          "Baseline"
+        ],
+        "title": "Primary cohort: hypothesis-positive contrast",
+        "uncertainty": "95% bootstrap confidence interval",
+        "uncertainty_level": 0.95,
+        "uncertainty_method": "bootstrap",
+        "uncertainty_type": "confidence interval",
+        "unit_name": "paired seed",
+        "value_annotations": false,
+        "x_label": "",
+        "x_quantity": "",
+        "x_spec": null,
+        "y_label": "Mean Difference in Held-Out Classification Accuracy",
+        "y_limits": [
+          -0.05683746182558533,
+          0.05819477434679329
+        ],
+        "y_quantity": "held-out classification accuracy",
+        "y_spec": {
+          "aggregation": "mean",
+          "domain_high": null,
+          "domain_low": null,
+          "evaluation_split": "held-out",
+          "higher_is_better": true,
+          "is_difference": true,
+          "name": "held-out classification accuracy",
+          "quantity_type": "accuracy",
+          "unit": "proportion",
+          "zero_meaningful": true
+        },
+        "y_unit": "proportion"
+      },
+      {
+        "axis_reason": "both axes have a meaningful zero, so the origin is part of the reading",
+        "baseline_zero": false,
+        "cohort": "Primary",
+        "comparison": "",
+        "dataset": "UCI Human Activity Recognition Using Smartphones",
+        "encoding": "colour+dash+marker",
+        "encoding_note": "conditions whose curves coincide are distinguished by marker shape and dash pattern as well as by colour, with markers offset so neither hides the other; no value is jittered",
+        "evaluation": "",
+        "figure_role": "learning curves",
+        "filename": "primary_learning_curves.png",
+        "has_error_bars": false,
+        "kind": "curve",
+        "legend": true,
+        "n_points": 12,
+        "n_units": 43,
+        "observation_level": "seed",
+        "origin_included": true,
+        "overlapping_series": [
+          "Proposed",
+          "Baseline",
+          "Negative control 1"
+        ],
+        "paired": true,
+        "reference_line": "",
+        "series": [
+          "Proposed",
+          "Baseline",
+          "Negative control 1"
+        ],
+        "title": "Learning curves: held-out classification accuracy",
+        "uncertainty": "",
+        "uncertainty_level": null,
+        "uncertainty_method": "",
+        "uncertainty_type": "",
+        "unit_name": "seed",
+        "value_annotations": false,
+        "x_label": "Training Steps",
+        "x_quantity": "training steps",
+        "x_spec": {
+          "aggregation": "",
+          "domain_high": null,
+          "domain_low": 0.0,
+          "evaluation_split": "training",
+          "higher_is_better": null,
+          "is_difference": false,
+          "name": "training steps",
+          "quantity_type": "count",
+          "unit": "",
+          "zero_meaningful": true
+        },
+        "y_label": "Mean Held-Out Classification Accuracy",
+        "y_limits": [
+          0.0,
+          0.9802081738622644
+        ],
+        "y_quantity": "held-out classification accuracy",
+        "y_spec": {
+          "aggregation": "mean",
+          "domain_high": 1.0,
+          "domain_low": 0.0,
+          "evaluation_split": "held-out",
+          "higher_is_better": true,
+          "is_difference": false,
+          "name": "held-out classification accuracy",
+          "quantity_type": "accuracy",
+          "unit": "proportion",
+          "zero_meaningful": true
+        },
+        "y_unit": "proportion"
+      },
+      {
+        "axis_reason": "a bar encodes magnitude by length, so the axis starts at zero; the point estimates are printed above the bars instead of truncating the axis",
+        "baseline_zero": true,
+        "cohort": "Replication",
+        "comparison": "the proposed condition against the baseline",
+        "dataset": "UCI Human Activity Recognition Using Smartphones",
+        "encoding": "axis",
+        "encoding_note": "",
+        "evaluation": "",
+        "figure_role": "outcome levels",
+        "filename": "replication_results_bars.png",
+        "has_error_bars": true,
+        "kind": "bar",
+        "legend": false,
+        "n_points": null,
+        "n_units": 43,
+        "observation_level": "seed",
+        "origin_included": false,
+        "overlapping_series": [
+          "Proposed",
+          "Baseline",
+          "Negative control 1"
+        ],
+        "paired": true,
+        "reference_line": "baseline mean",
+        "series": [
+          "Proposed",
+          "Baseline",
+          "Negative control 1"
+        ],
+        "title": "Replication cohort: held-out classification accuracy by condition (mean \u00b1 95% CI)",
+        "uncertainty": "95% bootstrap confidence interval",
+        "uncertainty_level": 0.95,
+        "uncertainty_method": "bootstrap",
+        "uncertainty_type": "confidence interval",
+        "unit_name": "paired seed",
+        "value_annotations": true,
+        "x_label": "",
+        "x_quantity": "",
+        "x_spec": null,
+        "y_label": "Mean Held-Out Classification Accuracy",
+        "y_limits": [
+          0.0,
+          1.0
+        ],
+        "y_quantity": "held-out classification accuracy",
+        "y_spec": {
+          "aggregation": "mean",
+          "domain_high": 1.0,
+          "domain_low": 0.0,
+          "evaluation_split": "held-out",
+          "higher_is_better": true,
+          "is_difference": false,
+          "name": "held-out classification accuracy",
+          "quantity_type": "accuracy",
+          "unit": "proportion",
+          "zero_meaningful": true
+        },
+        "y_unit": "proportion"
+      },
+      {
+        "axis_reason": "a difference is read against zero, which is drawn",
+        "baseline_zero": false,
+        "cohort": "Replication",
+        "comparison": "the proposed condition against the baseline",
+        "dataset": "UCI Human Activity Recognition Using Smartphones",
+        "encoding": "axis",
+        "encoding_note": "",
+        "evaluation": "",
+        "figure_role": "paired effect",
+        "filename": "replication_effect_sizes.png",
+        "has_error_bars": true,
+        "kind": "effect",
+        "legend": false,
+        "n_points": 43,
+        "n_units": 43,
+        "observation_level": "seed",
+        "origin_included": false,
+        "overlapping_series": [],
+        "paired": true,
+        "reference_line": "",
+        "series": [
+          "Proposed",
+          "Baseline"
+        ],
+        "title": "Replication cohort: hypothesis-positive contrast",
+        "uncertainty": "95% bootstrap confidence interval",
+        "uncertainty_level": 0.95,
+        "uncertainty_method": "bootstrap",
+        "uncertainty_type": "confidence interval",
+        "unit_name": "paired seed",
+        "value_annotations": false,
+        "x_label": "",
+        "x_quantity": "",
+        "x_spec": null,
+        "y_label": "Mean Difference in Held-Out Classification Accuracy",
+        "y_limits": [
+          -0.03741092636579568,
+          0.04453681710213775
+        ],
+        "y_quantity": "held-out classification accuracy",
+        "y_spec": {
+          "aggregation": "mean",
+          "domain_high": null,
+          "domain_low": null,
+          "evaluation_split": "held-out",
+          "higher_is_better": true,
+          "is_difference": true,
+          "name": "held-out classification accuracy",
+          "quantity_type": "accuracy",
+          "unit": "proportion",
+          "zero_meaningful": true
+        },
+        "y_unit": "proportion"
+      },
+      {
+        "axis_reason": "both axes have a meaningful zero, so the origin is part of the reading",
+        "baseline_zero": false,
+        "cohort": "Replication",
+        "comparison": "",
+        "dataset": "UCI Human Activity Recognition Using Smartphones",
+        "encoding": "colour+dash+marker",
+        "encoding_note": "conditions whose curves coincide are distinguished by marker shape and dash pattern as well as by colour, with markers offset so neither hides the other; no value is jittered",
+        "evaluation": "",
+        "figure_role": "learning curves",
+        "filename": "replication_learning_curves.png",
+        "has_error_bars": false,
+        "kind": "curve",
+        "legend": true,
+        "n_points": 12,
+        "n_units": 43,
+        "observation_level": "seed",
+        "origin_included": true,
+        "overlapping_series": [
+          "Proposed",
+          "Baseline",
+          "Negative control 1"
+        ],
+        "paired": true,
+        "reference_line": "",
+        "series": [
+          "Proposed",
+          "Baseline",
+          "Negative control 1"
+        ],
+        "title": "Learning curves: held-out classification accuracy",
+        "uncertainty": "",
+        "uncertainty_level": null,
+        "uncertainty_method": "",
+        "uncertainty_type": "",
+        "unit_name": "seed",
+        "value_annotations": false,
+        "x_label": "Training Steps",
+        "x_quantity": "training steps",
+        "x_spec": {
+          "aggregation": "",
+          "domain_high": null,
+          "domain_low": 0.0,
+          "evaluation_split": "training",
+          "higher_is_better": null,
+          "is_difference": false,
+          "name": "training steps",
+          "quantity_type": "count",
+          "unit": "",
+          "zero_meaningful": true
+        },
+        "y_label": "Mean Held-Out Classification Accuracy",
+        "y_limits": [
+          0.0,
+          0.980233741842315
+        ],
+        "y_quantity": "held-out classification accuracy",
+        "y_spec": {
+          "aggregation": "mean",
+          "domain_high": 1.0,
+          "domain_low": 0.0,
+          "evaluation_split": "held-out",
+          "higher_is_better": true,
+          "is_difference": false,
+          "name": "held-out classification accuracy",
+          "quantity_type": "accuracy",
+          "unit": "proportion",
+          "zero_meaningful": true
+        },
+        "y_unit": "proportion"
+      }
+    ],
+    "primary": {
+      "baseline": "baseline_1",
+      "comparisons": {
+        "held-out classification accuracy": {
+          "all_pairs_identical": false,
+          "ci_high": 0.005603057109713464,
+          "ci_low": -0.00314864939512788,
+          "cohens_d": 0.08890782293391766,
+          "contrast": "hypothesis-positive proposed versus baseline",
+          "decision": "inconclusive",
+          "identical_pairs": 0,
+          "mean_diff": 0.0013257471137380487,
+          "multiplicity_method": "preregistered primary (unadjusted)",
+          "n_a": 43,
+          "n_b": 43,
+          "operator_inactive": false,
+          "p_value": 0.5458908218356329,
+          "p_value_adjusted": 0.5458908218356329,
+          "paired": true,
+          "significant": false,
+          "significant_adjusted": false,
+          "smallest_worthwhile_effect_value": 0.012509797746985206
+        }
+      },
+      "conditions": {
+        "baseline_1": {
+          "held-out classification accuracy": {
+            "ci_high": 0.9085946686026782,
+            "ci_low": 0.901610230348561,
+            "mean": 0.9051301678490542,
+            "n": 43,
+            "std": 0.011969661099051657
+          }
+        },
+        "negative_control_1": {
+          "held-out classification accuracy": {
+            "ci_high": 0.9108125330450358,
+            "ci_low": 0.904443422952786,
+            "mean": 0.9076001609835781,
+            "n": 43,
+            "std": 0.01095215252776129
+          }
+        },
+        "proposed": {
+          "held-out classification accuracy": {
+            "ci_high": 0.9106225487488263,
+            "ci_low": 0.9021549309112145,
+            "mean": 0.9064559149627922,
+            "n": 43,
+            "std": 0.014719944134714023
+          }
+        }
+      },
+      "figure_metadata": [
+        {
+          "axis_reason": "a bar encodes magnitude by length, so the axis starts at zero; the point estimates are printed above the bars instead of truncating the axis",
+          "baseline_zero": true,
+          "cohort": "Primary",
+          "comparison": "the proposed condition against the baseline",
+          "dataset": "UCI Human Activity Recognition Using Smartphones",
+          "encoding": "axis",
+          "encoding_note": "",
+          "evaluation": "",
+          "figure_role": "outcome levels",
+          "filename": "primary_results_bars.png",
+          "has_error_bars": true,
+          "kind": "bar",
+          "legend": false,
+          "n_points": null,
+          "n_units": 43,
+          "observation_level": "seed",
+          "origin_included": false,
+          "overlapping_series": [
+            "Proposed",
+            "Baseline",
+            "Negative control 1"
+          ],
+          "paired": true,
+          "reference_line": "baseline mean",
+          "series": [
+            "Proposed",
+            "Baseline",
+            "Negative control 1"
+          ],
+          "title": "Primary cohort: held-out classification accuracy by condition (mean \u00b1 95% CI)",
+          "uncertainty": "95% bootstrap confidence interval",
+          "uncertainty_level": 0.95,
+          "uncertainty_method": "bootstrap",
+          "uncertainty_type": "confidence interval",
+          "unit_name": "paired seed",
+          "value_annotations": true,
+          "x_label": "",
+          "x_quantity": "",
+          "x_spec": null,
+          "y_label": "Mean Held-Out Classification Accuracy",
+          "y_limits": [
+            0.0,
+            1.0
+          ],
+          "y_quantity": "held-out classification accuracy",
+          "y_spec": {
+            "aggregation": "mean",
+            "domain_high": 1.0,
+            "domain_low": 0.0,
+            "evaluation_split": "held-out",
+            "higher_is_better": true,
+            "is_difference": false,
+            "name": "held-out classification accuracy",
+            "quantity_type": "accuracy",
+            "unit": "proportion",
+            "zero_meaningful": true
+          },
+          "y_unit": "proportion"
+        },
+        {
+          "axis_reason": "a difference is read against zero, which is drawn",
+          "baseline_zero": false,
+          "cohort": "Primary",
+          "comparison": "the proposed condition against the baseline",
+          "dataset": "UCI Human Activity Recognition Using Smartphones",
+          "encoding": "axis",
+          "encoding_note": "",
+          "evaluation": "",
+          "figure_role": "paired effect",
+          "filename": "primary_effect_sizes.png",
+          "has_error_bars": true,
+          "kind": "effect",
+          "legend": false,
+          "n_points": 43,
+          "n_units": 43,
+          "observation_level": "seed",
+          "origin_included": false,
+          "overlapping_series": [],
+          "paired": true,
+          "reference_line": "",
+          "series": [
+            "Proposed",
+            "Baseline"
+          ],
+          "title": "Primary cohort: hypothesis-positive contrast",
+          "uncertainty": "95% bootstrap confidence interval",
+          "uncertainty_level": 0.95,
+          "uncertainty_method": "bootstrap",
+          "uncertainty_type": "confidence interval",
+          "unit_name": "paired seed",
+          "value_annotations": false,
+          "x_label": "",
+          "x_quantity": "",
+          "x_spec": null,
+          "y_label": "Mean Difference in Held-Out Classification Accuracy",
+          "y_limits": [
+            -0.05683746182558533,
+            0.05819477434679329
+          ],
+          "y_quantity": "held-out classification accuracy",
+          "y_spec": {
+            "aggregation": "mean",
+            "domain_high": null,
+            "domain_low": null,
+            "evaluation_split": "held-out",
+            "higher_is_better": true,
+            "is_difference": true,
+            "name": "held-out classification accuracy",
+            "quantity_type": "accuracy",
+            "unit": "proportion",
+            "zero_meaningful": true
+          },
+          "y_unit": "proportion"
+        },
+        {
+          "axis_reason": "both axes have a meaningful zero, so the origin is part of the reading",
+          "baseline_zero": false,
+          "cohort": "Primary",
+          "comparison": "",
+          "dataset": "UCI Human Activity Recognition Using Smartphones",
+          "encoding": "colour+dash+marker",
+          "encoding_note": "conditions whose curves coincide are distinguished by marker shape and dash pattern as well as by colour, with markers offset so neither hides the other; no value is jittered",
+          "evaluation": "",
+          "figure_role": "learning curves",
+          "filename": "primary_learning_curves.png",
+          "has_error_bars": false,
+          "kind": "curve",
+          "legend": true,
+          "n_points": 12,
+          "n_units": 43,
+          "observation_level": "seed",
+          "origin_included": true,
+          "overlapping_series": [
+            "Proposed",
+            "Baseline",
+            "Negative control 1"
+          ],
+          "paired": true,
+          "reference_line": "",
+          "series": [
+            "Proposed",
+            "Baseline",
+            "Negative control 1"
+          ],
+          "title": "Learning curves: held-out classification accuracy",
+          "uncertainty": "",
+          "uncertainty_level": null,
+          "uncertainty_method": "",
+          "uncertainty_type": "",
+          "unit_name": "seed",
+          "value_annotations": false,
+          "x_label": "Training Steps",
+          "x_quantity": "training steps",
+          "x_spec": {
+            "aggregation": "",
+            "domain_high": null,
+            "domain_low": 0.0,
+            "evaluation_split": "training",
+            "higher_is_better": null,
+            "is_difference": false,
+            "name": "training steps",
+            "quantity_type": "count",
+            "unit": "",
+            "zero_meaningful": true
+          },
+          "y_label": "Mean Held-Out Classification Accuracy",
+          "y_limits": [
+            0.0,
+            0.9802081738622644
+          ],
+          "y_quantity": "held-out classification accuracy",
+          "y_spec": {
+            "aggregation": "mean",
+            "domain_high": 1.0,
+            "domain_low": 0.0,
+            "evaluation_split": "held-out",
+            "higher_is_better": true,
+            "is_difference": false,
+            "name": "held-out classification accuracy",
+            "quantity_type": "accuracy",
+            "unit": "proportion",
+            "zero_meaningful": true
+          },
+          "y_unit": "proportion"
+        }
+      ],
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "n_conditions": 3,
+      "n_seeds": 43,
+      "primary_metric": "held-out classification accuracy",
+      "proposed": "proposed",
+      "shape": "structured",
+      "table_metadata": [
+        {
+          "cohort": "Primary",
+          "column_specs": [
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "Condition",
+              "quantity": "",
+              "role": "condition",
+              "statistic": "",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "Seeds",
+              "quantity": "",
+              "role": "count",
+              "statistic": "",
+              "unit": ""
+            },
+            {
+              "aggregation": "mean",
+              "cohort": "Primary",
+              "header": "Mean Held-Out Classification Accuracy",
+              "quantity": "held-out classification accuracy",
+              "role": "estimate",
+              "statistic": "",
+              "unit": "proportion"
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "CI Lower",
+              "quantity": "",
+              "role": "ci_low",
+              "statistic": "95% bootstrap confidence interval",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "CI Upper",
+              "quantity": "",
+              "role": "ci_high",
+              "statistic": "95% bootstrap confidence interval",
+              "unit": ""
+            }
+          ],
+          "columns": [
+            "Condition",
+            "Seeds",
+            "Mean Held-Out Classification Accuracy",
+            "CI Lower",
+            "CI Upper"
+          ],
+          "conditions": [
+            "Proposed",
+            "Baseline",
+            "Negative control 1"
+          ],
+          "n_rows": 3,
+          "n_units": 43,
+          "observation_level": "seed",
+          "paired": true,
+          "quantities": [
+            "Mean Held-Out Classification Accuracy"
+          ],
+          "role": "condition levels",
+          "uncertainty": "95% bootstrap confidence interval",
+          "uncertainty_level": 0.95,
+          "uncertainty_method": "bootstrap",
+          "uncertainty_type": "confidence interval",
+          "unit_name": "seed"
+        },
+        {
+          "cohort": "Primary",
+          "column_specs": [
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "Outcome",
+              "quantity": "",
+              "role": "label",
+              "statistic": "",
+              "unit": ""
+            },
+            {
+              "aggregation": "mean",
+              "cohort": "",
+              "header": "Mean Difference",
+              "quantity": "",
+              "role": "estimate",
+              "statistic": "paired mean difference",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "CI Lower",
+              "quantity": "",
+              "role": "ci_low",
+              "statistic": "95% bootstrap confidence interval",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "CI Upper",
+              "quantity": "",
+              "role": "ci_high",
+              "statistic": "95% bootstrap confidence interval",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "p-value",
+              "quantity": "",
+              "role": "p_value",
+              "statistic": "paired sign-flip randomisation test",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "Effect Size (Cohen's dz)",
+              "quantity": "",
+              "role": "effect_size",
+              "statistic": "Cohen's dz for paired differences",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "Registered Decision",
+              "quantity": "",
+              "role": "decision",
+              "statistic": "",
+              "unit": ""
+            }
+          ],
+          "columns": [
+            "Outcome",
+            "Mean Difference",
+            "CI Lower",
+            "CI Upper",
+            "p-value",
+            "Effect Size (Cohen's dz)",
+            "Registered Decision"
+          ],
+          "conditions": [],
+          "n_rows": 1,
+          "n_units": 43,
+          "observation_level": "seed",
+          "paired": true,
+          "quantities": [
+            "held-out classification accuracy"
+          ],
+          "role": "paired statistics",
+          "uncertainty": "95% bootstrap confidence interval",
+          "uncertainty_level": 0.95,
+          "uncertainty_method": "bootstrap",
+          "uncertainty_type": "confidence interval",
+          "unit_name": "seed"
+        }
+      ]
+    },
+    "primary_decision": "inconclusive",
+    "replication": {
+      "baseline": "baseline_1",
+      "comparisons": {
+        "held-out classification accuracy": {
+          "all_pairs_identical": false,
+          "ci_high": 0.0018230995651865227,
+          "ci_low": -0.004869161386037038,
+          "cohens_d": -0.14004981865511465,
+          "contrast": "hypothesis-positive proposed versus baseline",
+          "decision": "inconclusive",
+          "identical_pairs": 0,
+          "mean_diff": -0.0015703790216301916,
+          "multiplicity_method": "preregistered primary (unadjusted)",
+          "n_a": 43,
+          "n_b": 43,
+          "operator_inactive": false,
+          "p_value": 0.372125574885023,
+          "p_value_adjusted": 0.372125574885023,
+          "paired": true,
+          "significant": false,
+          "significant_adjusted": false,
+          "smallest_worthwhile_effect_value": 0.012509797746985206
+        }
+      },
+      "conditions": {
+        "baseline_1": {
+          "held-out classification accuracy": {
+            "ci_high": 0.9110804444409372,
+            "ci_low": 0.9037884407477844,
+            "mean": 0.9076238350391805,
+            "n": 43,
+            "std": 0.012371654029222131
+          }
+        },
+        "negative_control_1": {
+          "held-out classification accuracy": {
+            "ci_high": 0.9099281097844872,
+            "ci_low": 0.9030229796166381,
+            "mean": 0.9066689814632142,
+            "n": 43,
+            "std": 0.011712838214908946
+          }
+        },
+        "proposed": {
+          "held-out classification accuracy": {
+            "ci_high": 0.9094076751288263,
+            "ci_low": 0.9023679974116368,
+            "mean": 0.9060534560175505,
+            "n": 43,
+            "std": 0.011909582120034094
+          }
+        }
+      },
+      "figure_metadata": [
+        {
+          "axis_reason": "a bar encodes magnitude by length, so the axis starts at zero; the point estimates are printed above the bars instead of truncating the axis",
+          "baseline_zero": true,
+          "cohort": "Replication",
+          "comparison": "the proposed condition against the baseline",
+          "dataset": "UCI Human Activity Recognition Using Smartphones",
+          "encoding": "axis",
+          "encoding_note": "",
+          "evaluation": "",
+          "figure_role": "outcome levels",
+          "filename": "replication_results_bars.png",
+          "has_error_bars": true,
+          "kind": "bar",
+          "legend": false,
+          "n_points": null,
+          "n_units": 43,
+          "observation_level": "seed",
+          "origin_included": false,
+          "overlapping_series": [
+            "Proposed",
+            "Baseline",
+            "Negative control 1"
+          ],
+          "paired": true,
+          "reference_line": "baseline mean",
+          "series": [
+            "Proposed",
+            "Baseline",
+            "Negative control 1"
+          ],
+          "title": "Replication cohort: held-out classification accuracy by condition (mean \u00b1 95% CI)",
+          "uncertainty": "95% bootstrap confidence interval",
+          "uncertainty_level": 0.95,
+          "uncertainty_method": "bootstrap",
+          "uncertainty_type": "confidence interval",
+          "unit_name": "paired seed",
+          "value_annotations": true,
+          "x_label": "",
+          "x_quantity": "",
+          "x_spec": null,
+          "y_label": "Mean Held-Out Classification Accuracy",
+          "y_limits": [
+            0.0,
+            1.0
+          ],
+          "y_quantity": "held-out classification accuracy",
+          "y_spec": {
+            "aggregation": "mean",
+            "domain_high": 1.0,
+            "domain_low": 0.0,
+            "evaluation_split": "held-out",
+            "higher_is_better": true,
+            "is_difference": false,
+            "name": "held-out classification accuracy",
+            "quantity_type": "accuracy",
+            "unit": "proportion",
+            "zero_meaningful": true
+          },
+          "y_unit": "proportion"
+        },
+        {
+          "axis_reason": "a difference is read against zero, which is drawn",
+          "baseline_zero": false,
+          "cohort": "Replication",
+          "comparison": "the proposed condition against the baseline",
+          "dataset": "UCI Human Activity Recognition Using Smartphones",
+          "encoding": "axis",
+          "encoding_note": "",
+          "evaluation": "",
+          "figure_role": "paired effect",
+          "filename": "replication_effect_sizes.png",
+          "has_error_bars": true,
+          "kind": "effect",
+          "legend": false,
+          "n_points": 43,
+          "n_units": 43,
+          "observation_level": "seed",
+          "origin_included": false,
+          "overlapping_series": [],
+          "paired": true,
+          "reference_line": "",
+          "series": [
+            "Proposed",
+            "Baseline"
+          ],
+          "title": "Replication cohort: hypothesis-positive contrast",
+          "uncertainty": "95% bootstrap confidence interval",
+          "uncertainty_level": 0.95,
+          "uncertainty_method": "bootstrap",
+          "uncertainty_type": "confidence interval",
+          "unit_name": "paired seed",
+          "value_annotations": false,
+          "x_label": "",
+          "x_quantity": "",
+          "x_spec": null,
+          "y_label": "Mean Difference in Held-Out Classification Accuracy",
+          "y_limits": [
+            -0.03741092636579568,
+            0.04453681710213775
+          ],
+          "y_quantity": "held-out classification accuracy",
+          "y_spec": {
+            "aggregation": "mean",
+            "domain_high": null,
+            "domain_low": null,
+            "evaluation_split": "held-out",
+            "higher_is_better": true,
+            "is_difference": true,
+            "name": "held-out classification accuracy",
+            "quantity_type": "accuracy",
+            "unit": "proportion",
+            "zero_meaningful": true
+          },
+          "y_unit": "proportion"
+        },
+        {
+          "axis_reason": "both axes have a meaningful zero, so the origin is part of the reading",
+          "baseline_zero": false,
+          "cohort": "Replication",
+          "comparison": "",
+          "dataset": "UCI Human Activity Recognition Using Smartphones",
+          "encoding": "colour+dash+marker",
+          "encoding_note": "conditions whose curves coincide are distinguished by marker shape and dash pattern as well as by colour, with markers offset so neither hides the other; no value is jittered",
+          "evaluation": "",
+          "figure_role": "learning curves",
+          "filename": "replication_learning_curves.png",
+          "has_error_bars": false,
+          "kind": "curve",
+          "legend": true,
+          "n_points": 12,
+          "n_units": 43,
+          "observation_level": "seed",
+          "origin_included": true,
+          "overlapping_series": [
+            "Proposed",
+            "Baseline",
+            "Negative control 1"
+          ],
+          "paired": true,
+          "reference_line": "",
+          "series": [
+            "Proposed",
+            "Baseline",
+            "Negative control 1"
+          ],
+          "title": "Learning curves: held-out classification accuracy",
+          "uncertainty": "",
+          "uncertainty_level": null,
+          "uncertainty_method": "",
+          "uncertainty_type": "",
+          "unit_name": "seed",
+          "value_annotations": false,
+          "x_label": "Training Steps",
+          "x_quantity": "training steps",
+          "x_spec": {
+            "aggregation": "",
+            "domain_high": null,
+            "domain_low": 0.0,
+            "evaluation_split": "training",
+            "higher_is_better": null,
+            "is_difference": false,
+            "name": "training steps",
+            "quantity_type": "count",
+            "unit": "",
+            "zero_meaningful": true
+          },
+          "y_label": "Mean Held-Out Classification Accuracy",
+          "y_limits": [
+            0.0,
+            0.980233741842315
+          ],
+          "y_quantity": "held-out classification accuracy",
+          "y_spec": {
+            "aggregation": "mean",
+            "domain_high": 1.0,
+            "domain_low": 0.0,
+            "evaluation_split": "held-out",
+            "higher_is_better": true,
+            "is_difference": false,
+            "name": "held-out classification accuracy",
+            "quantity_type": "accuracy",
+            "unit": "proportion",
+            "zero_meaningful": true
+          },
+          "y_unit": "proportion"
+        }
+      ],
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "n_conditions": 3,
+      "n_seeds": 43,
+      "primary_metric": "held-out classification accuracy",
+      "proposed": "proposed",
+      "shape": "structured",
+      "table_metadata": [
+        {
+          "cohort": "Replication",
+          "column_specs": [
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "Condition",
+              "quantity": "",
+              "role": "condition",
+              "statistic": "",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "Seeds",
+              "quantity": "",
+              "role": "count",
+              "statistic": "",
+              "unit": ""
+            },
+            {
+              "aggregation": "mean",
+              "cohort": "Replication",
+              "header": "Mean Held-Out Classification Accuracy",
+              "quantity": "held-out classification accuracy",
+              "role": "estimate",
+              "statistic": "",
+              "unit": "proportion"
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "CI Lower",
+              "quantity": "",
+              "role": "ci_low",
+              "statistic": "95% bootstrap confidence interval",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "CI Upper",
+              "quantity": "",
+              "role": "ci_high",
+              "statistic": "95% bootstrap confidence interval",
+              "unit": ""
+            }
+          ],
+          "columns": [
+            "Condition",
+            "Seeds",
+            "Mean Held-Out Classification Accuracy",
+            "CI Lower",
+            "CI Upper"
+          ],
+          "conditions": [
+            "Proposed",
+            "Baseline",
+            "Negative control 1"
+          ],
+          "n_rows": 3,
+          "n_units": 43,
+          "observation_level": "seed",
+          "paired": true,
+          "quantities": [
+            "Mean Held-Out Classification Accuracy"
+          ],
+          "role": "condition levels",
+          "uncertainty": "95% bootstrap confidence interval",
+          "uncertainty_level": 0.95,
+          "uncertainty_method": "bootstrap",
+          "uncertainty_type": "confidence interval",
+          "unit_name": "seed"
+        },
+        {
+          "cohort": "Replication",
+          "column_specs": [
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "Outcome",
+              "quantity": "",
+              "role": "label",
+              "statistic": "",
+              "unit": ""
+            },
+            {
+              "aggregation": "mean",
+              "cohort": "",
+              "header": "Mean Difference",
+              "quantity": "",
+              "role": "estimate",
+              "statistic": "paired mean difference",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "CI Lower",
+              "quantity": "",
+              "role": "ci_low",
+              "statistic": "95% bootstrap confidence interval",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "CI Upper",
+              "quantity": "",
+              "role": "ci_high",
+              "statistic": "95% bootstrap confidence interval",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "p-value",
+              "quantity": "",
+              "role": "p_value",
+              "statistic": "paired sign-flip randomisation test",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "Effect Size (Cohen's dz)",
+              "quantity": "",
+              "role": "effect_size",
+              "statistic": "Cohen's dz for paired differences",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "Registered Decision",
+              "quantity": "",
+              "role": "decision",
+              "statistic": "",
+              "unit": ""
+            }
+          ],
+          "columns": [
+            "Outcome",
+            "Mean Difference",
+            "CI Lower",
+            "CI Upper",
+            "p-value",
+            "Effect Size (Cohen's dz)",
+            "Registered Decision"
+          ],
+          "conditions": [],
+          "n_rows": 1,
+          "n_units": 43,
+          "observation_level": "seed",
+          "paired": true,
+          "quantities": [
+            "held-out classification accuracy"
+          ],
+          "role": "paired statistics",
+          "uncertainty": "95% bootstrap confidence interval",
+          "uncertainty_level": 0.95,
+          "uncertainty_method": "bootstrap",
+          "uncertainty_type": "confidence interval",
+          "unit_name": "seed"
+        }
+      ]
+    },
+    "replication_decision": "inconclusive",
+    "shape": "confirmatory",
+    "table_metadata": [
+      {
+        "cohort": "Primary",
+        "column_specs": [
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "Condition",
+            "quantity": "",
+            "role": "condition",
+            "statistic": "",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "Seeds",
+            "quantity": "",
+            "role": "count",
+            "statistic": "",
+            "unit": ""
+          },
+          {
+            "aggregation": "mean",
+            "cohort": "Primary",
+            "header": "Mean Held-Out Classification Accuracy",
+            "quantity": "held-out classification accuracy",
+            "role": "estimate",
+            "statistic": "",
+            "unit": "proportion"
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "CI Lower",
+            "quantity": "",
+            "role": "ci_low",
+            "statistic": "95% bootstrap confidence interval",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "CI Upper",
+            "quantity": "",
+            "role": "ci_high",
+            "statistic": "95% bootstrap confidence interval",
+            "unit": ""
+          }
+        ],
+        "columns": [
+          "Condition",
+          "Seeds",
+          "Mean Held-Out Classification Accuracy",
+          "CI Lower",
+          "CI Upper"
+        ],
+        "conditions": [
+          "Proposed",
+          "Baseline",
+          "Negative control 1"
+        ],
+        "n_rows": 3,
+        "n_units": 43,
+        "observation_level": "seed",
+        "paired": true,
+        "quantities": [
+          "Mean Held-Out Classification Accuracy"
+        ],
+        "role": "condition levels",
+        "uncertainty": "95% bootstrap confidence interval",
+        "uncertainty_level": 0.95,
+        "uncertainty_method": "bootstrap",
+        "uncertainty_type": "confidence interval",
+        "unit_name": "seed"
+      },
+      {
+        "cohort": "Primary",
+        "column_specs": [
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "Outcome",
+            "quantity": "",
+            "role": "label",
+            "statistic": "",
+            "unit": ""
+          },
+          {
+            "aggregation": "mean",
+            "cohort": "",
+            "header": "Mean Difference",
+            "quantity": "",
+            "role": "estimate",
+            "statistic": "paired mean difference",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "CI Lower",
+            "quantity": "",
+            "role": "ci_low",
+            "statistic": "95% bootstrap confidence interval",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "CI Upper",
+            "quantity": "",
+            "role": "ci_high",
+            "statistic": "95% bootstrap confidence interval",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "p-value",
+            "quantity": "",
+            "role": "p_value",
+            "statistic": "paired sign-flip randomisation test",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "Effect Size (Cohen's dz)",
+            "quantity": "",
+            "role": "effect_size",
+            "statistic": "Cohen's dz for paired differences",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "Registered Decision",
+            "quantity": "",
+            "role": "decision",
+            "statistic": "",
+            "unit": ""
+          }
+        ],
+        "columns": [
+          "Outcome",
+          "Mean Difference",
+          "CI Lower",
+          "CI Upper",
+          "p-value",
+          "Effect Size (Cohen's dz)",
+          "Registered Decision"
+        ],
+        "conditions": [],
+        "n_rows": 1,
+        "n_units": 43,
+        "observation_level": "seed",
+        "paired": true,
+        "quantities": [
+          "held-out classification accuracy"
+        ],
+        "role": "paired statistics",
+        "uncertainty": "95% bootstrap confidence interval",
+        "uncertainty_level": 0.95,
+        "uncertainty_method": "bootstrap",
+        "uncertainty_type": "confidence interval",
+        "unit_name": "seed"
+      },
+      {
+        "cohort": "Replication",
+        "column_specs": [
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "Condition",
+            "quantity": "",
+            "role": "condition",
+            "statistic": "",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "Seeds",
+            "quantity": "",
+            "role": "count",
+            "statistic": "",
+            "unit": ""
+          },
+          {
+            "aggregation": "mean",
+            "cohort": "Replication",
+            "header": "Mean Held-Out Classification Accuracy",
+            "quantity": "held-out classification accuracy",
+            "role": "estimate",
+            "statistic": "",
+            "unit": "proportion"
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "CI Lower",
+            "quantity": "",
+            "role": "ci_low",
+            "statistic": "95% bootstrap confidence interval",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "CI Upper",
+            "quantity": "",
+            "role": "ci_high",
+            "statistic": "95% bootstrap confidence interval",
+            "unit": ""
+          }
+        ],
+        "columns": [
+          "Condition",
+          "Seeds",
+          "Mean Held-Out Classification Accuracy",
+          "CI Lower",
+          "CI Upper"
+        ],
+        "conditions": [
+          "Proposed",
+          "Baseline",
+          "Negative control 1"
+        ],
+        "n_rows": 3,
+        "n_units": 43,
+        "observation_level": "seed",
+        "paired": true,
+        "quantities": [
+          "Mean Held-Out Classification Accuracy"
+        ],
+        "role": "condition levels",
+        "uncertainty": "95% bootstrap confidence interval",
+        "uncertainty_level": 0.95,
+        "uncertainty_method": "bootstrap",
+        "uncertainty_type": "confidence interval",
+        "unit_name": "seed"
+      },
+      {
+        "cohort": "Replication",
+        "column_specs": [
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "Outcome",
+            "quantity": "",
+            "role": "label",
+            "statistic": "",
+            "unit": ""
+          },
+          {
+            "aggregation": "mean",
+            "cohort": "",
+            "header": "Mean Difference",
+            "quantity": "",
+            "role": "estimate",
+            "statistic": "paired mean difference",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "CI Lower",
+            "quantity": "",
+            "role": "ci_low",
+            "statistic": "95% bootstrap confidence interval",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "CI Upper",
+            "quantity": "",
+            "role": "ci_high",
+            "statistic": "95% bootstrap confidence interval",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "p-value",
+            "quantity": "",
+            "role": "p_value",
+            "statistic": "paired sign-flip randomisation test",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "Effect Size (Cohen's dz)",
+            "quantity": "",
+            "role": "effect_size",
+            "statistic": "Cohen's dz for paired differences",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "Registered Decision",
+            "quantity": "",
+            "role": "decision",
+            "statistic": "",
+            "unit": ""
+          }
+        ],
+        "columns": [
+          "Outcome",
+          "Mean Difference",
+          "CI Lower",
+          "CI Upper",
+          "p-value",
+          "Effect Size (Cohen's dz)",
+          "Registered Decision"
+        ],
+        "conditions": [],
+        "n_rows": 1,
+        "n_units": 43,
+        "observation_level": "seed",
+        "paired": true,
+        "quantities": [
+          "held-out classification accuracy"
+        ],
+        "role": "paired statistics",
+        "uncertainty": "95% bootstrap confidence interval",
+        "uncertainty_level": 0.95,
+        "uncertainty_method": "bootstrap",
+        "uncertainty_type": "confidence interval",
+        "unit_name": "seed"
+      },
+      {
+        "cohort": "",
+        "column_specs": [
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "Condition",
+            "quantity": "",
+            "role": "condition",
+            "statistic": "",
+            "unit": ""
+          },
+          {
+            "aggregation": "mean",
+            "cohort": "primary",
+            "header": "Primary Cohort Mean Held-Out Classification Accuracy",
+            "quantity": "held-out classification accuracy",
+            "role": "estimate",
+            "statistic": "",
+            "unit": "proportion"
+          },
+          {
+            "aggregation": "mean",
+            "cohort": "replication",
+            "header": "Replication Cohort Mean Held-Out Classification Accuracy",
+            "quantity": "held-out classification accuracy",
+            "role": "estimate",
+            "statistic": "",
+            "unit": "proportion"
+          }
+        ],
+        "columns": [
+          "Condition",
+          "Primary Cohort Mean Held-Out Classification Accuracy",
+          "Replication Cohort Mean Held-Out Classification Accuracy"
+        ],
+        "conditions": [
+          "Proposed",
+          "Baseline",
+          "Negative control 1"
+        ],
+        "n_rows": 3,
+        "n_units": null,
+        "observation_level": "seed",
+        "paired": true,
+        "quantities": [
+          "Mean Held-Out Classification Accuracy"
+        ],
+        "role": "cohort comparison",
+        "uncertainty": "",
+        "uncertainty_level": null,
+        "uncertainty_method": "",
+        "uncertainty_type": "",
+        "unit_name": "seed"
+      }
+    ]
+  },
+  "inputs": {
+    "code_files": {
+      "_harness.py": "\"\"\"Server-owned experiment driver. Staged into every harness bundle; never model-written.\n\nThis owns everything the recipe already determines \u2014 the paired cohort loops over the\npreregistered seed lists, one RNG per seed with precomputed epoch permutations, every\nregistered condition, curve logging, the smoke path, the non-finite policy and the results\nschema. The generated code contributes exactly one function, ``apply_operator(ctx)``.\n\nWhy: two A100 compute jobs (15504724 / 15504898) and sixteen codegen attempts were lost to code\nthat had to re-derive this scaffolding from prose \u2014 a tensor name, an archive member, a\nwritable directory. None of that is science, and all of it is already known here.\n\n**The operator lifecycle.** The driver used to offer exactly one hook, after the optimizer\nstep. The journal's first paper preregistered an intervention that perturbs the target before\nthe forward pass, adds a term to the training objective, and learns its noise scale by\nbackpropagation \u2014 none of which that hook can express \u2014 so the generated operator did the only\nthing available: it mutated the live parameter in place under ``no_grad`` after the update,\nadvanced the \"learnable\" scale with hand-written arithmetic the loss never touched, and let the\nperturbation accumulate into the evaluated weights. The numbers reproduced exactly. They\nreproduced the wrong experiment. The driver now invokes the operator at each of the three\nphases the protocol may register (``pre_forward`` / ``loss_term`` / ``post_step``), and RECORDS\nwhich of them the operator actually realized so the entrypoint can refuse results whose\nexecution does not match the registration.\n\n``pre_forward`` is a differentiable *reparameterization*, not an in-place write: the operator\nreturns a function of the target, the forward and backward passes see its output, and the base\nparameter is restored \u2014 untouched \u2014 before the optimizer step. That makes three of the\ninvariants structural rather than asserted: an operator-owned parameter gets a real gradient\nfrom the real loss, the base weight never accumulates the perturbation, and the held-out\nevaluation reads clean deterministic weights.\n\nThe module imports torch lazily so the orchestration logic stays importable (and testable)\nwithout it.\n\"\"\"\n\nfrom __future__ import annotations\n\nCURVE_POINTS = 12\n\n#: What the per-step curve actually IS: the CLASSIFICATION objective, before any operator term\n#: is added, so the series means the same thing in every arm. Filing it under the outcome's name\n#: made every figure claim to plot \"held-out classification accuracy\" while showing a loss\n#: falling from 1.85 to 0.1 \u2014 a false axis on a published figure. Name the series for what it is\n#: and the label follows.\nCURVE_SERIES = \"training loss\"\n\nPRE_FORWARD = \"pre_forward\"\nLOSS_TERM = \"loss_term\"\nPOST_STEP = \"post_step\"\nPHASES = (PRE_FORWARD, LOSS_TERM, POST_STEP)\n\n\nclass ConformanceError(AssertionError):\n    \"\"\"The executed operator does not realize the protocol that was registered.\"\"\"\n\n\nclass OperatorContext:\n    \"\"\"What the generated operator may see and touch.\n\n    The operator gets its own ``rng``: drawing from the training stream would unpair the\n    conditions, and the analysis is a per-seed paired difference. Making that structurally\n    impossible is the point of passing it in.\n\n    ``state`` is a plain dict that persists across every step of one (seed, condition) run and\n    is discarded between them. An operator with a threshold fixed at initialisation, a counter,\n    or any other carried quantity keeps it there \u2014 a fresh context is constructed per phase, so\n    an attribute set on the context itself would silently vanish.\n\n    ``phase`` names where in the step the operator is being invoked. Branch on it exactly as on\n    ``condition``: the harness calls the operator at every phase and does whatever the operator\n    does in each.\n    \"\"\"\n\n    __slots__ = (\n        \"condition\", \"phase\", \"step\", \"epoch\", \"total_steps\", \"model\", \"optimizer\",\n        \"target\", \"target_name\", \"momentum_buffer\", \"rng\", \"torch\", \"state\",\n        \"_generator\", \"_record\",\n    )\n\n    def __init__(self, **fields) -> None:\n        for name in self.__slots__:\n            setattr(self, name, fields.get(name))\n\n    # Tensor-valued randomness MUST come from these, not from ``rng``. The target lives on the\n    # GPU during a real run and on the CPU in the preflight sandbox, so a numpy array folded\n    # into a CUDA tensor raises \"can't convert cuda:0 device type tensor to numpy\" \u2014 on the\n    # GPU only. That is invisible to the dry-run by construction, and it killed compute job\n    # 15539746. These draw from the operator's own generator on the tensor's own device, so\n    # the paired contract holds and the device is right without the author thinking about it.\n    def randn_like(self, tensor):\n        return self.torch.randn(\n            tensor.shape, generator=self._generator, device=tensor.device, dtype=tensor.dtype\n        )\n\n    def rand_like(self, tensor):\n        return self.torch.rand(\n            tensor.shape, generator=self._generator, device=tensor.device, dtype=tensor.dtype\n        )\n\n    # --- the three phases ------------------------------------------------------------------ #\n\n    def reparameterize(self, function):\n        \"\"\"``pre_forward`` only: use ``function(target)`` in place of the target this step.\n\n        The returned tensor is what the forward and backward passes see. The base parameter is\n        never written to, so the perturbation cannot accumulate across steps, the optimizer\n        updates the clean weights, and the held-out evaluation reads them. Because the\n        reparameterization is an ordinary differentiable expression, any parameter it closes\n        over receives the true gradient of the true loss.\n        \"\"\"\n\n        if self.phase != PRE_FORWARD:\n            raise ConformanceError(\n                f\"ctx.reparameterize() is only valid in the {PRE_FORWARD!r} phase \"\n                f\"(called in {self.phase!r})\"\n            )\n        if self._record[\"reparameterization\"] is not None:\n            raise ConformanceError(\"the operator reparameterized the target twice in one step\")\n        if not callable(function):\n            raise ConformanceError(\"ctx.reparameterize() takes a callable of the target tensor\")\n        self._record[\"reparameterization\"] = function\n\n    def add_loss(self, term):\n        \"\"\"``loss_term`` only: add ``term`` to this step's training objective.\n\n        The term is summed into the loss BEFORE the backward pass, inside the autograd graph,\n        so it is genuinely part of what is differentiated.\n        \"\"\"\n\n        if self.phase != LOSS_TERM:\n            raise ConformanceError(\n                f\"ctx.add_loss() is only valid in the {LOSS_TERM!r} phase \"\n                f\"(called in {self.phase!r})\"\n            )\n        self._record[\"loss_terms\"].append(term)\n\n    def parameter(self, name, init):\n        \"\"\"An operator-owned scalar parameter, trained by the objective.\n\n        Created once per (seed, condition) run and registered into the optimizer with the\n        model's own hyperparameters, so it is updated by the same optimizer, from the gradient\n        of the same loss, as every other parameter. This is the only way an operator may carry\n        a learnable quantity: a scalar advanced by hand-written arithmetic is a schedule, and\n        the experiment would not be measuring what it registered.\n        \"\"\"\n\n        owned = self.state.setdefault(\"_operator_parameters\", {})\n        if name not in owned:\n            tensor = self.torch.tensor(\n                float(init), device=self.target.device, dtype=self.target.dtype,\n                requires_grad=True,\n            )\n            group = {k: v for k, v in self.optimizer.param_groups[0].items() if k != \"params\"}\n            group[\"params\"] = [tensor]\n            self.optimizer.add_param_group(group)\n            owned[name] = tensor\n            self._record[\"parameters\"].setdefault(name, {\"received_gradient\": False})\n        return owned[name]\n\n    @property\n    def is_proposed(self) -> bool:\n        return self.condition == \"proposed\"\n\n    @property\n    def is_baseline(self) -> bool:\n        return self.condition.startswith(\"baseline_\")\n\n    @property\n    def is_negative_control(self) -> bool:\n        return self.condition.startswith(\"negative_control_\")\n\n\ndef downsample(points, limit=CURVE_POINTS):\n    \"\"\"Even-spaced subsample of [[step, value], ...] keeping the first and last points.\"\"\"\n\n    if len(points) <= limit:\n        return [[int(s), float(v)] for s, v in points]\n    stride = (len(points) - 1) / (limit - 1)\n    picked = [points[min(len(points) - 1, int(round(i * stride)))] for i in range(limit)]\n    return [[int(s), float(v)] for s, v in picked]\n\n\ndef mean_curves(per_seed_curves, limit=CURVE_POINTS):\n    \"\"\"Mean over seeds at each logged step (curves share a step grid by construction).\"\"\"\n\n    if not per_seed_curves:\n        return []\n    length = min(len(c) for c in per_seed_curves)\n    merged = []\n    for i in range(length):\n        step = per_seed_curves[0][i][0]\n        merged.append([step, sum(c[i][1] for c in per_seed_curves) / len(per_seed_curves)])\n    return downsample(merged, limit)\n\n\ndef cohort_seed_ids(seed_ids, smoke):\n    \"\"\"Smoke mode uses the FIRST seed of the cohort \u2014 never a different or renumbered one.\"\"\"\n\n    ids = [int(s) for s in seed_ids]\n    return ids[:1] if smoke else ids\n\n\ndef _owning_module(model, target_name):\n    \"\"\"The module holding ``target_name`` and the attribute it holds it under.\"\"\"\n\n    path, _, attribute = target_name.rpartition(\".\")\n    module = model.get_submodule(path) if path else model\n    if attribute not in getattr(module, \"_parameters\", {}):\n        raise KeyError(\n            f\"{target_name!r} is not a direct parameter of {type(module).__name__}; \"\n            \"the harness cannot reparameterize it\"\n        )\n    return module, attribute\n\n\ndef check_conformance(realized, registered_phases, *, learns_parameters=False):\n    \"\"\"Compare what the operator DID against what the protocol registered.\n\n    ``realized`` is the per-condition summary the driver builds. This is the layer that was\n    missing: reproducibility proved the archived program reproduces its archived numbers, and\n    nothing proved the archived program performs the registered intervention.\n    \"\"\"\n\n    registered = [phase for phase in PHASES if phase in set(registered_phases or ())]\n    problems = []\n    proposed = realized.get(\"proposed\")\n    if proposed is None:\n        return problems  # no proposed arm in this run (not a registered-report execution)\n    if registered:\n        missing = [phase for phase in registered if phase not in proposed[\"phases\"]]\n        extra = [phase for phase in proposed[\"phases\"] if phase not in registered]\n        if missing:\n            problems.append(\n                f\"the proposed arm never acted in registered phase(s) {missing}; the \"\n                \"experiment did not perform the intervention it preregistered\"\n            )\n        if extra:\n            problems.append(\n                f\"the proposed arm acted in unregistered phase(s) {extra}; the experiment \"\n                \"performed an intervention it did not preregister\"\n            )\n    if learns_parameters:\n        parameters = proposed[\"parameters\"]\n        if not parameters:\n            problems.append(\n                \"the protocol registers an operator-owned learnable parameter but the operator \"\n                \"created none via ctx.parameter()\"\n            )\n        ungraded = sorted(n for n, info in parameters.items() if not info[\"received_gradient\"])\n        if ungraded:\n            problems.append(\n                f\"operator parameter(s) {ungraded} never received a gradient from the \"\n                \"objective, so they were not learned by the experiment\"\n            )\n    for condition, summary in sorted(realized.items()):\n        if condition.startswith(\"baseline_\") and summary[\"phases\"]:\n            problems.append(\n                f\"the comparator arm {condition!r} acted in {summary['phases']}; the \"\n                \"registered comparator is the same program with the operator applying no \"\n                \"modification, so the contrast is not the operator alone\"\n            )\n        problems.extend(summary[\"violations\"])\n    return problems\n\n\ndef run_experiment(\n    results_dir,\n    *,\n    testbed,\n    apply_operator,\n    seed_ids,\n    replication_seed_ids,\n    required_condition_ids,\n    target_name,\n    registered_phases=(),\n    learns_parameters=False,\n    datasets=None,\n    smoke=False,\n):\n    \"\"\"Drive every cohort \u00d7 condition \u00d7 seed and return the structured result.\n\n    ``testbed`` supplies the data and model (server-owned, per recipe); ``apply_operator`` is\n    the generated hook. Everything between them is fixed here.\n    \"\"\"\n\n    import json\n    import os\n\n    conditions = list(required_condition_ids)\n    if not conditions:\n        raise ValueError(\"no condition ids were supplied\")\n\n    if smoke:\n        data = testbed.synthetic_cohorts()\n        epochs, batch_size = 1, testbed.SMOKE_BATCH_SIZE\n        max_steps = testbed.SMOKE_STEPS\n    else:\n        staged = (datasets or {}).get(testbed.DATASET_NAME)\n        if not staged:\n            raise ValueError(\n                f\"staged dataset {testbed.DATASET_NAME!r} was not provided; the full run \"\n                \"must not fabricate data\"\n            )\n        data = testbed.load_cohorts(staged)\n        epochs, batch_size = testbed.EPOCHS, testbed.BATCH_SIZE\n        max_steps = None\n\n    result = {}\n    realized = {}\n    for cohort_name, ids in (\n        (\"primary\", seed_ids), (\"replication\", replication_seed_ids)\n    ):\n        cohort_ids = cohort_seed_ids(ids, smoke)\n        metrics = {condition: {testbed.OUTCOME_NAME: []} for condition in conditions}\n        curves = {condition: [] for condition in conditions}\n        operator_activations = {condition: [] for condition in conditions}\n\n        for seed in cohort_ids:\n            # One RNG per seed, drawn ONCE: initial parameters, the train/eval order and every\n            # epoch permutation come from it and are reused by every condition in this seed's\n            # pair. Only apply_operator differs between conditions.\n            shared = testbed.derive_seed_artifacts(\n                int(seed), data, epochs=epochs, batch_size=batch_size, max_steps=max_steps\n            )\n            for condition in conditions:\n                accuracy, curve, activations, record = _train_one_condition(\n                    testbed=testbed, shared=shared, data=data, condition=condition,\n                    apply_operator=apply_operator, target_name=target_name, seed=int(seed),\n                )\n                if accuracy != accuracy or accuracy in (float(\"inf\"), float(\"-inf\")):\n                    raise ValueError(\n                        f\"non-finite {testbed.OUTCOME_NAME} for condition {condition!r} \"\n                        f\"at seed {seed} \u2014 the run cannot report it as a result\"\n                    )\n                metrics[condition][testbed.OUTCOME_NAME].append(float(accuracy))\n                curves[condition].append(curve)\n                operator_activations[condition].append(int(activations))\n                _merge_conformance(realized, condition, record)\n\n        result[cohort_name] = {\n            \"seed_ids\": cohort_ids,\n            \"conditions\": metrics,\n            \"curves\": {\n                condition: {\n                    series: mean_curves([per_seed[series] for per_seed in curves[condition]])\n                    for series in (CURVE_SERIES, testbed.OUTCOME_NAME)\n                }\n                for condition in conditions\n            },\n            # Steps on which the operator changed the target, its momentum buffer, the forward\n            # pass or the objective, per seed. All zero for an arm means the operator never\n            # fired in that arm.\n            \"operator_activations\": operator_activations,\n        }\n\n    problems = check_conformance(\n        realized, registered_phases, learns_parameters=learns_parameters\n    )\n    if problems:\n        raise ConformanceError(\n            \"the executed operator does not realize the registered protocol: \"\n            + \"; \".join(problems)\n        )\n    result[\"conformance\"] = {\n        \"registered_phases\": [p for p in PHASES if p in set(registered_phases or ())],\n        \"learns_parameters\": bool(learns_parameters),\n        \"realized\": {\n            condition: {\n                \"phases\": summary[\"phases\"],\n                \"parameters\": summary[\"parameters\"],\n            }\n            for condition, summary in sorted(realized.items())\n        },\n    }\n\n    os.makedirs(results_dir, exist_ok=True)\n    with open(os.path.join(results_dir, \"results.json\"), \"w\") as handle:\n        json.dump(result, handle, indent=2)\n    return result\n\n\ndef _merge_conformance(realized, condition, record):\n    \"\"\"Fold one (seed, condition) run's record into the per-condition summary.\"\"\"\n\n    summary = realized.setdefault(\n        condition, {\"phases\": [], \"parameters\": {}, \"violations\": []}\n    )\n    for phase in PHASES:\n        if phase in record[\"phases\"] and phase not in summary[\"phases\"]:\n            summary[\"phases\"].append(phase)\n    summary[\"phases\"].sort(key=PHASES.index)\n    for name, info in record[\"parameters\"].items():\n        merged = summary[\"parameters\"].setdefault(name, {\"received_gradient\": False})\n        merged[\"received_gradient\"] = merged[\"received_gradient\"] or info[\"received_gradient\"]\n    for violation in record[\"violations\"]:\n        if violation not in summary[\"violations\"]:\n            summary[\"violations\"].append(violation)\n\n\ndef _new_record():\n    return {\n        \"phases\": set(),\n        \"parameters\": {},\n        \"violations\": [],\n        \"reparameterization\": None,\n        \"loss_terms\": [],\n    }\n\n\ndef _train_one_condition(\n    *, testbed, shared, data, condition, apply_operator, target_name, seed\n):\n    \"\"\"One condition's training run over this seed's shared artifacts.\"\"\"\n\n    import numpy as np\n    import torch\n\n    model = testbed.build_model()\n    model.load_state_dict(shared[\"init_state\"])\n    device = \"cuda\" if torch.cuda.is_available() else \"cpu\"\n    model.to(device)\n\n    state = model.state_dict()\n    if target_name not in state:\n        raise KeyError(\n            f\"operator target {target_name!r} is not a parameter of this model; \"\n            f\"available: {sorted(state)}\"\n        )\n    target = dict(model.named_parameters())[target_name]\n    owner, attribute = _owning_module(model, target_name)\n\n    optimizer = testbed.build_optimizer(model)\n    # The operator's randomness is its own, so it cannot shift the training stream and\n    # unpair the conditions. Two views of the SAME dedicated stream: numpy for scalar\n    # decisions, and a torch generator on the training device for tensor-valued draws.\n    operator_seed = (int(seed) * 2_654_435_761 + 1_013_904_223) % (2**31 - 1)\n    operator_rng = np.random.default_rng(operator_seed)\n    operator_generator = torch.Generator(device=device)\n    operator_generator.manual_seed(operator_seed)\n\n    curve = []\n    outcome_curve = []\n    total_steps = len(shared[\"batches\"])\n    # One scratch dict for the whole run: the operator's carried state (a threshold fixed at\n    # initialisation, a counter) has to outlive the per-step context object.\n    operator_state = {}\n    run_record = {\"phases\": set(), \"parameters\": {}, \"violations\": []}\n    # How often the operator actually changed something. An operator whose activation condition\n    # is never met makes its arm bit-identical to the comparator, and the run then LOOKS like a\n    # clean null while having measured nothing at all. Counting here turns that from a mystery\n    # inferred off identical metrics into a recorded fact.\n    activations = 0\n\n    def context(phase, step, epoch, record):\n        return OperatorContext(\n            condition=condition, phase=phase, step=step, epoch=epoch,\n            total_steps=total_steps, model=model, optimizer=optimizer, target=target,\n            target_name=target_name,\n            momentum_buffer=optimizer.state.get(target, {}).get(\"momentum_buffer\"),\n            rng=operator_rng, torch=torch, state=operator_state,\n            _generator=operator_generator, _record=record,\n        )\n\n    for index, (epoch, batch_index) in enumerate(shared[\"batches\"]):\n        record = _new_record()\n        acted = False\n\n        # --- pre_forward: a differentiable reparameterization, never an in-place write ------\n        clean = target.detach().clone()\n        apply_operator(context(PRE_FORWARD, index, epoch, record))\n        if not torch.equal(clean, target.detach()):\n            record[\"violations\"].append(\n                f\"the operator wrote to the base parameter {target_name!r} during the \"\n                f\"{PRE_FORWARD!r} phase; a transient perturbation must be expressed with \"\n                \"ctx.reparameterize(fn) so the base weights, the optimizer update and the \"\n                \"held-out evaluation stay clean\"\n            )\n            with torch.no_grad():\n                target.copy_(clean)\n        reparameterization = record[\"reparameterization\"]\n        installed = False\n        if reparameterization is not None:\n            substitute = reparameterization(target)\n            if not torch.is_tensor(substitute) or substitute.shape != target.shape:\n                raise ConformanceError(\n                    \"ctx.reparameterize(fn) must return a tensor with the target's shape \"\n                    f\"{tuple(target.shape)}\"\n                )\n            del owner._parameters[attribute]\n            owner.__dict__[attribute] = substitute\n            installed = True\n            record[\"phases\"].add(PRE_FORWARD)\n            acted = True\n\n        try:\n            # --- the forward pass and the objective ---------------------------------------\n            loss = testbed.forward_loss(model, optimizer, data, shared, epoch, batch_index, device)\n            reported = float(loss.detach().cpu())\n\n            # --- loss_term: added inside the autograd graph, before backward ---------------\n            apply_operator(context(LOSS_TERM, index, epoch, record))\n            for term in record[\"loss_terms\"]:\n                if torch.is_tensor(term) and term.requires_grad:\n                    record[\"phases\"].add(LOSS_TERM)\n                    acted = True\n                elif condition == \"proposed\":\n                    record[\"violations\"].append(\n                        \"the operator added a loss term that carries no gradient, so it \"\n                        \"cannot change the optimization; build the term from ctx.parameter() \"\n                        \"or from the target itself\"\n                    )\n                loss = loss + term\n\n            loss.backward()\n        finally:\n            # Restore the base parameter before the optimizer step, always. Its gradient \u2014 the\n            # gradient of the loss the reparameterized forward produced \u2014 is what the standard\n            # update then applies to the clean weights.\n            if installed:\n                owner.__dict__.pop(attribute, None)\n                owner._parameters[attribute] = target\n\n        for name, tensor in operator_state.get(\"_operator_parameters\", {}).items():\n            info = record[\"parameters\"].setdefault(name, {\"received_gradient\": False})\n            grad = tensor.grad\n            if grad is not None and bool(torch.isfinite(grad).all()) and bool((grad != 0).any()):\n                info[\"received_gradient\"] = True\n\n        optimizer.step()\n\n        # --- post_step: persistent modification of what the update just produced -----------\n        before_target = target.detach().clone()\n        buffer = optimizer.state.get(target, {}).get(\"momentum_buffer\")\n        before_buffer = buffer.detach().clone() if buffer is not None else None\n        apply_operator(context(POST_STEP, index, epoch, record))\n        changed = not torch.equal(before_target, target.detach())\n        if not changed and before_buffer is not None:\n            buffer = optimizer.state.get(target, {}).get(\"momentum_buffer\")\n            changed = buffer is not None and not torch.equal(before_buffer, buffer)\n        if changed:\n            record[\"phases\"].add(POST_STEP)\n            acted = True\n\n        activations += int(acted)\n        run_record[\"phases\"].update(record[\"phases\"])\n        for name, info in record[\"parameters\"].items():\n            merged = run_record[\"parameters\"].setdefault(name, {\"received_gradient\": False})\n            merged[\"received_gradient\"] = merged[\"received_gradient\"] or info[\"received_gradient\"]\n        for violation in record[\"violations\"]:\n            if violation not in run_record[\"violations\"]:\n                run_record[\"violations\"].append(violation)\n\n        if index % max(1, total_steps // testbed.CURVE_SAMPLES) == 0 or index == total_steps - 1:\n            curve.append([index, reported])\n            # The OUTCOME over training, not only the loss. A results section's learning curve\n            # is meant to show the reported metric developing; logging only a loss meant the\n            # only way to have a curve \"for the primary metric\" was to file the loss under its\n            # name, which is exactly the false axis this pass removed. `evaluate` is a\n            # deterministic no_grad pass over a fixed-order held-out cohort that restores train\n            # mode, so it draws nothing from the training stream and the conditions stay paired.\n            outcome_curve.append([index, float(testbed.evaluate(model, data, device))])\n\n    # Evaluation reads the parameters the optimizer produced. A pre_forward reparameterization\n    # is never written back, so \"the evaluated weights carry no residual perturbation\" holds by\n    # construction rather than by inspection.\n    accuracy = testbed.evaluate(model, data, device)\n    run_record[\"phases\"] = [p for p in PHASES if p in run_record[\"phases\"]]\n    return accuracy, {CURVE_SERIES: curve, testbed.OUTCOME_NAME: outcome_curve}, activations, run_record\n",
+      "_journal_entrypoint.py": "#!/usr/bin/env python3\n\"\"\"Generic experiment entrypoint baked into the experiment image at /opt/journal.\n\nRuns an arbitrary experiment module (staged separately and bind-mounted) and writes a\nreproducibility bundle to the results dir:\n\n  - metadata.json : seeds, git sha, args, timings, versions, gpu, host, status\n  - metrics.json  : whatever the experiment's ``run(results_dir, **kwargs)`` returns\n\nConvention: the experiment module defines ``run(results_dir, **kwargs) -> dict | None``.\n\nThis file is intentionally self-contained (stdlib only at its core; numpy/torch are\noptional) so it runs both inside the CUDA image and in plain unit tests.\n\n    python entrypoint.py --code-dir DIR --entrypoint MODULE --results-dir DIR \\\n        [--seed N] [--git-sha SHA] [--args-json '{\"size\": 4096}'] \\\n        [--datasets-json '{\"wikitext-2\": \"/work/datasets/<sha>/wikitext-2.zip\"}']\n\nDatasets (staged on the login node into the bind-mounted cache; see app/experiment/\ndatasets.py) are passed to the experiment as a ``datasets`` kwarg (a name -> local path\nmapping) and exported as the ``JOURNAL_DATASETS`` env var. They are injected only when\nnon-empty, so experiments that use synthetic data (and the demo toy) are unaffected.\n\"\"\"\n\nfrom __future__ import annotations\n\n# When this file is executed directly from ``app/experiment``, Python places that directory\n# first on sys.path and its ``types.py`` can shadow the standard-library ``types`` module.\n# Remove only the script-directory entry before importing the rest of the stdlib.\nimport sys\n\nif sys.path:\n    sys.path.pop(0)\n\nimport argparse\nimport datetime as _dt\nimport importlib\nimport json\nimport math\nimport os\nimport platform\nimport socket\nimport time\nimport traceback\n\n\ndef _now_iso() -> str:\n    return _dt.datetime.now(_dt.timezone.utc).isoformat()\n\n\ndef set_seeds(seed: int) -> dict:\n    \"\"\"Seed Python / numpy / torch (whichever are importable). Returns what was seeded.\"\"\"\n    seeded: dict[str, object] = {\"python\": seed, \"PYTHONHASHSEED\": str(seed)}\n    import random\n\n    random.seed(seed)\n\n    try:\n        import numpy as np\n\n        np.random.seed(seed)\n        seeded[\"numpy\"] = seed\n    except Exception:  # noqa: BLE001 - numpy is optional\n        seeded[\"numpy\"] = None\n\n    try:\n        import torch\n\n        torch.manual_seed(seed)\n        if torch.cuda.is_available():\n            torch.cuda.manual_seed_all(seed)\n            torch.backends.cudnn.deterministic = True\n            torch.backends.cudnn.benchmark = False\n        seeded[\"torch\"] = seed\n    except Exception:  # noqa: BLE001 - torch is optional\n        seeded[\"torch\"] = None\n\n    return seeded\n\n\ndef collect_versions() -> dict:\n    versions = {\"python\": platform.python_version()}\n    for name in (\"numpy\", \"torch\", \"pandas\", \"sklearn\", \"matplotlib\"):\n        try:\n            module = importlib.import_module(name)\n            versions[name] = getattr(module, \"__version__\", \"unknown\")\n        except Exception:  # noqa: BLE001\n            versions[name] = None\n    return versions\n\n\ndef gpu_info() -> dict:\n    try:\n        import torch\n\n        if torch.cuda.is_available():\n            return {\n                \"cuda_available\": True,\n                \"device_count\": torch.cuda.device_count(),\n                \"devices\": [torch.cuda.get_device_name(i) for i in range(torch.cuda.device_count())],\n            }\n        return {\"cuda_available\": False}\n    except Exception:  # noqa: BLE001\n        return {\"cuda_available\": None}\n\n\ndef _write_json(path: str, data: object) -> None:\n    with open(path, \"w\", encoding=\"utf-8\") as handle:\n        json.dump(data, handle, indent=2, default=str)\n\n\ndef _call_experiment(module, results_dir: str, kwargs: dict):\n    if hasattr(module, \"run\"):\n        return module.run(results_dir, **kwargs)\n    raise AttributeError(\n        f\"experiment module {module.__name__!r} must define run(results_dir, **kwargs)\"\n    )\n\n\ndef _validate_cohort(\n    name: str,\n    cohort: object,\n    expected_ids: list,\n    *,\n    smoke: bool,\n    required_condition_ids: list[str] | None = None,\n) -> None:\n    if not isinstance(cohort, dict):\n        raise ValueError(f\"result.{name} must be an object\")\n    returned_ids = cohort.get(\"seed_ids\")\n    if not isinstance(returned_ids, list) or not returned_ids:\n        raise ValueError(f\"result.{name}.seed_ids must be a non-empty list\")\n    required_ids = expected_ids[: len(returned_ids)] if smoke else expected_ids\n    if returned_ids != required_ids or (smoke and len(returned_ids) != 1):\n        mode = \"the first preregistered ID\" if smoke else \"the exact preregistered IDs\"\n        raise ValueError(f\"result.{name}.seed_ids must equal {mode} in order\")\n    conditions = cohort.get(\"conditions\")\n    if not isinstance(conditions, dict) or len(conditions) < 2:\n        raise ValueError(f\"result.{name}.conditions must contain proposed and baseline\")\n    if required_condition_ids is not None and set(conditions) != set(required_condition_ids):\n        raise ValueError(\n            f\"result.{name}.conditions must contain exactly the registered condition ids\"\n        )\n    for condition, metrics in conditions.items():\n        if not isinstance(metrics, dict) or not metrics:\n            raise ValueError(f\"result.{name}.conditions.{condition} must contain metrics\")\n        for metric, values in metrics.items():\n            if not isinstance(values, list) or len(values) != len(returned_ids):\n                raise ValueError(\n                    f\"result.{name}.conditions.{condition}.{metric} must have one value per seed\"\n                )\n            if any(\n                isinstance(value, bool)\n                or not isinstance(value, (int, float))\n                or not math.isfinite(float(value))\n                for value in values\n            ):\n                raise ValueError(\n                    f\"result.{name}.conditions.{condition}.{metric} must be finite numeric values\"\n                )\n\n\ndef _validate_confirmatory_result(result: object, run_kwargs: dict) -> None:\n    \"\"\"Enforce executed primary + independent replication cohorts when preregistered.\"\"\"\n\n    primary_ids = run_kwargs.get(\"seed_ids\")\n    replication_ids = run_kwargs.get(\"replication_seed_ids\")\n    if primary_ids is None and replication_ids is None:  # legacy/demo result contract\n        return\n    if not isinstance(primary_ids, list) or not isinstance(replication_ids, list):\n        raise ValueError(\"seed_ids and replication_seed_ids must both be runner-provided lists\")\n    if not isinstance(result, dict):\n        raise ValueError(\"experiment result must be an object\")\n    smoke = bool(run_kwargs.get(\"smoke\"))\n    required_condition_ids = run_kwargs.get(\"required_condition_ids\")\n    if required_condition_ids is not None and (\n        not isinstance(required_condition_ids, list)\n        or not required_condition_ids\n        or any(not isinstance(item, str) or not item for item in required_condition_ids)\n    ):\n        raise ValueError(\"required_condition_ids must be a non-empty runner-provided list\")\n    _validate_cohort(\n        \"primary\",\n        result.get(\"primary\"),\n        primary_ids,\n        smoke=smoke,\n        required_condition_ids=required_condition_ids,\n    )\n    _validate_cohort(\n        \"replication\",\n        result.get(\"replication\"),\n        replication_ids,\n        smoke=smoke,\n        required_condition_ids=required_condition_ids,\n    )\n\n\ndef main(argv: list[str] | None = None) -> int:\n    parser = argparse.ArgumentParser(description=\"Generic experiment runner.\")\n    parser.add_argument(\"--code-dir\", required=True)\n    parser.add_argument(\"--entrypoint\", required=True, help=\"experiment module name\")\n    parser.add_argument(\"--results-dir\", required=True)\n    parser.add_argument(\"--seed\", type=int, default=0)\n    parser.add_argument(\"--git-sha\", default=\"unknown\")\n    parser.add_argument(\"--args-json\", default=\"{}\")\n    parser.add_argument(\"--datasets-json\", default=\"{}\", help=\"name -> staged path mapping\")\n    args = parser.parse_args(argv)\n\n    os.makedirs(args.results_dir, exist_ok=True)\n    try:\n        run_kwargs = json.loads(args.args_json) or {}\n    except json.JSONDecodeError as exc:\n        print(f\"invalid --args-json: {exc}\", file=sys.stderr)\n        return 2\n    try:\n        datasets = json.loads(args.datasets_json) or {}\n    except json.JSONDecodeError as exc:\n        print(f\"invalid --datasets-json: {exc}\", file=sys.stderr)\n        return 2\n    # Expose staged datasets to the experiment, but only when present \u2014 keep synthetic-data\n    # experiments (and the stdlib demo toy) byte-for-byte unchanged.\n    if datasets:\n        os.environ[\"JOURNAL_DATASETS\"] = json.dumps(datasets)\n        run_kwargs.setdefault(\"datasets\", datasets)\n\n    seeds = set_seeds(args.seed)\n    metadata = {\n        \"status\": \"running\",\n        \"entrypoint\": args.entrypoint,\n        \"code_dir\": args.code_dir,\n        \"seed\": args.seed,\n        \"seeds\": seeds,\n        \"git_sha\": args.git_sha,\n        \"args\": run_kwargs,\n        \"datasets\": datasets,\n        \"hostname\": socket.gethostname(),\n        \"slurm_job_id\": os.environ.get(\"SLURM_JOB_ID\"),\n        \"cuda_visible_devices\": os.environ.get(\"CUDA_VISIBLE_DEVICES\"),\n        \"versions\": collect_versions(),\n        \"gpu\": gpu_info(),\n        \"started_at\": _now_iso(),\n    }\n    metadata_path = os.path.join(args.results_dir, \"metadata.json\")\n    _write_json(metadata_path, metadata)  # partial, survives a crash\n\n    start = time.time()\n    exit_code = 0\n    try:\n        sys.path.insert(0, args.code_dir)\n        module = importlib.import_module(args.entrypoint)\n        result = _call_experiment(module, args.results_dir, run_kwargs)\n        _validate_confirmatory_result(result, run_kwargs)\n        metadata[\"status\"] = \"completed\"\n        _write_json(os.path.join(args.results_dir, \"metrics.json\"), result or {})\n        print(f\"experiment completed; metrics={result!r}\")\n    except Exception:  # noqa: BLE001 - record any failure into the bundle\n        metadata[\"status\"] = \"error\"\n        metadata[\"error\"] = traceback.format_exc()\n        print(metadata[\"error\"], file=sys.stderr)\n        exit_code = 1\n    finally:\n        end = time.time()\n        metadata[\"finished_at\"] = _now_iso()\n        metadata[\"duration_seconds\"] = round(end - start, 4)\n        _write_json(metadata_path, metadata)\n\n    return exit_code\n\n\nif __name__ == \"__main__\":\n    raise SystemExit(main())\n",
+      "_protocol.py": "\"\"\"Run-specific protocol constants, written by the server from the preregistration.\"\"\"\n\nTARGET_NAME = 'blocks.1.attn.q_proj.weight'\nREGISTERED_PHASES = ('loss_term',)\nLEARNS_PARAMETERS = False\n",
+      "_testbed.py": "\"\"\"Server-owned data + model for ``uci_har_small_transformer_v1``.\n\nPorted from the committed, human-reviewed ``CALIBRATION_SOURCES`` entry that produced this\ntestbed's registered baseline on an A100 (compute job 15446009). Keeping it here \u2014 rather than asking\nthe generator to re-derive it from the recipe's prose \u2014 is the whole point of the harness: the\narchive's member layout, the per-channel standardisation axis and the parameter names in\n``operator_targets`` are facts this server already knows, and every one of them has cost either\na codegen attempt or a GPU job when a model guessed at it instead.\n\nThe cohorts are parsed once per process: np.loadtxt over 18 signal files dominates a short run\nand the arrays are identical every time, so per-seed determinism is unaffected.\n\"\"\"\n\nfrom __future__ import annotations\n\nDATASET_NAME = \"uci_har_smartphones\"\nOUTCOME_NAME = \"held-out classification accuracy\"\n\nSEQ_LEN = 128\nCHANNELS = 9\nCLASSES = 6\nD_MODEL = 64\nN_HEAD = 4\nN_LAYERS = 2\nD_FF = 128\nEPOCHS = 12\nBATCH_SIZE = 128\nLR = 0.05\nMOMENTUM = 0.9\n\nSMOKE_BATCH_SIZE = 8\nSMOKE_STEPS = 3\nCURVE_SAMPLES = 12\n\n#: The model's full parameter inventory, as the recipe's ``operator_targets`` names them. The\n#: runtime checks the built model against this before training, so a naming drift fails in the\n#: dry-run with a precise message instead of as a KeyError inside a GPU job.\nPARAMETER_SHAPES = {\n    \"input_proj.weight\": (D_MODEL, CHANNELS),\n    \"blocks.0.attn.q_proj.weight\": (D_MODEL, D_MODEL),\n    \"blocks.0.attn.out_proj.weight\": (D_MODEL, D_MODEL),\n    \"blocks.0.fc1.weight\": (D_FF, D_MODEL),\n    \"blocks.1.attn.q_proj.weight\": (D_MODEL, D_MODEL),\n    \"blocks.1.attn.out_proj.weight\": (D_MODEL, D_MODEL),\n    \"blocks.1.fc1.weight\": (D_FF, D_MODEL),\n}\n\n_CHANNEL_NAMES = (\n    \"body_acc_x\", \"body_acc_y\", \"body_acc_z\",\n    \"body_gyro_x\", \"body_gyro_y\", \"body_gyro_z\",\n    \"total_acc_x\", \"total_acc_y\", \"total_acc_z\",\n)\n_CACHE = {}\n\n\ndef load_cohorts(dataset_path):\n    \"\"\"Read the official subject-disjoint split straight out of the staged archive.\n\n    The container mounts the dataset read-only, so the nested zip is read through BytesIO\n    rather than unpacked \u2014 the failure that killed compute job 15504724.\n    \"\"\"\n\n    import io\n    import zipfile\n\n    import numpy as np\n\n    if \"data\" in _CACHE:\n        return _CACHE[\"data\"]\n    with zipfile.ZipFile(dataset_path) as outer:\n        inner = zipfile.ZipFile(io.BytesIO(outer.read(\"UCI HAR Dataset.zip\")))\n\n    def _split(name):\n        channels = []\n        for channel in _CHANNEL_NAMES:\n            member = f\"UCI HAR Dataset/{name}/Inertial Signals/{channel}_{name}.txt\"\n            with inner.open(member) as handle:\n                channels.append(np.loadtxt(handle, dtype=np.float32))\n        features = np.stack(channels, axis=-1)\n        with inner.open(f\"UCI HAR Dataset/{name}/y_{name}.txt\") as handle:\n            labels = np.loadtxt(handle, dtype=np.int64) - 1\n        return features, labels\n\n    x_train, y_train = _split(\"train\")\n    x_test, y_test = _split(\"test\")\n    # Standardise per channel using TRAINING statistics only.\n    mean = x_train.mean(axis=(0, 1), keepdims=True)\n    sd = np.maximum(x_train.std(axis=(0, 1), keepdims=True), 1e-6)\n    _CACHE[\"data\"] = {\n        \"x_train\": ((x_train - mean) / sd).astype(np.float32), \"y_train\": y_train,\n        \"x_test\": ((x_test - mean) / sd).astype(np.float32), \"y_test\": y_test,\n    }\n    return _CACHE[\"data\"]\n\n\ndef synthetic_cohorts():\n    \"\"\"Tiny in-memory stand-in with the real shapes/dtypes \u2014 the preflight sandbox stages\n    no dataset, so the smoke path may never touch ``load_cohorts``.\"\"\"\n\n    import numpy as np\n\n    rng = np.random.default_rng(0)\n    return {\n        \"x_train\": rng.standard_normal((32, SEQ_LEN, CHANNELS), dtype=np.float32),\n        \"y_train\": rng.integers(0, CLASSES, size=32, dtype=np.int64),\n        \"x_test\": rng.standard_normal((16, SEQ_LEN, CHANNELS), dtype=np.float32),\n        \"y_test\": rng.integers(0, CLASSES, size=16, dtype=np.int64),\n    }\n\n\ndef build_model():\n    import math\n\n    import torch\n\n    class Attention(torch.nn.Module):\n        def __init__(self):\n            super().__init__()\n            self.q_proj = torch.nn.Linear(D_MODEL, D_MODEL)\n            self.k_proj = torch.nn.Linear(D_MODEL, D_MODEL)\n            self.v_proj = torch.nn.Linear(D_MODEL, D_MODEL)\n            self.out_proj = torch.nn.Linear(D_MODEL, D_MODEL)\n\n        def forward(self, x):\n            batch, steps, _ = x.shape\n            head_dim = D_MODEL // N_HEAD\n\n            def _heads(projection):\n                return projection(x).view(batch, steps, N_HEAD, head_dim).transpose(1, 2)\n\n            query, key, value = _heads(self.q_proj), _heads(self.k_proj), _heads(self.v_proj)\n            scores = (query @ key.transpose(-2, -1)) / math.sqrt(head_dim)\n            attended = torch.softmax(scores, dim=-1) @ value\n            merged = attended.transpose(1, 2).reshape(batch, steps, D_MODEL)\n            return self.out_proj(merged)\n\n    class Block(torch.nn.Module):\n        def __init__(self):\n            super().__init__()\n            self.ln1 = torch.nn.LayerNorm(D_MODEL)\n            self.attn = Attention()\n            self.ln2 = torch.nn.LayerNorm(D_MODEL)\n            self.fc1 = torch.nn.Linear(D_MODEL, D_FF)\n            self.fc2 = torch.nn.Linear(D_FF, D_MODEL)\n\n        def forward(self, x):\n            x = x + self.attn(self.ln1(x))\n            return x + self.fc2(torch.relu(self.fc1(self.ln2(x))))\n\n    class Encoder(torch.nn.Module):\n        def __init__(self):\n            super().__init__()\n            self.input_proj = torch.nn.Linear(CHANNELS, D_MODEL)\n            self.pos_embed = torch.nn.Parameter(torch.zeros(1, SEQ_LEN, D_MODEL))\n            self.blocks = torch.nn.ModuleList([Block() for _ in range(N_LAYERS)])\n            self.ln_f = torch.nn.LayerNorm(D_MODEL)\n            self.head = torch.nn.Linear(D_MODEL, CLASSES)\n\n        def forward(self, x):\n            hidden = self.input_proj(x) + self.pos_embed\n            for block in self.blocks:\n                hidden = block(hidden)\n            return self.head(self.ln_f(hidden).mean(dim=1))\n\n    return Encoder()\n\n\ndef build_optimizer(model):\n    import torch\n\n    return torch.optim.SGD(model.parameters(), lr=LR, momentum=MOMENTUM)\n\n\ndef derive_seed_artifacts(seed, data, *, epochs, batch_size, max_steps=None):\n    \"\"\"Everything this seed's conditions SHARE, drawn once from the seed alone.\n\n    Initial parameters and the full list of per-epoch batch permutations are computed here and\n    reused by every condition, so the only difference within a seed's pair is the operator.\n    \"\"\"\n\n    import torch\n\n    torch.manual_seed(int(seed % (2**63 - 1)))\n    if torch.cuda.is_available():\n        torch.cuda.manual_seed_all(int(seed % (2**63 - 1)))\n    torch.use_deterministic_algorithms(True)\n\n    init_state = {k: v.clone() for k, v in build_model().state_dict().items()}\n    generator = torch.Generator(device=\"cpu\").manual_seed(int(seed % (2**63 - 1)))\n    count = len(data[\"x_train\"])\n    orders, batches = [], []\n    for epoch in range(epochs):\n        order = torch.randperm(count, generator=generator)\n        orders.append(order)\n        for batch_index, _start in enumerate(range(0, count, batch_size)):\n            batches.append((epoch, batch_index))\n    if max_steps is not None:\n        batches = batches[:max_steps]\n    return {\n        \"init_state\": init_state, \"orders\": orders, \"batches\": batches,\n        \"batch_size\": batch_size,\n    }\n\n\ndef forward_loss(model, optimizer, data, shared, epoch, batch_index, device):\n    \"\"\"This step's classification objective, as a live autograd tensor.\n\n    The backward pass and the optimizer step belong to the driver, not here: an operator may\n    reparameterize the target for this forward pass or add a term to this objective, and both\n    have to happen between the forward and the backward. Returning a float \u2014 which is what this\n    function did while it also owned backward+step \u2014 made those interventions unrepresentable.\n    \"\"\"\n\n    import torch\n\n    batch_size = shared[\"batch_size\"]\n    order = shared[\"orders\"][epoch]\n    start = batch_index * batch_size\n    ids = order[start:start + batch_size]\n    xb = torch.from_numpy(data[\"x_train\"])[ids].to(device)\n    yb = torch.from_numpy(data[\"y_train\"])[ids].to(device)\n    optimizer.zero_grad(set_to_none=True)\n    return torch.nn.functional.cross_entropy(model(xb), yb)\n\n\ndef evaluate(model, data, device):\n    import numpy as np\n    import torch\n\n    model.eval()\n    with torch.no_grad():\n        predictions = []\n        for start in range(0, len(data[\"x_test\"]), 512):\n            xb = torch.from_numpy(data[\"x_test\"][start:start + 512]).to(device)\n            predictions.append(model(xb).argmax(dim=1).cpu().numpy())\n    model.train()\n    correct = (np.concatenate(predictions) == data[\"y_test\"]).sum()\n    return float(correct / len(data[\"y_test\"]))\n",
+      "experiment.py": "\"\"\"Bundle entrypoint for a harness run. Server-owned; the model contributes only the operator.\n\nThe generic journal entrypoint calls ``run(results_dir, **kwargs)`` here. This module wires the\nrun's protocol constants to the server's testbed definition and the generated operator hook,\nverifies the model's parameter inventory before spending any compute, and hands control to the\ndriver in ``_harness``.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport _harness\nimport _protocol\nimport _testbed\n# NOT `operator` \u2014 that is a standard-library module, and shadowing it breaks numpy/torch.\nfrom operator_hook import apply_operator\n\n\ndef _verify_parameter_inventory() -> None:\n    \"\"\"Fail here, precisely, rather than as a KeyError inside a queued GPU job.\n\n    Compute job 15504898 died deep in training on a tensor name that did not exist. The dry-run\n    builds this same model, so this error is caught in preflight before submitting a compute job.\n    \"\"\"\n\n    state = _testbed.build_model().state_dict()\n    problems = []\n    for name, shape in _testbed.PARAMETER_SHAPES.items():\n        if name not in state:\n            problems.append(f\"{name} is missing (model has {sorted(state)})\")\n        elif tuple(state[name].shape) != tuple(shape):\n            problems.append(f\"{name} has shape {tuple(state[name].shape)}, expected {tuple(shape)}\")\n    if problems:\n        raise AssertionError(\"testbed parameter inventory does not match the recipe: \" + \"; \".join(problems))\n    if _protocol.TARGET_NAME not in state:\n        raise AssertionError(\n            f\"operator target {_protocol.TARGET_NAME!r} is not a parameter of this model; \"\n            f\"available: {sorted(state)}\"\n        )\n\n\ndef run(results_dir, *, seed_ids, replication_seed_ids, required_condition_ids,\n        datasets=None, smoke=False, **kwargs):\n    _verify_parameter_inventory()\n    return _harness.run_experiment(\n        results_dir,\n        testbed=_testbed,\n        apply_operator=apply_operator,\n        seed_ids=seed_ids,\n        replication_seed_ids=replication_seed_ids,\n        required_condition_ids=required_condition_ids,\n        target_name=_protocol.TARGET_NAME,\n        # The registered lifecycle travels WITH the code, so the run itself refuses results\n        # whose execution does not realize the registration. The smoke path executes every\n        # phase too, which is why a non-conformant operator dies in the preflight sandbox\n        # rather than in a queued GPU job \u2014 or, as it did once, in a published paper.\n        registered_phases=getattr(_protocol, \"REGISTERED_PHASES\", ()),\n        learns_parameters=getattr(_protocol, \"LEARNS_PARAMETERS\", False),\n        datasets=datasets,\n        smoke=smoke,\n    )\n",
+      "operator_hook.py": "def apply_operator(ctx) -> None:\n    if ctx.phase == 'loss_term':\n        if ctx.condition == 'baseline_1':\n            return\n        \n        reference_weights = ctx.model.blocks[0].attn.q_proj.weight.detach()\n        consistency_coefficient = 0.01\n        \n        if ctx.condition == 'proposed':\n            diff = ctx.target - reference_weights\n            loss_raw = (diff * diff).sum()\n            loss_term = consistency_coefficient * loss_raw\n            ctx.add_loss(loss_term)\n        \n        elif ctx.condition == 'negative_control_1':\n            if 'negative_control_reference' not in ctx.state:\n                random_matrix = ctx.randn_like(reference_weights)\n                random_norm = random_matrix.norm()\n                reference_norm = reference_weights.norm()\n                if random_norm > 0:\n                    random_matrix = random_matrix * (reference_norm / random_norm)\n                ctx.state['negative_control_reference'] = random_matrix.detach()\n            \n            fixed_reference = ctx.state['negative_control_reference']\n            diff = ctx.target - fixed_reference\n            loss_raw = (diff * diff).sum()\n            loss_term = consistency_coefficient * loss_raw\n            ctx.add_loss(loss_term)\n"
+    },
+    "datasets": [
+      {
+        "filename": "uci-har-smartphones.zip",
+        "license": "CC BY 4.0",
+        "name": "uci_har_smartphones",
+        "notes": "UCI dataset DOI 10.24432/C54S4K; 10,299 windows, 6 activity classes, 30 subjects. Outer zip contains 'UCI HAR Dataset.zip'; raw per-channel inertial signals live under '<split>/Inertial Signals/<channel>_<split>.txt'.",
+        "sha256": "c00b803081a5c797cd5e4b83700a9810b38d53d9d84e01917e090e1fdbc81031",
+        "size_bytes": 61005872,
+        "source": "https://archive.ics.uci.edu/static/public/240/human+activity+recognition+using+smartphones.zip"
+      }
+    ],
+    "entrypoint": "experiment",
+    "image_ref": "pytorch/pytorch@sha256:c8268a92a69bd500f8be0e665b2630ee006dadaf7bfbc24249141b15ff622755",
+    "resources": {
+      "cpus": null,
+      "estimated_gpu_hours": 3.75,
+      "gpu_type": "",
+      "gpus": 1,
+      "mem": null,
+      "walltime": "03:45:00"
+    },
+    "run_args": {
+      "replication_seed_ids": [
+        2340648136914159678,
+        4191649941990144526,
+        914975885928187538,
+        3493291245950488,
+        3092035777930482330,
+        3033986887553884854,
+        1948116001888441515,
+        3721334120068172834,
+        1629568842510008,
+        3605262731553156275,
+        3904049989082932630,
+        892823242471123166,
+        3725427329689760378,
+        3555864911429215929,
+        3606907749333550835,
+        2155528049710964782,
+        2789562881046154133,
+        1853921749424354694,
+        1745680992267274019,
+        841184256946095993,
+        3464957341317932123,
+        775787681821570599,
+        3309282745006621851,
+        146154474434366067,
+        2391332672707033902,
+        706889780011171718,
+        2426763361766452408,
+        3736121309580882765,
+        479020209906455928,
+        1963761814288298963,
+        2233713330617425866,
+        2745262338024609657,
+        2296843351460209463,
+        2142392810908805088,
+        1468658092695416100,
+        2052272999620538285,
+        3506933794820522738,
+        351506867199205715,
+        4557863017481180823,
+        2654635865597404598,
+        3394110221015017757,
+        3791841174141345598,
+        3513984727252394996
+      ],
+      "required_condition_ids": [
+        "proposed",
+        "baseline_1",
+        "negative_control_1"
+      ],
+      "seed_ids": [
+        2615122547193570606,
+        252200600861128310,
+        634766601307347027,
+        2289833669515924996,
+        1075721894937126869,
+        2219905518708798979,
+        1472572688149772095,
+        3154489071090469597,
+        2567160067431731676,
+        375878476100283907,
+        3680443165500893007,
+        2412595240837917458,
+        2601790489635802822,
+        1913826313556203271,
+        710938911890137278,
+        4578385222592080447,
+        3998799165023144543,
+        3601994374998462166,
+        517409047000623439,
+        3812347621373549969,
+        3406080211412548461,
+        772595819596432589,
+        3615834778985602079,
+        1415494652153299218,
+        2062219541250864404,
+        142389970181333221,
+        4434070341016929754,
+        1135820606004933817,
+        3780975103128256366,
+        4407244770048434366,
+        4376044843392817728,
+        3255929081425547334,
+        3574102472552171439,
+        19016511533479923,
+        2933058706039751666,
+        3462839959629419857,
+        4607211731052019561,
+        2779871998158610606,
+        1485808255187976782,
+        3471275713396068135,
+        4429899216283540008,
+        1385236021301736380,
+        1330453660667172384
+      ]
+    },
+    "seed": 1234,
+    "sif_sha256": "b04db4d9ba8a7e95505a053162340badfc283d7cb408bc7ec62ec60eb48fb02e"
+  },
+  "metrics": {
+    "conformance": {
+      "learns_parameters": false,
+      "realized": {
+        "baseline_1": {
+          "parameters": {},
+          "phases": []
+        },
+        "negative_control_1": {
+          "parameters": {},
+          "phases": [
+            "loss_term"
+          ]
+        },
+        "proposed": {
+          "parameters": {},
+          "phases": [
+            "loss_term"
+          ]
+        }
+      },
+      "registered_phases": [
+        "loss_term"
+      ]
+    },
+    "primary": {
+      "conditions": {
+        "baseline_1": {
+          "held-out classification accuracy": [
+            0.8944689514760774,
+            0.8914149983033594,
+            0.8900576857821514,
+            0.8975229046487954,
+            0.9107567017305734,
+            0.9121140142517815,
+            0.9172039362063115,
+            0.8856464200882254,
+            0.8958262639972854,
+            0.9114353579911775,
+            0.8917543264336614,
+            0.9216152019002375,
+            0.9032914828639295,
+            0.8805564981336953,
+            0.9012555140821175,
+            0.9110960298608755,
+            0.9131319986426875,
+            0.9107567017305734,
+            0.8958262639972854,
+            0.9009161859518154,
+            0.9141499830335935,
+            0.8890397013912453,
+            0.8903970139124533,
+            0.9049881235154394,
+            0.9195792331184255,
+            0.9243298269426535,
+            0.8931116389548693,
+            0.8937902952154734,
+            0.9117746861214795,
+            0.9114353579911775,
+            0.9273837801153716,
+            0.8968442483881914,
+            0.9284017645062775,
+            0.9229725144214456,
+            0.9117746861214795,
+            0.9083814048184594,
+            0.8988802171700034,
+            0.9015948422124194,
+            0.9151679674244995,
+            0.9182219205972175,
+            0.9012555140821175,
+            0.8961655921275874,
+            0.9043094672548354
+          ]
+        },
+        "negative_control_1": {
+          "held-out classification accuracy": [
+            0.8917543264336614,
+            0.8920936545639634,
+            0.9121140142517815,
+            0.9049881235154394,
+            0.9036308109942314,
+            0.9073634204275535,
+            0.9107567017305734,
+            0.9110960298608755,
+            0.9117746861214795,
+            0.9300984051577876,
+            0.8887003732609433,
+            0.9212758737699356,
+            0.9019341703427214,
+            0.8883610451306413,
+            0.9046487953851374,
+            0.9290804207668816,
+            0.9073634204275535,
+            0.9097387173396675,
+            0.8985408890397014,
+            0.8944689514760774,
+            0.9090600610790635,
+            0.9124533423820834,
+            0.9097387173396675,
+            0.9100780454699695,
+            0.9144893111638955,
+            0.9212758737699356,
+            0.9029521547336274,
+            0.8917543264336614,
+            0.9168646080760094,
+            0.9039701391245334,
+            0.9199185612487275,
+            0.9053274516457415,
+            0.9127926705123854,
+            0.8934509670851714,
+            0.9273837801153716,
+            0.9053274516457415,
+            0.9158466236851035,
+            0.9049881235154394,
+            0.9124533423820834,
+            0.9243298269426535,
+            0.9005768578215134,
+            0.9049881235154394,
+            0.8870037326094333
+          ]
+        },
+        "proposed": {
+          "held-out classification accuracy": [
+            0.8998982015609094,
+            0.8961655921275874,
+            0.9124533423820834,
+            0.9093993892093655,
+            0.9100780454699695,
+            0.9066847641669494,
+            0.9270444519850696,
+            0.9246691550729556,
+            0.8581608415337632,
+            0.9141499830335935,
+            0.8887003732609433,
+            0.9297590770274856,
+            0.9127926705123854,
+            0.8887003732609433,
+            0.9100780454699695,
+            0.9260264675941635,
+            0.9260264675941635,
+            0.8951476077366813,
+            0.8842891075670173,
+            0.8995588734306074,
+            0.8903970139124533,
+            0.9182219205972175,
+            0.9148286392941974,
+            0.9060061079063454,
+            0.9144893111638955,
+            0.9277231082456736,
+            0.8924329826942654,
+            0.8968442483881914,
+            0.9093993892093655,
+            0.9138106549032915,
+            0.8903970139124533,
+            0.9053274516457415,
+            0.9253478113335596,
+            0.9073634204275535,
+            0.9172039362063115,
+            0.8995588734306074,
+            0.9138106549032915,
+            0.9009161859518154,
+            0.9114353579911775,
+            0.9212758737699356,
+            0.8982015609093994,
+            0.8992195453003053,
+            0.8836104513064132
+          ]
+        }
+      },
+      "curves": {
+        "baseline_1": {
+          "held-out classification accuracy": [
+            [
+              0,
+              0.3760308078376907
+            ],
+            [
+              58,
+              0.8412496744817358
+            ],
+            [
+              116,
+              0.8645370538426939
+            ],
+            [
+              174,
+              0.8805170413743576
+            ],
+            [
+              232,
+              0.8870747547762406
+            ],
+            [
+              290,
+              0.8894737257439572
+            ],
+            [
+              406,
+              0.8934351843814365
+            ],
+            [
+              464,
+              0.8989749133924136
+            ],
+            [
+              522,
+              0.9004742702472359
+            ],
+            [
+              580,
+              0.9022656071211558
+            ],
+            [
+              638,
+              0.9053116689420065
+            ],
+            [
+              695,
+              0.9051301678490541
+            ]
+          ],
+          "training loss": [
+            [
+              0,
+              1.90793552509574
+            ],
+            [
+              58,
+              0.24471491505933363
+            ],
+            [
+              116,
+              0.18458989834369616
+            ],
+            [
+              174,
+              0.1638803395421006
+            ],
+            [
+              232,
+              0.12807934142129365
+            ],
+            [
+              290,
+              0.12113415657780892
+            ],
+            [
+              406,
+              0.1094577445886856
+            ],
+            [
+              464,
+              0.10740267580678296
+            ],
+            [
+              522,
+              0.10315081633107606
+            ],
+            [
+              580,
+              0.09150068037385164
+            ],
+            [
+              638,
+              0.09525819148781688
+            ],
+            [
+              695,
+              0.07510902632980845
+            ]
+          ]
+        },
+        "negative_control_1": {
+          "held-out classification accuracy": [
+            [
+              0,
+              0.37602291648582326
+            ],
+            [
+              58,
+              0.8403895171281793
+            ],
+            [
+              116,
+              0.8652946236219725
+            ],
+            [
+              174,
+              0.8789861191120653
+            ],
+            [
+              232,
+              0.8888187435389554
+            ],
+            [
+              290,
+              0.8901602733564288
+            ],
+            [
+              406,
+              0.8942243195681852
+            ],
+            [
+              464,
+              0.8980989733351222
+            ],
+            [
+              522,
+              0.9000797026538617
+            ],
+            [
+              580,
+              0.9026917401220004
+            ],
+            [
+              638,
+              0.9048381878299573
+            ],
+            [
+              695,
+              0.9076001609835781
+            ]
+          ],
+          "training loss": [
+            [
+              0,
+              1.90793552509574
+            ],
+            [
+              58,
+              0.2472134572128917
+            ],
+            [
+              116,
+              0.1873812183391216
+            ],
+            [
+              174,
+              0.16932960582333942
+            ],
+            [
+              232,
+              0.1275896968016791
+            ],
+            [
+              290,
+              0.12188711121331813
+            ],
+            [
+              406,
+              0.10815645884289297
+            ],
+            [
+              464,
+              0.11033417916921683
+            ],
+            [
+              522,
+              0.10097346550156903
+            ],
+            [
+              580,
+              0.09502833371245584
+            ],
+            [
+              638,
+              0.09760747771970062
+            ],
+            [
+              695,
+              0.08263581908892753
+            ]
+          ]
+        },
+        "proposed": {
+          "held-out classification accuracy": [
+            [
+              0,
+              0.3760308078376907
+            ],
+            [
+              58,
+              0.8406104749804689
+            ],
+            [
+              116,
+              0.8645212711389587
+            ],
+            [
+              174,
+              0.8787730526116431
+            ],
+            [
+              232,
+              0.8887082646128107
+            ],
+            [
+              290,
+              0.888463632704919
+            ],
+            [
+              406,
+              0.8972230332778306
+            ],
+            [
+              464,
+              0.8985014322803639
+            ],
+            [
+              522,
+              0.8988170863550634
+            ],
+            [
+              580,
+              0.9046014472739322
+            ],
+            [
+              638,
+              0.9068110257968292
+            ],
+            [
+              695,
+              0.9064559149627922
+            ]
+          ],
+          "training loss": [
+            [
+              0,
+              1.90793552509574
+            ],
+            [
+              58,
+              0.24694331406160844
+            ],
+            [
+              116,
+              0.18548274681318638
+            ],
+            [
+              174,
+              0.16780549079872842
+            ],
+            [
+              232,
+              0.13109789320895837
+            ],
+            [
+              290,
+              0.12101957851717639
+            ],
+            [
+              406,
+              0.10965043271696845
+            ],
+            [
+              464,
+              0.10889064126409763
+            ],
+            [
+              522,
+              0.10310504351590954
+            ],
+            [
+              580,
+              0.09323044329188591
+            ],
+            [
+              638,
+              0.09441218109324921
+            ],
+            [
+              695,
+              0.08316123944728873
+            ]
+          ]
+        }
+      },
+      "operator_activations": {
+        "baseline_1": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "negative_control_1": [
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696
+        ],
+        "proposed": [
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696
+        ]
+      },
+      "seed_ids": [
+        2615122547193570606,
+        252200600861128310,
+        634766601307347027,
+        2289833669515924996,
+        1075721894937126869,
+        2219905518708798979,
+        1472572688149772095,
+        3154489071090469597,
+        2567160067431731676,
+        375878476100283907,
+        3680443165500893007,
+        2412595240837917458,
+        2601790489635802822,
+        1913826313556203271,
+        710938911890137278,
+        4578385222592080447,
+        3998799165023144543,
+        3601994374998462166,
+        517409047000623439,
+        3812347621373549969,
+        3406080211412548461,
+        772595819596432589,
+        3615834778985602079,
+        1415494652153299218,
+        2062219541250864404,
+        142389970181333221,
+        4434070341016929754,
+        1135820606004933817,
+        3780975103128256366,
+        4407244770048434366,
+        4376044843392817728,
+        3255929081425547334,
+        3574102472552171439,
+        19016511533479923,
+        2933058706039751666,
+        3462839959629419857,
+        4607211731052019561,
+        2779871998158610606,
+        1485808255187976782,
+        3471275713396068135,
+        4429899216283540008,
+        1385236021301736380,
+        1330453660667172384
+      ]
+    },
+    "replication": {
+      "conditions": {
+        "baseline_1": {
+          "held-out classification accuracy": [
+            0.9284017645062775,
+            0.9165252799457075,
+            0.8937902952154734,
+            0.8768238887003733,
+            0.9110960298608755,
+            0.9155072955548015,
+            0.9236511706820495,
+            0.8873430607397353,
+            0.9270444519850696,
+            0.8992195453003053,
+            0.9222938581608415,
+            0.9175432643366135,
+            0.9090600610790635,
+            0.9070240922972514,
+            0.8866644044791313,
+            0.8995588734306074,
+            0.9175432643366135,
+            0.9104173736002714,
+            0.9168646080760094,
+            0.9009161859518154,
+            0.8907363420427553,
+            0.9131319986426875,
+            0.8931116389548693,
+            0.8781812012215813,
+            0.9104173736002714,
+            0.9060061079063454,
+            0.9165252799457075,
+            0.9070240922972514,
+            0.9212758737699356,
+            0.9236511706820495,
+            0.9117746861214795,
+            0.9056667797760435,
+            0.8971835765184933,
+            0.9060061079063454,
+            0.9107567017305734,
+            0.9114353579911775,
+            0.9056667797760435,
+            0.9192399049881235,
+            0.9121140142517815,
+            0.9022734984730234,
+            0.8954869358669834,
+            0.9049881235154394,
+            0.9178825924669155
+          ]
+        },
+        "negative_control_1": {
+          "held-out classification accuracy": [
+            0.9260264675941635,
+            0.9216152019002375,
+            0.8876823888700374,
+            0.8985408890397014,
+            0.8975229046487954,
+            0.9161859518154055,
+            0.9100780454699695,
+            0.8992195453003053,
+            0.9182219205972175,
+            0.9141499830335935,
+            0.9134713267729895,
+            0.9104173736002714,
+            0.9104173736002714,
+            0.8866644044791313,
+            0.8859857482185273,
+            0.8870037326094333,
+            0.9148286392941974,
+            0.9032914828639295,
+            0.9056667797760435,
+            0.9134713267729895,
+            0.9205972175093315,
+            0.9151679674244995,
+            0.8931116389548693,
+            0.8880217170003394,
+            0.9077027485578555,
+            0.9073634204275535,
+            0.9148286392941974,
+            0.9036308109942314,
+            0.8832711231761113,
+            0.9260264675941635,
+            0.9131319986426875,
+            0.8893790295215473,
+            0.9104173736002714,
+            0.9114353579911775,
+            0.9212758737699356,
+            0.9077027485578555,
+            0.9002375296912114,
+            0.9138106549032915,
+            0.8961655921275874,
+            0.9117746861214795,
+            0.9063454360366474,
+            0.9022734984730234,
+            0.9226331862911435
+          ]
+        },
+        "proposed": {
+          "held-out classification accuracy": [
+            0.9222938581608415,
+            0.9260264675941635,
+            0.9039701391245334,
+            0.9022734984730234,
+            0.8975229046487954,
+            0.9039701391245334,
+            0.9168646080760094,
+            0.9182219205972175,
+            0.9192399049881235,
+            0.9002375296912114,
+            0.9124533423820834,
+            0.8937902952154734,
+            0.9087207329487614,
+            0.8917543264336614,
+            0.8992195453003053,
+            0.8863250763488293,
+            0.9114353579911775,
+            0.9175432643366135,
+            0.9161859518154055,
+            0.9073634204275535,
+            0.8995588734306074,
+            0.9138106549032915,
+            0.9053274516457415,
+            0.8618934509670851,
+            0.9066847641669494,
+            0.9056667797760435,
+            0.9205972175093315,
+            0.9100780454699695,
+            0.8998982015609094,
+            0.9216152019002375,
+            0.8965049202578894,
+            0.8954869358669834,
+            0.8903970139124533,
+            0.9066847641669494,
+            0.9192399049881235,
+            0.9056667797760435,
+            0.8924329826942654,
+            0.9178825924669155,
+            0.9100780454699695,
+            0.9066847641669494,
+            0.9032914828639295,
+            0.9012555140821175,
+            0.9141499830335935
+          ]
+        }
+      },
+      "curves": {
+        "baseline_1": {
+          "held-out classification accuracy": [
+            [
+              0,
+              0.38924882221573376
+            ],
+            [
+              58,
+              0.8422913329282442
+            ],
+            [
+              116,
+              0.8732017581931962
+            ],
+            [
+              174,
+              0.8814166554872517
+            ],
+            [
+              232,
+              0.8854096795322005
+            ],
+            [
+              290,
+              0.8896078787257047
+            ],
+            [
+              406,
+              0.8982331263168692
+            ],
+            [
+              464,
+              0.8981857782056644
+            ],
+            [
+              522,
+              0.8991643058372328
+            ],
+            [
+              580,
+              0.9007741416182005
+            ],
+            [
+              638,
+              0.9043489240141729
+            ],
+            [
+              695,
+              0.9076238350391805
+            ]
+          ],
+          "training loss": [
+            [
+              0,
+              1.8785524035609045
+            ],
+            [
+              58,
+              0.2553226854218993
+            ],
+            [
+              116,
+              0.1838311395326326
+            ],
+            [
+              174,
+              0.15934193602135016
+            ],
+            [
+              232,
+              0.144199876764486
+            ],
+            [
+              290,
+              0.12411045205107955
+            ],
+            [
+              406,
+              0.10495334932970446
+            ],
+            [
+              464,
+              0.10896906525243161
+            ],
+            [
+              522,
+              0.10837414505523305
+            ],
+            [
+              580,
+              0.10611200488583986
+            ],
+            [
+              638,
+              0.09221421502703844
+            ],
+            [
+              695,
+              0.0817751657477645
+            ]
+          ]
+        },
+        "negative_control_1": {
+          "held-out classification accuracy": [
+            [
+              0,
+              0.38924882221573376
+            ],
+            [
+              58,
+              0.8419125480386047
+            ],
+            [
+              116,
+              0.8726967116736769
+            ],
+            [
+              174,
+              0.8810299792457447
+            ],
+            [
+              232,
+              0.8855359411620805
+            ],
+            [
+              290,
+              0.892141002675168
+            ],
+            [
+              406,
+              0.8966390732396368
+            ],
+            [
+              464,
+              0.8994799599119324
+            ],
+            [
+              522,
+              0.8975544700562651
+            ],
+            [
+              580,
+              0.8997877226347647
+            ],
+            [
+              638,
+              0.9052485381270664
+            ],
+            [
+              695,
+              0.9066689814632144
+            ]
+          ],
+          "training loss": [
+            [
+              0,
+              1.8785524035609045
+            ],
+            [
+              58,
+              0.25691098252008127
+            ],
+            [
+              116,
+              0.18865852248530054
+            ],
+            [
+              174,
+              0.16105542297280112
+            ],
+            [
+              232,
+              0.15015476890081583
+            ],
+            [
+              290,
+              0.12746461801404177
+            ],
+            [
+              406,
+              0.1083686998937019
+            ],
+            [
+              464,
+              0.10884519389202428
+            ],
+            [
+              522,
+              0.10542233262297719
+            ],
+            [
+              580,
+              0.10531848582417466
+            ],
+            [
+              638,
+              0.08957635957834333
+            ],
+            [
+              695,
+              0.087480352671687
+            ]
+          ]
+        },
+        "proposed": {
+          "held-out classification accuracy": [
+            [
+              0,
+              0.38924882221573376
+            ],
+            [
+              58,
+              0.84177050370499
+            ],
+            [
+              116,
+              0.8727992992479542
+            ],
+            [
+              174,
+              0.8818980279511685
+            ],
+            [
+              232,
+              0.8865381428492513
+            ],
+            [
+              290,
+              0.8905548409498032
+            ],
+            [
+              406,
+              0.8976570576305426
+            ],
+            [
+              464,
+              0.8992511107077755
+            ],
+            [
+              522,
+              0.899992897783319
+            ],
+            [
+              580,
+              0.9004190307841635
+            ],
+            [
+              638,
+              0.9060455646656828
+            ],
+            [
+              695,
+              0.9060534560175503
+            ]
+          ],
+          "training loss": [
+            [
+              0,
+              1.8785524035609045
+            ],
+            [
+              58,
+              0.25706048379110735
+            ],
+            [
+              116,
+              0.18858606472264888
+            ],
+            [
+              174,
+              0.15958704851394476
+            ],
+            [
+              232,
+              0.14771425221548523
+            ],
+            [
+              290,
+              0.12657617197133775
+            ],
+            [
+              406,
+              0.10895870573991953
+            ],
+            [
+              464,
+              0.11005715653300285
+            ],
+            [
+              522,
+              0.10601990566004155
+            ],
+            [
+              580,
+              0.10539771525492501
+            ],
+            [
+              638,
+              0.08840318634932817
+            ],
+            [
+              695,
+              0.08634680923247753
+            ]
+          ]
+        }
+      },
+      "operator_activations": {
+        "baseline_1": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "negative_control_1": [
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696
+        ],
+        "proposed": [
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696
+        ]
+      },
+      "seed_ids": [
+        2340648136914159678,
+        4191649941990144526,
+        914975885928187538,
+        3493291245950488,
+        3092035777930482330,
+        3033986887553884854,
+        1948116001888441515,
+        3721334120068172834,
+        1629568842510008,
+        3605262731553156275,
+        3904049989082932630,
+        892823242471123166,
+        3725427329689760378,
+        3555864911429215929,
+        3606907749333550835,
+        2155528049710964782,
+        2789562881046154133,
+        1853921749424354694,
+        1745680992267274019,
+        841184256946095993,
+        3464957341317932123,
+        775787681821570599,
+        3309282745006621851,
+        146154474434366067,
+        2391332672707033902,
+        706889780011171718,
+        2426763361766452408,
+        3736121309580882765,
+        479020209906455928,
+        1963761814288298963,
+        2233713330617425866,
+        2745262338024609657,
+        2296843351460209463,
+        2142392810908805088,
+        1468658092695416100,
+        2052272999620538285,
+        3506933794820522738,
+        351506867199205715,
+        4557863017481180823,
+        2654635865597404598,
+        3394110221015017757,
+        3791841174141345598,
+        3513984727252394996
+      ]
+    }
+  },
+  "run_id": "e5c7eb4e-f542-4c7d-bcd0-6ceff9b99e91",
+  "version": 1
+}
