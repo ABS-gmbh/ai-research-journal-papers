@@ -1,0 +1,126 @@
+{
+  "evidence_sha256": "0ce14ccf152328f9a794cfb601707ba8d230b910e54b2c3b5ba10f3838addf07",
+  "original_paper_id": "1fd3f7b3-7590-4fa6-8c8a-31a8e63109c1",
+  "original_protocol_commit_sha": "80ff8c2d68c28c765b1bbc35d7bf30e2b8ac042d",
+  "original_protocol_sha256": "74440f5a36e0e5f2612524f1eae42c8ab490029cc32a18634ae6e1af274d0801",
+  "original_repo_url": "https://github.com/ABS-gmbh/ai-research-journal-papers/tree/80ff8c2d68c28c765b1bbc35d7bf30e2b8ac042d/papers/e5c7eb4e-f542-4c7d-bcd0-6ceff9b99e91",
+  "original_run_id": "e5c7eb4e-f542-4c7d-bcd0-6ceff9b99e91",
+  "original_title": "Cross-Layer Query Consistency Loss Tests Whether Attention Stability Across Depth Improves Subject-Disjoint Generalization in Time-Series Transformers",
+  "policy": "controlled_replication_v1",
+  "prior_evidence": [
+    {
+      "checks": {
+        "execution_record": "pass",
+        "operator_conformance": "pass",
+        "preregistration_integrity": "pass",
+        "registered_outcomes": "pass",
+        "structured_metrics": "pass",
+        "vacuous_contrast": "pass"
+      },
+      "cohorts": [
+        {
+          "ci_high": 0.005603057109713464,
+          "ci_low": -0.00314864939512788,
+          "cohens_d": 0.08890782293391766,
+          "cohort": "primary",
+          "decision": "inconclusive",
+          "hypothesis_sign": 1,
+          "improvement_ci_high": 0.005603057109713464,
+          "improvement_ci_low": -0.00314864939512788,
+          "improvement_mean": 0.0013257471137380487,
+          "margin": 0.012509797746985206,
+          "mean_diff": 0.0013257471137380487,
+          "n": 43,
+          "p_value": 0.5458908218356329,
+          "paired": true,
+          "se": 0.002341408222622586,
+          "se_method": "per-seed paired differences, sd/sqrt(n), t-inflated"
+        },
+        {
+          "ci_high": 0.0018230995651865227,
+          "ci_low": -0.004869161386037038,
+          "cohens_d": -0.14004981865511465,
+          "cohort": "replication",
+          "decision": "inconclusive",
+          "hypothesis_sign": 1,
+          "improvement_ci_high": 0.0018230995651865227,
+          "improvement_ci_low": -0.004869161386037038,
+          "improvement_mean": -0.0015703790216301916,
+          "margin": 0.012509797746985206,
+          "mean_diff": -0.0015703790216301916,
+          "n": 43,
+          "p_value": 0.372125574885023,
+          "paired": true,
+          "se": 0.0017606715997447039,
+          "se_method": "per-seed paired differences, sd/sqrt(n), t-inflated"
+        }
+      ],
+      "contrast": {
+        "intervention_digest": "39ecc25e35c3d48c",
+        "intervention_target": "blocks.1.attn.q_proj.weight",
+        "operator_name": "CrossLayerQueryConsistency",
+        "outcome_higher_is_better": true,
+        "outcome_name": "held-out classification accuracy",
+        "testbed_id": "uci_har_small_transformer_v1"
+      },
+      "id": "ev:e5c7eb4e-f542-4c7d-bcd0-6ceff9b99e91",
+      "kind": "registered_experiment",
+      "limitations": [
+        "the replication cohort used fresh seeds through the same pipeline: a confirmatory replication, not an independent one (treated as one run, A4)",
+        "declared boundary condition: Only tested on 2-block PreNormTransformerEncoder; effect may differ with more depth",
+        "declared boundary condition: Only tested on UCI HAR inertial sensor data; may not generalize to other time-series modalities",
+        "declared boundary condition: Coefficient 0.01 fixed; different values may yield different effects",
+        "declared boundary condition: Only query projections tested; key/value/output projections may show different patterns"
+      ],
+      "provenance": {
+        "anchor_commit": "80ff8c2d68c28c765b1bbc35d7bf30e2b8ac042d",
+        "commit_sha": "d4c0a4529bb5eae78284f7a7823a068c94b1067b",
+        "observed_at": "2026-09-24T20:00:16.895788+00:00",
+        "paper_id": "1fd3f7b3-7590-4fa6-8c8a-31a8e63109c1",
+        "preregistration_sha256": "74440f5a36e0e5f2612524f1eae42c8ab490029cc32a18634ae6e1af274d0801",
+        "record": "runs.artifacts.analysis.stats.{primary,replication}.comparisons[primary_metric]",
+        "repo_url": "https://github.com/ABS-gmbh/ai-research-journal-papers/tree/d4c0a4529bb5eae78284f7a7823a068c94b1067b/papers/e5c7eb4e-f542-4c7d-bcd0-6ceff9b99e91",
+        "run_id": "e5c7eb4e-f542-4c7d-bcd0-6ceff9b99e91",
+        "slurm_job_id": "16152821",
+        "source": "analysis"
+      },
+      "recorded_at": "2026-09-24T20:00:16.895788+00:00",
+      "registration": {
+        "alternative_predictions": [],
+        "alternatives": [
+          "Cross-layer consistency limits model capacity, reducing both training and test accuracy",
+          "Effect only appears in deeper transformers (>2 blocks), not visible in 2-block architecture",
+          "Consistency helps early training but harms convergence, yielding mixed effects on final accuracy"
+        ],
+        "boundary_conditions": [
+          "Only tested on 2-block PreNormTransformerEncoder; effect may differ with more depth",
+          "Only tested on UCI HAR inertial sensor data; may not generalize to other time-series modalities",
+          "Coefficient 0.01 fixed; different values may yield different effects",
+          "Only query projections tested; key/value/output projections may show different patterns"
+        ],
+        "hypothesized_direction": "intervention_better",
+        "mechanism": "Cross-layer query consistency encourages the second transformer block to attend to similar temporal patterns as the first block, potentially learning more stable, subject-invariant attention mechanisms. If subject-specific variations cause layers to diverge in what they attend to, consistency regularization may prevent overfitting to idiosyncratic temporal features. However, if deeper layers need to refine attention patterns based on first-layer outputs, consistency may limit representational capacity.",
+        "n_seeds": 43,
+        "negative_controls": [
+          "Add loss term penalizing difference between blocks.1.attn.q_proj.weight and a fixed random matrix with same shape and norm as block 0's weights, destroying the meaningful cross-layer relationship while matching compute"
+        ],
+        "outcome_higher_is_better": true,
+        "planning_sd": 0.025019595493970412,
+        "preregistration_sha256": "74440f5a36e0e5f2612524f1eae42c8ab490029cc32a18634ae6e1af274d0801",
+        "registered_at": "2026-09-12T01:33:38.353362+00:00",
+        "registered_hypothesis": "The intervention is predicted to yield higher held-out classification accuracy than the comparator, with mean hypothesis-positive paired contrast H_s exceeding the fixed worthwhile margin of 0.0125098 proportion.",
+        "research_question": "Does enforcing cross-layer consistency in attention query projections, where deeper layer weights are regularized toward shallower layer weights, improve subject-disjoint generalization in time-series transformers?",
+        "title": "Cross-Layer Query Consistency Loss Tests Whether Attention Stability Across Depth Improves Subject-Disjoint Generalization in Time-Series Transformers"
+      },
+      "reproduction_status": "verified",
+      "retraction_status": "none",
+      "run_id": "e5c7eb4e-f542-4c7d-bcd0-6ceff9b99e91",
+      "source_digest": "5f9e62ac70b4b05aa009f61b454f79675172d9ece18bfa065bd96119be5b84dc",
+      "validity": "valid",
+      "validity_history": [],
+      "validity_reasons": []
+    }
+  ],
+  "reason": "independent_confirmation",
+  "scientific_rationale": "Inquiry selected this independently seeded exact replication from the current Episteme evidence state. It tests whether the registered conclusion remains stable under fresh sampling, accounting for possible flaws in a single study. All prior outcomes are disclosed and every valid outcome will be reported. The selection is exploratory; its value is sensitive to the stated flaw-rate assumption. It makes no claim of an original discovery."
+}
