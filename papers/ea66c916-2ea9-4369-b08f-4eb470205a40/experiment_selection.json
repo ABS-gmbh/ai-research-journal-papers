@@ -1,0 +1,287 @@
+{
+  "assumptions": [
+    "undetected-flaw rate 0.05 (sensitivity 0-0.15), a planning assumption",
+    "failure rate 0.333: 1 of 4 executed registered studies ended without a publishable outcome; Beta(1,1) posterior mean",
+    "Episteme's effect model A1-A4; information is expected reduction in entropy (bits)"
+  ],
+  "belief_revision": 3,
+  "belief_state_sha256": "1f4c33ca44fead2d63171a597114e8049e41ef4a29520d869978f202fb9d7a1a",
+  "chosen_matches_planner": true,
+  "chosen_valuation": {
+    "constraints": [
+      {
+        "detail": "a new registered study on fresh seeds",
+        "id": "new_registration",
+        "status": "pass"
+      },
+      {
+        "detail": "replications of published studies have an editorial route past the novelty gate",
+        "id": "novelty_policy",
+        "status": "pass"
+      },
+      {
+        "detail": "no recorded source compiler blocker; admission rechecks it",
+        "id": "replication_protocol",
+        "status": "pass"
+      },
+      {
+        "detail": "the harness records every quantity this study measures",
+        "id": "observables_recorded",
+        "status": "pass"
+      },
+      {
+        "detail": "uses the calibrated recipe as registered",
+        "id": "recipe_unchanged",
+        "status": "pass"
+      },
+      {
+        "detail": "uci_har_small_transformer_v1 has an offerable calibration record",
+        "id": "testbed_calibrated",
+        "status": "pass"
+      },
+      {
+        "detail": "not closed by a scientific rejection",
+        "id": "direction_open",
+        "status": "pass"
+      },
+      {
+        "detail": "discloses 1 prior registered result(s)",
+        "id": "prior_evidence_disclosed",
+        "status": "pass"
+      },
+      {
+        "detail": "expected 1.14 GPU-h within the per-run cap 12",
+        "id": "within_run_cap",
+        "status": "pass"
+      },
+      {
+        "detail": "expected $2.84 vs per-run cap $50",
+        "id": "within_run_cap_usd",
+        "status": "pass"
+      },
+      {
+        "detail": "expected $2.84 vs $999.79 left this month",
+        "id": "within_monthly_budget",
+        "status": "pass"
+      }
+    ],
+    "contrast": "CrossLayerQueryConsistency on blocks.1.attn.q_proj.weight [uci_har_small_transformer_v1]",
+    "cost": {
+      "basis": "7.93 GPU-seconds per training measured on 7 completed job(s) of uci_har_small_transformer_v1; 258 trainings per job x 2 job(s) (incl. the mandatory pre-publication reproduction); 90% prediction interval from 7 jobs (t, df=6); wall-clock adds the measured submission-to-settlement overhead per job",
+      "ceiling_gpu_hours": 1.0,
+      "gpu_hours": 1.1366,
+      "gpu_hours_high": 1.2592,
+      "gpu_hours_low": 1.0139,
+      "jobs": 2,
+      "queue_hours": 0.766,
+      "reliability": "measured",
+      "runtime_hours": 1.137,
+      "trainings_per_job": 258,
+      "usd": 2.84
+    },
+    "discriminates": [
+      "worthwhile benefit",
+      "negligible",
+      "worthwhile harm"
+    ],
+    "index": 0,
+    "matched_frame": "frame:effect:3ef651f55af2",
+    "notes": [],
+    "prior_evidence": [
+      {
+        "bearing": "valid: weighs in the posterior",
+        "contrast": "CrossLayerQueryConsistency on blocks.1.attn.q_proj.weight [uci_har_small_transformer_v1]",
+        "decisions": {
+          "primary": "inconclusive",
+          "replication": "inconclusive"
+        },
+        "evidence_id": "ev:e5c7eb4e-f542-4c7d-bcd0-6ceff9b99e91",
+        "intervals": {
+          "primary": [
+            -0.003149,
+            0.005603
+          ],
+          "replication": [
+            -0.004869,
+            0.001823
+          ]
+        },
+        "preregistration_sha256": "74440f5a36e0e5f2612524f1eae42c8ab490029cc32a18634ae6e1af274d0801",
+        "run_id": "e5c7eb4e-f542-4c7d-bcd0-6ceff9b99e91",
+        "validity": "valid"
+      }
+    ],
+    "probe": "replicate",
+    "resolves": "which effect region holds for CrossLayerQueryConsistency on blocks.1.attn.q_proj.weight [uci_har_small_transformer_v1] (existing evidence)",
+    "testbed_id": "uci_har_small_transformer_v1",
+    "title": "Replication: Cross-Layer Query Consistency Loss Tests Whether Attention Stability Across Depth Improves Subject-Disjoint Generalization in Time-Series Transformers",
+    "value": {
+      "bits": 0.106322,
+      "discrimination_bits": null,
+      "estimator": "region_grid",
+      "high": 0.197253,
+      "interval_basis": "undetected-flaw rate 0-0.15 (point 0.05); failure rate 0.333 applied exactly",
+      "low": 0.0,
+      "shadow": {},
+      "unvaluable_reason": null
+    },
+    "value_per_gpu_hour": 0.093544
+  },
+  "contrast": "CrossLayerQueryConsistency on blocks.1.attn.q_proj.weight [uci_har_small_transformer_v1]",
+  "expected_to_resolve": "which effect region holds for CrossLayerQueryConsistency on blocks.1.attn.q_proj.weight [uci_har_small_transformer_v1] (existing evidence)",
+  "mode": "seeded",
+  "plan_sha256": "1e87ccfc317992f8caaf62ae6265d15f717b4b6699627b8e0c1ddb5917ddc1f5",
+  "planner_selected": "exp:effect:replicate:3ef651f55af2",
+  "planner_selected_title": "Register a new study of CrossLayerQueryConsistency on blocks.1.attn.q_proj.weight [uci_har_small_transformer_v1]",
+  "portfolio": [
+    {
+      "constraints": [
+        {
+          "detail": "a new registered study on fresh seeds",
+          "id": "new_registration",
+          "status": "pass"
+        },
+        {
+          "detail": "replications of published studies have an editorial route past the novelty gate",
+          "id": "novelty_policy",
+          "status": "pass"
+        },
+        {
+          "detail": "no recorded source compiler blocker; admission rechecks it",
+          "id": "replication_protocol",
+          "status": "pass"
+        },
+        {
+          "detail": "the harness records every quantity this study measures",
+          "id": "observables_recorded",
+          "status": "pass"
+        },
+        {
+          "detail": "uses the calibrated recipe as registered",
+          "id": "recipe_unchanged",
+          "status": "pass"
+        },
+        {
+          "detail": "uci_har_small_transformer_v1 has an offerable calibration record",
+          "id": "testbed_calibrated",
+          "status": "pass"
+        },
+        {
+          "detail": "not closed by a scientific rejection",
+          "id": "direction_open",
+          "status": "pass"
+        },
+        {
+          "detail": "discloses 1 prior registered result(s)",
+          "id": "prior_evidence_disclosed",
+          "status": "pass"
+        },
+        {
+          "detail": "expected 1.14 GPU-h within the per-run cap 12",
+          "id": "within_run_cap",
+          "status": "pass"
+        },
+        {
+          "detail": "expected $2.84 vs per-run cap $50",
+          "id": "within_run_cap_usd",
+          "status": "pass"
+        },
+        {
+          "detail": "expected $2.84 vs $999.79 left this month",
+          "id": "within_monthly_budget",
+          "status": "pass"
+        }
+      ],
+      "contrast": "CrossLayerQueryConsistency on blocks.1.attn.q_proj.weight [uci_har_small_transformer_v1]",
+      "cost": {
+        "basis": "7.93 GPU-seconds per training measured on 7 completed job(s) of uci_har_small_transformer_v1; 258 trainings per job x 2 job(s) (incl. the mandatory pre-publication reproduction); 90% prediction interval from 7 jobs (t, df=6); wall-clock adds the measured submission-to-settlement overhead per job",
+        "ceiling_gpu_hours": 1.0,
+        "gpu_hours": 1.1366,
+        "gpu_hours_high": 1.2592,
+        "gpu_hours_low": 1.0139,
+        "jobs": 2,
+        "queue_hours": 0.766,
+        "reliability": "measured",
+        "runtime_hours": 1.137,
+        "trainings_per_job": 258,
+        "usd": 2.84
+      },
+      "discriminates": [
+        "worthwhile benefit",
+        "negligible",
+        "worthwhile harm"
+      ],
+      "index": 0,
+      "matched_frame": "frame:effect:3ef651f55af2",
+      "notes": [],
+      "prior_evidence": [
+        {
+          "bearing": "valid: weighs in the posterior",
+          "contrast": "CrossLayerQueryConsistency on blocks.1.attn.q_proj.weight [uci_har_small_transformer_v1]",
+          "decisions": {
+            "primary": "inconclusive",
+            "replication": "inconclusive"
+          },
+          "evidence_id": "ev:e5c7eb4e-f542-4c7d-bcd0-6ceff9b99e91",
+          "intervals": {
+            "primary": [
+              -0.003149,
+              0.005603
+            ],
+            "replication": [
+              -0.004869,
+              0.001823
+            ]
+          },
+          "preregistration_sha256": "74440f5a36e0e5f2612524f1eae42c8ab490029cc32a18634ae6e1af274d0801",
+          "run_id": "e5c7eb4e-f542-4c7d-bcd0-6ceff9b99e91",
+          "validity": "valid"
+        }
+      ],
+      "probe": "replicate",
+      "resolves": "which effect region holds for CrossLayerQueryConsistency on blocks.1.attn.q_proj.weight [uci_har_small_transformer_v1] (existing evidence)",
+      "testbed_id": "uci_har_small_transformer_v1",
+      "title": "Replication: Cross-Layer Query Consistency Loss Tests Whether Attention Stability Across Depth Improves Subject-Disjoint Generalization in Time-Series Transformers",
+      "value": {
+        "bits": 0.106322,
+        "discrimination_bits": null,
+        "estimator": "region_grid",
+        "high": 0.197253,
+        "interval_basis": "undetected-flaw rate 0-0.15 (point 0.05); failure rate 0.333 applied exactly",
+        "low": 0.0,
+        "shadow": {},
+        "unvaluable_reason": null
+      },
+      "value_per_gpu_hour": 0.093544
+    }
+  ],
+  "prior_evidence": [
+    {
+      "bearing": "valid: weighs in the posterior",
+      "contrast": "CrossLayerQueryConsistency on blocks.1.attn.q_proj.weight [uci_har_small_transformer_v1]",
+      "decisions": {
+        "primary": "inconclusive",
+        "replication": "inconclusive"
+      },
+      "evidence_id": "ev:e5c7eb4e-f542-4c7d-bcd0-6ceff9b99e91",
+      "intervals": {
+        "primary": [
+          -0.003149,
+          0.005603
+        ],
+        "replication": [
+          -0.004869,
+          0.001823
+        ]
+      },
+      "preregistration_sha256": "74440f5a36e0e5f2612524f1eae42c8ab490029cc32a18634ae6e1af274d0801",
+      "run_id": "e5c7eb4e-f542-4c7d-bcd0-6ceff9b99e91",
+      "validity": "valid"
+    }
+  ],
+  "recorded_at": "2026-10-14T22:08:11.591740+00:00",
+  "requires_new_registration": true,
+  "run_id": "ea66c916-2ea9-4369-b08f-4eb470205a40",
+  "schema_version": 1,
+  "topic_title": "Replication: Cross-Layer Query Consistency Loss Tests Whether Attention Stability Across Depth Improves Subject-Disjoint Generalization in Time-Series Transformers"
+}
