@@ -1,0 +1,3119 @@
+{
+  "analysis_stats": {
+    "figure_metadata": [
+      {
+        "axis_reason": "a bar encodes magnitude by length, so the axis starts at zero; the point estimates are printed above the bars instead of truncating the axis",
+        "baseline_zero": true,
+        "cohort": "Primary",
+        "comparison": "the proposed condition against the baseline",
+        "dataset": "UCI Human Activity Recognition Using Smartphones",
+        "encoding": "axis",
+        "encoding_note": "",
+        "evaluation": "",
+        "figure_role": "outcome levels",
+        "filename": "primary_results_bars.png",
+        "has_error_bars": true,
+        "kind": "bar",
+        "legend": false,
+        "n_points": null,
+        "n_units": 43,
+        "observation_level": "seed",
+        "origin_included": false,
+        "overlapping_series": [
+          "Proposed",
+          "Baseline",
+          "Negative control 1"
+        ],
+        "paired": true,
+        "reference_line": "baseline mean",
+        "series": [
+          "Proposed",
+          "Baseline",
+          "Negative control 1"
+        ],
+        "title": "Primary cohort: held-out classification accuracy by condition (mean \u00b1 95% CI)",
+        "uncertainty": "95% bootstrap confidence interval",
+        "uncertainty_level": 0.95,
+        "uncertainty_method": "bootstrap",
+        "uncertainty_type": "confidence interval",
+        "unit_name": "paired seed",
+        "value_annotations": true,
+        "x_label": "",
+        "x_quantity": "",
+        "x_spec": null,
+        "y_label": "Mean Held-Out Classification Accuracy",
+        "y_limits": [
+          0.0,
+          1.0
+        ],
+        "y_quantity": "held-out classification accuracy",
+        "y_spec": {
+          "aggregation": "mean",
+          "domain_high": 1.0,
+          "domain_low": 0.0,
+          "evaluation_split": "held-out",
+          "higher_is_better": true,
+          "is_difference": false,
+          "name": "held-out classification accuracy",
+          "quantity_type": "accuracy",
+          "unit": "proportion",
+          "zero_meaningful": true
+        },
+        "y_unit": "proportion"
+      },
+      {
+        "axis_reason": "a difference is read against zero, which is drawn",
+        "baseline_zero": false,
+        "cohort": "Primary",
+        "comparison": "the proposed condition against the baseline",
+        "dataset": "UCI Human Activity Recognition Using Smartphones",
+        "encoding": "axis",
+        "encoding_note": "",
+        "evaluation": "",
+        "figure_role": "paired effect",
+        "filename": "primary_effect_sizes.png",
+        "has_error_bars": true,
+        "kind": "effect",
+        "legend": false,
+        "n_points": 43,
+        "n_units": 43,
+        "observation_level": "seed",
+        "origin_included": false,
+        "overlapping_series": [],
+        "paired": true,
+        "reference_line": "",
+        "series": [
+          "Proposed",
+          "Baseline"
+        ],
+        "title": "Primary cohort: hypothesis-positive contrast",
+        "uncertainty": "95% bootstrap confidence interval",
+        "uncertainty_level": 0.95,
+        "uncertainty_method": "bootstrap",
+        "uncertainty_type": "confidence interval",
+        "unit_name": "paired seed",
+        "value_annotations": false,
+        "worthwhile_thresholds": {
+          "held-out classification accuracy": 0.012509797746985206
+        },
+        "x_label": "",
+        "x_quantity": "",
+        "x_spec": null,
+        "y_label": "Mean Difference in Held-Out Classification Accuracy",
+        "y_limits": [
+          -0.03138785205293518,
+          0.03681710213776715
+        ],
+        "y_quantity": "held-out classification accuracy",
+        "y_spec": {
+          "aggregation": "mean",
+          "domain_high": null,
+          "domain_low": null,
+          "evaluation_split": "held-out",
+          "higher_is_better": true,
+          "is_difference": true,
+          "name": "held-out classification accuracy",
+          "quantity_type": "accuracy",
+          "unit": "proportion",
+          "zero_meaningful": true
+        },
+        "y_unit": "proportion"
+      },
+      {
+        "axis_reason": "both axes have a meaningful zero, so the origin is part of the reading",
+        "baseline_zero": false,
+        "cohort": "Primary",
+        "comparison": "",
+        "dataset": "UCI Human Activity Recognition Using Smartphones",
+        "encoding": "colour+dash+marker",
+        "encoding_note": "conditions whose curves coincide are distinguished by marker shape and dash pattern as well as by colour, with markers offset so neither hides the other; no value is jittered",
+        "evaluation": "",
+        "figure_role": "learning curves",
+        "filename": "primary_learning_curves.png",
+        "has_error_bars": false,
+        "kind": "curve",
+        "legend": true,
+        "n_points": 12,
+        "n_units": 43,
+        "observation_level": "seed",
+        "origin_included": true,
+        "overlapping_series": [
+          "Proposed",
+          "Baseline",
+          "Negative control 1"
+        ],
+        "paired": true,
+        "reference_line": "",
+        "series": [
+          "Proposed",
+          "Baseline",
+          "Negative control 1"
+        ],
+        "title": "Learning curves: held-out classification accuracy",
+        "uncertainty": "",
+        "uncertainty_level": null,
+        "uncertainty_method": "",
+        "uncertainty_type": "",
+        "unit_name": "seed",
+        "value_annotations": false,
+        "x_label": "Training Steps",
+        "x_quantity": "training steps",
+        "x_spec": {
+          "aggregation": "",
+          "domain_high": null,
+          "domain_low": 0.0,
+          "evaluation_split": "training",
+          "higher_is_better": null,
+          "is_difference": false,
+          "name": "training steps",
+          "quantity_type": "count",
+          "unit": "",
+          "zero_meaningful": true
+        },
+        "y_label": "Mean Held-Out Classification Accuracy",
+        "y_limits": [
+          0.0,
+          0.9786826177192419
+        ],
+        "y_quantity": "held-out classification accuracy",
+        "y_spec": {
+          "aggregation": "mean",
+          "domain_high": 1.0,
+          "domain_low": 0.0,
+          "evaluation_split": "held-out",
+          "higher_is_better": true,
+          "is_difference": false,
+          "name": "held-out classification accuracy",
+          "quantity_type": "accuracy",
+          "unit": "proportion",
+          "zero_meaningful": true
+        },
+        "y_unit": "proportion"
+      },
+      {
+        "axis_reason": "a bar encodes magnitude by length, so the axis starts at zero; the point estimates are printed above the bars instead of truncating the axis",
+        "baseline_zero": true,
+        "cohort": "Replication",
+        "comparison": "the proposed condition against the baseline",
+        "dataset": "UCI Human Activity Recognition Using Smartphones",
+        "encoding": "axis",
+        "encoding_note": "",
+        "evaluation": "",
+        "figure_role": "outcome levels",
+        "filename": "replication_results_bars.png",
+        "has_error_bars": true,
+        "kind": "bar",
+        "legend": false,
+        "n_points": null,
+        "n_units": 43,
+        "observation_level": "seed",
+        "origin_included": false,
+        "overlapping_series": [
+          "Proposed",
+          "Baseline",
+          "Negative control 1"
+        ],
+        "paired": true,
+        "reference_line": "baseline mean",
+        "series": [
+          "Proposed",
+          "Baseline",
+          "Negative control 1"
+        ],
+        "title": "Replication cohort: held-out classification accuracy by condition (mean \u00b1 95% CI)",
+        "uncertainty": "95% bootstrap confidence interval",
+        "uncertainty_level": 0.95,
+        "uncertainty_method": "bootstrap",
+        "uncertainty_type": "confidence interval",
+        "unit_name": "paired seed",
+        "value_annotations": true,
+        "x_label": "",
+        "x_quantity": "",
+        "x_spec": null,
+        "y_label": "Mean Held-Out Classification Accuracy",
+        "y_limits": [
+          0.0,
+          1.0
+        ],
+        "y_quantity": "held-out classification accuracy",
+        "y_spec": {
+          "aggregation": "mean",
+          "domain_high": 1.0,
+          "domain_low": 0.0,
+          "evaluation_split": "held-out",
+          "higher_is_better": true,
+          "is_difference": false,
+          "name": "held-out classification accuracy",
+          "quantity_type": "accuracy",
+          "unit": "proportion",
+          "zero_meaningful": true
+        },
+        "y_unit": "proportion"
+      },
+      {
+        "axis_reason": "a difference is read against zero, which is drawn",
+        "baseline_zero": false,
+        "cohort": "Replication",
+        "comparison": "the proposed condition against the baseline",
+        "dataset": "UCI Human Activity Recognition Using Smartphones",
+        "encoding": "axis",
+        "encoding_note": "",
+        "evaluation": "",
+        "figure_role": "paired effect",
+        "filename": "replication_effect_sizes.png",
+        "has_error_bars": true,
+        "kind": "effect",
+        "legend": false,
+        "n_points": 43,
+        "n_units": 43,
+        "observation_level": "seed",
+        "origin_included": false,
+        "overlapping_series": [],
+        "paired": true,
+        "reference_line": "",
+        "series": [
+          "Proposed",
+          "Baseline"
+        ],
+        "title": "Replication cohort: hypothesis-positive contrast",
+        "uncertainty": "95% bootstrap confidence interval",
+        "uncertainty_level": 0.95,
+        "uncertainty_method": "bootstrap",
+        "uncertainty_type": "confidence interval",
+        "unit_name": "paired seed",
+        "value_annotations": false,
+        "worthwhile_thresholds": {
+          "held-out classification accuracy": 0.012509797746985206
+        },
+        "x_label": "",
+        "x_quantity": "",
+        "x_spec": null,
+        "y_label": "Mean Difference in Held-Out Classification Accuracy",
+        "y_limits": [
+          -0.057346454021038384,
+          0.04445198506956233
+        ],
+        "y_quantity": "held-out classification accuracy",
+        "y_spec": {
+          "aggregation": "mean",
+          "domain_high": null,
+          "domain_low": null,
+          "evaluation_split": "held-out",
+          "higher_is_better": true,
+          "is_difference": true,
+          "name": "held-out classification accuracy",
+          "quantity_type": "accuracy",
+          "unit": "proportion",
+          "zero_meaningful": true
+        },
+        "y_unit": "proportion"
+      },
+      {
+        "axis_reason": "both axes have a meaningful zero, so the origin is part of the reading",
+        "baseline_zero": false,
+        "cohort": "Replication",
+        "comparison": "",
+        "dataset": "UCI Human Activity Recognition Using Smartphones",
+        "encoding": "colour+dash+marker",
+        "encoding_note": "conditions whose curves coincide are distinguished by marker shape and dash pattern as well as by colour, with markers offset so neither hides the other; no value is jittered",
+        "evaluation": "",
+        "figure_role": "learning curves",
+        "filename": "replication_learning_curves.png",
+        "has_error_bars": false,
+        "kind": "curve",
+        "legend": true,
+        "n_points": 12,
+        "n_units": 43,
+        "observation_level": "seed",
+        "origin_included": true,
+        "overlapping_series": [
+          "Proposed",
+          "Baseline",
+          "Negative control 1"
+        ],
+        "paired": true,
+        "reference_line": "",
+        "series": [
+          "Proposed",
+          "Baseline",
+          "Negative control 1"
+        ],
+        "title": "Learning curves: held-out classification accuracy",
+        "uncertainty": "",
+        "uncertainty_level": null,
+        "uncertainty_method": "",
+        "uncertainty_type": "",
+        "unit_name": "seed",
+        "value_annotations": false,
+        "x_label": "Training Steps",
+        "x_quantity": "training steps",
+        "x_spec": {
+          "aggregation": "",
+          "domain_high": null,
+          "domain_low": 0.0,
+          "evaluation_split": "training",
+          "higher_is_better": null,
+          "is_difference": false,
+          "name": "training steps",
+          "quantity_type": "count",
+          "unit": "",
+          "zero_meaningful": true
+        },
+        "y_label": "Mean Held-Out Classification Accuracy",
+        "y_limits": [
+          0.0,
+          0.9779241009777386
+        ],
+        "y_quantity": "held-out classification accuracy",
+        "y_spec": {
+          "aggregation": "mean",
+          "domain_high": 1.0,
+          "domain_low": 0.0,
+          "evaluation_split": "held-out",
+          "higher_is_better": true,
+          "is_difference": false,
+          "name": "held-out classification accuracy",
+          "quantity_type": "accuracy",
+          "unit": "proportion",
+          "zero_meaningful": true
+        },
+        "y_unit": "proportion"
+      }
+    ],
+    "primary": {
+      "baseline": "baseline_1",
+      "comparisons": {
+        "held-out classification accuracy": {
+          "all_pairs_identical": false,
+          "ci_high": 0.004356026230853611,
+          "ci_low": -0.002707128258141888,
+          "cohens_d": 0.06497583856183622,
+          "contrast": "hypothesis-positive proposed versus baseline",
+          "decision": "inconclusive",
+          "identical_pairs": 0,
+          "mean_diff": 0.0007733524830138729,
+          "multiplicity_method": "preregistered primary (unadjusted)",
+          "n_a": 43,
+          "n_b": 43,
+          "operator_inactive": false,
+          "p_value": 0.6566686662667467,
+          "p_value_adjusted": 0.6566686662667467,
+          "paired": true,
+          "significant": false,
+          "significant_adjusted": false,
+          "smallest_worthwhile_effect_value": 0.012509797746985206
+        }
+      },
+      "conditions": {
+        "baseline_1": {
+          "held-out classification accuracy": {
+            "ci_high": 0.9087682783437631,
+            "ci_low": 0.9019418644107924,
+            "mean": 0.9054142565162837,
+            "n": 43,
+            "std": 0.011372759057098003
+          }
+        },
+        "negative_control_1": {
+          "held-out classification accuracy": {
+            "ci_high": 0.9085471232076766,
+            "ci_low": 0.9015551881692853,
+            "mean": 0.9050907110897166,
+            "n": 43,
+            "std": 0.011878223751597396
+          }
+        },
+        "proposed": {
+          "held-out classification accuracy": {
+            "ci_high": 0.9093524356657539,
+            "ci_low": 0.9031490439627211,
+            "mean": 0.9061876089992978,
+            "n": 43,
+            "std": 0.010216766096998755
+          }
+        }
+      },
+      "figure_metadata": [
+        {
+          "axis_reason": "a bar encodes magnitude by length, so the axis starts at zero; the point estimates are printed above the bars instead of truncating the axis",
+          "baseline_zero": true,
+          "cohort": "Primary",
+          "comparison": "the proposed condition against the baseline",
+          "dataset": "UCI Human Activity Recognition Using Smartphones",
+          "encoding": "axis",
+          "encoding_note": "",
+          "evaluation": "",
+          "figure_role": "outcome levels",
+          "filename": "primary_results_bars.png",
+          "has_error_bars": true,
+          "kind": "bar",
+          "legend": false,
+          "n_points": null,
+          "n_units": 43,
+          "observation_level": "seed",
+          "origin_included": false,
+          "overlapping_series": [
+            "Proposed",
+            "Baseline",
+            "Negative control 1"
+          ],
+          "paired": true,
+          "reference_line": "baseline mean",
+          "series": [
+            "Proposed",
+            "Baseline",
+            "Negative control 1"
+          ],
+          "title": "Primary cohort: held-out classification accuracy by condition (mean \u00b1 95% CI)",
+          "uncertainty": "95% bootstrap confidence interval",
+          "uncertainty_level": 0.95,
+          "uncertainty_method": "bootstrap",
+          "uncertainty_type": "confidence interval",
+          "unit_name": "paired seed",
+          "value_annotations": true,
+          "x_label": "",
+          "x_quantity": "",
+          "x_spec": null,
+          "y_label": "Mean Held-Out Classification Accuracy",
+          "y_limits": [
+            0.0,
+            1.0
+          ],
+          "y_quantity": "held-out classification accuracy",
+          "y_spec": {
+            "aggregation": "mean",
+            "domain_high": 1.0,
+            "domain_low": 0.0,
+            "evaluation_split": "held-out",
+            "higher_is_better": true,
+            "is_difference": false,
+            "name": "held-out classification accuracy",
+            "quantity_type": "accuracy",
+            "unit": "proportion",
+            "zero_meaningful": true
+          },
+          "y_unit": "proportion"
+        },
+        {
+          "axis_reason": "a difference is read against zero, which is drawn",
+          "baseline_zero": false,
+          "cohort": "Primary",
+          "comparison": "the proposed condition against the baseline",
+          "dataset": "UCI Human Activity Recognition Using Smartphones",
+          "encoding": "axis",
+          "encoding_note": "",
+          "evaluation": "",
+          "figure_role": "paired effect",
+          "filename": "primary_effect_sizes.png",
+          "has_error_bars": true,
+          "kind": "effect",
+          "legend": false,
+          "n_points": 43,
+          "n_units": 43,
+          "observation_level": "seed",
+          "origin_included": false,
+          "overlapping_series": [],
+          "paired": true,
+          "reference_line": "",
+          "series": [
+            "Proposed",
+            "Baseline"
+          ],
+          "title": "Primary cohort: hypothesis-positive contrast",
+          "uncertainty": "95% bootstrap confidence interval",
+          "uncertainty_level": 0.95,
+          "uncertainty_method": "bootstrap",
+          "uncertainty_type": "confidence interval",
+          "unit_name": "paired seed",
+          "value_annotations": false,
+          "worthwhile_thresholds": {
+            "held-out classification accuracy": 0.012509797746985206
+          },
+          "x_label": "",
+          "x_quantity": "",
+          "x_spec": null,
+          "y_label": "Mean Difference in Held-Out Classification Accuracy",
+          "y_limits": [
+            -0.03138785205293518,
+            0.03681710213776715
+          ],
+          "y_quantity": "held-out classification accuracy",
+          "y_spec": {
+            "aggregation": "mean",
+            "domain_high": null,
+            "domain_low": null,
+            "evaluation_split": "held-out",
+            "higher_is_better": true,
+            "is_difference": true,
+            "name": "held-out classification accuracy",
+            "quantity_type": "accuracy",
+            "unit": "proportion",
+            "zero_meaningful": true
+          },
+          "y_unit": "proportion"
+        },
+        {
+          "axis_reason": "both axes have a meaningful zero, so the origin is part of the reading",
+          "baseline_zero": false,
+          "cohort": "Primary",
+          "comparison": "",
+          "dataset": "UCI Human Activity Recognition Using Smartphones",
+          "encoding": "colour+dash+marker",
+          "encoding_note": "conditions whose curves coincide are distinguished by marker shape and dash pattern as well as by colour, with markers offset so neither hides the other; no value is jittered",
+          "evaluation": "",
+          "figure_role": "learning curves",
+          "filename": "primary_learning_curves.png",
+          "has_error_bars": false,
+          "kind": "curve",
+          "legend": true,
+          "n_points": 12,
+          "n_units": 43,
+          "observation_level": "seed",
+          "origin_included": true,
+          "overlapping_series": [
+            "Proposed",
+            "Baseline",
+            "Negative control 1"
+          ],
+          "paired": true,
+          "reference_line": "",
+          "series": [
+            "Proposed",
+            "Baseline",
+            "Negative control 1"
+          ],
+          "title": "Learning curves: held-out classification accuracy",
+          "uncertainty": "",
+          "uncertainty_level": null,
+          "uncertainty_method": "",
+          "uncertainty_type": "",
+          "unit_name": "seed",
+          "value_annotations": false,
+          "x_label": "Training Steps",
+          "x_quantity": "training steps",
+          "x_spec": {
+            "aggregation": "",
+            "domain_high": null,
+            "domain_low": 0.0,
+            "evaluation_split": "training",
+            "higher_is_better": null,
+            "is_difference": false,
+            "name": "training steps",
+            "quantity_type": "count",
+            "unit": "",
+            "zero_meaningful": true
+          },
+          "y_label": "Mean Held-Out Classification Accuracy",
+          "y_limits": [
+            0.0,
+            0.9786826177192419
+          ],
+          "y_quantity": "held-out classification accuracy",
+          "y_spec": {
+            "aggregation": "mean",
+            "domain_high": 1.0,
+            "domain_low": 0.0,
+            "evaluation_split": "held-out",
+            "higher_is_better": true,
+            "is_difference": false,
+            "name": "held-out classification accuracy",
+            "quantity_type": "accuracy",
+            "unit": "proportion",
+            "zero_meaningful": true
+          },
+          "y_unit": "proportion"
+        }
+      ],
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "n_conditions": 3,
+      "n_seeds": 43,
+      "primary_metric": "held-out classification accuracy",
+      "proposed": "proposed",
+      "shape": "structured",
+      "table_metadata": [
+        {
+          "cohort": "Primary",
+          "column_specs": [
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "Condition",
+              "quantity": "",
+              "role": "condition",
+              "statistic": "",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "Seeds",
+              "quantity": "",
+              "role": "count",
+              "statistic": "",
+              "unit": ""
+            },
+            {
+              "aggregation": "mean",
+              "cohort": "Primary",
+              "header": "Mean Held-Out Classification Accuracy",
+              "quantity": "held-out classification accuracy",
+              "role": "estimate",
+              "statistic": "",
+              "unit": "proportion"
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "CI Lower",
+              "quantity": "",
+              "role": "ci_low",
+              "statistic": "95% bootstrap confidence interval",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "CI Upper",
+              "quantity": "",
+              "role": "ci_high",
+              "statistic": "95% bootstrap confidence interval",
+              "unit": ""
+            }
+          ],
+          "columns": [
+            "Condition",
+            "Seeds",
+            "Mean Held-Out Classification Accuracy",
+            "CI Lower",
+            "CI Upper"
+          ],
+          "conditions": [
+            "Proposed",
+            "Baseline",
+            "Negative control 1"
+          ],
+          "n_rows": 3,
+          "n_units": 43,
+          "observation_level": "seed",
+          "paired": true,
+          "quantities": [
+            "Mean Held-Out Classification Accuracy"
+          ],
+          "role": "condition levels",
+          "uncertainty": "95% bootstrap confidence interval",
+          "uncertainty_level": 0.95,
+          "uncertainty_method": "bootstrap",
+          "uncertainty_type": "confidence interval",
+          "unit_name": "seed"
+        },
+        {
+          "cohort": "Primary",
+          "column_specs": [
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "Outcome",
+              "quantity": "",
+              "role": "label",
+              "statistic": "",
+              "unit": ""
+            },
+            {
+              "aggregation": "mean",
+              "cohort": "",
+              "header": "Mean Difference",
+              "quantity": "",
+              "role": "estimate",
+              "statistic": "paired mean difference",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "CI Lower",
+              "quantity": "",
+              "role": "ci_low",
+              "statistic": "95% bootstrap confidence interval",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "CI Upper",
+              "quantity": "",
+              "role": "ci_high",
+              "statistic": "95% bootstrap confidence interval",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "p-value",
+              "quantity": "",
+              "role": "p_value",
+              "statistic": "paired sign-flip randomisation test",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "Effect Size (Cohen's dz)",
+              "quantity": "",
+              "role": "effect_size",
+              "statistic": "Cohen's dz for paired differences",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "Registered Decision",
+              "quantity": "",
+              "role": "decision",
+              "statistic": "",
+              "unit": ""
+            }
+          ],
+          "columns": [
+            "Outcome",
+            "Mean Difference",
+            "CI Lower",
+            "CI Upper",
+            "p-value",
+            "Effect Size (Cohen's dz)",
+            "Registered Decision"
+          ],
+          "conditions": [],
+          "n_rows": 1,
+          "n_units": 43,
+          "observation_level": "seed",
+          "paired": true,
+          "quantities": [
+            "held-out classification accuracy"
+          ],
+          "role": "paired statistics",
+          "uncertainty": "95% bootstrap confidence interval",
+          "uncertainty_level": 0.95,
+          "uncertainty_method": "bootstrap",
+          "uncertainty_type": "confidence interval",
+          "unit_name": "seed"
+        }
+      ]
+    },
+    "primary_decision": "inconclusive",
+    "replication": {
+      "baseline": "baseline_1",
+      "comparisons": {
+        "held-out classification accuracy": {
+          "all_pairs_identical": false,
+          "ci_high": 0.0057135360358583145,
+          "ci_low": -0.0019572525469338025,
+          "cohens_d": 0.15182276442644482,
+          "contrast": "hypothesis-positive proposed versus baseline",
+          "decision": "inconclusive",
+          "identical_pairs": 0,
+          "mean_diff": 0.001957055263137136,
+          "multiplicity_method": "preregistered primary (unadjusted)",
+          "n_a": 43,
+          "n_b": 43,
+          "operator_inactive": false,
+          "p_value": 0.33093381323735255,
+          "p_value_adjusted": 0.33093381323735255,
+          "paired": true,
+          "significant": false,
+          "significant_adjusted": false,
+          "smallest_worthwhile_effect_value": 0.012509797746985206
+        }
+      },
+      "conditions": {
+        "baseline_1": {
+          "held-out classification accuracy": {
+            "ci_high": 0.9070319836491191,
+            "ci_low": 0.9000392594755409,
+            "mean": 0.9035282234199541,
+            "n": 43,
+            "std": 0.01186228774677344
+          }
+        },
+        "negative_control_1": {
+          "held-out classification accuracy": {
+            "ci_high": 0.9082002982931006,
+            "ci_low": 0.9002925718704873,
+            "mean": 0.9043252499585701,
+            "n": 43,
+            "std": 0.013084829591134654
+          }
+        },
+        "proposed": {
+          "held-out classification accuracy": {
+            "ci_high": 0.9094244442515447,
+            "ci_low": 0.9016106249161544,
+            "mean": 0.9054852786830911,
+            "n": 43,
+            "std": 0.01362681643134979
+          }
+        }
+      },
+      "figure_metadata": [
+        {
+          "axis_reason": "a bar encodes magnitude by length, so the axis starts at zero; the point estimates are printed above the bars instead of truncating the axis",
+          "baseline_zero": true,
+          "cohort": "Replication",
+          "comparison": "the proposed condition against the baseline",
+          "dataset": "UCI Human Activity Recognition Using Smartphones",
+          "encoding": "axis",
+          "encoding_note": "",
+          "evaluation": "",
+          "figure_role": "outcome levels",
+          "filename": "replication_results_bars.png",
+          "has_error_bars": true,
+          "kind": "bar",
+          "legend": false,
+          "n_points": null,
+          "n_units": 43,
+          "observation_level": "seed",
+          "origin_included": false,
+          "overlapping_series": [
+            "Proposed",
+            "Baseline",
+            "Negative control 1"
+          ],
+          "paired": true,
+          "reference_line": "baseline mean",
+          "series": [
+            "Proposed",
+            "Baseline",
+            "Negative control 1"
+          ],
+          "title": "Replication cohort: held-out classification accuracy by condition (mean \u00b1 95% CI)",
+          "uncertainty": "95% bootstrap confidence interval",
+          "uncertainty_level": 0.95,
+          "uncertainty_method": "bootstrap",
+          "uncertainty_type": "confidence interval",
+          "unit_name": "paired seed",
+          "value_annotations": true,
+          "x_label": "",
+          "x_quantity": "",
+          "x_spec": null,
+          "y_label": "Mean Held-Out Classification Accuracy",
+          "y_limits": [
+            0.0,
+            1.0
+          ],
+          "y_quantity": "held-out classification accuracy",
+          "y_spec": {
+            "aggregation": "mean",
+            "domain_high": 1.0,
+            "domain_low": 0.0,
+            "evaluation_split": "held-out",
+            "higher_is_better": true,
+            "is_difference": false,
+            "name": "held-out classification accuracy",
+            "quantity_type": "accuracy",
+            "unit": "proportion",
+            "zero_meaningful": true
+          },
+          "y_unit": "proportion"
+        },
+        {
+          "axis_reason": "a difference is read against zero, which is drawn",
+          "baseline_zero": false,
+          "cohort": "Replication",
+          "comparison": "the proposed condition against the baseline",
+          "dataset": "UCI Human Activity Recognition Using Smartphones",
+          "encoding": "axis",
+          "encoding_note": "",
+          "evaluation": "",
+          "figure_role": "paired effect",
+          "filename": "replication_effect_sizes.png",
+          "has_error_bars": true,
+          "kind": "effect",
+          "legend": false,
+          "n_points": 43,
+          "n_units": 43,
+          "observation_level": "seed",
+          "origin_included": false,
+          "overlapping_series": [],
+          "paired": true,
+          "reference_line": "",
+          "series": [
+            "Proposed",
+            "Baseline"
+          ],
+          "title": "Replication cohort: hypothesis-positive contrast",
+          "uncertainty": "95% bootstrap confidence interval",
+          "uncertainty_level": 0.95,
+          "uncertainty_method": "bootstrap",
+          "uncertainty_type": "confidence interval",
+          "unit_name": "paired seed",
+          "value_annotations": false,
+          "worthwhile_thresholds": {
+            "held-out classification accuracy": 0.012509797746985206
+          },
+          "x_label": "",
+          "x_quantity": "",
+          "x_spec": null,
+          "y_label": "Mean Difference in Held-Out Classification Accuracy",
+          "y_limits": [
+            -0.057346454021038384,
+            0.04445198506956233
+          ],
+          "y_quantity": "held-out classification accuracy",
+          "y_spec": {
+            "aggregation": "mean",
+            "domain_high": null,
+            "domain_low": null,
+            "evaluation_split": "held-out",
+            "higher_is_better": true,
+            "is_difference": true,
+            "name": "held-out classification accuracy",
+            "quantity_type": "accuracy",
+            "unit": "proportion",
+            "zero_meaningful": true
+          },
+          "y_unit": "proportion"
+        },
+        {
+          "axis_reason": "both axes have a meaningful zero, so the origin is part of the reading",
+          "baseline_zero": false,
+          "cohort": "Replication",
+          "comparison": "",
+          "dataset": "UCI Human Activity Recognition Using Smartphones",
+          "encoding": "colour+dash+marker",
+          "encoding_note": "conditions whose curves coincide are distinguished by marker shape and dash pattern as well as by colour, with markers offset so neither hides the other; no value is jittered",
+          "evaluation": "",
+          "figure_role": "learning curves",
+          "filename": "replication_learning_curves.png",
+          "has_error_bars": false,
+          "kind": "curve",
+          "legend": true,
+          "n_points": 12,
+          "n_units": 43,
+          "observation_level": "seed",
+          "origin_included": true,
+          "overlapping_series": [
+            "Proposed",
+            "Baseline",
+            "Negative control 1"
+          ],
+          "paired": true,
+          "reference_line": "",
+          "series": [
+            "Proposed",
+            "Baseline",
+            "Negative control 1"
+          ],
+          "title": "Learning curves: held-out classification accuracy",
+          "uncertainty": "",
+          "uncertainty_level": null,
+          "uncertainty_method": "",
+          "uncertainty_type": "",
+          "unit_name": "seed",
+          "value_annotations": false,
+          "x_label": "Training Steps",
+          "x_quantity": "training steps",
+          "x_spec": {
+            "aggregation": "",
+            "domain_high": null,
+            "domain_low": 0.0,
+            "evaluation_split": "training",
+            "higher_is_better": null,
+            "is_difference": false,
+            "name": "training steps",
+            "quantity_type": "count",
+            "unit": "",
+            "zero_meaningful": true
+          },
+          "y_label": "Mean Held-Out Classification Accuracy",
+          "y_limits": [
+            0.0,
+            0.9779241009777386
+          ],
+          "y_quantity": "held-out classification accuracy",
+          "y_spec": {
+            "aggregation": "mean",
+            "domain_high": 1.0,
+            "domain_low": 0.0,
+            "evaluation_split": "held-out",
+            "higher_is_better": true,
+            "is_difference": false,
+            "name": "held-out classification accuracy",
+            "quantity_type": "accuracy",
+            "unit": "proportion",
+            "zero_meaningful": true
+          },
+          "y_unit": "proportion"
+        }
+      ],
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "n_conditions": 3,
+      "n_seeds": 43,
+      "primary_metric": "held-out classification accuracy",
+      "proposed": "proposed",
+      "shape": "structured",
+      "table_metadata": [
+        {
+          "cohort": "Replication",
+          "column_specs": [
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "Condition",
+              "quantity": "",
+              "role": "condition",
+              "statistic": "",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "Seeds",
+              "quantity": "",
+              "role": "count",
+              "statistic": "",
+              "unit": ""
+            },
+            {
+              "aggregation": "mean",
+              "cohort": "Replication",
+              "header": "Mean Held-Out Classification Accuracy",
+              "quantity": "held-out classification accuracy",
+              "role": "estimate",
+              "statistic": "",
+              "unit": "proportion"
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "CI Lower",
+              "quantity": "",
+              "role": "ci_low",
+              "statistic": "95% bootstrap confidence interval",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "CI Upper",
+              "quantity": "",
+              "role": "ci_high",
+              "statistic": "95% bootstrap confidence interval",
+              "unit": ""
+            }
+          ],
+          "columns": [
+            "Condition",
+            "Seeds",
+            "Mean Held-Out Classification Accuracy",
+            "CI Lower",
+            "CI Upper"
+          ],
+          "conditions": [
+            "Proposed",
+            "Baseline",
+            "Negative control 1"
+          ],
+          "n_rows": 3,
+          "n_units": 43,
+          "observation_level": "seed",
+          "paired": true,
+          "quantities": [
+            "Mean Held-Out Classification Accuracy"
+          ],
+          "role": "condition levels",
+          "uncertainty": "95% bootstrap confidence interval",
+          "uncertainty_level": 0.95,
+          "uncertainty_method": "bootstrap",
+          "uncertainty_type": "confidence interval",
+          "unit_name": "seed"
+        },
+        {
+          "cohort": "Replication",
+          "column_specs": [
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "Outcome",
+              "quantity": "",
+              "role": "label",
+              "statistic": "",
+              "unit": ""
+            },
+            {
+              "aggregation": "mean",
+              "cohort": "",
+              "header": "Mean Difference",
+              "quantity": "",
+              "role": "estimate",
+              "statistic": "paired mean difference",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "CI Lower",
+              "quantity": "",
+              "role": "ci_low",
+              "statistic": "95% bootstrap confidence interval",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "CI Upper",
+              "quantity": "",
+              "role": "ci_high",
+              "statistic": "95% bootstrap confidence interval",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "p-value",
+              "quantity": "",
+              "role": "p_value",
+              "statistic": "paired sign-flip randomisation test",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "Effect Size (Cohen's dz)",
+              "quantity": "",
+              "role": "effect_size",
+              "statistic": "Cohen's dz for paired differences",
+              "unit": ""
+            },
+            {
+              "aggregation": "",
+              "cohort": "",
+              "header": "Registered Decision",
+              "quantity": "",
+              "role": "decision",
+              "statistic": "",
+              "unit": ""
+            }
+          ],
+          "columns": [
+            "Outcome",
+            "Mean Difference",
+            "CI Lower",
+            "CI Upper",
+            "p-value",
+            "Effect Size (Cohen's dz)",
+            "Registered Decision"
+          ],
+          "conditions": [],
+          "n_rows": 1,
+          "n_units": 43,
+          "observation_level": "seed",
+          "paired": true,
+          "quantities": [
+            "held-out classification accuracy"
+          ],
+          "role": "paired statistics",
+          "uncertainty": "95% bootstrap confidence interval",
+          "uncertainty_level": 0.95,
+          "uncertainty_method": "bootstrap",
+          "uncertainty_type": "confidence interval",
+          "unit_name": "seed"
+        }
+      ]
+    },
+    "replication_decision": "inconclusive",
+    "shape": "confirmatory",
+    "table_metadata": [
+      {
+        "cohort": "Primary",
+        "column_specs": [
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "Condition",
+            "quantity": "",
+            "role": "condition",
+            "statistic": "",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "Seeds",
+            "quantity": "",
+            "role": "count",
+            "statistic": "",
+            "unit": ""
+          },
+          {
+            "aggregation": "mean",
+            "cohort": "Primary",
+            "header": "Mean Held-Out Classification Accuracy",
+            "quantity": "held-out classification accuracy",
+            "role": "estimate",
+            "statistic": "",
+            "unit": "proportion"
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "CI Lower",
+            "quantity": "",
+            "role": "ci_low",
+            "statistic": "95% bootstrap confidence interval",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "CI Upper",
+            "quantity": "",
+            "role": "ci_high",
+            "statistic": "95% bootstrap confidence interval",
+            "unit": ""
+          }
+        ],
+        "columns": [
+          "Condition",
+          "Seeds",
+          "Mean Held-Out Classification Accuracy",
+          "CI Lower",
+          "CI Upper"
+        ],
+        "conditions": [
+          "Proposed",
+          "Baseline",
+          "Negative control 1"
+        ],
+        "n_rows": 3,
+        "n_units": 43,
+        "observation_level": "seed",
+        "paired": true,
+        "quantities": [
+          "Mean Held-Out Classification Accuracy"
+        ],
+        "role": "condition levels",
+        "uncertainty": "95% bootstrap confidence interval",
+        "uncertainty_level": 0.95,
+        "uncertainty_method": "bootstrap",
+        "uncertainty_type": "confidence interval",
+        "unit_name": "seed"
+      },
+      {
+        "cohort": "Primary",
+        "column_specs": [
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "Outcome",
+            "quantity": "",
+            "role": "label",
+            "statistic": "",
+            "unit": ""
+          },
+          {
+            "aggregation": "mean",
+            "cohort": "",
+            "header": "Mean Difference",
+            "quantity": "",
+            "role": "estimate",
+            "statistic": "paired mean difference",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "CI Lower",
+            "quantity": "",
+            "role": "ci_low",
+            "statistic": "95% bootstrap confidence interval",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "CI Upper",
+            "quantity": "",
+            "role": "ci_high",
+            "statistic": "95% bootstrap confidence interval",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "p-value",
+            "quantity": "",
+            "role": "p_value",
+            "statistic": "paired sign-flip randomisation test",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "Effect Size (Cohen's dz)",
+            "quantity": "",
+            "role": "effect_size",
+            "statistic": "Cohen's dz for paired differences",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "Registered Decision",
+            "quantity": "",
+            "role": "decision",
+            "statistic": "",
+            "unit": ""
+          }
+        ],
+        "columns": [
+          "Outcome",
+          "Mean Difference",
+          "CI Lower",
+          "CI Upper",
+          "p-value",
+          "Effect Size (Cohen's dz)",
+          "Registered Decision"
+        ],
+        "conditions": [],
+        "n_rows": 1,
+        "n_units": 43,
+        "observation_level": "seed",
+        "paired": true,
+        "quantities": [
+          "held-out classification accuracy"
+        ],
+        "role": "paired statistics",
+        "uncertainty": "95% bootstrap confidence interval",
+        "uncertainty_level": 0.95,
+        "uncertainty_method": "bootstrap",
+        "uncertainty_type": "confidence interval",
+        "unit_name": "seed"
+      },
+      {
+        "cohort": "Replication",
+        "column_specs": [
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "Condition",
+            "quantity": "",
+            "role": "condition",
+            "statistic": "",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "Seeds",
+            "quantity": "",
+            "role": "count",
+            "statistic": "",
+            "unit": ""
+          },
+          {
+            "aggregation": "mean",
+            "cohort": "Replication",
+            "header": "Mean Held-Out Classification Accuracy",
+            "quantity": "held-out classification accuracy",
+            "role": "estimate",
+            "statistic": "",
+            "unit": "proportion"
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "CI Lower",
+            "quantity": "",
+            "role": "ci_low",
+            "statistic": "95% bootstrap confidence interval",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "CI Upper",
+            "quantity": "",
+            "role": "ci_high",
+            "statistic": "95% bootstrap confidence interval",
+            "unit": ""
+          }
+        ],
+        "columns": [
+          "Condition",
+          "Seeds",
+          "Mean Held-Out Classification Accuracy",
+          "CI Lower",
+          "CI Upper"
+        ],
+        "conditions": [
+          "Proposed",
+          "Baseline",
+          "Negative control 1"
+        ],
+        "n_rows": 3,
+        "n_units": 43,
+        "observation_level": "seed",
+        "paired": true,
+        "quantities": [
+          "Mean Held-Out Classification Accuracy"
+        ],
+        "role": "condition levels",
+        "uncertainty": "95% bootstrap confidence interval",
+        "uncertainty_level": 0.95,
+        "uncertainty_method": "bootstrap",
+        "uncertainty_type": "confidence interval",
+        "unit_name": "seed"
+      },
+      {
+        "cohort": "Replication",
+        "column_specs": [
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "Outcome",
+            "quantity": "",
+            "role": "label",
+            "statistic": "",
+            "unit": ""
+          },
+          {
+            "aggregation": "mean",
+            "cohort": "",
+            "header": "Mean Difference",
+            "quantity": "",
+            "role": "estimate",
+            "statistic": "paired mean difference",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "CI Lower",
+            "quantity": "",
+            "role": "ci_low",
+            "statistic": "95% bootstrap confidence interval",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "CI Upper",
+            "quantity": "",
+            "role": "ci_high",
+            "statistic": "95% bootstrap confidence interval",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "p-value",
+            "quantity": "",
+            "role": "p_value",
+            "statistic": "paired sign-flip randomisation test",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "Effect Size (Cohen's dz)",
+            "quantity": "",
+            "role": "effect_size",
+            "statistic": "Cohen's dz for paired differences",
+            "unit": ""
+          },
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "Registered Decision",
+            "quantity": "",
+            "role": "decision",
+            "statistic": "",
+            "unit": ""
+          }
+        ],
+        "columns": [
+          "Outcome",
+          "Mean Difference",
+          "CI Lower",
+          "CI Upper",
+          "p-value",
+          "Effect Size (Cohen's dz)",
+          "Registered Decision"
+        ],
+        "conditions": [],
+        "n_rows": 1,
+        "n_units": 43,
+        "observation_level": "seed",
+        "paired": true,
+        "quantities": [
+          "held-out classification accuracy"
+        ],
+        "role": "paired statistics",
+        "uncertainty": "95% bootstrap confidence interval",
+        "uncertainty_level": 0.95,
+        "uncertainty_method": "bootstrap",
+        "uncertainty_type": "confidence interval",
+        "unit_name": "seed"
+      },
+      {
+        "cohort": "",
+        "column_specs": [
+          {
+            "aggregation": "",
+            "cohort": "",
+            "header": "Condition",
+            "quantity": "",
+            "role": "condition",
+            "statistic": "",
+            "unit": ""
+          },
+          {
+            "aggregation": "mean",
+            "cohort": "primary",
+            "header": "Primary Cohort Mean Held-Out Classification Accuracy",
+            "quantity": "held-out classification accuracy",
+            "role": "estimate",
+            "statistic": "",
+            "unit": "proportion"
+          },
+          {
+            "aggregation": "mean",
+            "cohort": "replication",
+            "header": "Replication Cohort Mean Held-Out Classification Accuracy",
+            "quantity": "held-out classification accuracy",
+            "role": "estimate",
+            "statistic": "",
+            "unit": "proportion"
+          }
+        ],
+        "columns": [
+          "Condition",
+          "Primary Cohort Mean Held-Out Classification Accuracy",
+          "Replication Cohort Mean Held-Out Classification Accuracy"
+        ],
+        "conditions": [
+          "Proposed",
+          "Baseline",
+          "Negative control 1"
+        ],
+        "n_rows": 3,
+        "n_units": null,
+        "observation_level": "seed",
+        "paired": true,
+        "quantities": [
+          "Mean Held-Out Classification Accuracy"
+        ],
+        "role": "cohort comparison",
+        "uncertainty": "",
+        "uncertainty_level": null,
+        "uncertainty_method": "",
+        "uncertainty_type": "",
+        "unit_name": "seed"
+      }
+    ]
+  },
+  "inputs": {
+    "code_files": {
+      "_protocol.py": "\"\"\"Run-specific protocol constants, written by the server from the preregistration.\"\"\"\n\nTARGET_NAME = 'blocks.1.attn.q_proj.weight'\nREGISTERED_PHASES = ('loss_term',)\nLEARNS_PARAMETERS = False\n",
+      "operator_hook.py": "def apply_operator(ctx) -> None:\n    # Only act in loss_term phase (the only registered phase)\n    if ctx.phase != 'loss_term':\n        return\n    \n    # Control arm (baseline_1): do nothing - no loss term added\n    if ctx.condition == 'baseline_1':\n        return\n    \n    # Get reference weights from block 0's q_proj\n    reference_weights = ctx.model.blocks[0].attn.q_proj.weight.detach()\n    \n    # For negative_control_1, use a fixed random matrix instead of block 0's weights\n    if ctx.condition == 'negative_control_1':\n        # Initialize fixed random matrix on first call\n        if 'negative_control_reference' not in ctx.state:\n            # Create fixed random matrix with same shape and norm as block 0's weights\n            ref_norm = ctx.torch.norm(reference_weights)\n            random_matrix = ctx.randn_like(reference_weights)\n            random_norm = ctx.torch.norm(random_matrix)\n            random_matrix = random_matrix * (ref_norm / random_norm)\n            ctx.state['negative_control_reference'] = random_matrix\n        reference_weights = ctx.state['negative_control_reference'].detach()\n    \n    # Compute Frobenius norm consistency loss\n    diff = ctx.target - reference_weights\n    squared_elements = diff * diff\n    loss_raw = ctx.torch.sum(squared_elements)\n    consistency_coefficient = 0.01\n    loss_term = consistency_coefficient * loss_raw\n    \n    # Add loss term to training objective\n    ctx.add_loss(loss_term)\n"
+    },
+    "code_sha256": {
+      "_harness.py": "2f787b271fdf2a70dd1d9a8f034140b75a404d0a444b5a9612a50ed3dbabb210",
+      "_journal_entrypoint.py": "9c2a41e225e79f258f1693ee9b40f17f283d15f7164f54acecbc2db41d826973",
+      "_protocol.py": "7467e902b85e2dca4a59ce8bd1fd7293135be686ef0432a1a75f2842dba34b70",
+      "_semlock_monitor.py": "5032662617f234f9a3215b37cc776db3d2a878c16795ebe1b5481c531a2c683c",
+      "_testbed.py": "7be39188b9fddc9fb54d776685c4d1a26184c2c20008b5e19bbe1a1ad3b6a50d",
+      "experiment.py": "c822c5d665dc019b4bcecbbbaa0a8da4eeb08f86a2ad8d21fb9dd4c353aba643",
+      "operator_hook.py": "f2abcfb05ff281cdda9db7b5a973578506ccaf861db5cb667ff8c0b48a825b67"
+    },
+    "datasets": [
+      {
+        "filename": "uci-har-smartphones.zip",
+        "license": "CC BY 4.0",
+        "name": "uci_har_smartphones",
+        "notes": "UCI dataset DOI 10.24432/C54S4K; 10,299 windows, 6 activity classes, 30 subjects. Outer zip contains 'UCI HAR Dataset.zip'; raw per-channel inertial signals live under '<split>/Inertial Signals/<channel>_<split>.txt'.",
+        "sha256": "c00b803081a5c797cd5e4b83700a9810b38d53d9d84e01917e090e1fdbc81031",
+        "size_bytes": 61005872,
+        "source": "https://archive.ics.uci.edu/static/public/240/human+activity+recognition+using+smartphones.zip"
+      }
+    ],
+    "entrypoint": "experiment",
+    "image_ref": "pytorch/pytorch@sha256:c8268a92a69bd500f8be0e665b2630ee006dadaf7bfbc24249141b15ff622755",
+    "resources": {
+      "cpus": null,
+      "estimated_gpu_hours": 3.75,
+      "gpu_type": "",
+      "gpus": 1,
+      "mem": null,
+      "walltime": "03:45:00"
+    },
+    "run_args": {
+      "replication_seed_ids": [
+        977459171940437340,
+        4488684769213213828,
+        1946600601137041155,
+        3416445909951360620,
+        94015168479249032,
+        245818450391945052,
+        4163063857117823088,
+        2717512241999814344,
+        3272748125613112133,
+        2370826470989774210,
+        1246227564208053654,
+        1763313708890820020,
+        4237763328141452310,
+        189961628016980323,
+        3945708179936401034,
+        469354882092208534,
+        2362016536193918241,
+        159255973982391164,
+        4365608024907845659,
+        387604714248465277,
+        745895122294483880,
+        46716666623954822,
+        4499449375448926851,
+        3008410952988380379,
+        2884677716462523534,
+        989949122925515117,
+        778369360471311952,
+        2224210984340661255,
+        2176941969250537915,
+        3008498851693170318,
+        2776754912777002994,
+        1890870248134977771,
+        882560239534186207,
+        297046870819713949,
+        1418335113356987113,
+        1214865161567177267,
+        4237397377132919006,
+        1869765722857981507,
+        448793344464843120,
+        1346906245604336130,
+        816203111240928895,
+        1477596452365914441,
+        4367633781936564098
+      ],
+      "required_condition_ids": [
+        "proposed",
+        "baseline_1",
+        "negative_control_1"
+      ],
+      "seed_ids": [
+        1283456944311395052,
+        3089827065251130706,
+        3820704350825163869,
+        21236671524869010,
+        3415510045131152228,
+        2471081763373673405,
+        2374229508893286820,
+        2544941384231390184,
+        1567606677881050665,
+        2053777282625161573,
+        1221184456753876155,
+        3840525734538224513,
+        3504834781713389789,
+        77032002028652062,
+        4286278862225646279,
+        52245002576694452,
+        3986941535421188655,
+        4071087587955586190,
+        3260374718512374155,
+        4461885864847931220,
+        491323389332414539,
+        496860537829936944,
+        1932727500076940062,
+        3540548724348848006,
+        2513328952985036215,
+        609131993201635141,
+        4204928448906752539,
+        170530799314395416,
+        4086858104574164556,
+        2837886427063813598,
+        524975045864782648,
+        1034243053804099323,
+        2213998415094885164,
+        4277462776836849410,
+        369187523183942457,
+        2922011945439219839,
+        4356023442558125597,
+        3546063947330525743,
+        823309675197582790,
+        2178248810602791538,
+        1462835975243560544,
+        3406899122066815415,
+        2216116664296627259
+      ]
+    },
+    "seed": 1234,
+    "sif_sha256": "b04db4d9ba8a7e95505a053162340badfc283d7cb408bc7ec62ec60eb48fb02e",
+    "withheld_code_files": [
+      "_harness.py",
+      "_journal_entrypoint.py",
+      "_semlock_monitor.py",
+      "_testbed.py",
+      "experiment.py"
+    ]
+  },
+  "metrics": {
+    "conformance": {
+      "learns_parameters": false,
+      "realized": {
+        "baseline_1": {
+          "parameters": {},
+          "phases": []
+        },
+        "negative_control_1": {
+          "parameters": {},
+          "phases": [
+            "loss_term"
+          ]
+        },
+        "proposed": {
+          "parameters": {},
+          "phases": [
+            "loss_term"
+          ]
+        }
+      },
+      "registered_phases": [
+        "loss_term"
+      ]
+    },
+    "primary": {
+      "conditions": {
+        "baseline_1": {
+          "held-out classification accuracy": [
+            0.9233118425517476,
+            0.8887003732609433,
+            0.9253478113335596,
+            0.9148286392941974,
+            0.9104173736002714,
+            0.9138106549032915,
+            0.9070240922972514,
+            0.9104173736002714,
+            0.9148286392941974,
+            0.8995588734306074,
+            0.9015948422124194,
+            0.8961655921275874,
+            0.8971835765184933,
+            0.9104173736002714,
+            0.9127926705123854,
+            0.8954869358669834,
+            0.8982015609093994,
+            0.8853070919579233,
+            0.9009161859518154,
+            0.9039701391245334,
+            0.9243298269426535,
+            0.9093993892093655,
+            0.8890397013912453,
+            0.9073634204275535,
+            0.9093993892093655,
+            0.9093993892093655,
+            0.8951476077366813,
+            0.9178825924669155,
+            0.9124533423820834,
+            0.9039701391245334,
+            0.9002375296912114,
+            0.9093993892093655,
+            0.8920936545639634,
+            0.9077027485578555,
+            0.9168646080760094,
+            0.9060061079063454,
+            0.8849677638276213,
+            0.9267051238547676,
+            0.8744485917882593,
+            0.9053274516457415,
+            0.9077027485578555,
+            0.8995588734306074,
+            0.9131319986426875
+          ]
+        },
+        "negative_control_1": {
+          "held-out classification accuracy": [
+            0.9168646080760094,
+            0.8978622327790974,
+            0.9046487953851374,
+            0.9080420766881574,
+            0.8873430607397353,
+            0.9243298269426535,
+            0.9077027485578555,
+            0.9107567017305734,
+            0.8873430607397353,
+            0.9117746861214795,
+            0.9032914828639295,
+            0.9070240922972514,
+            0.8917543264336614,
+            0.9195792331184255,
+            0.9239904988123515,
+            0.9046487953851374,
+            0.9022734984730234,
+            0.8958262639972854,
+            0.9127926705123854,
+            0.9019341703427214,
+            0.9172039362063115,
+            0.9144893111638955,
+            0.9097387173396675,
+            0.9090600610790635,
+            0.8948082796063793,
+            0.9039701391245334,
+            0.8842891075670173,
+            0.9300984051577876,
+            0.9022734984730234,
+            0.8778418730912793,
+            0.8890397013912453,
+            0.9131319986426875,
+            0.8975229046487954,
+            0.9307770614183916,
+            0.9161859518154055,
+            0.9012555140821175,
+            0.9039701391245334,
+            0.9087207329487614,
+            0.9046487953851374,
+            0.8924329826942654,
+            0.8958262639972854,
+            0.8951476077366813,
+            0.9066847641669494
+          ]
+        },
+        "proposed": {
+          "held-out classification accuracy": [
+            0.9270444519850696,
+            0.9083814048184594,
+            0.9053274516457415,
+            0.9131319986426875,
+            0.8951476077366813,
+            0.9144893111638955,
+            0.9117746861214795,
+            0.9043094672548354,
+            0.9121140142517815,
+            0.9205972175093315,
+            0.9087207329487614,
+            0.9060061079063454,
+            0.8825924669155073,
+            0.9032914828639295,
+            0.9087207329487614,
+            0.8866644044791313,
+            0.9063454360366474,
+            0.9104173736002714,
+            0.9233118425517476,
+            0.9073634204275535,
+            0.9134713267729895,
+            0.9090600610790635,
+            0.9049881235154394,
+            0.8995588734306074,
+            0.9114353579911775,
+            0.9046487953851374,
+            0.8927723108245673,
+            0.9246691550729556,
+            0.9019341703427214,
+            0.8876823888700374,
+            0.8954869358669834,
+            0.9053274516457415,
+            0.9053274516457415,
+            0.9151679674244995,
+            0.9175432643366135,
+            0.9029521547336274,
+            0.9104173736002714,
+            0.9161859518154055,
+            0.8941296233457754,
+            0.9056667797760435,
+            0.8900576857821514,
+            0.8903970139124533,
+            0.9114353579911775
+          ]
+        }
+      },
+      "curves": {
+        "baseline_1": {
+          "held-out classification accuracy": [
+            [
+              0,
+              0.3887674497518171
+            ],
+            [
+              58,
+              0.8457398536943364
+            ],
+            [
+              116,
+              0.8669754815697477
+            ],
+            [
+              174,
+              0.8810931100606844
+            ],
+            [
+              232,
+              0.8843916951412947
+            ],
+            [
+              290,
+              0.8901208165970914
+            ],
+            [
+              406,
+              0.8968363570363237
+            ],
+            [
+              464,
+              0.895660545608068
+            ],
+            [
+              522,
+              0.9016342989717568
+            ],
+            [
+              580,
+              0.896867922443794
+            ],
+            [
+              638,
+              0.9031415471784472
+            ],
+            [
+              695,
+              0.9054142565162837
+            ]
+          ],
+          "training loss": [
+            [
+              0,
+              1.9199627166570619
+            ],
+            [
+              58,
+              0.2544236633666726
+            ],
+            [
+              116,
+              0.17560471334429675
+            ],
+            [
+              174,
+              0.1483078959376313
+            ],
+            [
+              232,
+              0.14094459074874258
+            ],
+            [
+              290,
+              0.12094274033294168
+            ],
+            [
+              406,
+              0.10935465229112049
+            ],
+            [
+              464,
+              0.11550369806760966
+            ],
+            [
+              522,
+              0.0977004581066065
+            ],
+            [
+              580,
+              0.09591433267260707
+            ],
+            [
+              638,
+              0.09145169713815977
+            ],
+            [
+              695,
+              0.09274201415652453
+            ]
+          ]
+        },
+        "negative_control_1": {
+          "held-out classification accuracy": [
+            [
+              0,
+              0.3887516670480821
+            ],
+            [
+              58,
+              0.8450217406743947
+            ],
+            [
+              116,
+              0.8673148097000498
+            ],
+            [
+              174,
+              0.8809589570789371
+            ],
+            [
+              232,
+              0.8824267485262904
+            ],
+            [
+              290,
+              0.890957299895045
+            ],
+            [
+              406,
+              0.8954948272188505
+            ],
+            [
+              464,
+              0.8934194016777017
+            ],
+            [
+              522,
+              0.8996141128936798
+            ],
+            [
+              580,
+              0.8934983151963766
+            ],
+            [
+              638,
+              0.9056509970723083
+            ],
+            [
+              695,
+              0.9050907110897165
+            ]
+          ],
+          "training loss": [
+            [
+              0,
+              1.9199627166570619
+            ],
+            [
+              58,
+              0.25695307344891305
+            ],
+            [
+              116,
+              0.1778735577367073
+            ],
+            [
+              174,
+              0.15001486917567808
+            ],
+            [
+              232,
+              0.14285155125828677
+            ],
+            [
+              290,
+              0.12558077847541765
+            ],
+            [
+              406,
+              0.11051611957508464
+            ],
+            [
+              464,
+              0.1172459875774938
+            ],
+            [
+              522,
+              0.0984629858718362
+            ],
+            [
+              580,
+              0.0988616569097652
+            ],
+            [
+              638,
+              0.0951425940837971
+            ],
+            [
+              695,
+              0.09390673119314881
+            ]
+          ]
+        },
+        "proposed": {
+          "held-out classification accuracy": [
+            [
+              0,
+              0.3887595583999496
+            ],
+            [
+              58,
+              0.8452348071748169
+            ],
+            [
+              116,
+              0.867867204330774
+            ],
+            [
+              174,
+              0.8817323095619508
+            ],
+            [
+              232,
+              0.8844074778450296
+            ],
+            [
+              290,
+              0.8887871781314853
+            ],
+            [
+              406,
+              0.8970888802960835
+            ],
+            [
+              464,
+              0.8938534260304131
+            ],
+            [
+              522,
+              0.8994326118007276
+            ],
+            [
+              580,
+              0.8961024613126475
+            ],
+            [
+              638,
+              0.9044672942921854
+            ],
+            [
+              695,
+              0.9061876089992981
+            ]
+          ],
+          "training loss": [
+            [
+              0,
+              1.9199627166570619
+            ],
+            [
+              58,
+              0.2567433517339618
+            ],
+            [
+              116,
+              0.17871498143257097
+            ],
+            [
+              174,
+              0.1518155819801397
+            ],
+            [
+              232,
+              0.1431317727059819
+            ],
+            [
+              290,
+              0.12658949993377508
+            ],
+            [
+              406,
+              0.11149718248566916
+            ],
+            [
+              464,
+              0.11744011089552281
+            ],
+            [
+              522,
+              0.09908425062894821
+            ],
+            [
+              580,
+              0.09689331409889598
+            ],
+            [
+              638,
+              0.09153867088431536
+            ],
+            [
+              695,
+              0.09670541626076366
+            ]
+          ]
+        }
+      },
+      "operator_activations": {
+        "baseline_1": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "negative_control_1": [
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696
+        ],
+        "proposed": [
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696
+        ]
+      },
+      "seed_ids": [
+        1283456944311395052,
+        3089827065251130706,
+        3820704350825163869,
+        21236671524869010,
+        3415510045131152228,
+        2471081763373673405,
+        2374229508893286820,
+        2544941384231390184,
+        1567606677881050665,
+        2053777282625161573,
+        1221184456753876155,
+        3840525734538224513,
+        3504834781713389789,
+        77032002028652062,
+        4286278862225646279,
+        52245002576694452,
+        3986941535421188655,
+        4071087587955586190,
+        3260374718512374155,
+        4461885864847931220,
+        491323389332414539,
+        496860537829936944,
+        1932727500076940062,
+        3540548724348848006,
+        2513328952985036215,
+        609131993201635141,
+        4204928448906752539,
+        170530799314395416,
+        4086858104574164556,
+        2837886427063813598,
+        524975045864782648,
+        1034243053804099323,
+        2213998415094885164,
+        4277462776836849410,
+        369187523183942457,
+        2922011945439219839,
+        4356023442558125597,
+        3546063947330525743,
+        823309675197582790,
+        2178248810602791538,
+        1462835975243560544,
+        3406899122066815415,
+        2216116664296627259
+      ]
+    },
+    "replication": {
+      "conditions": {
+        "baseline_1": {
+          "held-out classification accuracy": [
+            0.8934509670851714,
+            0.9189005768578216,
+            0.9222938581608415,
+            0.9104173736002714,
+            0.8961655921275874,
+            0.8893790295215473,
+            0.9100780454699695,
+            0.9131319986426875,
+            0.9043094672548354,
+            0.9032914828639295,
+            0.9049881235154394,
+            0.8764845605700713,
+            0.9046487953851374,
+            0.9260264675941635,
+            0.9009161859518154,
+            0.9070240922972514,
+            0.8890397013912453,
+            0.8887003732609433,
+            0.8917543264336614,
+            0.9270444519850696,
+            0.9066847641669494,
+            0.8978622327790974,
+            0.9090600610790635,
+            0.8975229046487954,
+            0.9114353579911775,
+            0.9005768578215134,
+            0.8903970139124533,
+            0.9073634204275535,
+            0.8880217170003394,
+            0.8893790295215473,
+            0.9178825924669155,
+            0.8883610451306413,
+            0.9100780454699695,
+            0.9151679674244995,
+            0.8866644044791313,
+            0.9127926705123854,
+            0.9073634204275535,
+            0.9066847641669494,
+            0.8900576857821514,
+            0.9192399049881235,
+            0.9104173736002714,
+            0.9124533423820834,
+            0.8982015609093994
+          ]
+        },
+        "negative_control_1": {
+          "held-out classification accuracy": [
+            0.8992195453003053,
+            0.9158466236851035,
+            0.8975229046487954,
+            0.9104173736002714,
+            0.8829317950458093,
+            0.9043094672548354,
+            0.9043094672548354,
+            0.9077027485578555,
+            0.9165252799457075,
+            0.9161859518154055,
+            0.8931116389548693,
+            0.8897183576518494,
+            0.9134713267729895,
+            0.9300984051577876,
+            0.9077027485578555,
+            0.9127926705123854,
+            0.8978622327790974,
+            0.9026128266033254,
+            0.8764845605700713,
+            0.9222938581608415,
+            0.9060061079063454,
+            0.8900576857821514,
+            0.9165252799457075,
+            0.8965049202578894,
+            0.8876823888700374,
+            0.8907363420427553,
+            0.9009161859518154,
+            0.9236511706820495,
+            0.8887003732609433,
+            0.8978622327790974,
+            0.9134713267729895,
+            0.9026128266033254,
+            0.9155072955548015,
+            0.9199185612487275,
+            0.8978622327790974,
+            0.9216152019002375,
+            0.9005768578215134,
+            0.9049881235154394,
+            0.8907363420427553,
+            0.9036308109942314,
+            0.9304377332880895,
+            0.8788598574821853,
+            0.9060061079063454
+          ]
+        },
+        "proposed": {
+          "held-out classification accuracy": [
+            0.9077027485578555,
+            0.9219545300305395,
+            0.9117746861214795,
+            0.9080420766881574,
+            0.8880217170003394,
+            0.9090600610790635,
+            0.9141499830335935,
+            0.8727519511367492,
+            0.9070240922972514,
+            0.9070240922972514,
+            0.8917543264336614,
+            0.8859857482185273,
+            0.9182219205972175,
+            0.9239904988123515,
+            0.9117746861214795,
+            0.8764845605700713,
+            0.9165252799457075,
+            0.9056667797760435,
+            0.8924329826942654,
+            0.9256871394638616,
+            0.8982015609093994,
+            0.8988802171700034,
+            0.9117746861214795,
+            0.8941296233457754,
+            0.9124533423820834,
+            0.9063454360366474,
+            0.8971835765184933,
+            0.9185612487275195,
+            0.8937902952154734,
+            0.8978622327790974,
+            0.9144893111638955,
+            0.8971835765184933,
+            0.9073634204275535,
+            0.9233118425517476,
+            0.9121140142517815,
+            0.9168646080760094,
+            0.8934509670851714,
+            0.9151679674244995,
+            0.8785205293518833,
+            0.9185612487275195,
+            0.9012555140821175,
+            0.9331523583305056,
+            0.8992195453003053
+          ]
+        }
+      },
+      "curves": {
+        "baseline_1": {
+          "held-out classification accuracy": [
+            [
+              0,
+              0.37498914939118233
+            ],
+            [
+              58,
+              0.8381404818459449
+            ],
+            [
+              116,
+              0.8711263326520466
+            ],
+            [
+              174,
+              0.8782127666290512
+            ],
+            [
+              232,
+              0.8829317950458095
+            ],
+            [
+              290,
+              0.8890554840949804
+            ],
+            [
+              406,
+              0.8915964993963119
+            ],
+            [
+              464,
+              0.8996377869492822
+            ],
+            [
+              522,
+              0.8979490376496397
+            ],
+            [
+              580,
+              0.9034493099012791
+            ],
+            [
+              638,
+              0.9017132124904317
+            ],
+            [
+              695,
+              0.9035282234199541
+            ]
+          ],
+          "training loss": [
+            [
+              0,
+              1.8837082968201748
+            ],
+            [
+              58,
+              0.2706857788008313
+            ],
+            [
+              116,
+              0.16214954333249912
+            ],
+            [
+              174,
+              0.1619415196568467
+            ],
+            [
+              232,
+              0.14712255344141362
+            ],
+            [
+              290,
+              0.1293903937519983
+            ],
+            [
+              406,
+              0.11098512444038723
+            ],
+            [
+              464,
+              0.11327403783798218
+            ],
+            [
+              522,
+              0.10898429553869159
+            ],
+            [
+              580,
+              0.10295280285699424
+            ],
+            [
+              638,
+              0.08546923949967983
+            ],
+            [
+              695,
+              0.09112910599296176
+            ]
+          ]
+        },
+        "negative_control_1": {
+          "held-out classification accuracy": [
+            [
+              0,
+              0.37498914939118233
+            ],
+            [
+              58,
+              0.8377616969563054
+            ],
+            [
+              116,
+              0.8704240023358404
+            ],
+            [
+              174,
+              0.8784179417776059
+            ],
+            [
+              232,
+              0.8821032030997231
+            ],
+            [
+              290,
+              0.8906732112278155
+            ],
+            [
+              406,
+              0.8923303951199879
+            ],
+            [
+              464,
+              0.8969152705549989
+            ],
+            [
+              522,
+              0.901042447581695
+            ],
+            [
+              580,
+              0.90479873107062
+            ],
+            [
+              638,
+              0.9039859218282682
+            ],
+            [
+              695,
+              0.90432524995857
+            ]
+          ],
+          "training loss": [
+            [
+              0,
+              1.8837082968201748
+            ],
+            [
+              58,
+              0.2717646235643431
+            ],
+            [
+              116,
+              0.16540172366901887
+            ],
+            [
+              174,
+              0.1654301259753316
+            ],
+            [
+              232,
+              0.14404092607803123
+            ],
+            [
+              290,
+              0.1273932324419188
+            ],
+            [
+              406,
+              0.10957804382886997
+            ],
+            [
+              464,
+              0.11770809051948924
+            ],
+            [
+              522,
+              0.10766739588837292
+            ],
+            [
+              580,
+              0.10315565288413403
+            ],
+            [
+              638,
+              0.08819223394574122
+            ],
+            [
+              695,
+              0.09263344799969779
+            ]
+          ]
+        },
+        "proposed": {
+          "held-out classification accuracy": [
+            [
+              0,
+              0.37498914939118233
+            ],
+            [
+              58,
+              0.8377222401969682
+            ],
+            [
+              116,
+              0.8705502639657198
+            ],
+            [
+              174,
+              0.8774630882016395
+            ],
+            [
+              232,
+              0.8840681497147277
+            ],
+            [
+              290,
+              0.8882584575563643
+            ],
+            [
+              406,
+              0.8935930114187866
+            ],
+            [
+              464,
+              0.8967969002769864
+            ],
+            [
+              522,
+              0.9010819043410325
+            ],
+            [
+              580,
+              0.9029126979742901
+            ],
+            [
+              638,
+              0.9026207179551926
+            ],
+            [
+              695,
+              0.9054852786830913
+            ]
+          ],
+          "training loss": [
+            [
+              0,
+              1.8837082968201748
+            ],
+            [
+              58,
+              0.27204837494118267
+            ],
+            [
+              116,
+              0.16558323402044384
+            ],
+            [
+              174,
+              0.16533647945453955
+            ],
+            [
+              232,
+              0.14417163109363512
+            ],
+            [
+              290,
+              0.1288020758088245
+            ],
+            [
+              406,
+              0.10981603729170422
+            ],
+            [
+              464,
+              0.11556688713472943
+            ],
+            [
+              522,
+              0.11064545948838078
+            ],
+            [
+              580,
+              0.10842205705337746
+            ],
+            [
+              638,
+              0.08892946958888409
+            ],
+            [
+              695,
+              0.09600467822882672
+            ]
+          ]
+        }
+      },
+      "operator_activations": {
+        "baseline_1": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "negative_control_1": [
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696
+        ],
+        "proposed": [
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696,
+          696
+        ]
+      },
+      "seed_ids": [
+        977459171940437340,
+        4488684769213213828,
+        1946600601137041155,
+        3416445909951360620,
+        94015168479249032,
+        245818450391945052,
+        4163063857117823088,
+        2717512241999814344,
+        3272748125613112133,
+        2370826470989774210,
+        1246227564208053654,
+        1763313708890820020,
+        4237763328141452310,
+        189961628016980323,
+        3945708179936401034,
+        469354882092208534,
+        2362016536193918241,
+        159255973982391164,
+        4365608024907845659,
+        387604714248465277,
+        745895122294483880,
+        46716666623954822,
+        4499449375448926851,
+        3008410952988380379,
+        2884677716462523534,
+        989949122925515117,
+        778369360471311952,
+        2224210984340661255,
+        2176941969250537915,
+        3008498851693170318,
+        2776754912777002994,
+        1890870248134977771,
+        882560239534186207,
+        297046870819713949,
+        1418335113356987113,
+        1214865161567177267,
+        4237397377132919006,
+        1869765722857981507,
+        448793344464843120,
+        1346906245604336130,
+        816203111240928895,
+        1477596452365914441,
+        4367633781936564098
+      ]
+    },
+    "semlock": {
+      "conditions": {
+        "baseline_1": {
+          "calls": 179568,
+          "detached_reparameterization": [],
+          "fingerprint": null,
+          "footprint_checks": 0,
+          "foreign_mutations": [],
+          "foreign_optimizer_state": [],
+          "full_checks": 3870,
+          "global_rng_draws": [],
+          "gradient_footprint": [],
+          "optimizer_hyperparameters": [],
+          "runs": 86,
+          "stochastic_calls": 0,
+          "structure_changes": [],
+          "version": 1
+        },
+        "negative_control_1": {
+          "calls": 179568,
+          "detached_reparameterization": [],
+          "fingerprint": null,
+          "footprint_checks": 1290,
+          "foreign_mutations": [],
+          "foreign_optimizer_state": [],
+          "full_checks": 3870,
+          "global_rng_draws": [],
+          "gradient_footprint": [],
+          "optimizer_hyperparameters": [],
+          "runs": 86,
+          "stochastic_calls": 86,
+          "structure_changes": [],
+          "version": 1
+        },
+        "proposed": {
+          "calls": 179568,
+          "detached_reparameterization": [],
+          "fingerprint": null,
+          "footprint_checks": 1290,
+          "foreign_mutations": [],
+          "foreign_optimizer_state": [],
+          "full_checks": 3870,
+          "global_rng_draws": [],
+          "gradient_footprint": [],
+          "optimizer_hyperparameters": [],
+          "runs": 86,
+          "stochastic_calls": 0,
+          "structure_changes": [],
+          "version": 1
+        }
+      },
+      "sampling": {
+        "full_check_steps": 2,
+        "full_check_stride": 50
+      },
+      "smoke": false,
+      "version": 1
+    }
+  },
+  "packet_sha256": "553de9bdc08c1fb42b6355d227c4507ce0df0f528e5eb4f1ddfb1da927a97106",
+  "run_id": "ea66c916-2ea9-4369-b08f-4eb470205a40",
+  "schema": "public-reproduction-record/1",
+  "statement": "Public form of the frozen reproduction packet. The run-specific code (the generated operator and the protocol constants) is included verbatim; the platform components (harness, runner, testbed, monitor, wrapper) are identified by SHA-256 only. The complete packet, with every source file, is archived privately by the journal, which performs the independent re-run from it; packet_sha256 is the digest of that complete packet.",
+  "version": 1
+}
