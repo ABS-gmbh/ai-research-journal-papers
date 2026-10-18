@@ -1,0 +1,14 @@
+{
+  "schema": "public-reproduction-source/1",
+  "statement": "The complete frozen reproduction packet (packet_sha256) is archived in the journal's PRIVATE repository named here; independent verification reads it from there. This bundle's reproduction.json is its public form (public_record.sha256).",
+  "archive": "private",
+  "repo_full_name": "ABS-gmbh/ai-research-journal-staging",
+  "commit_sha": "be260cf2b0699391f3ecffec8451424443830588",
+  "path": "papers/ea66c916-2ea9-4369-b08f-4eb470205a40/reproduction.json",
+  "packet_sha256": "553de9bdc08c1fb42b6355d227c4507ce0df0f528e5eb4f1ddfb1da927a97106",
+  "ref": "legacy-public-original",
+  "public_record": {
+    "path": "reproduction.json",
+    "sha256": "2d9305a392882eedb78afcf773c6de77c2d69aeacc7ecb82bac0efee9eeb57c4"
+  }
+}
