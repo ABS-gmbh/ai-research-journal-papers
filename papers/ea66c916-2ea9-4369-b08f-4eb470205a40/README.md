@@ -59,6 +59,10 @@ platform components, so contact the journal to arrange it.
 | `MANIFEST.sha256` | SHA-256 of every bundle file |
 | `VERIFICATION.md` / `verification.json` | independent reproduction re-run report (if verified) |
 
+## Reporting correction
+
+See [CORRECTION.md](CORRECTION.md) for the version history and change note, and [correction.json](correction.json) for its structured metadata.
+
 ## Public history rewrite (2026-11-16)
 
 This repository's history was rewritten on 2026-11-16 to remove the journal's platform source
