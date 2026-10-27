@@ -1,0 +1,209 @@
+# Preregistration
+
+> 🤖 This record was written by the autonomous pipeline at the DESIGN stage,
+> BEFORE the experiment was executed, and committed unchanged. It fixes the
+> hypothesis, the predicted effect, the metrics, and the analysis plan in advance
+> so the reported findings cannot be retrofitted to the results (HARKing).
+
+- **Registered at:** 2026-10-27T12:49:06.400663+00:00
+- **Experiment:** FFN Neuron Capacity Balancing Tests Whether Weight Norm Uniformity Improves Subject-Disjoint Generalization in Time-Series Transformers
+- **Research question:** Does balancing FFN neuron capacities improve subject-disjoint generalization in the uci_har_small_transformer_v1 testbed?
+- **Primary metric:** held-out classification accuracy
+- **Metrics:** held-out classification accuracy
+- **Baselines:** Control arm, defined by what the harness guarantees rather than by a description of the intervention. Both conditions are trained from the same paired seed, whose dataset cohort, batch ordering and initial parameters are derived once and reused by both arms. Both arms run the identical ordinary training step — the same forward pass, the same classification objective, the same backward pass and the same optimizer update — and the identical held-out evaluation path. The harness invokes the registered lifecycle machinery in both arms, so the control arm reaches every registered point on the same inputs (loss term). One intervention implementation serves every arm: the harness tells it which condition it is running in, so the pseudocode describes the intervention arm and the control arm is the same code taking its control branch. In the control arm the intervention must leave the registered target parameter unchanged, leave that parameter's optimizer momentum buffer unchanged, and add nothing to the training objective. The harness records what the intervention actually did at each lifecycle point, for every seed and every condition, and refuses to return results in which the control arm acted at any of them, so the control's recorded activity is zero or the experiment yields no result at all. Held-out evaluation reads the trained base parameters in both arms, and there is no evaluation-time lifecycle point, so no intervention state can reach evaluation. Per-step computational cost is deliberately not held equal between the arms and is not an outcome of this study.
+- **Publication policy:** publish_all_valid_outcomes
+- **Publishable valid outcomes:** direction_supported, direction_refuted, inconclusive
+- **Seeds per condition:** 43
+- **Primary seed IDs:** 3082305311014867827, 4186422859404013514, 2387181325241556003, 3182619286003977438, 3438331344051643608, 620252232043632839, 3239163973742456083, 1898248096129308665, 1066012308908509790, 4438929654394750517, 2854402741562619104, 1920862951106082837, 1536148981766593057, 1964427229086117459, 1887475434142652658, 3772847866917766394, 359941395117292827, 2136554577369890083, 4188340981133805670, 1315161378058826978, 1415188985576409927, 1310082642526382996, 2736886400400380092, 1485561164519252005, 3502707465086045048, 3394863877104515794, 371674130373742582, 1386069600169889359, 3148930491141517020, 1013576460105568673, 3638501434658534819, 2453211275455103459, 2735914919971171670, 357041012913871729, 2525930462449636703, 1404659974452858503, 2421171159155662627, 1567729552275512853, 3073538427502128060, 2266614561625367693, 3237028201528057935, 633394856712588532, 4364642531486158638
+- **Executed confirmatory-replication seed IDs:** 4320773929864477461, 4572011691334341044, 1024169838608046568, 70426179010925050, 4279951434647552413, 1525730301824159332, 2456995112630259840, 1438940561707491066, 3265594330752860948, 3313077302295843199, 154257161523473883, 932959957416460902, 2460345311424550248, 4103027776969344918, 3180763842676044575, 2680763204965541202, 860343005213925595, 2251660953322924511, 3602542195028900413, 4597019890493101173, 1088915320621658123, 1852251732497043221, 3465798054693121361, 1353228797488142695, 4288297583911624336, 4255826400377963612, 2929822804607519445, 1498830690282327365, 3112246099719202789, 1000118519658128261, 1257818511997115116, 1228137926523810998, 7730833112919494, 2311327190165276681, 2983717921336380133, 1878749905703531082, 699211854863334235, 3299934322367760388, 1909067866147248581, 848308637145405381, 749878386657420966, 689681967342702198, 249916436928423872
+
+## Hypothesis
+
+The intervention is predicted to yield higher held-out classification accuracy than the comparator, with mean hypothesis-positive paired contrast H_s exceeding the fixed worthwhile margin of 0.0125098 proportion.
+
+## Predicted direction / effect
+
+The intervention is predicted to yield higher held-out classification accuracy than the comparator, with mean hypothesis-positive paired contrast H_s exceeding the fixed worthwhile margin of 0.0125098 proportion. Specifically, we predict: The intervention is predicted to yield higher held-out classification accuracy than the comparator, with mean hypothesis-positive paired contrast H_s exceeding the fixed worthwhile margin of 0.0125098 proportion.
+
+## Fixed operational specification
+
+```json
+{
+  "alternative_hypotheses": [
+    "Regularization acts as generic weight decay without geometry-specific benefits"
+  ],
+  "boundary_conditions": [
+    "Limited to 2-block PreNormTransformerEncoder architecture on uci_har_small_transformer_v1 testbed",
+    "Effect may differ with more depth or different attention mechanisms",
+    "Scope (server-owned): single calibrated testbed uci_har_small_transformer_v1 \u2014 UCI Human Activity Recognition Using Smartphones (DOI 10.24432/C54S4K; raw inertial signals, 128-timestep windows over 9 channels; official subject-disjoint split of 7,352 training and 2,947 held-out windows); model PreNormTransformerEncoder(Linear(9,64) + learned positional embedding(128,64); 2 blocks, each LayerNorm(64) -> 4-head self-attention over 128 timesteps with q/k/v/out Linear(64,64) -> residual -> LayerNorm(64) -> Linear(64,128) -> ReLU -> Linear(128,64) -> residual; final LayerNorm(64), mean-pool over time, Linear(64,6)); evaluated as the official UCI HAR test split \u2014 2,947 windows recorded from 9 subjects who appear in no training window, so the held-out cohort is subject-disjoint rather than a random row split, and is never used for training or tuning",
+    "For each seed, both conditions use identical initialization, data split/order, stochastic draws, hyperparameters, tuning, update count, and compute budget.",
+    "Model and optimizer state are reset independently for each condition; no trained state is carried between paired runs."
+  ],
+  "calibration_record_id": "ef4188ff-a4a8-4720-a3a7-f59d889d0c94",
+  "canonical_hypothesis": "The intervention is predicted to yield higher held-out classification accuracy than the comparator, with mean hypothesis-positive paired contrast H_s exceeding the fixed worthwhile margin of 0.0125098 proportion.",
+  "comparator": "Control arm, defined by what the harness guarantees rather than by a description of the intervention. Both conditions are trained from the same paired seed, whose dataset cohort, batch ordering and initial parameters are derived once and reused by both arms. Both arms run the identical ordinary training step \u2014 the same forward pass, the same classification objective, the same backward pass and the same optimizer update \u2014 and the identical held-out evaluation path. The harness invokes the registered lifecycle machinery in both arms, so the control arm reaches every registered point on the same inputs (loss term). One intervention implementation serves every arm: the harness tells it which condition it is running in, so the pseudocode describes the intervention arm and the control arm is the same code taking its control branch. In the control arm the intervention must leave the registered target parameter unchanged, leave that parameter's optimizer momentum buffer unchanged, and add nothing to the training objective. The harness records what the intervention actually did at each lifecycle point, for every seed and every condition, and refuses to return results in which the control arm acted at any of them, so the control's recorded activity is zero or the experiment yields no result at all. Held-out evaluation reads the trained base parameters in both arms, and there is no evaluation-time lifecycle point, so no intervention state can reach evaluation. Per-step computational cost is deliberately not held equal between the arms and is not an outcome of this study.",
+  "decision_consequence": "If supported, include FFN row-norm variance regularization in the uci_har_small_transformer_v1 baseline recipe for future studies on this testbed. If refuted, discontinue investigation of FFN weight geometry regularization for this testbed configuration. If inconclusive, retain the question as open for this testbed and consider modified interventions or additional runs.",
+  "decision_value": "Using the two-sided paired-bootstrap 95% CI for mean(H_s), support the preregistered directional effect only when CI_low > 0.0125098; refute that directional effect when CI_high <= 0; otherwise report inconclusive. The paired sign-flip p-value is descriptive and does not replace this decision rule. Decision consequence: If supported, include FFN row-norm variance regularization in the uci_har_small_transformer_v1 baseline recipe for future studies on this testbed. If refuted, discontinue investigation of FFN weight geometry regularization for this testbed configuration. If inconclusive, retain the question as open for this testbed and consider modified interventions or additional runs.",
+  "estimand": "Hypothesis-positive paired contrast H_s = outcome_intervention - outcome_comparator; estimand = arithmetic mean of H_s over the preregistered primary seed IDs.",
+  "failure_handling": "A non-finite outcome is never a data point: the harness raises on any non-finite value for either condition in that seed pair, so the job fails and reports nothing rather than a value it did not measure. No preregistered seed is discarded, skipped, or rerun, and no outcome is imputed.",
+  "falsification_criteria": [
+    "Refute the preregistered directional effect when the two-sided paired-bootstrap 95% CI upper endpoint for mean(H_s) is <= 0.",
+    "Do not claim a worthwhile directional effect unless that CI's lower endpoint exceeds the fixed margin 0.0125098 proportion."
+  ],
+  "hypothesis_positive_multiplier": 1,
+  "hypothesized_direction": "intervention_better",
+  "intervention": "Server-bound target blocks.0.fc1.weight has stored tensor shape (128, 64). Add FFN Row-Norm Variance Loss Term",
+  "intervention_protocol": {
+    "application_timing": "Executed lifecycle (server-owned): the operator is invoked during loss computation of every optimization step: the operator's term is added to the classification objective inside the autograd graph, so the combined objective is what is differentiated and every operator-owned parameter is trained by it.",
+    "execution_phases": [
+      "loss_term"
+    ],
+    "invariants": [
+      "Loss term is non-negative",
+      "Gradient flows to W through the loss",
+      "Coefficient is fixed at 0.01",
+      "Penalty is added to classification loss before backward pass"
+    ],
+    "learns_parameters": false,
+    "normalization_rule": "None (raw norms).",
+    "numerical_safeguards": "Clamp variance to >= 0. Epsilon 1e-8 for norm stability.",
+    "operator_name": "FFNRowNormVarianceRegularization",
+    "ordering_rule": "Compute norms, then mean, then variance, then scale and add to loss.",
+    "pseudocode": [
+      "Retrieve target parameter tensor W with shape [128, 64].",
+      "Compute row norms: norms = torch.norm(W, p=2, dim=1).",
+      "Compute mean norm: mu = norms.mean().",
+      "Compute centered norms: centered = norms - mu.",
+      "Compute variance penalty: var_penalty = (centered ** 2).mean().",
+      "Scale penalty: scaled_penalty = var_penalty * 0.01.",
+      "Add scaled_penalty to the classification loss before the backward pass.",
+      "Scope (server-owned): control arm. Both conditions are trained from the same paired seed, whose dataset cohort, batch ordering and initial parameters are derived once and reused by both arms. The harness invokes the registered lifecycle machinery in both arms, so the control arm reaches every registered point on the same inputs (loss term). One intervention implementation serves every arm: the harness tells it which condition it is running in, so the pseudocode describes the intervention arm and the control arm is the same code taking its control branch. If the condition the harness passes in is a control condition, return here: add no term to the training objective, and leave the registered target parameter and that parameter's optimizer momentum buffer exactly as received. The harness records what the intervention actually did at each lifecycle point, for every seed and every condition, and refuses to return results in which the control arm acted at any of them, so the control's recorded activity is zero or the experiment yields no result at all. Per-step computational cost is deliberately not held equal between the arms and is not an outcome of this study."
+    ],
+    "tensor_axis_or_scope": "dim=1 (output neurons)"
+  },
+  "intervention_target": "blocks.0.fc1.weight",
+  "intervention_target_shape": [
+    128,
+    64
+  ],
+  "leakage_risks": [
+    "None identified - held-out evaluation is subject-disjoint and never used for training or tuning"
+  ],
+  "mechanistic_rationale": "Uniform neuron capacity prevents over-reliance on specific features, improving robustness to subject-specific sensor noise in inertial signal classification.",
+  "negative_controls": [
+    "Apply variance penalty to column norms (dim=0) instead of row norms, with identical coefficient 0.01"
+  ],
+  "outcome_formula": "number of correct activity predictions / 2947 windows in the official subject-disjoint UCI HAR test split",
+  "outcome_higher_is_better": true,
+  "outcome_name": "held-out classification accuracy",
+  "outcome_range_max": 1.0,
+  "outcome_range_min": 0.0,
+  "outcome_unit": "proportion",
+  "planning_sd": 0.025019595493970412,
+  "planning_sd_basis": "Immutable calibration record ef4188ff-a4a8-4720-a3a7-f59d889d0c94; baseline-only paired-null bootstrap UCL80 under recipe sha256:94f3ad0aa281d8b6845da79f0abcea1cd604a36c8b00ffcce5861e16cc4ff155.",
+  "population": "Training runs of PreNormTransformerEncoder on UCI HAR with subject-disjoint split",
+  "primary_outcome": "held-out classification accuracy: number of correct activity predictions / 2947 windows in the official subject-disjoint UCI HAR test split; unit=proportion; range=[0, 1]; computed once per seeded run; higher is better; failure handling: A non-finite outcome is never a data point: the harness raises on any non-finite value for either condition in that seed pair, so the job fails and reports nothing rather than a value it did not measure. No preregistered seed is discarded, skipped, or rerun, and no outcome is imputed.",
+  "replication_plan": "Independently repeat the same paired protocol using both conditions for every disjoint replication seed ID [4320773929864477461, 4572011691334341044, 1024169838608046568, 70426179010925050, 4279951434647552413, 1525730301824159332, 2456995112630259840, 1438940561707491066, 3265594330752860948, 3313077302295843199, 154257161523473883, 932959957416460902, 2460345311424550248, 4103027776969344918, 3180763842676044575, 2680763204965541202, 860343005213925595, 2251660953322924511, 3602542195028900413, 4597019890493101173, 1088915320621658123, 1852251732497043221, 3465798054693121361, 1353228797488142695, 4288297583911624336, 4255826400377963612, 2929822804607519445, 1498830690282327365, 3112246099719202789, 1000118519658128261, 1257818511997115116, 1228137926523810998, 7730833112919494, 2311327190165276681, 2983717921336380133, 1878749905703531082, 699211854863334235, 3299934322367760388, 1909067866147248581, 848308637145405381, 749878386657420966, 689681967342702198, 249916436928423872]; reset all state and apply the identical hypothesis-positive contrast and fixed CI decision rule.",
+  "replication_seed_ids": [
+    4320773929864477461,
+    4572011691334341044,
+    1024169838608046568,
+    70426179010925050,
+    4279951434647552413,
+    1525730301824159332,
+    2456995112630259840,
+    1438940561707491066,
+    3265594330752860948,
+    3313077302295843199,
+    154257161523473883,
+    932959957416460902,
+    2460345311424550248,
+    4103027776969344918,
+    3180763842676044575,
+    2680763204965541202,
+    860343005213925595,
+    2251660953322924511,
+    3602542195028900413,
+    4597019890493101173,
+    1088915320621658123,
+    1852251732497043221,
+    3465798054693121361,
+    1353228797488142695,
+    4288297583911624336,
+    4255826400377963612,
+    2929822804607519445,
+    1498830690282327365,
+    3112246099719202789,
+    1000118519658128261,
+    1257818511997115116,
+    1228137926523810998,
+    7730833112919494,
+    2311327190165276681,
+    2983717921336380133,
+    1878749905703531082,
+    699211854863334235,
+    3299934322367760388,
+    1909067866147248581,
+    848308637145405381,
+    749878386657420966,
+    689681967342702198,
+    249916436928423872
+  ],
+  "sample_size_rationale": "Prospective paired normal approximation with two-sided alpha=0.05: planning SD(H_s)=0.0250196 proportion, worthwhile effect=0.0125098, target power=0.90, required n=43; fixed n=43. Planning-SD basis: Immutable calibration record ef4188ff-a4a8-4720-a3a7-f59d889d0c94; baseline-only paired-null bootstrap UCL80 under recipe sha256:94f3ad0aa281d8b6845da79f0abcea1cd604a36c8b00ffcce5861e16cc4ff155. Worthwhile-effect basis: Versioned policy accuracy_fraction_v1 in proportion: max(absolute floor 0.005, fixed SD multiplier).",
+  "seed_ids": [
+    3082305311014867827,
+    4186422859404013514,
+    2387181325241556003,
+    3182619286003977438,
+    3438331344051643608,
+    620252232043632839,
+    3239163973742456083,
+    1898248096129308665,
+    1066012308908509790,
+    4438929654394750517,
+    2854402741562619104,
+    1920862951106082837,
+    1536148981766593057,
+    1964427229086117459,
+    1887475434142652658,
+    3772847866917766394,
+    359941395117292827,
+    2136554577369890083,
+    4188340981133805670,
+    1315161378058826978,
+    1415188985576409927,
+    1310082642526382996,
+    2736886400400380092,
+    1485561164519252005,
+    3502707465086045048,
+    3394863877104515794,
+    371674130373742582,
+    1386069600169889359,
+    3148930491141517020,
+    1013576460105568673,
+    3638501434658534819,
+    2453211275455103459,
+    2735914919971171670,
+    357041012913871729,
+    2525930462449636703,
+    1404659974452858503,
+    2421171159155662627,
+    1567729552275512853,
+    3073538427502128060,
+    2266614561625367693,
+    3237028201528057935,
+    633394856712588532,
+    4364642531486158638
+  ],
+  "smallest_worthwhile_effect": "0.0125098 proportion on H_s",
+  "smallest_worthwhile_effect_basis": "Versioned policy accuracy_fraction_v1 in proportion: max(absolute floor 0.005, fixed SD multiplier).",
+  "smallest_worthwhile_effect_value": 0.012509797746985206,
+  "target_power": 0.9,
+  "testbed_id": "uci_har_small_transformer_v1",
+  "unit_of_analysis": "Seeded training run"
+}
+```
+
+## Analysis plan (statistics + seeds)
+
+Each condition (the proposed method vs the baseline(s): Control arm, defined by what the harness guarantees rather than by a description of the intervention. Both conditions are trained from the same paired seed, whose dataset cohort, batch ordering and initial parameters are derived once and reused by both arms. Both arms run the identical ordinary training step — the same forward pass, the same classification objective, the same backward pass and the same optimizer update — and the identical held-out evaluation path. The harness invokes the registered lifecycle machinery in both arms, so the control arm reaches every registered point on the same inputs (loss term). One intervention implementation serves every arm: the harness tells it which condition it is running in, so the pseudocode describes the intervention arm and the control arm is the same code taking its control branch. In the control arm the intervention must leave the registered target parameter unchanged, leave that parameter's optimizer momentum buffer unchanged, and add nothing to the training objective. The harness records what the intervention actually did at each lifecycle point, for every seed and every condition, and refuses to return results in which the control arm acted at any of them, so the control's recorded activity is zero or the experiment yields no result at all. Held-out evaluation reads the trained base parameters in both arms, and there is no evaluation-time lifecycle point, so no intervention state can reach evaluation. Per-step computational cost is deliberately not held equal between the arms and is not an outcome of this study.) is first run across the 43 primary random seeds fixed in advance with exact IDs [3082305311014867827, 4186422859404013514, 2387181325241556003, 3182619286003977438, 3438331344051643608, 620252232043632839, 3239163973742456083, 1898248096129308665, 1066012308908509790, 4438929654394750517, 2854402741562619104, 1920862951106082837, 1536148981766593057, 1964427229086117459, 1887475434142652658, 3772847866917766394, 359941395117292827, 2136554577369890083, 4188340981133805670, 1315161378058826978, 1415188985576409927, 1310082642526382996, 2736886400400380092, 1485561164519252005, 3502707465086045048, 3394863877104515794, 371674130373742582, 1386069600169889359, 3148930491141517020, 1013576460105568673, 3638501434658534819, 2453211275455103459, 2735914919971171670, 357041012913871729, 2525930462449636703, 1404659974452858503, 2421171159155662627, 1567729552275512853, 3073538427502128060, 2266614561625367693, 3237028201528057935, 633394856712588532, 4364642531486158638], then independently rerun across the disjoint confirmatory-replication IDs [4320773929864477461, 4572011691334341044, 1024169838608046568, 70426179010925050, 4279951434647552413, 1525730301824159332, 2456995112630259840, 1438940561707491066, 3265594330752860948, 3313077302295843199, 154257161523473883, 932959957416460902, 2460345311424550248, 4103027776969344918, 3180763842676044575, 2680763204965541202, 860343005213925595, 2251660953322924511, 3602542195028900413, 4597019890493101173, 1088915320621658123, 1852251732497043221, 3465798054693121361, 1353228797488142695, 4288297583911624336, 4255826400377963612, 2929822804607519445, 1498830690282327365, 3112246099719202789, 1000118519658128261, 1257818511997115116, 1228137926523810998, 7730833112919494, 2311327190165276681, 2983717921336380133, 1878749905703531082, 699211854863334235, 3299934322367760388, 1909067866147248581, 848308637145405381, 749878386657420966, 689681967342702198, 249916436928423872]. For every metric (held-out classification accuracy) we report the per-condition mean with a bootstrap 95% confidence interval separately in each block. The proposed-vs-baseline difference on the primary metric ('held-out classification accuracy') is tested with a two-sided paired sign-flip randomisation test and a paired bootstrap confidence interval, together with Cohen's dz, applying the identical preregistered decision rule independently to primary and replication without pooling. Secondary-metric p-values use Holm family-wise-error correction. Every declared negative control is executed in both seed blocks under its registered condition ID and reported descriptively, but is excluded from the primary decision. The seed identities, metrics, and comparisons are fixed now; none are added after seeing the results. Smallest worthwhile effect: 0.0125098 proportion on H_s. Power justification: Prospective paired normal approximation with two-sided alpha=0.05: planning SD(H_s)=0.0250196 proportion, worthwhile effect=0.0125098, target power=0.90, required n=43; fixed n=43. Planning-SD basis: Immutable calibration record ef4188ff-a4a8-4720-a3a7-f59d889d0c94; baseline-only paired-null bootstrap UCL80 under recipe sha256:94f3ad0aa281d8b6845da79f0abcea1cd604a36c8b00ffcce5861e16cc4ff155. Worthwhile-effect basis: Versioned policy accuracy_fraction_v1 in proportion: max(absolute floor 0.005, fixed SD multiplier).. Stopping rule: Run every preregistered primary and replication seed exactly once per condition for the fixed training/evaluation budget; analyze the two blocks separately with no outcome-dependent stopping, pooling, or seed replacement.. Multiplicity: Primary decision based on single contrast (Intervention vs Baseline). Negative controls and ablations are descriptive or use Holm-Bonferroni correction if claiming significance. Primary CI decision rule takes precedence..
