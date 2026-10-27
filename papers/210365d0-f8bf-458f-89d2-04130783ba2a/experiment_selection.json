@@ -1,0 +1,260 @@
+{
+  "assumptions": [
+    "undetected-flaw rate 0.05 (sensitivity 0-0.15), a planning assumption",
+    "failure rate 0.286: 1 of 5 executed registered studies ended without a publishable outcome; Beta(1,1) posterior mean",
+    "Episteme's effect model A1-A4; information is expected reduction in entropy (bits)"
+  ],
+  "belief_revision": 5,
+  "belief_state_sha256": "911e228b2adf399d2ff54e89d20c08e0a32f0f1a00cc5f880ce3389ca8f33c6f",
+  "chosen_matches_planner": null,
+  "chosen_valuation": {
+    "constraints": [
+      {
+        "detail": "a new registered study on fresh seeds",
+        "id": "new_registration",
+        "status": "pass"
+      },
+      {
+        "detail": "the harness records every quantity this study measures",
+        "id": "observables_recorded",
+        "status": "pass"
+      },
+      {
+        "detail": "uses the calibrated recipe as registered",
+        "id": "recipe_unchanged",
+        "status": "pass"
+      },
+      {
+        "detail": "uci_har_small_transformer_v1 has an offerable calibration record",
+        "id": "testbed_calibrated",
+        "status": "pass"
+      },
+      {
+        "detail": "not closed by a scientific rejection",
+        "id": "direction_open",
+        "status": "pass"
+      },
+      {
+        "detail": "expected 1.16 GPU-h within the per-run cap 12",
+        "id": "within_run_cap",
+        "status": "pass"
+      },
+      {
+        "detail": "expected $2.91 vs per-run cap $50",
+        "id": "within_run_cap_usd",
+        "status": "pass"
+      },
+      {
+        "detail": "expected $2.91 vs $996.78 left this month",
+        "id": "within_monthly_budget",
+        "status": "pass"
+      }
+    ],
+    "contrast": "FFNRowNormVarianceRegularization on blocks.0.fc1.weight [uci_har_small_transformer_v1]",
+    "cost": {
+      "basis": "8.12 GPU-seconds per training measured on 9 completed job(s) of uci_har_small_transformer_v1; 258 trainings per job x 2 job(s) (incl. the mandatory pre-publication reproduction); 90% prediction interval from 9 jobs (t, df=8); wall-clock adds the queue wait measured from Slurm's start time on 2 of 9 job(s); the rest submission-to-settlement minus runtime, which includes polling",
+      "ceiling_gpu_hours": 1.0,
+      "gpu_hours": 1.1637,
+      "gpu_hours_high": 1.2907,
+      "gpu_hours_low": 1.0368,
+      "jobs": 2,
+      "queue_hours": 1.112,
+      "reliability": "measured",
+      "runtime_hours": 1.164,
+      "trainings_per_job": 258,
+      "usd": 2.91
+    },
+    "discriminates": [
+      "worthwhile benefit",
+      "negligible",
+      "worthwhile harm"
+    ],
+    "index": 0,
+    "matched_frame": null,
+    "notes": [],
+    "prior_evidence": [],
+    "probe": "new_intervention",
+    "resolves": "which effect region holds for FFNRowNormVarianceRegularization on blocks.0.fc1.weight [uci_har_small_transformer_v1], which has no evidence yet",
+    "testbed_id": "uci_har_small_transformer_v1",
+    "title": "FFN Neuron Capacity Balancing Tests Whether Weight Norm Uniformity Improves Subject-Disjoint Generalization in Time-Series Transformers",
+    "value": {
+      "bits": 0.834135,
+      "discrimination_bits": null,
+      "estimator": "region_grid",
+      "high": 0.982034,
+      "interval_basis": "undetected-flaw rate 0-0.15 (point 0.05); failure rate 0.286 applied exactly",
+      "low": 0.633319,
+      "shadow": {},
+      "unvaluable_reason": null
+    },
+    "value_per_gpu_hour": 0.716796
+  },
+  "contrast": "FFNRowNormVarianceRegularization on blocks.0.fc1.weight [uci_har_small_transformer_v1]",
+  "expected_to_resolve": "which effect region holds for FFNRowNormVarianceRegularization on blocks.0.fc1.weight [uci_har_small_transformer_v1], which has no evidence yet",
+  "mode": "advisory",
+  "plan_sha256": "c60036280d3433b4d62f18c38f2869bfeade277885cfa42e47a14d854a3509c6",
+  "planner_selected": null,
+  "planner_selected_title": "",
+  "portfolio": [
+    {
+      "constraints": [
+        {
+          "detail": "a new registered study on fresh seeds",
+          "id": "new_registration",
+          "status": "pass"
+        },
+        {
+          "detail": "the harness records every quantity this study measures",
+          "id": "observables_recorded",
+          "status": "pass"
+        },
+        {
+          "detail": "uses the calibrated recipe as registered",
+          "id": "recipe_unchanged",
+          "status": "pass"
+        },
+        {
+          "detail": "uci_har_small_transformer_v1 has an offerable calibration record",
+          "id": "testbed_calibrated",
+          "status": "pass"
+        },
+        {
+          "detail": "not closed by a scientific rejection",
+          "id": "direction_open",
+          "status": "pass"
+        },
+        {
+          "detail": "expected 1.16 GPU-h within the per-run cap 12",
+          "id": "within_run_cap",
+          "status": "pass"
+        },
+        {
+          "detail": "expected $2.91 vs per-run cap $50",
+          "id": "within_run_cap_usd",
+          "status": "pass"
+        },
+        {
+          "detail": "expected $2.91 vs $996.78 left this month",
+          "id": "within_monthly_budget",
+          "status": "pass"
+        }
+      ],
+      "contrast": "FFNRowNormVarianceRegularization on blocks.0.fc1.weight [uci_har_small_transformer_v1]",
+      "cost": {
+        "basis": "8.12 GPU-seconds per training measured on 9 completed job(s) of uci_har_small_transformer_v1; 258 trainings per job x 2 job(s) (incl. the mandatory pre-publication reproduction); 90% prediction interval from 9 jobs (t, df=8); wall-clock adds the queue wait measured from Slurm's start time on 2 of 9 job(s); the rest submission-to-settlement minus runtime, which includes polling",
+        "ceiling_gpu_hours": 1.0,
+        "gpu_hours": 1.1637,
+        "gpu_hours_high": 1.2907,
+        "gpu_hours_low": 1.0368,
+        "jobs": 2,
+        "queue_hours": 1.112,
+        "reliability": "measured",
+        "runtime_hours": 1.164,
+        "trainings_per_job": 258,
+        "usd": 2.91
+      },
+      "discriminates": [
+        "worthwhile benefit",
+        "negligible",
+        "worthwhile harm"
+      ],
+      "index": 0,
+      "matched_frame": null,
+      "notes": [],
+      "prior_evidence": [],
+      "probe": "new_intervention",
+      "resolves": "which effect region holds for FFNRowNormVarianceRegularization on blocks.0.fc1.weight [uci_har_small_transformer_v1], which has no evidence yet",
+      "testbed_id": "uci_har_small_transformer_v1",
+      "title": "FFN Neuron Capacity Balancing Tests Whether Weight Norm Uniformity Improves Subject-Disjoint Generalization in Time-Series Transformers",
+      "value": {
+        "bits": 0.834135,
+        "discrimination_bits": null,
+        "estimator": "region_grid",
+        "high": 0.982034,
+        "interval_basis": "undetected-flaw rate 0-0.15 (point 0.05); failure rate 0.286 applied exactly",
+        "low": 0.633319,
+        "shadow": {},
+        "unvaluable_reason": null
+      },
+      "value_per_gpu_hour": 0.716796
+    },
+    {
+      "constraints": [
+        {
+          "detail": "a new registered study on fresh seeds",
+          "id": "new_registration",
+          "status": "pass"
+        },
+        {
+          "detail": "the harness records every quantity this study measures",
+          "id": "observables_recorded",
+          "status": "pass"
+        },
+        {
+          "detail": "uses the calibrated recipe as registered",
+          "id": "recipe_unchanged",
+          "status": "pass"
+        },
+        {
+          "detail": "uci_letter_small_mlp_v1 has an offerable calibration record",
+          "id": "testbed_calibrated",
+          "status": "pass"
+        },
+        {
+          "detail": "not closed by a scientific rejection",
+          "id": "direction_open",
+          "status": "pass"
+        },
+        {
+          "detail": "unmeasured; at the default walltime (1.00 GPU-h) it fits the per-run cap 12",
+          "id": "within_run_cap",
+          "status": "pass"
+        }
+      ],
+      "contrast": "PostStepAngularSeparation on first_layer.weight [uci_letter_small_mlp_v1]",
+      "cost": {
+        "basis": "no completed job on uci_letter_small_mlp_v1 has been measured; value per cost is computed against the configured default walltime (1.00 GPU-h for 2 job(s)) \u2014 a scheduling default, not a measured runtime",
+        "ceiling_gpu_hours": 1.0,
+        "gpu_hours": null,
+        "gpu_hours_high": null,
+        "gpu_hours_low": null,
+        "jobs": 2,
+        "queue_hours": null,
+        "reliability": "bound_only",
+        "runtime_hours": null,
+        "trainings_per_job": 430,
+        "usd": null
+      },
+      "discriminates": [
+        "worthwhile benefit",
+        "negligible",
+        "worthwhile harm"
+      ],
+      "index": 1,
+      "matched_frame": null,
+      "notes": [],
+      "prior_evidence": [],
+      "probe": "new_intervention",
+      "resolves": "which effect region holds for PostStepAngularSeparation on first_layer.weight [uci_letter_small_mlp_v1], which has no evidence yet",
+      "testbed_id": "uci_letter_small_mlp_v1",
+      "title": "Post-Step Angular Separation of Hidden Unit Weights Tests Whether Directional Diversity in First-Layer Representations Improves Generalization in Small MLPs",
+      "value": {
+        "bits": 0.834135,
+        "discrimination_bits": null,
+        "estimator": "region_grid",
+        "high": 0.982034,
+        "interval_basis": "undetected-flaw rate 0-0.15 (point 0.05); failure rate 0.286 applied exactly",
+        "low": 0.633319,
+        "shadow": {},
+        "unvaluable_reason": null
+      },
+      "value_per_gpu_hour": 0.834135
+    }
+  ],
+  "prior_evidence": [],
+  "recorded_at": "2026-10-27T12:23:01.453131+00:00",
+  "requires_new_registration": true,
+  "run_id": "210365d0-f8bf-458f-89d2-04130783ba2a",
+  "schema_version": 1,
+  "topic_title": "FFN Neuron Capacity Balancing Tests Whether Weight Norm Uniformity Improves Subject-Disjoint Generalization in Time-Series Transformers"
+}
