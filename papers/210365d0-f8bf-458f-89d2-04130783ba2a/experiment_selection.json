@@ -52,7 +52,7 @@
     ],
     "contrast": "FFNRowNormVarianceRegularization on blocks.0.fc1.weight [uci_har_small_transformer_v1]",
     "cost": {
-      "basis": "8.12 GPU-seconds per training measured on 9 completed job(s) of uci_har_small_transformer_v1; 258 trainings per job x 2 job(s) (incl. the mandatory pre-publication reproduction); 90% prediction interval from 9 jobs (t, df=8); wall-clock adds the queue wait measured from Slurm's start time on 2 of 9 job(s); the rest submission-to-settlement minus runtime, which includes polling",
+      "basis": "8.12 GPU-seconds per training measured on 9 completed job(s) of uci_har_small_transformer_v1; 258 trainings per job x 2 job(s) (incl. the mandatory pre-publication reproduction); 90% prediction interval from 9 jobs (t, df=8); wall-clock adds the queue wait measured from the scheduler's start time on 2 of 9 job(s); the rest submission-to-settlement minus runtime, which includes polling",
       "ceiling_gpu_hours": 1.0,
       "gpu_hours": 1.1637,
       "gpu_hours_high": 1.2907,
@@ -141,7 +141,7 @@
       ],
       "contrast": "FFNRowNormVarianceRegularization on blocks.0.fc1.weight [uci_har_small_transformer_v1]",
       "cost": {
-        "basis": "8.12 GPU-seconds per training measured on 9 completed job(s) of uci_har_small_transformer_v1; 258 trainings per job x 2 job(s) (incl. the mandatory pre-publication reproduction); 90% prediction interval from 9 jobs (t, df=8); wall-clock adds the queue wait measured from Slurm's start time on 2 of 9 job(s); the rest submission-to-settlement minus runtime, which includes polling",
+        "basis": "8.12 GPU-seconds per training measured on 9 completed job(s) of uci_har_small_transformer_v1; 258 trainings per job x 2 job(s) (incl. the mandatory pre-publication reproduction); 90% prediction interval from 9 jobs (t, df=8); wall-clock adds the queue wait measured from the scheduler's start time on 2 of 9 job(s); the rest submission-to-settlement minus runtime, which includes polling",
         "ceiling_gpu_hours": 1.0,
         "gpu_hours": 1.1637,
         "gpu_hours_high": 1.2907,

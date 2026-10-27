@@ -1,0 +1,273 @@
+{
+  "margin": 0.012509797746985206,
+  "run_id": "210365d0-f8bf-458f-89d2-04130783ba2a",
+  "status": "verified_identity",
+  "n_seeds": {
+    "primary": 43,
+    "replication": 43
+  },
+  "reasons": [],
+  "version": 1,
+  "hardware": {
+    "original": {
+      "torch": "2.5.1+cu124",
+      "devices": [
+        "NVIDIA A100-SXM4-40GB"
+      ],
+      "hostname": "ggpu136",
+      "started_at": "2026-10-27T13:23:31.517563+00:00",
+      "finished_at": "2026-10-27T14:02:49.449046+00:00",
+      "device_count": 1,
+      "metadata_digest": "canonical_json",
+      "metadata_sha256": "6d3d83be0127529726cddea5194cd6e410eb65aec750cba7f57cb419d8b1df92"
+    },
+    "reproduction": {
+      "torch": "2.5.1+cu124",
+      "devices": [
+        "NVIDIA H100"
+      ],
+      "hostname": "ggpu237",
+      "started_at": "2026-10-27T15:14:36.884860+00:00",
+      "finished_at": "2026-10-27T15:51:17.195634+00:00",
+      "device_count": 1,
+      "metadata_digest": "canonical_json",
+      "metadata_sha256": "7dc8b3d0d8d7ba63051ba48a6109b50962052021f08acf633b770d2e5e8fcf72"
+    }
+  },
+  "criterion": {
+    "n_ok": 6,
+    "rule": "each condition mean inside the published 95% CI or within the relative tolerance",
+    "status": "verified",
+    "compares": "condition means",
+    "tolerance": 0.05,
+    "within_ci": [
+      "primary / baseline_1 / held-out classification accuracy",
+      "primary / negative_control_1 / held-out classification accuracy",
+      "primary / proposed / held-out classification accuracy",
+      "replication / baseline_1 / held-out classification accuracy",
+      "replication / negative_control_1 / held-out classification accuracy",
+      "replication / proposed / held-out classification accuracy"
+    ],
+    "n_compared": 6,
+    "tolerance_only": []
+  },
+  "comparison": {
+    "primary": {
+      "original": {
+        "n": 43,
+        "ci_low": -0.0021701217635593027,
+        "metric": "held-out classification accuracy",
+        "ci_high": 0.002138950923682744,
+        "p_value": 0.9554089182163568,
+        "decision": "inconclusive",
+        "mean_diff": -7.891351867487007e-05
+      },
+      "reproduced": {
+        "n": 43,
+        "ci_low": -0.003267216956936876,
+        "metric": "held-out classification accuracy",
+        "ci_high": 0.001996709306271251,
+        "p_value": 0.6308738252349531,
+        "decision": "inconclusive",
+        "mean_diff": -0.0006707649087365105
+      },
+      "same_decision": true,
+      "original_includes_zero": true,
+      "reproduced_includes_zero": true
+    },
+    "replication": {
+      "original": {
+        "n": 43,
+        "ci_low": -0.0017992282257873618,
+        "metric": "held-out classification accuracy",
+        "ci_high": 0.0038746537669368097,
+        "p_value": 0.5246950609878024,
+        "decision": "inconclusive",
+        "mean_diff": 0.0009390708722311225
+      },
+      "reproduced": {
+        "n": 43,
+        "ci_low": -0.0001025875742773316,
+        "metric": "held-out classification accuracy",
+        "ci_high": 0.004024589452419102,
+        "p_value": 0.08418316336732654,
+        "decision": "inconclusive",
+        "mean_diff": 0.0018860330963297416
+      },
+      "same_decision": true,
+      "original_includes_zero": true,
+      "reproduced_includes_zero": true
+    }
+  },
+  "computed_with": "app.modules.analysis.Analyzer (the registered analysis plan)",
+  "analysis_stats": {
+    "shape": "confirmatory",
+    "primary": {
+      "shape": "structured",
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "n_seeds": 43,
+      "baseline": "baseline_1",
+      "proposed": "proposed",
+      "conditions": {
+        "proposed": {
+          "held-out classification accuracy": {
+            "n": 43,
+            "std": 0.013521121160495697,
+            "mean": 0.9052011900158616,
+            "ci_low": 0.901365598440669,
+            "ci_high": 0.9091630432209341
+          }
+        },
+        "baseline_1": {
+          "held-out classification accuracy": {
+            "n": 43,
+            "std": 0.01129051257492938,
+            "mean": 0.9058719549245983,
+            "ci_low": 0.9026284120232638,
+            "ci_high": 0.9093210675420806
+          }
+        },
+        "negative_control_1": {
+          "held-out classification accuracy": {
+            "n": 43,
+            "std": 0.013892013382356079,
+            "mean": 0.9048302964780895,
+            "ci_low": 0.9009317713717536,
+            "ci_high": 0.9089890389122561
+          }
+        }
+      },
+      "comparisons": {
+        "held-out classification accuracy": {
+          "n_a": 43,
+          "n_b": 43,
+          "ci_low": -0.003267216956936876,
+          "paired": true,
+          "ci_high": 0.001996709306271251,
+          "p_value": 0.6308738252349531,
+          "cohens_d": -0.07539009555561525,
+          "contrast": "hypothesis-positive proposed versus baseline",
+          "decision": "inconclusive",
+          "mean_diff": -0.0006707649087365105,
+          "significant": false,
+          "identical_pairs": 0,
+          "p_value_adjusted": 0.6308738252349531,
+          "operator_inactive": false,
+          "all_pairs_identical": false,
+          "multiplicity_method": "preregistered primary (unadjusted)",
+          "significant_adjusted": false,
+          "smallest_worthwhile_effect_value": 0.012509797746985206
+        }
+      },
+      "n_conditions": 3,
+      "primary_metric": "held-out classification accuracy"
+    },
+    "replication": {
+      "shape": "structured",
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "n_seeds": 43,
+      "baseline": "baseline_1",
+      "proposed": "proposed",
+      "conditions": {
+        "proposed": {
+          "held-out classification accuracy": {
+            "n": 43,
+            "std": 0.010985463932488886,
+            "mean": 0.9076711831503854,
+            "ci_low": 0.9042220705329032,
+            "ci_high": 0.910725530890697
+          }
+        },
+        "baseline_1": {
+          "held-out classification accuracy": {
+            "n": 43,
+            "std": 0.01216045300729654,
+            "mean": 0.9057851500540558,
+            "ci_low": 0.901989212521997,
+            "ci_high": 0.9091472605171991
+          }
+        },
+        "negative_control_1": {
+          "held-out classification accuracy": {
+            "n": 43,
+            "std": 0.010446456034984893,
+            "mean": 0.9063612187403824,
+            "ci_low": 0.9032275629138027,
+            "ci_high": 0.9092969989188847
+          }
+        }
+      },
+      "comparisons": {
+        "held-out classification accuracy": {
+          "n_a": 43,
+          "n_b": 43,
+          "ci_low": -0.0001025875742773316,
+          "paired": true,
+          "ci_high": 0.004024589452419102,
+          "p_value": 0.08418316336732654,
+          "cohens_d": 0.26821106929399824,
+          "contrast": "hypothesis-positive proposed versus baseline",
+          "decision": "inconclusive",
+          "mean_diff": 0.0018860330963297416,
+          "significant": false,
+          "identical_pairs": 3,
+          "p_value_adjusted": 0.08418316336732654,
+          "operator_inactive": false,
+          "all_pairs_identical": false,
+          "multiplicity_method": "preregistered primary (unadjusted)",
+          "significant_adjusted": false,
+          "smallest_worthwhile_effect_value": 0.012509797746985206
+        }
+      },
+      "n_conditions": 3,
+      "primary_metric": "held-out classification accuracy"
+    },
+    "primary_decision": "inconclusive",
+    "replication_decision": "inconclusive"
+  },
+  "identity_checks": {
+    "seed_ids_registered": {
+      "primary": true,
+      "replication": true
+    },
+    "conditions_registered": {
+      "primary": true,
+      "replication": true
+    },
+    "inputs_equal_original": true,
+    "verification_job_role": true,
+    "verification_reported": true,
+    "verification_job_matches": true,
+    "packet_hash_matches_commit": true,
+    "reproduced_metrics_present": true,
+    "verification_job_completed": true,
+    "job_metadata_seeds_registered": true,
+    "analyzer_reproduces_registered_analysis": true
+  },
+  "original_job_id": "16881595",
+  "reproduction_source": {
+    "path": "papers/210365d0-f8bf-458f-89d2-04130783ba2a/reproduction.json",
+    "sha256": "1b3b47a9548e1dbed577e6c73ed6a5bdf3811abd12796ae14fa851b7f0abb47b",
+    "commit_sha": "d39521e4542e21abe5f9fa72b099a47670e0c66f",
+    "repo_full_name": "ABS-gmbh/ai-research-journal-papers"
+  },
+  "verification_job_id": "16883125",
+  "analysis_stats_sha256": "d7e406d343fbac9094b4e81b88605cdf3af674714c835867787ce1a16426c5ad",
+  "identical_seed_values": {
+    "primary": {
+      "proposed": 2,
+      "baseline_1": 1,
+      "negative_control_1": 2
+    },
+    "replication": {
+      "proposed": 1,
+      "baseline_1": 1,
+      "negative_control_1": 2
+    }
+  },
+  "reproduced_metrics_sha256": "7faf41c469e982bf5bfd467c69028e044a2c83ae9a4cf52a815be0cd1a8a7cbc"
+}
