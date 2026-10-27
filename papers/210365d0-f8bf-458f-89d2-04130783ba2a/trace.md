@@ -896,3 +896,78 @@ _2026-10-27T17:40:58.188879+00:00_
 
 ## [orchestrator] DECISION — semantic lock publication: accept
 _2026-10-27T17:56:44.639267+00:00_
+
+## [orchestrator] ERROR — GitHub publish interrupted: GitHubTransientError: GET /repos/ABS-gmbh/ai-research-journal-papers/git/ref/heads/main: ConnectionError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/ABS-gmbh/ai-research-journal-papers/git/ref/heads/main (Caused by NameResolutionError("HTTPSConnection(host='api.github.com', port=443): Failed to resolve 'api.github.com' ([Errno -2] Name or service not known)"))
+_2026-10-27T18:02:40.425152+00:00_
+
+## [orchestrator] ERROR — handler failed during PUBLISHING
+_2026-10-27T18:02:40.490200+00:00_
+
+## [orchestrator] DECISION — transient GitHub fault in PUBLISHING; retrying attempt 1/6 in 60s
+_2026-10-27T18:02:40.557760+00:00_
+
+## [orchestrator] DECISION — semantic lock publication: accept
+_2026-10-27T18:14:02.034195+00:00_
+
+## [orchestrator] OUTPUT — published to GitHub
+_2026-10-27T18:30:33.731315+00:00_
+
+## [orchestrator] INFO — published
+_2026-10-27T18:30:33.900579+00:00_
+
+## [orchestrator] DECISION — targeted correction composed from the version of record
+_2026-10-27T23:31:16.069948+00:00_
+
+## [orchestrator] INFO — paper written
+_2026-10-27T23:31:16.591539+00:00_
+
+## [citation_check] PROMPT — citation_check:review prompt
+_2026-10-27T23:31:49.968331+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-10-27T23:34:11.416526+00:00_
+
+## [citation_check] OUTPUT — citation_check:review text output
+_2026-10-27T23:34:11.425436+00:00_
+
+## [citation_check] OUTPUT — citation audit: All references verified and in-text citations consistent.
+_2026-10-27T23:34:11.428697+00:00_
+
+## [plagiarism_check] OUTPUT — plagiarism/text-overlap check: Text overlap 1% is within the 18% threshold; no plagiarism detected.
+_2026-10-27T23:34:11.443163+00:00_
+
+## [preregistration_check] PROMPT — preregistration_check:review prompt
+_2026-10-27T23:34:11.444877+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-10-27T23:34:43.670504+00:00_
+
+## [preregistration_check] OUTPUT — preregistration_check:review text output
+_2026-10-27T23:34:43.673982+00:00_
+
+## [preregistration_check] OUTPUT — preregistration audit: The paper is faithful to its preregistration.
+_2026-10-27T23:34:43.675580+00:00_
+
+## [review] PROMPT — review:review prompt
+_2026-10-27T23:34:44.272214+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-10-27T23:35:28.437723+00:00_
+
+## [review] OUTPUT — review:review text output
+_2026-10-27T23:35:28.444222+00:00_
+
+## [review] DECISION — review decision: revise (target=writing; citations_ok=True; artifact_repairs=0; overlap_ok=True; prereg_ok=True)
+_2026-10-27T23:35:28.490934+00:00_
+
+## [orchestrator] DECISION — registered report: every integrity check passed, so a subjective revise request is recorded as an editorial note rather than blocking publication
+_2026-10-27T23:35:28.733860+00:00_
+
+## [orchestrator] DECISION — semantic lock publication: accept
+_2026-10-27T23:35:28.905810+00:00_
+
+## [orchestrator] DECISION — parked for editorial publication approval
+_2026-10-27T23:35:28.908576+00:00_
+
+## [orchestrator] DECISION — semantic lock publication: accept
+_2026-10-27T23:41:41.544620+00:00_

@@ -7942,5 +7942,480 @@
       "contract_hash": "51d4b1653f393324efcfeec8c68d8ddd8c69a843ea6e06504b798ddaa10fe316"
     },
     "created_at": "2026-10-27T17:56:44.639267+00:00"
+  },
+  {
+    "module": "orchestrator",
+    "event_type": "ERROR",
+    "message": "GitHub publish interrupted: GitHubTransientError: GET /repos/ABS-gmbh/ai-research-journal-papers/git/ref/heads/main: ConnectionError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/ABS-gmbh/ai-research-journal-papers/git/ref/heads/main (Caused by NameResolutionError(\"HTTPSConnection(host='api.github.com', port=443): Failed to resolve 'api.github.com' ([Errno -2] Name or service not known)\"))",
+    "payload": {
+      "publication_intent": "8ef60bd3471cf934ec310bb65cd84f2b"
+    },
+    "created_at": "2026-10-27T18:02:40.425152+00:00"
+  },
+  {
+    "module": "orchestrator",
+    "event_type": "ERROR",
+    "message": "handler failed during PUBLISHING",
+    "payload": {
+      "error": "GET /repos/ABS-gmbh/ai-research-journal-papers/git/ref/heads/main: ConnectionError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/ABS-gmbh/ai-research-journal-papers/git/ref/heads/main (Caused by NameResolutionError(\"HTTPSConnection(host='api.github.com', port=443): Failed to resolve 'api.github.com' ([Errno -2] Name or service not known)\"))",
+      "exception_type": "GitHubTransientError"
+    },
+    "created_at": "2026-10-27T18:02:40.490200+00:00"
+  },
+  {
+    "module": "orchestrator",
+    "event_type": "DECISION",
+    "message": "transient GitHub fault in PUBLISHING; retrying attempt 1/6 in 60s",
+    "payload": {
+      "retry_after": "2026-10-27T18:03:40.492438+00:00",
+      "exception_type": "GitHubTransientError"
+    },
+    "created_at": "2026-10-27T18:02:40.557760+00:00"
+  },
+  {
+    "module": "orchestrator",
+    "event_type": "DECISION",
+    "message": "semantic lock publication: accept",
+    "payload": {
+      "summary": {
+        "clauses": {
+          "verified": 8
+        },
+        "violations": 0,
+        "obligations": {
+          "verified": 8
+        },
+        "essential_clauses": 8,
+        "essential_verified": 8,
+        "essential_violated": 0,
+        "essential_unverified": 0,
+        "residual_review_only": 0
+      },
+      "blocking": [],
+      "violations": [],
+      "contract_hash": "51d4b1653f393324efcfeec8c68d8ddd8c69a843ea6e06504b798ddaa10fe316"
+    },
+    "created_at": "2026-10-27T18:14:02.034195+00:00"
+  },
+  {
+    "module": "orchestrator",
+    "event_type": "OUTPUT",
+    "message": "published to GitHub",
+    "payload": {
+      "repo_url": "https://github.com/ABS-gmbh/ai-research-journal-papers/tree/853b26bd5f7a330b3ca20644aa7349be96af4a6b/papers/210365d0-f8bf-458f-89d2-04130783ba2a",
+      "commit_sha": "853b26bd5f7a330b3ca20644aa7349be96af4a6b",
+      "publication_intent": "8ef60bd3471cf934ec310bb65cd84f2b"
+    },
+    "created_at": "2026-10-27T18:30:33.731315+00:00"
+  },
+  {
+    "module": "orchestrator",
+    "event_type": "INFO",
+    "message": "published",
+    "payload": {
+      "repo_url": "https://github.com/ABS-gmbh/ai-research-journal-papers/tree/853b26bd5f7a330b3ca20644aa7349be96af4a6b/papers/210365d0-f8bf-458f-89d2-04130783ba2a"
+    },
+    "created_at": "2026-10-27T18:30:33.900579+00:00"
+  },
+  {
+    "module": "orchestrator",
+    "event_type": "DECISION",
+    "message": "targeted correction composed from the version of record",
+    "payload": {
+      "sections_changed": [
+        "ai_generated_disclosure"
+      ],
+      "sentence_repairs": 0,
+      "disclosure_claims": 0
+    },
+    "created_at": "2026-10-27T23:31:16.069948+00:00"
+  },
+  {
+    "module": "orchestrator",
+    "event_type": "INFO",
+    "message": "paper written",
+    "payload": {
+      "paper_id": "5b98d919-98ba-4d17-aab8-c7c9dc758440"
+    },
+    "created_at": "2026-10-27T23:31:16.591539+00:00"
+  },
+  {
+    "module": "citation_check",
+    "event_type": "PROMPT",
+    "message": "citation_check:review prompt",
+    "payload": {
+      "user": "[platform prompt withheld; sha256=2441b42eae29ce4994874e3fa55ec7eb5082d18c83ef90177aa0b92e248cac1a; chars=25886]",
+      "system": "[platform prompt withheld; sha256=98e893a35133d4ac33fe11c0220c60615ff7b12577d9eb046f39c4b933ca6116; chars=321]"
+    },
+    "created_at": "2026-10-27T23:31:49.968331+00:00"
+  },
+  {
+    "module": "llm",
+    "event_type": "OUTPUT",
+    "message": "review provider completion (attempt 1)",
+    "payload": {
+      "content": "\n\nNONE",
+      "messages": [
+        {
+          "role": "system",
+          "content": "[platform prompt withheld; sha256=98e893a35133d4ac33fe11c0220c60615ff7b12577d9eb046f39c4b933ca6116; chars=321]"
+        },
+        {
+          "role": "user",
+          "content": "[platform prompt withheld; sha256=2441b42eae29ce4994874e3fa55ec7eb5082d18c83ef90177aa0b92e248cac1a; chars=25886]"
+        }
+      ],
+      "model_id": "qwen3.5-397b-a17b",
+      "finish_reason": "stop",
+      "length_attempt": 0,
+      "provider_reasoning": {
+        "reasoning": "[platform prompt withheld; sha256=e8c734273b44379a9c45b58472eb9a8d75f7da522fbd06a804a744f21260d7c9; chars=52067]"
+      }
+    },
+    "created_at": "2026-10-27T23:34:11.416526+00:00"
+  },
+  {
+    "module": "citation_check",
+    "event_type": "OUTPUT",
+    "message": "citation_check:review text output",
+    "payload": {
+      "content": "\n\nNONE"
+    },
+    "created_at": "2026-10-27T23:34:11.425436+00:00"
+  },
+  {
+    "module": "citation_check",
+    "event_type": "OUTPUT",
+    "message": "citation audit: All references verified and in-text citations consistent.",
+    "payload": {
+      "ok": true,
+      "issues": [],
+      "summary": "All references verified and in-text citations consistent."
+    },
+    "created_at": "2026-10-27T23:34:11.428697+00:00"
+  },
+  {
+    "module": "plagiarism_check",
+    "event_type": "OUTPUT",
+    "message": "plagiarism/text-overlap check: Text overlap 1% is within the 18% threshold; no plagiarism detected.",
+    "payload": {
+      "ok": true,
+      "method": "ngram",
+      "matches": [
+        {
+          "cosine": null,
+          "source": "Spectral Entropy Minimization of Input Projections for Temporal Feature Learning",
+          "overlap": 0.0048,
+          "snippet": "spectrum on input projection weights enhances held",
+          "shared_ngrams": 13
+        },
+        {
+          "cosine": null,
+          "source": "[journal] Spectral Entropy Minimization of Input Projections for Temporal Feature Learning",
+          "overlap": 0.0048,
+          "snippet": "spectrum on input projection weights enhances held",
+          "shared_ngrams": 13
+        },
+        {
+          "cosine": null,
+          "source": "Cross-Layer Query Consistency Loss Tests Whether Attention Stability Across Depth Improves Subject-Disjoint Generalization in Time-Series Transformers",
+          "overlap": 0.0029,
+          "snippet": "seeds and a pre specified confirmatory replication",
+          "shared_ngrams": 8
+        },
+        {
+          "cosine": null,
+          "source": "[journal] Cross-Layer Query Consistency Loss Tests Whether Attention Stability Across Depth Improves Subject-Disjoint Generalization in Time-Series Transformers",
+          "overlap": 0.0029,
+          "snippet": "seeds and a pre specified confirmatory replication",
+          "shared_ngrams": 8
+        },
+        {
+          "cosine": null,
+          "source": "Replication: Cross-Layer Query Consistency Loss Tests Whether Attention Stability Across Depth Improves Subject-Disjoint Generalization in Time-Series Transformers",
+          "overlap": 0.0022,
+          "snippet": "seeds and a pre specified confirmatory replication",
+          "shared_ngrams": 6
+        },
+        {
+          "cosine": null,
+          "source": "[journal] Replication: Cross-Layer Query Consistency Loss Tests Whether Attention Stability Across Depth Improves Subject-Disjoint Generalization in Time-Series Transformers",
+          "overlap": 0.0022,
+          "snippet": "in the replication cohort the proposed condition",
+          "shared_ngrams": 6
+        }
+      ],
+      "summary": "Text overlap 1% is within the 18% threshold; no plagiarism detected.",
+      "threshold": 0.18,
+      "max_cosine": null,
+      "max_overlap": 0.0099
+    },
+    "created_at": "2026-10-27T23:34:11.443163+00:00"
+  },
+  {
+    "module": "preregistration_check",
+    "event_type": "PROMPT",
+    "message": "preregistration_check:review prompt",
+    "payload": {
+      "user": "[platform prompt withheld; sha256=0d333534fa004bd4d6a2f70e4856930d5dccf60f4065466f6eff518a7e633efc; chars=8437]",
+      "system": "[platform prompt withheld; sha256=a7faf2fbf8e74f1b0a55554d3811cba9e051bbb7d4e23004975ae5e32d518073; chars=687]"
+    },
+    "created_at": "2026-10-27T23:34:11.444877+00:00"
+  },
+  {
+    "module": "llm",
+    "event_type": "OUTPUT",
+    "message": "review provider completion (attempt 1)",
+    "payload": {
+      "content": "\n\nNONE",
+      "messages": [
+        {
+          "role": "system",
+          "content": "[platform prompt withheld; sha256=a7faf2fbf8e74f1b0a55554d3811cba9e051bbb7d4e23004975ae5e32d518073; chars=687]"
+        },
+        {
+          "role": "user",
+          "content": "[platform prompt withheld; sha256=0d333534fa004bd4d6a2f70e4856930d5dccf60f4065466f6eff518a7e633efc; chars=8437]"
+        }
+      ],
+      "model_id": "qwen3.5-397b-a17b",
+      "finish_reason": "stop",
+      "length_attempt": 0,
+      "provider_reasoning": {
+        "reasoning": "[platform prompt withheld; sha256=9de91db7565f5985de8b670f282cc5e7a25e8289c4827045fa3398c7698f0d4b; chars=6348]"
+      }
+    },
+    "created_at": "2026-10-27T23:34:43.670504+00:00"
+  },
+  {
+    "module": "preregistration_check",
+    "event_type": "OUTPUT",
+    "message": "preregistration_check:review text output",
+    "payload": {
+      "content": "\n\nNONE"
+    },
+    "created_at": "2026-10-27T23:34:43.673982+00:00"
+  },
+  {
+    "module": "preregistration_check",
+    "event_type": "OUTPUT",
+    "message": "preregistration audit: The paper is faithful to its preregistration.",
+    "payload": {
+      "ok": true,
+      "summary": "The paper is faithful to its preregistration.",
+      "deviations": []
+    },
+    "created_at": "2026-10-27T23:34:43.675580+00:00"
+  },
+  {
+    "module": "review",
+    "event_type": "PROMPT",
+    "message": "review:review prompt",
+    "payload": {
+      "user": "[platform prompt withheld; sha256=b4409d8ffd0370d4a4f9cf37f38ac3611ae9e551ce3a6650c38cdb0fd055dec3; chars=34253]",
+      "system": "[platform prompt withheld; sha256=8636310f7456ecdd7dc3438f0e86e75bba1a007ee8359b4c238c713c809a0a33; chars=1506]"
+    },
+    "created_at": "2026-10-27T23:34:44.272214+00:00"
+  },
+  {
+    "module": "llm",
+    "event_type": "OUTPUT",
+    "message": "review provider completion (attempt 1)",
+    "payload": {
+      "content": "\n\nDECISION: REVISE\nFEEDBACK: The experimental execution and handling of inconclusive results adhere to Registered Report standards, and the distinction between measured accuracy and unmeasured weight geometry is appropriately maintained. However, the manuscript includes meta-evaluation sections (e.g., \"Citation audit,\" \"Presentation check\") that must be removed for publication. Additionally, the internal presentation check flags citation [14] as irrelevant, yet it remains in the Related Work; please remove this reference to align with the audit's recommendation. Once these formatting and citation cleanup tasks are completed, the study is suitable for publication as an honest null report.",
+      "messages": [
+        {
+          "role": "system",
+          "content": "[platform prompt withheld; sha256=8636310f7456ecdd7dc3438f0e86e75bba1a007ee8359b4c238c713c809a0a33; chars=1506]"
+        },
+        {
+          "role": "user",
+          "content": "[platform prompt withheld; sha256=b4409d8ffd0370d4a4f9cf37f38ac3611ae9e551ce3a6650c38cdb0fd055dec3; chars=34253]"
+        }
+      ],
+      "model_id": "qwen3.5-397b-a17b",
+      "finish_reason": "stop",
+      "length_attempt": 0,
+      "provider_reasoning": {
+        "reasoning": "[platform prompt withheld; sha256=9b0330bb26996c07f3485c95d552a6250908f211a03823766c4ebb20f8674c5c; chars=14557]"
+      }
+    },
+    "created_at": "2026-10-27T23:35:28.437723+00:00"
+  },
+  {
+    "module": "review",
+    "event_type": "OUTPUT",
+    "message": "review:review text output",
+    "payload": {
+      "content": "\n\nDECISION: REVISE\nFEEDBACK: The experimental execution and handling of inconclusive results adhere to Registered Report standards, and the distinction between measured accuracy and unmeasured weight geometry is appropriately maintained. However, the manuscript includes meta-evaluation sections (e.g., \"Citation audit,\" \"Presentation check\") that must be removed for publication. Additionally, the internal presentation check flags citation [14] as irrelevant, yet it remains in the Related Work; please remove this reference to align with the audit's recommendation. Once these formatting and citation cleanup tasks are completed, the study is suitable for publication as an honest null report."
+    },
+    "created_at": "2026-10-27T23:35:28.444222+00:00"
+  },
+  {
+    "module": "review",
+    "event_type": "DECISION",
+    "message": "review decision: revise (target=writing; citations_ok=True; artifact_repairs=0; overlap_ok=True; prereg_ok=True)",
+    "payload": {
+      "feedback": "CLAIM-EVIDENCE VERIFICATION (deterministic, against the run's own records). Correct these claims:\nAlso qualify: [experimental_setup] methodological description supported under conditions: 'This pairing allows for a paired contrast analysis, increasing sensitivity to small effects.' \u2014 the two cohorts' point estimates have opposite signs; the direction holds for one cohort only. Fix: Name the cohort the direction refers to; the cohorts disagree. (name the cohort the direction refers to)\n\nThe exper",
+      "hold_kind": "",
+      "claim_ledger": {
+        "diff": {
+          "resolved": [],
+          "introduced": [],
+          "persisting": [],
+          "evidence_changed": false,
+          "previous_manuscript_sha256": "cc938f5084c058a2d8e3fdc26c5f8bfe1b17b8e606d7397c4eaf2cecbaa13b61"
+        },
+        "counts": {
+          "claims": 117,
+          "by_type": {
+            "hypothesis": 6,
+            "literature": 18,
+            "causal_mechanistic": 3,
+            "experimental_result": 16,
+            "statistical_inference": 29,
+            "limitation_speculation": 7,
+            "methodological_description": 38
+          },
+          "advisory": 1,
+          "material": 117,
+          "by_status": {
+            "supported": 77,
+            "unsupported": 0,
+            "contradicted": 0,
+            "unverifiable": 39,
+            "supported_under_conditions": 1
+          },
+          "server_owned": 9,
+          "qualifications": 1,
+          "repair_required": 0,
+          "references_flagged": 2
+        },
+        "decision": "advisory",
+        "enforced": true,
+        "evidence_sha256": "b38340f2202320bc6205dae6b2dca3393e824cf094e855a483b3b4259da9e1bf",
+        "verifier_version": "grounding-2.5",
+        "manuscript_sha256": "d1fd23c912f49fd51385fe0f623e76cd5a688e9d88b336c351300517621ce518",
+        "registered_outcome": {
+          "margin": 0.012509797746985206,
+          "primary": {
+            "ci_low": -0.0021701217635593027,
+            "ci_high": 0.002138950923682744,
+            "p_value": 0.9554089182163568,
+            "decision": "inconclusive",
+            "mean_diff": -7.891351867487007e-05
+          },
+          "decisions": {
+            "primary": "inconclusive",
+            "replication": "inconclusive"
+          },
+          "replication": {
+            "ci_low": -0.0017992282257873618,
+            "ci_high": 0.0038746537669368097,
+            "p_value": 0.5246950609878024,
+            "decision": "inconclusive",
+            "mean_diff": 0.0009390708722311225
+          },
+          "primary_metric": "held-out classification accuracy",
+          "hypothesized_direction": "intervention_better"
+        }
+      },
+      "claim_repairs": [],
+      "quality_report": "publication eligible: 0 repair-required, 3 revision, 0 cosmetic; 26/32 checks passed, 0 unverified (0 of them required)",
+      "blocking_errors": [],
+      "artifact_repairs": [],
+      "citation_summary": "All references verified and in-text citations consistent.",
+      "registered_report": true,
+      "plagiarism_summary": "Text overlap 1% is within the 18% threshold; no plagiarism detected.",
+      "publication_eligible": true,
+      "presentation_findings": [
+        {
+          "code": "discussion_shallow",
+          "where": "discussion",
+          "detail": "the discussion never addresses what the measured outcome means",
+          "origin": "machine",
+          "remedy": "A discussion interprets the outcome, says what it cannot establish, offers a mechanism, sets the result against the cited work, and says what would settle it \u2014 for a null result as much as for a positive one. Do not pad it.",
+          "severity": "revision",
+          "skill_id": "discussion-depth"
+        },
+        {
+          "code": "literature_padded",
+          "where": "related_work",
+          "detail": "1 reference(s) above the completeness floor do not clear the citing relevance bar: Out-of-Distribution Generalization in Time Series: A Survey",
+          "origin": "machine",
+          "remedy": "Remove work the argument does not need. A reference target is a target, not a quota, and a short honest bibliography is the correct outcome of a narrow field.",
+          "severity": "revision",
+          "skill_id": "presentation"
+        }
+      ],
+      "preregistration_summary": "The paper is faithful to its preregistration."
+    },
+    "created_at": "2026-10-27T23:35:28.490934+00:00"
+  },
+  {
+    "module": "orchestrator",
+    "event_type": "DECISION",
+    "message": "registered report: every integrity check passed, so a subjective revise request is recorded as an editorial note rather than blocking publication",
+    "payload": {
+      "review_attempts": 0
+    },
+    "created_at": "2026-10-27T23:35:28.733860+00:00"
+  },
+  {
+    "module": "orchestrator",
+    "event_type": "DECISION",
+    "message": "semantic lock publication: accept",
+    "payload": {
+      "summary": {
+        "clauses": {
+          "verified": 8
+        },
+        "violations": 0,
+        "obligations": {
+          "verified": 8
+        },
+        "essential_clauses": 8,
+        "essential_verified": 8,
+        "essential_violated": 0,
+        "essential_unverified": 0,
+        "residual_review_only": 0
+      },
+      "blocking": [],
+      "violations": [],
+      "contract_hash": "51d4b1653f393324efcfeec8c68d8ddd8c69a843ea6e06504b798ddaa10fe316"
+    },
+    "created_at": "2026-10-27T23:35:28.905810+00:00"
+  },
+  {
+    "module": "orchestrator",
+    "event_type": "DECISION",
+    "message": "parked for editorial publication approval",
+    "payload": null,
+    "created_at": "2026-10-27T23:35:28.908576+00:00"
+  },
+  {
+    "module": "orchestrator",
+    "event_type": "DECISION",
+    "message": "semantic lock publication: accept",
+    "payload": {
+      "summary": {
+        "clauses": {
+          "verified": 8
+        },
+        "violations": 0,
+        "obligations": {
+          "verified": 8
+        },
+        "essential_clauses": 8,
+        "essential_verified": 8,
+        "essential_violated": 0,
+        "essential_unverified": 0,
+        "residual_review_only": 0
+      },
+      "blocking": [],
+      "violations": [],
+      "contract_hash": "51d4b1653f393324efcfeec8c68d8ddd8c69a843ea6e06504b798ddaa10fe316"
+    },
+    "created_at": "2026-10-27T23:41:41.544620+00:00"
   }
 ]
