@@ -1404,7 +1404,7 @@
         7,
         11
       ],
-      "claim_id": "c-1609bd760ff9",
+      "claim_id": "c-505a7fcaf102",
       "claim_type": "literature",
       "cohorts": [
         "primary",
@@ -1434,7 +1434,7 @@
         "literature_lexically_supported"
       ],
       "section": "related_work",
-      "sentence": "Specific applications include biosignal data augmentation in *TTS-CGAN: A Transformer Time-Series Conditional GAN for Biosignal Data Augmentation* and representing multivariate series as graphs in *Expressing Multivariate Time Series as Graphs with Time Series Attention Transformer* [7, 11].",
+      "sentence": "Specific applications include representing multivariate series as graphs in *Expressing Multivariate Time Series as Graphs with Time Series Attention Transformer* and biosignal data augmentation in *TTS-CGAN: A Transformer Time-Series Conditional GAN for Biosignal Data Augmentation* [7, 11].",
       "sentence_index": 2,
       "server_owned": false,
       "statistic": {},
@@ -1455,7 +1455,7 @@
           "value": null
         }
       ],
-      "text": "Specific applications include biosignal data augmentation in *TTS-CGAN: A Transformer Time-Series Conditional GAN for Biosignal Data Augmentation* and representing multivariate series as graphs in *Expressing Multivariate Time Series as Graphs with Time Series Attention Transformer* [7, 11]."
+      "text": "Specific applications include representing multivariate series as graphs in *Expressing Multivariate Time Series as Graphs with Time Series Attention Transformer* and biosignal data augmentation in *TTS-CGAN: A Transformer Time-Series Conditional GAN for Biosignal Data Augmentation* [7, 11]."
     },
     {
       "arms": [],
@@ -2096,7 +2096,7 @@
         12,
         21
       ],
-      "claim_id": "c-a24ec6036826",
+      "claim_id": "c-ac8a64467d92",
       "claim_type": "literature",
       "cohorts": [
         "primary",
@@ -2118,7 +2118,7 @@
       "origin": "machine",
       "qualifiers": [],
       "reasons": [
-        "the cited source resolves, carries no undisclosed notice, and shares the claim's terms (83%)"
+        "the cited source resolves, carries no undisclosed notice, and shares the claim's terms (86%)"
       ],
       "registered_outcome": {},
       "remedy": "",
@@ -2126,7 +2126,7 @@
         "literature_lexically_supported"
       ],
       "section": "related_work",
-      "sentence": "Surveys such as *A Survey on Vision Transformer*, *Transformers in Vision: A Survey*, and *A survey of transformers* document the application of Transformers across vision, NLP, and audio [6, 12, 21].",
+      "sentence": "Surveys such as *A Survey on Vision Transformer* [6] and *Transformers in Vision: A Survey* [12] document the application of Transformers in computer vision, while *A survey of transformers* [21] documents the application of Transformers across vision, NLP, and audio.",
       "sentence_index": 17,
       "server_owned": false,
       "statistic": {},
@@ -2154,7 +2154,7 @@
           "value": null
         }
       ],
-      "text": "Surveys such as *A Survey on Vision Transformer*, *Transformers in Vision: A Survey*, and *A survey of transformers* document the application of Transformers across vision, NLP, and audio [6, 12, 21]."
+      "text": "Surveys such as *A Survey on Vision Transformer* [6] and *Transformers in Vision: A Survey* [12] document the application of Transformers in computer vision, while *A survey of transformers* [21] documents the application of Transformers across vision, NLP, and audio."
     },
     {
       "arms": [],
@@ -6677,6 +6677,704 @@
     {
       "arms": [],
       "citations": [],
+      "claim_id": "c-160812f52b82",
+      "claim_type": "limitation_speculation",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "number_matches_record"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "design:job",
+          "recorded": 16678400.0,
+          "role": "other",
+          "text": "16678400",
+          "value": 16678400.0
+        },
+        {
+          "matched": true,
+          "node": "design:job",
+          "recorded": 16726777.0,
+          "role": "other",
+          "text": "16726777",
+          "value": 16726777.0
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "16678400 matches design:job",
+        "16726777 matches design:job"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "number_matches_record"
+      ],
+      "section": "limitations",
+      "sentence": "The registered experiment ran as compute job 16678400 on one NVIDIA H100 GPU, and the independent reproduction ran as compute job 16726777 on one NVIDIA A100-SXM4-80GB GPU.",
+      "sentence_index": 6,
+      "server_owned": true,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "design",
+          "node": "design:job",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "design",
+          "node": "design:job",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "The registered experiment ran as compute job 16678400 on one NVIDIA H100 GPU, and the independent reproduction ran as compute job 16726777 on one NVIDIA A100-SXM4-80GB GPU."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-381e71c3eb6b",
+      "claim_type": "limitation_speculation",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "number_count_matches",
+        "number_matches_record"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "design:seeds",
+          "recorded": 43.0,
+          "role": "other",
+          "text": "43",
+          "value": 43.0
+        },
+        {
+          "matched": true,
+          "node": "design:seeds",
+          "recorded": 43.0,
+          "role": "count",
+          "text": "43",
+          "value": 43.0
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "43 matches design:seeds",
+        "43 (count) matches design:seeds"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "number_count_matches",
+        "number_matches_record"
+      ],
+      "section": "limitations",
+      "sentence": "The reproduction record verifies that the re-run used the committed replay packet, whose inputs equal the original execution's frozen code, conditions and configuration, and the same 43 primary and 43 confirmatory seed identities in registered order.",
+      "sentence_index": 7,
+      "server_owned": true,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "design",
+          "node": "design:seeds",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "design",
+          "node": "design:seeds",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "The reproduction record verifies that the re-run used the committed replay packet, whose inputs equal the original execution's frozen code, conditions and configuration, and the same 43 primary and 43 confirmatory seed identities in registered order."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-d12c2871970b",
+      "claim_type": "limitation_speculation",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "number_count_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "design:seeds",
+          "recorded": 43.0,
+          "role": "count",
+          "text": "43",
+          "value": 43.0
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "43 (count) matches design:seeds"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "number_count_matches"
+      ],
+      "section": "limitations",
+      "sentence": "The reproduced per-seed accuracies were not identical to the original ones: between one and three of the 43 seeds per condition and cohort gave exactly the same value.",
+      "sentence_index": 8,
+      "server_owned": true,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "design",
+          "node": "design:seeds",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "The reproduced per-seed accuracies were not identical to the original ones: between one and three of the 43 seeds per condition and cohort gave exactly the same value."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-9f9fec78f551",
+      "claim_type": "limitation_speculation",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "number_interval_matches",
+        "number_matches_record"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "finding:primary:held-out classification accuracy",
+          "recorded": 0.0007733524830138729,
+          "role": "other",
+          "text": "0.00077",
+          "value": 0.00077
+        },
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        },
+        {
+          "matched": true,
+          "node": "finding:primary:held-out classification accuracy",
+          "recorded": -0.002707128258141888,
+          "role": "interval_low",
+          "text": "-0.00271",
+          "value": -0.00271
+        },
+        {
+          "matched": true,
+          "node": "finding:primary:held-out classification accuracy",
+          "recorded": 0.004356026230853611,
+          "role": "interval_high",
+          "text": "0.00436",
+          "value": 0.00436
+        },
+        {
+          "matched": true,
+          "node": "finding:replication:held-out classification accuracy",
+          "recorded": 0.001957055263137136,
+          "role": "other",
+          "text": "0.00196",
+          "value": 0.00196
+        },
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        },
+        {
+          "matched": true,
+          "node": "finding:replication:held-out classification accuracy",
+          "recorded": -0.0019572525469338025,
+          "role": "interval_low",
+          "text": "-0.00196",
+          "value": -0.00196
+        },
+        {
+          "matched": true,
+          "node": "finding:replication:held-out classification accuracy",
+          "recorded": 0.0057135360358583145,
+          "role": "interval_high",
+          "text": "0.00571",
+          "value": 0.00571
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "0.00077 matches finding:primary:held-out classification accuracy",
+        "interval [-0.00271, 0.00436] matches finding:primary:held-out classification accuracy",
+        "0.00196 matches finding:replication:held-out classification accuracy",
+        "interval [-0.00196, 0.00571] matches finding:replication:held-out classification accuracy"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "number_interval_matches",
+        "number_matches_record"
+      ],
+      "section": "limitations",
+      "sentence": "In the registered analysis of the original execution, the primary contrast was +0.00077 (95% CI [-0.00271, 0.00436]) and the confirmatory-replication contrast was +0.00196 (95% CI [-0.00196, 0.00571]).",
+      "sentence_index": 9,
+      "server_owned": true,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "finding",
+          "node": "finding:primary:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:primary:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:replication:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:replication:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "In the registered analysis of the original execution, the primary contrast was +0.00077 (95% CI [-0.00271, 0.00436]) and the confirmatory-replication contrast was +0.00196 (95% CI [-0.00196, 0.00571])."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-4a41fd0af840",
+      "claim_type": "limitation_speculation",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "number_interval_matches",
+        "number_matches_record"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "finding:reproduction:primary:held-out classification accuracy",
+          "recorded": 0.0009548535759661027,
+          "role": "other",
+          "text": "0.00095",
+          "value": 0.00095
+        },
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        },
+        {
+          "matched": true,
+          "node": "finding:reproduction:primary:held-out classification accuracy",
+          "recorded": -0.0019175985037996864,
+          "role": "interval_low",
+          "text": "-0.00192",
+          "value": -0.00192
+        },
+        {
+          "matched": true,
+          "node": "finding:reproduction:primary:held-out classification accuracy",
+          "recorded": 0.004056746711279092,
+          "role": "interval_high",
+          "text": "0.00406",
+          "value": 0.00406
+        },
+        {
+          "matched": true,
+          "node": "finding:reproduction:replication:held-out classification accuracy",
+          "recorded": 0.006147363104773482,
+          "role": "other",
+          "text": "0.00615",
+          "value": 0.00615
+        },
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        },
+        {
+          "matched": true,
+          "node": "finding:reproduction:replication:held-out classification accuracy",
+          "recorded": 0.001246636311266489,
+          "role": "interval_low",
+          "text": "0.00125",
+          "value": 0.00125
+        },
+        {
+          "matched": true,
+          "node": "finding:reproduction:replication:held-out classification accuracy",
+          "recorded": 0.012081856992921459,
+          "role": "interval_high",
+          "text": "0.01208",
+          "value": 0.01208
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "0.00095 matches finding:reproduction:primary:held-out classification accuracy",
+        "interval [-0.00192, 0.00406] matches finding:reproduction:primary:held-out classification accuracy",
+        "0.00615 matches finding:reproduction:replication:held-out classification accuracy",
+        "interval [0.00125, 0.01208] matches finding:reproduction:replication:held-out classification accuracy"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "number_interval_matches",
+        "number_matches_record"
+      ],
+      "section": "limitations",
+      "sentence": "In the reproduction, the reproduced primary contrast was +0.00095 (95% CI [-0.00192, 0.00406]) and the reproduced confirmatory-replication contrast was +0.00615 (95% CI [0.00125, 0.01208]).",
+      "sentence_index": 10,
+      "server_owned": true,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "finding",
+          "node": "finding:reproduction:primary:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:reproduction:primary:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:reproduction:replication:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:reproduction:replication:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "In the reproduction, the reproduced primary contrast was +0.00095 (95% CI [-0.00192, 0.00406]) and the reproduced confirmatory-replication contrast was +0.00615 (95% CI [0.00125, 0.01208])."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-d13192446e9f",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "decision_matches",
+        "number_margin_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        },
+        {
+          "matched": true,
+          "node": "registration:margin",
+          "recorded": 0.012509797746985206,
+          "role": "margin",
+          "text": "0.0125098",
+          "value": 0.0125098
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "0.0125098 (margin) matches registration:margin",
+        "the replication decision is recorded as inconclusive"
+      ],
+      "registered_outcome": {
+        "cohort": "replication",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "decision_matches",
+        "number_margin_matches"
+      ],
+      "section": "limitations",
+      "sentence": "The registered decision rule classifies a cohort as inconclusive unless its whole 95% interval lies above the worthwhile margin of 0.0125098 or at or below zero; both reproduced cohorts are inconclusive under this rule, the same decision as each registered cohort.",
+      "sentence_index": 12,
+      "server_owned": true,
+      "statistic": {
+        "ci_high": 0.0057135360358583145,
+        "ci_low": -0.0019572525469338025,
+        "effect_size": 0.15182276442644482,
+        "mean_diff": 0.001957055263137136,
+        "n": 43,
+        "p_value": 0.33093381323735255
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "registration",
+          "node": "registration:margin",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "decision",
+          "node": "decision:replication",
+          "note": "",
+          "relation": "supports",
+          "value": "inconclusive"
+        }
+      ],
+      "text": "The registered decision rule classifies a cohort as inconclusive unless its whole 95% interval lies above the worthwhile margin of 0.0125098 or at or below zero"
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-60d232f9b2b7",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "decision_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the replication decision is recorded as inconclusive"
+      ],
+      "registered_outcome": {
+        "cohort": "replication",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "decision_matches"
+      ],
+      "section": "limitations",
+      "sentence": "The registered decision rule classifies a cohort as inconclusive unless its whole 95% interval lies above the worthwhile margin of 0.0125098 or at or below zero; both reproduced cohorts are inconclusive under this rule, the same decision as each registered cohort.",
+      "sentence_index": 12,
+      "server_owned": true,
+      "statistic": {
+        "ci_high": 0.0057135360358583145,
+        "ci_low": -0.0019572525469338025,
+        "effect_size": 0.15182276442644482,
+        "mean_diff": 0.001957055263137136,
+        "n": 43,
+        "p_value": 0.33093381323735255
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "decision",
+          "node": "decision:replication",
+          "note": "",
+          "relation": "supports",
+          "value": "inconclusive"
+        }
+      ],
+      "text": "both reproduced cohorts are inconclusive under this rule, the same decision as each registered cohort."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-0c953f7fc185",
+      "claim_type": "limitation_speculation",
+      "cohorts": [
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "number_matches_record"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        },
+        {
+          "matched": true,
+          "node": "design:criterion",
+          "recorded": 5.0,
+          "role": "percent",
+          "text": "5",
+          "value": 5.0
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "5 matches design:criterion"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "number_matches_record"
+      ],
+      "section": "limitations",
+      "sentence": "The reproduction criterion compares each condition's mean with its published 95% interval or a 5% relative tolerance (five of six reproduced means fell inside the interval and one passed on the tolerance alone); it does not compare contrasts or decisions.",
+      "sentence_index": 13,
+      "server_owned": true,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "design",
+          "node": "design:criterion",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "The reproduction criterion compares each condition's mean with its published 95% interval or a 5% relative tolerance (five of six reproduced means fell inside the interval and one passed on the tolerance alone)"
+    },
+    {
+      "arms": [],
+      "citations": [],
       "claim_id": "c-506fd25e367a",
       "claim_type": "causal_mechanistic",
       "cohorts": [
@@ -6995,16 +7693,16 @@
     }
   ],
   "cost": {
-    "clauses_read": 161,
+    "clauses_read": 174,
     "llm_calls": 0,
-    "sentences_read": 149,
-    "wall_ms": 167.81
+    "sentences_read": 159,
+    "wall_ms": 109.89
   },
   "diff": {
     "evidence_changed": false,
     "introduced": [],
     "persisting": [],
-    "previous_manuscript_sha256": "ca9649ab7acc43510c86d0d5dbb564f5c3f57bfcc68a842804ce85710941bb36",
+    "previous_manuscript_sha256": "745d5bac64f5bbc9134663d0c21db31eee93e3b077241ef86a1ec81f78436591",
     "resolved": []
   },
   "enforced": true,
@@ -7060,6 +7758,46 @@
         "registration:margin",
         "decision:replication",
         "threshold"
+      ],
+      [
+        "observation:reproduction:primary:proposed:held-out classification accuracy",
+        "finding:reproduction:primary:held-out classification accuracy",
+        "derives"
+      ],
+      [
+        "observation:reproduction:primary:baseline_1:held-out classification accuracy",
+        "finding:reproduction:primary:held-out classification accuracy",
+        "derives"
+      ],
+      [
+        "finding:reproduction:primary:held-out classification accuracy",
+        "decision:primary",
+        "classified_by_registered_rule"
+      ],
+      [
+        "observation:reproduction:replication:proposed:held-out classification accuracy",
+        "finding:reproduction:replication:held-out classification accuracy",
+        "derives"
+      ],
+      [
+        "observation:reproduction:replication:baseline_1:held-out classification accuracy",
+        "finding:reproduction:replication:held-out classification accuracy",
+        "derives"
+      ],
+      [
+        "finding:reproduction:replication:held-out classification accuracy",
+        "decision:replication",
+        "classified_by_registered_rule"
+      ],
+      [
+        "assumption:reproduction_identity",
+        "finding:reproduction:primary:held-out classification accuracy",
+        "licenses"
+      ],
+      [
+        "assumption:reproduction_identity",
+        "finding:reproduction:replication:held-out classification accuracy",
+        "licenses"
       ]
     ],
     "nodes": [
@@ -7242,6 +7980,114 @@
         "id": "assumption:reproduction",
         "kind": "assumption",
         "value": "verified"
+      },
+      {
+        "id": "assumption:reproduction_identity",
+        "kind": "assumption",
+        "value": {
+          "reasons": [],
+          "status": "verified_identity"
+        }
+      },
+      {
+        "id": "observation:reproduction:primary:baseline_1:held-out classification accuracy",
+        "kind": "observation",
+        "value": {
+          "ci": [
+            0.9011134697485026,
+            0.9075297306681607
+          ],
+          "mean": 0.9044594029403176,
+          "n": 43
+        }
+      },
+      {
+        "id": "observation:reproduction:primary:negative_control_1:held-out classification accuracy",
+        "kind": "observation",
+        "value": {
+          "ci": [
+            0.9023044720291031,
+            0.9084372361329218
+          ],
+          "mean": 0.9054852786830911,
+          "n": 43
+        }
+      },
+      {
+        "id": "observation:reproduction:primary:proposed:held-out classification accuracy",
+        "kind": "observation",
+        "value": {
+          "ci": [
+            0.9030146936971771,
+            0.9079317950458093
+          ],
+          "mean": 0.9054142565162839,
+          "n": 43
+        }
+      },
+      {
+        "id": "observation:reproduction:replication:baseline_1:held-out classification accuracy",
+        "kind": "observation",
+        "value": {
+          "ci": [
+            0.8942239250005919,
+            0.9038525579817079
+          ],
+          "mean": 0.8995036339675349,
+          "n": 43
+        }
+      },
+      {
+        "id": "observation:reproduction:replication:negative_control_1:held-out classification accuracy",
+        "kind": "observation",
+        "value": {
+          "ci": [
+            0.9027225163942835,
+            0.9087051475288231
+          ],
+          "mean": 0.9057772587021883,
+          "n": 43
+        }
+      },
+      {
+        "id": "observation:reproduction:replication:proposed:held-out classification accuracy",
+        "kind": "observation",
+        "value": {
+          "ci": [
+            0.9018156027809126,
+            0.9091081983254551
+          ],
+          "mean": 0.9056509970723083,
+          "n": 43
+        }
+      },
+      {
+        "id": "finding:reproduction:primary:held-out classification accuracy",
+        "kind": "finding",
+        "value": {
+          "ci": [
+            -0.0019175985037996864,
+            0.004056746711279092
+          ],
+          "effect_size": 0.09331032648192522,
+          "mean_diff": 0.0009548535759661027,
+          "p_value": 0.5468906218756249,
+          "significant": false
+        }
+      },
+      {
+        "id": "finding:reproduction:replication:held-out classification accuracy",
+        "kind": "finding",
+        "value": {
+          "ci": [
+            0.001246636311266489,
+            0.012081856992921459
+          ],
+          "effect_size": 0.3325101994765736,
+          "mean_diff": 0.006147363104773482,
+          "p_value": 0.01739652069586083,
+          "significant": true
+        }
       },
       {
         "id": "construct:accuracy",
@@ -7466,28 +8312,14 @@
     ]
   },
   "manuscript_checks": [],
-  "manuscript_sha256": "ca9649ab7acc43510c86d0d5dbb564f5c3f57bfcc68a842804ce85710941bb36",
+  "manuscript_sha256": "745d5bac64f5bbc9134663d0c21db31eee93e3b077241ef86a1ec81f78436591",
   "qualifications": [
     {
-      "claim_id": "c-1748bce9ac84",
+      "claim_id": "c-6922948d89a4",
       "original": "These findings suggest that cross-layer query consistency does not yield robust accuracy gains in this regime, indicating layer-specific adaptation may remain essential for subject-disjoint time-series tasks.",
       "qualified": "These findings suggest that cross-layer query consistency does not yield robust accuracy gains in this regime. This experiment did not test whether layer-specific adaptation may remain essential for subject-disjoint time-series tasks.",
       "rule": "mechanism_unmeasured",
       "section": "abstract"
-    },
-    {
-      "claim_id": "c-710ee50327e2",
-      "original": "A negative control condition is included to verify that the observed effects are due to the specific cross-layer relationship rather than the mere presence of an additional loss term.",
-      "qualified": "A negative control condition is included to verify that the observed effects are. This experiment did not test whether this was due to the specific cross-layer relationship rather than the mere presence of an additional loss term.",
-      "rule": "causal_explanation_untested",
-      "section": "method"
-    },
-    {
-      "claim_id": "c-b88bda8ee28f",
-      "original": "If the proposed condition outperforms this negative control, it suggests the specific alignment to block 0 is relevant; if not, the effect may be attributable to generic regularization.",
-      "qualified": "If the proposed condition outperforms this negative control, it suggests the specific alignment to block 0 is relevant; if not, the effect may be. This experiment did not test whether this was attributable to generic regularization.",
-      "rule": "causal_explanation_untested",
-      "section": "method"
     }
   ],
   "references": [
@@ -7688,5 +8520,5 @@
     }
   },
   "schema_version": 1,
-  "verifier_version": "grounding-2.4"
+  "verifier_version": "grounding-2.5"
 }
