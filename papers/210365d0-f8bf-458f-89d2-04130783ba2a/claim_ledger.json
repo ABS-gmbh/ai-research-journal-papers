@@ -7198,13 +7198,13 @@
     "clauses_read": 167,
     "llm_calls": 0,
     "sentences_read": 151,
-    "wall_ms": 582.59
+    "wall_ms": 553.49
   },
   "diff": {
     "evidence_changed": false,
     "introduced": [],
     "persisting": [],
-    "previous_manuscript_sha256": "cc938f5084c058a2d8e3fdc26c5f8bfe1b17b8e606d7397c4eaf2cecbaa13b61",
+    "previous_manuscript_sha256": "d1fd23c912f49fd51385fe0f623e76cd5a688e9d88b336c351300517621ce518",
     "resolved": []
   },
   "enforced": true,
@@ -7754,7 +7754,7 @@
     ]
   },
   "manuscript_checks": [],
-  "manuscript_sha256": "cc938f5084c058a2d8e3fdc26c5f8bfe1b17b8e606d7397c4eaf2cecbaa13b61",
+  "manuscript_sha256": "d1fd23c912f49fd51385fe0f623e76cd5a688e9d88b336c351300517621ce518",
   "qualifications": [
     {
       "claim_id": "c-c5622aae9907",
