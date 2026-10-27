@@ -1,0 +1,787 @@
+{
+  "allowed_changes": [
+    "renaming variables, restructuring control flow, extracting helper functions, comments and formatting",
+    "numerical safeguards that leave values unchanged on non-degenerate inputs (an epsilon in a denominator, clamping a value the protocol says cannot occur)",
+    "device and dtype placement, and moving the operator's randomness between the harness-owned operator streams (ctx.rng, ctx.rand_like, ctx.randn_like) provided the drawn distribution is unchanged",
+    "performance changes (vectorisation, caching a fixed quantity in ctx.state for the current run)"
+  ],
+  "clauses": [
+    {
+      "applicable": true,
+      "authority": "typed_registration",
+      "clause_id": "Q1",
+      "essential": true,
+      "kind": "question",
+      "obligations": [
+        {
+          "blocking": true,
+          "description": "plan direction and outcome desirability equal the registered spec, and the preregistration carries the identical operational specification",
+          "machine_checkable": true,
+          "obligation_id": "Q1.design",
+          "surface": "design"
+        },
+        {
+          "blocking": true,
+          "description": "the analysis applies the registered hypothesis-positive multiplier",
+          "machine_checkable": true,
+          "obligation_id": "Q1.output",
+          "surface": "output"
+        }
+      ],
+      "sources": [
+        "topic.research_question",
+        "question_spec.hypothesized_direction",
+        "question_spec.outcome_higher_is_better",
+        "question_spec.canonical_hypothesis"
+      ],
+      "statement": "Test whether the intervention intervention better on 'held-out classification accuracy'; the analysed contrast is multiplied by 1 so a positive value supports the registered direction.",
+      "title": "Research question, hypothesis and direction",
+      "underspecified": [],
+      "value": {
+        "hypothesis": "The intervention is predicted to yield higher held-out classification accuracy than the comparator, with mean hypothesis-positive paired contrast H_s exceeding the fixed worthwhile margin of 0.0125098 proportion.",
+        "hypothesis_positive_multiplier": 1,
+        "hypothesized_direction": "intervention_better",
+        "outcome_higher_is_better": true,
+        "research_question": "Does balancing FFN neuron capacities improve subject-disjoint generalization in the uci_har_small_transformer_v1 testbed?"
+      }
+    },
+    {
+      "applicable": true,
+      "authority": "server_bound",
+      "clause_id": "P1",
+      "essential": true,
+      "kind": "population",
+      "obligations": [
+        {
+          "blocking": true,
+          "description": "the plan's dataset, model and staged files equal the contract",
+          "machine_checkable": true,
+          "obligation_id": "P1.design",
+          "surface": "design"
+        },
+        {
+          "blocking": true,
+          "description": "the server-owned loader, model and driver in the bundle are byte-identical to the server's (free-form code loads data itself: no machine method)",
+          "machine_checkable": true,
+          "obligation_id": "P1.static",
+          "surface": "static"
+        },
+        {
+          "blocking": true,
+          "description": "the datasets staged for the run carry the registered checksums",
+          "machine_checkable": true,
+          "obligation_id": "P1.output",
+          "surface": "output"
+        }
+      ],
+      "sources": [
+        "testbed_recipe:uci_har_small_transformer_v1",
+        "question_spec.population",
+        "question_spec.unit_of_analysis",
+        "plan.required_datasets"
+      ],
+      "statement": "Units: Seeded training run drawn from Training runs of PreNormTransformerEncoder on UCI HAR with subject-disjoint split; calibrated testbed uci_har_small_transformer_v1 (recipe 94f3ad0aa281).",
+      "title": "Population, dataset and model",
+      "underspecified": [],
+      "value": {
+        "dataset": "UCI Human Activity Recognition Using Smartphones (DOI 10.24432/C54S4K; raw inertial signals, 128-timestep windows over 9 channels; official subject-disjoint split of 7,352 training and 2,947 held-out windows)",
+        "model": "PreNormTransformerEncoder(Linear(9,64) + learned positional embedding(128,64); 2 blocks, each LayerNorm(64) -> 4-head self-attention over 128 timesteps with q/k/v/out Linear(64,64) -> residual -> LayerNorm(64) -> Linear(64,128) -> ReLU -> Linear(128,64) -> residual; final LayerNorm(64), mean-pool over time, Linear(64,6))",
+        "population": "Training runs of PreNormTransformerEncoder on UCI HAR with subject-disjoint split",
+        "preprocessing": "standardise each of the 9 inertial channels by subtracting that channel's mean and dividing by its standard deviation (floored at 1e-6) computed over the TRAINING split only, so no held-out statistic reaches training",
+        "recipe_hash": "94f3ad0aa281d8b6845da79f0abcea1cd604a36c8b00ffcce5861e16cc4ff155",
+        "required_datasets": [
+          {
+            "name": "uci_har_smartphones",
+            "sha256": "c00b803081a5c797cd5e4b83700a9810b38d53d9d84e01917e090e1fdbc81031"
+          }
+        ],
+        "testbed_id": "uci_har_small_transformer_v1",
+        "training_budget": "12 epochs; batch size 128; SGD(lr=0.05,momentum=0.9)",
+        "unit_of_analysis": "Seeded training run"
+      }
+    },
+    {
+      "applicable": true,
+      "authority": "typed_registration",
+      "clause_id": "S1",
+      "essential": true,
+      "kind": "sampling",
+      "obligations": [
+        {
+          "blocking": true,
+          "description": "plan and preregistration carry the exact seed lists",
+          "machine_checkable": true,
+          "obligation_id": "S1.design",
+          "surface": "design"
+        },
+        {
+          "blocking": true,
+          "description": "both cohorts report the exact seed lists in order with one finite value per seed",
+          "machine_checkable": true,
+          "obligation_id": "S1.output",
+          "surface": "output"
+        }
+      ],
+      "sources": [
+        "question_spec.seed_ids",
+        "question_spec.replication_seed_ids",
+        "question_spec.failure_handling"
+      ],
+      "statement": "43 primary and 43 disjoint replication seeds, each executed exactly once per condition and never pooled.",
+      "title": "Seed identities and cohorts",
+      "underspecified": [],
+      "value": {
+        "cohorts_analysed_separately": true,
+        "failure_handling": "A non-finite outcome is never a data point: the harness raises on any non-finite value for either condition in that seed pair, so the job fails and reports nothing rather than a value it did not measure. No preregistered seed is discarded, skipped, or rerun, and no outcome is imputed.",
+        "replication_seed_ids": [
+          4320773929864477461,
+          4572011691334341044,
+          1024169838608046568,
+          70426179010925050,
+          4279951434647552413,
+          1525730301824159332,
+          2456995112630259840,
+          1438940561707491066,
+          3265594330752860948,
+          3313077302295843199,
+          154257161523473883,
+          932959957416460902,
+          2460345311424550248,
+          4103027776969344918,
+          3180763842676044575,
+          2680763204965541202,
+          860343005213925595,
+          2251660953322924511,
+          3602542195028900413,
+          4597019890493101173,
+          1088915320621658123,
+          1852251732497043221,
+          3465798054693121361,
+          1353228797488142695,
+          4288297583911624336,
+          4255826400377963612,
+          2929822804607519445,
+          1498830690282327365,
+          3112246099719202789,
+          1000118519658128261,
+          1257818511997115116,
+          1228137926523810998,
+          7730833112919494,
+          2311327190165276681,
+          2983717921336380133,
+          1878749905703531082,
+          699211854863334235,
+          3299934322367760388,
+          1909067866147248581,
+          848308637145405381,
+          749878386657420966,
+          689681967342702198,
+          249916436928423872
+        ],
+        "seed_ids": [
+          3082305311014867827,
+          4186422859404013514,
+          2387181325241556003,
+          3182619286003977438,
+          3438331344051643608,
+          620252232043632839,
+          3239163973742456083,
+          1898248096129308665,
+          1066012308908509790,
+          4438929654394750517,
+          2854402741562619104,
+          1920862951106082837,
+          1536148981766593057,
+          1964427229086117459,
+          1887475434142652658,
+          3772847866917766394,
+          359941395117292827,
+          2136554577369890083,
+          4188340981133805670,
+          1315161378058826978,
+          1415188985576409927,
+          1310082642526382996,
+          2736886400400380092,
+          1485561164519252005,
+          3502707465086045048,
+          3394863877104515794,
+          371674130373742582,
+          1386069600169889359,
+          3148930491141517020,
+          1013576460105568673,
+          3638501434658534819,
+          2453211275455103459,
+          2735914919971171670,
+          357041012913871729,
+          2525930462449636703,
+          1404659974452858503,
+          2421171159155662627,
+          1567729552275512853,
+          3073538427502128060,
+          2266614561625367693,
+          3237028201528057935,
+          633394856712588532,
+          4364642531486158638
+        ]
+      }
+    },
+    {
+      "applicable": true,
+      "authority": "derived",
+      "clause_id": "S2",
+      "essential": true,
+      "kind": "pairing",
+      "obligations": [
+        {
+          "blocking": true,
+          "description": "the operator neither draws from nor re-seeds a global random stream",
+          "machine_checkable": true,
+          "obligation_id": "S2.static",
+          "surface": "static"
+        },
+        {
+          "blocking": true,
+          "description": "no global random stream moved during any observed operator call, and repeated runs are bit-identical",
+          "machine_checkable": true,
+          "obligation_id": "S2.runtime",
+          "surface": "runtime"
+        }
+      ],
+      "sources": [
+        "question_spec.boundary_conditions (canonical pairing clauses)"
+      ],
+      "statement": "Only the operator differs within a seed's pair; it draws randomness only from its own harness-owned stream and carries no state between runs.",
+      "title": "Paired-seed contract and operator randomness",
+      "underspecified": [],
+      "value": {
+        "operator_randomness": "harness-owned operator stream only",
+        "pairing": "per seed, every condition shares initialization, data order and stochastic draws; state is reset between runs"
+      }
+    },
+    {
+      "applicable": true,
+      "authority": "server_bound",
+      "clause_id": "C1",
+      "essential": true,
+      "kind": "conditions",
+      "obligations": [
+        {
+          "blocking": true,
+          "description": "plan baselines and negative controls are the registered comparator and controls",
+          "machine_checkable": true,
+          "obligation_id": "C1.design",
+          "surface": "design"
+        },
+        {
+          "blocking": true,
+          "description": "results contain exactly the registered conditions",
+          "machine_checkable": true,
+          "obligation_id": "C1.output",
+          "surface": "output"
+        }
+      ],
+      "sources": [
+        "plan.condition_ids",
+        "question_spec.comparator",
+        "question_spec.negative_controls"
+      ],
+      "statement": "Exactly the conditions ['proposed', 'baseline_1', 'negative_control_1'], executed in both cohorts.",
+      "title": "Registered experimental conditions",
+      "underspecified": [],
+      "value": {
+        "comparator": "Control arm, defined by what the harness guarantees rather than by a description of the intervention. Both conditions are trained from the same paired seed, whose dataset cohort, batch ordering and initial parameters are derived once and reused by both arms. Both arms run the identical ordinary training step \u2014 the same forward pass, the same classification objective, the same backward pass and the same optimizer update \u2014 and the identical held-out evaluation path. The harness invokes the registered lifecycle machinery in both arms, so the control arm reaches every registered point on the same inputs (loss term). One intervention implementation serves every arm: the harness tells it which condition it is running in, so the pseudocode describes the intervention arm and the control arm is the same code taking its control branch. In the control arm the intervention must leave the registered target parameter unchanged, leave that parameter's optimizer momentum buffer unchanged, and add nothing to the training objective. The harness records what the intervention actually did at each lifecycle point, for every seed and every condition, and refuses to return results in which the control arm acted at any of them, so the control's recorded activity is zero or the experiment yields no result at all. Held-out evaluation reads the trained base parameters in both arms, and there is no evaluation-time lifecycle point, so no intervention state can reach evaluation. Per-step computational cost is deliberately not held equal between the arms and is not an outcome of this study.",
+        "condition_ids": [
+          "proposed",
+          "baseline_1",
+          "negative_control_1"
+        ],
+        "negative_controls": [
+          "Apply variance penalty to column norms (dim=0) instead of row norms, with identical coefficient 0.01"
+        ]
+      }
+    },
+    {
+      "applicable": true,
+      "authority": "derived",
+      "clause_id": "A1",
+      "essential": true,
+      "kind": "assignment",
+      "obligations": [
+        {
+          "blocking": true,
+          "description": "the proposed path can apply the intervention and no baseline path can",
+          "machine_checkable": true,
+          "obligation_id": "A1.static",
+          "surface": "static"
+        },
+        {
+          "blocking": true,
+          "description": "the recorded realization shows the proposed arm acting and no baseline acting",
+          "machine_checkable": true,
+          "obligation_id": "A1.runtime",
+          "surface": "runtime"
+        },
+        {
+          "blocking": true,
+          "description": "full-run activation counts: proposed active, every baseline zero",
+          "machine_checkable": true,
+          "obligation_id": "A1.output",
+          "surface": "output"
+        }
+      ],
+      "sources": [
+        "plan.condition_ids",
+        "app/experiment/harness/comparator.py"
+      ],
+      "statement": "Only 'proposed' receives the intervention; every baseline is the same program with the operator applying no modification.",
+      "title": "Treatment and comparator assignment",
+      "underspecified": [],
+      "value": {
+        "treated": [
+          "proposed"
+        ],
+        "untreated": [
+          "baseline_1"
+        ]
+      }
+    },
+    {
+      "applicable": true,
+      "authority": "typed_registration",
+      "clause_id": "N1",
+      "essential": true,
+      "kind": "negative_controls",
+      "obligations": [
+        {
+          "blocking": true,
+          "description": "each control path can act and is not the proposed path under another name",
+          "machine_checkable": true,
+          "obligation_id": "N1.static",
+          "surface": "static"
+        },
+        {
+          "blocking": true,
+          "description": "each control acted on at least one seed and is not bit-identical to the treatment on every seed",
+          "machine_checkable": true,
+          "obligation_id": "N1.output",
+          "surface": "output"
+        },
+        {
+          "blocking": true,
+          "description": "a control implements its declared transform (independent review)",
+          "machine_checkable": false,
+          "obligation_id": "N1.static.semantics",
+          "surface": "static"
+        }
+      ],
+      "sources": [
+        "question_spec.negative_controls"
+      ],
+      "statement": "Each declared control executes its registered transform: it acts, and it is neither the comparator nor the treatment under another name.",
+      "title": "Negative controls",
+      "underspecified": [],
+      "value": {
+        "controls": [
+          {
+            "condition_id": "negative_control_1",
+            "constants": [
+              0.01
+            ],
+            "declared": "Apply variance penalty to column norms (dim=0) instead of row norms, with identical coefficient 0.01"
+          }
+        ]
+      }
+    },
+    {
+      "applicable": true,
+      "authority": "typed_registration",
+      "clause_id": "I1",
+      "essential": true,
+      "kind": "intervention_lifecycle",
+      "obligations": [
+        {
+          "blocking": true,
+          "description": "the proposed path reaches each registered phase's mechanism and none of an unregistered phase",
+          "machine_checkable": true,
+          "obligation_id": "I1.static",
+          "surface": "static"
+        },
+        {
+          "blocking": true,
+          "description": "the realized phases equal the registered phases, each learnable parameter received a gradient, and a reparameterization stayed differentiable",
+          "machine_checkable": true,
+          "obligation_id": "I1.runtime",
+          "surface": "runtime"
+        }
+      ],
+      "sources": [
+        "question_spec.intervention_protocol.execution_phases",
+        "question_spec.intervention_protocol.learns_parameters"
+      ],
+      "statement": "The proposed arm acts in exactly ['loss_term'].",
+      "title": "Intervention lifecycle",
+      "underspecified": [],
+      "value": {
+        "execution_phases": [
+          "loss_term"
+        ],
+        "learns_parameters": false
+      }
+    },
+    {
+      "applicable": true,
+      "authority": "server_bound",
+      "clause_id": "I2",
+      "essential": true,
+      "kind": "intervention_scope",
+      "obligations": [
+        {
+          "blocking": false,
+          "description": "the operator does not address another named parameter. Reading one is legitimate (a cross-layer penalty reads a detached reference), so an unverified verdict here does not block: the runtime footprint decides",
+          "machine_checkable": true,
+          "obligation_id": "I2.static",
+          "surface": "static"
+        },
+        {
+          "blocking": true,
+          "description": "no other parameter, optimizer state, hyperparameter or parameter inventory changed during an operator call, and no added term or reparameterization sends gradient to another parameter",
+          "machine_checkable": true,
+          "obligation_id": "I2.runtime",
+          "surface": "runtime"
+        }
+      ],
+      "sources": [
+        "question_spec.intervention_target",
+        "question_spec.intervention_target_shape"
+      ],
+      "statement": "The operator modifies only blocks.0.fc1.weight (and its momentum buffer or parameters it owns); nothing else it adds is trained by its terms.",
+      "title": "Intervention scope (target confinement)",
+      "underspecified": [],
+      "value": {
+        "shape": [
+          128,
+          64
+        ],
+        "target": "blocks.0.fc1.weight",
+        "writable": [
+          "target",
+          "target momentum buffer",
+          "operator-owned parameters"
+        ]
+      }
+    },
+    {
+      "applicable": true,
+      "authority": "typed_registration",
+      "clause_id": "I3",
+      "essential": true,
+      "kind": "intervention_parameters",
+      "obligations": [
+        {
+          "blocking": false,
+          "description": "each registered constant appears in the proposed path. Absence is unverified, never a violation (the value may be computed), and does not block: the repair obligation protects every constant the accepted code held",
+          "machine_checkable": true,
+          "obligation_id": "I3.static",
+          "surface": "static"
+        },
+        {
+          "blocking": true,
+          "description": "a repair never removes a registered constant the accepted code contained",
+          "machine_checkable": true,
+          "obligation_id": "I3.repair",
+          "surface": "repair"
+        }
+      ],
+      "sources": [
+        "question_spec.intervention",
+        "question_spec.intervention_protocol.pseudocode",
+        "question_spec.intervention_protocol.numerical_safeguards"
+      ],
+      "statement": "Registered magnitudes [1e-08] are part of the intervention.",
+      "title": "Registered treatment constants",
+      "underspecified": [],
+      "value": {
+        "constants": [
+          1e-08
+        ]
+      }
+    },
+    {
+      "applicable": true,
+      "authority": "typed_registration",
+      "clause_id": "I4",
+      "essential": true,
+      "kind": "intervention_semantics",
+      "obligations": [
+        {
+          "blocking": true,
+          "description": "the code realises the pseudocode, axis, ordering, normalisation, safeguards and invariants (independent review)",
+          "machine_checkable": false,
+          "obligation_id": "I4.static.semantics",
+          "surface": "static"
+        },
+        {
+          "blocking": true,
+          "description": "after acceptance, a repair preserves every arm's behavioural fingerprint on the fixed smoke inputs",
+          "machine_checkable": true,
+          "obligation_id": "I4.repair",
+          "surface": "repair"
+        }
+      ],
+      "sources": [
+        "question_spec.intervention",
+        "question_spec.intervention_protocol"
+      ],
+      "statement": "The operator computes the registered transform. Whether arbitrary Python realises the pseudocode is NOT machine-decidable: independent review judges it, and once code is accepted every later repair must preserve its measured behaviour on fixed probe inputs.",
+      "title": "Intervention computation",
+      "underspecified": [],
+      "value": {
+        "intervention": "Server-bound target blocks.0.fc1.weight has stored tensor shape (128, 64). Add FFN Row-Norm Variance Loss Term",
+        "invariants": [
+          "Loss term is non-negative",
+          "Gradient flows to W through the loss",
+          "Coefficient is fixed at 0.01",
+          "Penalty is added to classification loss before backward pass"
+        ],
+        "normalization_rule": "None (raw norms).",
+        "numerical_safeguards": "Clamp variance to >= 0. Epsilon 1e-8 for norm stability.",
+        "operator_name": "FFNRowNormVarianceRegularization",
+        "ordering_rule": "Compute norms, then mean, then variance, then scale and add to loss.",
+        "pseudocode_sha256": "e97d28024775d3595991c67ff8d776cc4358aa759c7ff4460dc72c8bd4655380",
+        "tensor_axis_or_scope": "dim=1 (output neurons)"
+      }
+    },
+    {
+      "applicable": true,
+      "authority": "server_bound",
+      "clause_id": "O1",
+      "essential": true,
+      "kind": "outcome",
+      "obligations": [
+        {
+          "blocking": true,
+          "description": "the analysed primary metric is the registered outcome, as preregistered",
+          "machine_checkable": true,
+          "obligation_id": "O1.design",
+          "surface": "design"
+        },
+        {
+          "blocking": true,
+          "description": "the outcome is computed by server-owned code",
+          "machine_checkable": true,
+          "obligation_id": "O1.static",
+          "surface": "static"
+        },
+        {
+          "blocking": true,
+          "description": "every condition reports the primary metric inside the registered range and the analysis treats it as primary",
+          "machine_checkable": true,
+          "obligation_id": "O1.output",
+          "surface": "output"
+        }
+      ],
+      "sources": [
+        "question_spec.outcome_name",
+        "question_spec.outcome_formula",
+        "question_spec.outcome_unit",
+        "question_spec.outcome_range_min/max",
+        "plan.primary_metric",
+        "plan.metrics"
+      ],
+      "statement": "The primary outcome is 'held-out classification accuracy' (proportion), analysed under the metric key 'held-out classification accuracy'.",
+      "title": "Primary outcome and metric",
+      "underspecified": [],
+      "value": {
+        "analysis_metric": "held-out classification accuracy",
+        "computed_by": "server-owned harness",
+        "higher_is_better": true,
+        "metrics": [
+          "held-out classification accuracy"
+        ],
+        "outcome_formula": "number of correct activity predictions / 2947 windows in the official subject-disjoint UCI HAR test split",
+        "outcome_name": "held-out classification accuracy",
+        "outcome_unit": "proportion",
+        "range": [
+          0.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "applicable": true,
+      "authority": "typed_registration",
+      "clause_id": "E1",
+      "essential": true,
+      "kind": "estimand",
+      "obligations": [
+        {
+          "blocking": true,
+          "description": "the plan carries the registered margin and direction",
+          "machine_checkable": true,
+          "obligation_id": "E1.design",
+          "surface": "design"
+        },
+        {
+          "blocking": true,
+          "description": "recomputed from per-seed results, the analysis's contrast, estimate, margin and decision equal the registered rule's",
+          "machine_checkable": true,
+          "obligation_id": "E1.output",
+          "surface": "output"
+        }
+      ],
+      "sources": [
+        "question_spec.estimand",
+        "question_spec.smallest_worthwhile_effect_value",
+        "question_spec.decision_value",
+        "question_spec.target_power",
+        "question_spec.planning_sd"
+      ],
+      "statement": "Mean hypothesis-positive paired difference proposed \u2212 baseline_1 over each cohort's seeds; supported only if CI_low > 0.0125098, refuted if CI_high \u2264 0.",
+      "title": "Estimand and decision rule",
+      "underspecified": [],
+      "value": {
+        "cohorts": [
+          "primary",
+          "replication"
+        ],
+        "contrast": [
+          "proposed",
+          "baseline_1"
+        ],
+        "estimand": "Hypothesis-positive paired contrast H_s = outcome_intervention - outcome_comparator; estimand = arithmetic mean of H_s over the preregistered primary seed IDs.",
+        "interval": "two-sided paired-bootstrap 95% CI of mean(H_s)",
+        "margin": 0.012509797746985206,
+        "multiplier": 1,
+        "planning_sd": 0.025019595493970412,
+        "rule": {
+          "direction_refuted": "ci_high <= 0",
+          "direction_supported": "ci_low > margin",
+          "inconclusive": "otherwise"
+        },
+        "target_power": 0.9
+      }
+    },
+    {
+      "applicable": true,
+      "authority": "server_bound",
+      "clause_id": "D1",
+      "essential": true,
+      "kind": "data_split",
+      "obligations": [
+        {
+          "blocking": true,
+          "description": "the plan's held-out evaluation is the registered one",
+          "machine_checkable": true,
+          "obligation_id": "D1.design",
+          "surface": "design"
+        },
+        {
+          "blocking": true,
+          "description": "the operator cannot reach any data source, server module, file or introspection primitive",
+          "machine_checkable": true,
+          "obligation_id": "D1.static",
+          "surface": "static"
+        },
+        {
+          "blocking": true,
+          "description": "trained parameters are bit-identical when only the held-out cohort is scrambled",
+          "machine_checkable": true,
+          "obligation_id": "D1.runtime",
+          "surface": "runtime"
+        }
+      ],
+      "sources": [
+        "testbed_recipe:uci_har_small_transformer_v1.held_out_evaluation",
+        "question_spec.leakage_risks"
+      ],
+      "statement": "Training never reads the held-out cohort; it is used only to measure the outcome.",
+      "title": "Held-out split and leakage",
+      "underspecified": [],
+      "value": {
+        "held_out_evaluation": "the official UCI HAR test split \u2014 2,947 windows recorded from 9 subjects who appear in no training window, so the held-out cohort is subject-disjoint rather than a random row split, and is never used for training or tuning",
+        "leakage_risks": [
+          "None identified - held-out evaluation is subject-disjoint and never used for training or tuning"
+        ],
+        "preprocessing": "standardise each of the 9 inertial channels by subtracting that channel's mean and dividing by its standard deviation (floored at 1e-6) computed over the TRAINING split only, so no held-out statistic reaches training"
+      }
+    }
+  ],
+  "condition_ids": [
+    "proposed",
+    "baseline_1",
+    "negative_control_1"
+  ],
+  "forbidden_changes": [
+    {
+      "change": "which arm receives the intervention, or adding, removing or exchanging an arm",
+      "clauses": [
+        "C1",
+        "A1",
+        "N1"
+      ]
+    },
+    {
+      "change": "the intervention target, or touching any other parameter, optimizer state or optimizer hyperparameter",
+      "clauses": [
+        "I2"
+      ]
+    },
+    {
+      "change": "the registered lifecycle phases or the learnable-parameter mechanism",
+      "clauses": [
+        "I1"
+      ]
+    },
+    {
+      "change": "a registered treatment constant (coefficient, scale, threshold)",
+      "clauses": [
+        "I3"
+      ]
+    },
+    {
+      "change": "the computation of the intervention or of a negative control beyond the allowed implementation changes",
+      "clauses": [
+        "I4",
+        "N1"
+      ]
+    },
+    {
+      "change": "the primary outcome, its metric, unit, range or desirability",
+      "clauses": [
+        "O1",
+        "Q1"
+      ]
+    },
+    {
+      "change": "the estimand, contrast direction, worthwhile margin, interval or decision rule",
+      "clauses": [
+        "E1",
+        "Q1"
+      ]
+    },
+    {
+      "change": "seed identities, cohorts, pairing or failure handling",
+      "clauses": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "change": "the dataset, preprocessing or held-out split, or any training-time use of the held-out cohort",
+      "clauses": [
+        "P1",
+        "D1"
+      ]
+    }
+  ],
+  "harness": true,
+  "invariant_hash": "51d4b1653f393324efcfeec8c68d8ddd8c69a843ea6e06504b798ddaa10fe316",
+  "provenance": {
+    "calibration_record_id": "ef4188ff-a4a8-4720-a3a7-f59d889d0c94",
+    "preregistration_sha256": "a21533b6e35f8d92ec518176269acfdbe91918a71177060fe647ba06228484f8",
+    "recipe_hash": "94f3ad0aa281d8b6845da79f0abcea1cd604a36c8b00ffcce5861e16cc4ff155",
+    "registered_at": "2026-10-27T12:49:06.400663+00:00"
+  },
+  "schema_version": 1,
+  "testbed_id": "uci_har_small_transformer_v1"
+}
