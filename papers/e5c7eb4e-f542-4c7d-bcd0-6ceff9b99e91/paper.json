@@ -1,6 +1,6 @@
 {
-  "title": "Cross-Layer Query Consistency Loss Tests Whether Attention Stability Across Depth Improves Subject-Disjoint Generalization in Time-Series Transformers",
-  "method": "The core operator is a Cross-Layer Query Consistency Loss added to the training objective. This intervention regularizes deeper block query projection weights toward shallower block weights. Specifically, a Frobenius norm consistency regularization term is added during training that penalizes the difference between block 1's query projection weights and block 0's query projection weights (detached). The loss term is computed as 0.01 * ||W_q1 - detach(W_q0)||_F^2, added to the classification objective. Gradients flow only to block 1's weights. This design tests the hypothesis that enforcing stability across depth improves generalization. The comparator is the baseline condition. Both intervention and baseline conditions use identical seeds, data ordering, initialization, and training steps. The only difference is whether the consistency loss term is added. The control arm is defined by what the harness guarantees rather than by a description of the intervention. Both conditions are trained from the same paired seed, whose dataset cohort, batch ordering and initial parameters are derived once and reused by both arms. Both arms run the identical ordinary training step \u2014 the same forward pass, the same classification objective, the same backward pass and the same optimizer update \u2014 and the identical held-out evaluation path. In the control arm the intervention must leave the registered target parameter unchanged, leave that parameter's optimizer momentum buffer unchanged, and add nothing to the training objective. The harness records what the intervention actually did at each lifecycle point, for every seed and every condition, and refuses to return results in which the control arm acted at any of them. A final LayerNorm(64) precedes mean-pool over time and a Linear(64,6) classification head. This architecture is selected to be large enough to learn temporal representations but small enough to train across many seeds for statistical power. The intervention targets the query projection weights within the self-attention modules, as these determine how temporal tokens attend to one another. The paired contrast in the hypothesised direction H_s is the difference in held-out classification accuracy between the proposed condition and the baseline. The preregistered decision rule compares the mean H_s against a fixed worthwhile margin of 0.0125098 proportion. If the lower bound of the 95% confidence interval exceeds this margin, the hypothesis is supported. If the interval includes zero, the result is inconclusive. This margin was set to reflect a practically significant improvement in activity recognition accuracy. The method isolates the effect of the consistency loss by pairing every condition on one seed, buying control over initialization variance at the cost of computational doubling per seed.\n\nOperator specification. CrossLayerQueryConsistency is applied to blocks.1.attn.q_proj.weight. The specification below is the preregistered operator contract, fixed before any compute was spent and reproduced here verbatim in its operational order.\n\n- Scope: Full weight matrix [64, 64] treated as flat parameter space.\n- Applied: the operator is invoked during loss computation of every optimization step: the operator's term is added to the classification objective inside the autograd graph, so the combined objective is what is differentiated and every operator-owned parameter is trained by it..\n- Ordering: Element-wise subtraction then sum; order-invariant due to commutativity of addition.\n- Normalisation: No normalization; raw Frobenius norm squared scaled by fixed coefficient.\n- Numerical safeguards: Coefficient 0.01 prevents in the training objective from dominating classification objective; diff computation uses standard floating-point subtraction.\n\nAlgorithm 1 gives the operator in full.\n\n1. Retrieve reference_weights from model.blocks[0].attn.q_proj.weight\n2. Detach reference_weights from gradient graph to prevent gradients flowing to block 0\n3. Compute diff = target - reference_weights\n4. Compute squared_elements = diff * diff (element-wise)\n5. Compute loss_raw = sum(squared_elements) over all elements\n6. Set consistency_coefficient = 0.01\n7. Compute in the training objective = consistency_coefficient * loss_raw\n8. Store in the training objective in scratch dict for harness aggregation\n9. Return in the training objective to harness for addition to training objective\n\nThe following invariants hold throughout:\n- Reference weights from block 0 are detached and receive no gradients\n- Loss term is differentiable with respect to target parameters only\n- Coefficient is fixed across all steps and seeds\n\nControl arm. Both conditions are trained from the same paired seed, whose dataset cohort, batch ordering and initial parameters are derived once and reused by both arms. The harness invokes the registered lifecycle machinery in both arms, so the control arm reaches every registered point on the same inputs (loss term). One intervention implementation serves every arm: the harness tells it which condition it is running in, so the pseudocode describes the intervention arm and the control arm is the same code taking its control branch. If the condition the harness passes in is a control condition, return here: add no term to the training objective, and leave the registered target parameter and that parameter's optimizer momentum buffer exactly as received. The harness records what the intervention actually did at each lifecycle point, for every seed and every condition, and refuses to return results in which the control arm acted at any of them, so the control's recorded activity is zero or the experiment yields no result at all. Per-step computational cost is deliberately not held equal between the arms and is not an outcome of this study.",
+  "title": "Cross-Layer Query-Weight Consistency Loss in a Two-Block Time-Series Transformer: A Preregistered Test on Subject-Disjoint Activity Recognition",
+  "method": "The core operator is a cross-layer query consistency loss added to the training objective. It pulls the query projection weights of the second transformer block (block 1) toward those of the first (block 0). The added term is 0.01 * ||W_q1 - detach(W_q0)||_F^2, summed with the classification objective. Because block 0's weights are detached inside the penalty, the penalty's gradient reaches only block 1's query weights; block 0's query weights are still trained by the classification loss but receive no gradient from the penalty. The intervention is designed to change the relationship between the two blocks' query weights; no manipulation check was run, and the study does not measure attention patterns, weight distances during training, or gradient contributions. The comparator is the baseline condition, which adds nothing to the objective. Both conditions use identical seeds, data ordering, initialization and training steps; the only difference is whether the consistency term is added. In the server-written specification below, \"control arm\" denotes this baseline; the negative control described next is a separate, active condition.\n\nThe registered negative control is active, not passive. It adds 0.01 * ||W_q1 - R||_F^2, where R is a random matrix drawn once per seed from the operator's own random stream, rescaled to the Frobenius norm of block 0's query weights when it is drawn, and then held fixed. It matches the proposed condition's form and coefficient but replaces the cross-layer reference with an unrelated fixed one, so it is a diagnostic for whether the specific cross-layer reference matters. Unlike the proposed reference, which moves as block 0 is trained, R does not change during training. The harness recorded the negative control acting on every training step of every seed.\n\nThe model is a pre-norm transformer encoder: a linear input projection with a learned positional embedding, two blocks of four-head self-attention and a feed-forward network, a final LayerNorm(64), mean pooling over time and a Linear(64,6) classification head. The intervention targets the query projection weights within the self-attention modules, which determine how temporal tokens attend to one another.\n\nThe paired contrast in the hypothesised direction H_s is the difference in held-out classification accuracy between the proposed condition and the baseline. The preregistered decision rule compares H_s with a fixed worthwhile margin of 0.0125098 proportion (1.251 percentage points): a cohort supports the hypothesis only if the lower bound of its 95% confidence interval exceeds the margin, and it is inconclusive unless its whole interval lies above the margin or at or below zero. The margin is derived from the calibration's measurement noise; it is not a judgment of practical significance. The preregistered 90% power refers to rejecting a zero effect when the true effect equals the margin; under the support rule, an effect exactly equal to the margin would give a lower bound above the margin only about one time in forty. We disclose this mismatch and keep the registered classification unchanged. The preregistered safeguard below states that the coefficient 0.01 keeps the term from dominating the classification objective; that was not checked during the run.\n\nOperator specification. CrossLayerQueryConsistency is applied to blocks.1.attn.q_proj.weight. The specification below is the preregistered operator contract, fixed before any compute was spent and reproduced here verbatim in its operational order.\n\n- Scope: Full weight matrix [64, 64] treated as flat parameter space.\n- Applied: the operator is invoked during loss computation of every optimization step: the operator's term is added to the classification objective inside the autograd graph, so the combined objective is what is differentiated and every operator-owned parameter is trained by it.\n- Ordering: Element-wise subtraction then sum; order-invariant due to commutativity of addition.\n- Normalisation: No normalization; raw Frobenius norm squared scaled by fixed coefficient.\n- Numerical safeguards: Coefficient 0.01 prevents loss_term from dominating classification objective; diff computation uses standard floating-point subtraction.\n\nAlgorithm 1 gives the operator in full.\n\n1. Retrieve reference_weights from model.blocks[0].attn.q_proj.weight\n2. Detach reference_weights from gradient graph to prevent gradients flowing to block 0\n3. Compute diff = target - reference_weights\n4. Compute squared_elements = diff * diff (element-wise)\n5. Compute loss_raw = sum(squared_elements) over all elements\n6. Set consistency_coefficient = 0.01\n7. Compute loss_term = consistency_coefficient * loss_raw\n8. Store loss_term in scratch dict for harness aggregation\n9. Return loss_term to harness for addition to training objective\n\nThe following invariants hold throughout:\n- Reference weights from block 0 are detached and receive no gradients\n- Loss term is differentiable with respect to target parameters only\n- Coefficient is fixed across all steps and seeds\n\nControl arm. Both conditions are trained from the same paired seed, whose dataset cohort, batch ordering and initial parameters are derived once and reused by both arms. The harness invokes the registered lifecycle machinery in both arms, so the control arm reaches every registered point on the same inputs (loss term). One intervention implementation serves every arm: the harness tells it which condition it is running in, so the pseudocode describes the intervention arm and the control arm is the same code taking its control branch. If the condition the harness passes in is a control condition, return here: add no term to the training objective, and leave the registered target parameter and that parameter's optimizer momentum buffer exactly as received. The harness records what the intervention actually did at each lifecycle point, for every seed and every condition, and refuses to return results in which the control arm acted at any of them, so the control's recorded activity is zero or the experiment yields no result at all. Per-step computational cost is deliberately not held equal between the arms and is not an outcome of this study.",
   "tables": [
     {
       "rows": [
@@ -595,8 +595,8 @@
       }
     }
   ],
-  "results": "We walk through the evidence from the primary and replication cohorts. Figure 1 shows the methodology overview, including data flow, model architecture, the CrossLayerQueryConsistency intervention at the loss term, and subject-disjoint evaluation. In the primary cohort, we report each metric's mean with a bootstrap 95% confidence interval (Table 1). On held-out classification accuracy, the proposed condition mean was 0.906 (95% CI [0.9022, 0.9106]) and the baseline mean was 0.905 (95% CI [0.9016, 0.9086]). The proposed condition improved the contrast in the hypothesised direction by 0.00133 versus the baseline condition (95% CI [-0.00315, 0.0056], paired randomisation p=0.546, Cohen's dz=0.09). Figure 2 displays these means with error bars. The 95% CI includes zero, indicating no statistically significant difference. The preregistered decision was inconclusive. Figure 3 plots the paired mean difference over 43 paired seeds for the primary cohort. Zero is the value the preregistered direction is tested against. The 43 individual paired differences are plotted behind the interval at their exact values. The distribution centers near zero, consistent with the mean difference of 0.00133. Figure 4 shows mean held-out classification accuracy over training steps for the proposed, baseline and negative control 1 conditions in the primary cohort. Each line is the mean over 43 seeds. The curves coincide closely, distinguished by marker shape and dash pattern. This suggests the consistency loss did not alter training dynamics substantially. In the pre-specified confirmatory replication on disjoint seeds, we report results separately (Table 3). On held-out classification accuracy, the proposed condition mean was 0.906 (95% CI [0.902, 0.909]) and the baseline mean was 0.908 (95% CI [0.904, 0.911]). The proposed condition worsened the contrast in the hypothesised direction by -0.00157 versus the baseline condition (95% CI [-0.00487, 0.00182], paired randomisation p=0.372, Cohen's dz=-0.14). Table 4 details this outcome. The 95% CI includes zero, and the direction reversed compared to the primary cohort. The preregistered decision was inconclusive. Figure 5 displays the replication cohort means. Figure 6 plots the paired mean difference for the replication cohort, showing the distribution of the 43 individual paired differences behind the interval. Figure 7 shows accuracy over training steps for the replication cohort, where curves again coincide. Variation across observations is attributed to the seeds that produced them. The primary cohort showed a negligible positive shift, while the replication cohort showed a negligible negative shift. Neither estimate exceeded the preregistered margin of 0.0125098 proportion. The negative control 1 condition achieved 0.908 in the primary cohort and 0.907 in the replication cohort, confirming the harness did not introduce bias. The results do not support the hypothesis that cross-layer consistency improves subject-disjoint generalization in this regime. Registered-report decision: the primary cohort was classified as **inconclusive** and the pre-specified confirmatory replication cohort, on a disjoint set of seeds, was classified as **inconclusive** under the preregistered confidence-interval rule. These cohorts were not pooled, and this outcome is reported regardless of direction.",
-  "abstract": "Transformers have become prominent in time-series analysis, yet whether architectural inductive biases improve subject-disjoint generalization remains unclear. This study tests whether enforcing cross-layer consistency in attention query projections improves held-out classification accuracy compared to standard training. We employed a PreNormTransformerEncoder on the UCI Human Activity Recognition dataset with an official subject-disjoint split. The intervention added a Frobenius norm consistency loss regularizing deeper block projections toward earlier blocks. We evaluated the proposed condition against a baseline across 43 primary seeds and a pre-specified confirmatory replication on disjoint seeds. In the primary cohort, the proposed condition improved accuracy by 0.00133 (95% CI [-0.00315, 0.0056], p=0.546). In the replication cohort, the proposed condition worsened accuracy by -0.00157 (95% CI [-0.00487, 0.00182], p=0.372). Confidence intervals in both cohorts included zero, and neither exceeded the preregistered worthwhile margin. Variation across observations is attributed to the seeds that produced them. The results are inconclusive. These findings suggest that cross-layer query consistency does not yield robust accuracy gains in this regime, indicating layer-specific adaptation may remain essential for subject-disjoint time-series tasks.",
+  "results": "We report the primary and confirmatory-replication cohorts separately. Figure 1 shows the methodology overview, including data flow, model architecture, the CrossLayerQueryConsistency intervention at the loss term, and subject-disjoint evaluation. In the primary cohort (Table 1), mean held-out classification accuracy was 0.906 (95% CI [0.9022, 0.9106]) for the proposed condition and 0.905 (95% CI [0.9016, 0.9086]) for the baseline. The paired contrast in the hypothesised direction was 0.00133, or 0.13 percentage points (95% CI [-0.00315, 0.0056], paired randomisation p=0.546, Cohen's dz=0.09; Table 2). Figure 2 displays the condition means with their intervals. The interval includes zero and its upper bound lies below the margin of 0.0125098, so the preregistered decision was inconclusive: no improvement of the registered size is supported. Figure 3 plots the 43 individual paired differences behind the interval at their exact values; zero is the value the preregistered direction is tested against. Figure 4 shows mean held-out classification accuracy over training steps for the proposed, baseline and negative control conditions in the primary cohort; each line is the mean over 43 seeds, and the curves coincide closely, distinguished by marker shape and dash pattern.\n\nIn the confirmatory replication (Table 3), mean accuracy was 0.906 (95% CI [0.902, 0.909]) for the proposed condition and 0.908 (95% CI [0.904, 0.911]) for the baseline. The paired contrast was -0.00157, or -0.16 percentage points (95% CI [-0.00487, 0.00182], paired randomisation p=0.372, Cohen's dz=-0.14); Table 4 details it. The interval includes zero, the point estimate has the opposite sign to the primary cohort's, and the preregistered decision was again inconclusive. Figure 5 shows the replication cohort's condition means with their intervals, which overlap; Figure 6 shows its 43 paired differences, which straddle zero, so the replication supports no improvement either; Figure 7 shows mean held-out accuracy over training steps, where the curves again coincide. Table 5 sets the two cohorts' condition means side by side without pooling them, so the reader can compare cohorts without a combined estimate the design does not license.\n\nThe active negative control reached mean accuracies of 0.908 in the primary cohort and 0.907 in the replication cohort, close to both the baseline and the proposed condition. The harness recorded it acting on every training step, so it ran as registered; no contrast involving it was registered or tested. Neither cohort's estimate approached the margin: both 95% intervals lie entirely below 0.0125098 (1.251 percentage points). Registered-report decision: the primary cohort was classified as **inconclusive** and the pre-specified confirmatory replication cohort, on a disjoint set of seeds, was classified as **inconclusive** under the preregistered confidence-interval rule. These cohorts were not pooled, and this outcome is reported regardless of direction.",
+  "abstract": "Whether constraining how a transformer's weights relate across depth helps it generalize to unseen people is not settled for time-series classification. This preregistered study tests whether a cross-layer consistency loss on the query projection weights of the second of two attention blocks improves held-out classification accuracy over standard training in a two-block pre-norm transformer trained on the UCI Human Activity Recognition dataset and evaluated on its official subject-disjoint split. The loss adds 0.01 times the squared Frobenius distance between the second block's query projection weights and a detached copy of the first block's to the classification objective. We compared the proposed condition with a paired baseline on 43 primary seeds and on 43 disjoint confirmatory-replication seeds that reuse the same subjects and split. In the primary cohort the paired contrast was 0.00133, or 0.13 percentage points (95% CI [-0.00315, 0.0056], p=0.546); in the replication cohort it was -0.00157, or -0.16 percentage points (95% CI [-0.00487, 0.00182], p=0.372). Both intervals include zero and lie entirely below the preregistered threshold of 0.0125098 (1.251 percentage points), so neither cohort supports an improvement of that size, and both are classified as inconclusive under the preregistered rule. An active negative control, which pulls the same weights toward a fixed random matrix instead, reached mean accuracies of 0.908 and 0.907. Only accuracy was measured, so the study identifies no mechanism.",
   "appendix": "Executed configuration. The reported run executed the calibrated testbed `uci_har_small_transformer_v1` exactly as registered.\n- Data: UCI Human Activity Recognition Using Smartphones (DOI 10.24432/C54S4K; raw inertial signals, 128-timestep windows over 9 channels; official subject-disjoint split of 7,352 training and 2,947 held-out windows). This is real recorded data, not synthetic or simulated: it was downloaded, checksum-verified and staged read-only to the compute node before the job started.\n  - `uci_har_smartphones` \u2014 https://archive.ics.uci.edu/static/public/240/human+activity+recognition+using+smartphones.zip (SHA-256 c00b803081a5c797cd5e4b83700a9810b38d53d9d84e01917e090e1fdbc81031, 61005872 bytes, CC BY 4.0)\n- Preprocessing: standardise each of the 9 inertial channels by subtracting that channel's mean and dividing by its standard deviation (floored at 1e-6) computed over the TRAINING split only, so no held-out statistic reaches training.\n- Model: PreNormTransformerEncoder(Linear(9,64) + learned positional embedding(128,64); 2 blocks, each LayerNorm(64) -> 4-head self-attention over 128 timesteps with q/k/v/out Linear(64,64) -> residual -> LayerNorm(64) -> Linear(64,128) -> ReLU -> Linear(128,64) -> residual; final LayerNorm(64), mean-pool over time, Linear(64,6)).\n- Training budget: 12 epochs; batch size 128; SGD(lr=0.05,momentum=0.9).\n- Held-out evaluation: the official UCI HAR test split \u2014 2,947 windows recorded from 9 subjects who appear in no training window, so the held-out cohort is subject-disjoint rather than a random row split, and is never used for training or tuning.\n- Outcome: held-out classification accuracy \u2014 number of correct activity predictions / 2947 windows in the official subject-disjoint UCI HAR test split (proportion).\n\nSeed identities. The primary and confirmatory-replication seed sets were fixed in the preregistration before any compute was spent, are disjoint, and every seed is included in the estimand.\n- Primary (43): 2615122547193570606, 252200600861128310, 634766601307347027, 2289833669515924996, 1075721894937126869, 2219905518708798979, 1472572688149772095, 3154489071090469597, 2567160067431731676, 375878476100283907, 3680443165500893007, 2412595240837917458, 2601790489635802822, 1913826313556203271, 710938911890137278, 4578385222592080447, 3998799165023144543, 3601994374998462166, 517409047000623439, 3812347621373549969, 3406080211412548461, 772595819596432589, 3615834778985602079, 1415494652153299218, 2062219541250864404, 142389970181333221, 4434070341016929754, 1135820606004933817, 3780975103128256366, 4407244770048434366, 4376044843392817728, 3255929081425547334, 3574102472552171439, 19016511533479923, 2933058706039751666, 3462839959629419857, 4607211731052019561, 2779871998158610606, 1485808255187976782, 3471275713396068135, 4429899216283540008, 1385236021301736380, 1330453660667172384.\n- Confirmatory replication (43): 2340648136914159678, 4191649941990144526, 914975885928187538, 3493291245950488, 3092035777930482330, 3033986887553884854, 1948116001888441515, 3721334120068172834, 1629568842510008, 3605262731553156275, 3904049989082932630, 892823242471123166, 3725427329689760378, 3555864911429215929, 3606907749333550835, 2155528049710964782, 2789562881046154133, 1853921749424354694, 1745680992267274019, 841184256946095993, 3464957341317932123, 775787681821570599, 3309282745006621851, 146154474434366067, 2391332672707033902, 706889780011171718, 2426763361766452408, 3736121309580882765, 479020209906455928, 1963761814288298963, 2233713330617425866, 2745262338024609657, 2296843351460209463, 2142392810908805088, 1468658092695416100, 2052272999620538285, 3506933794820522738, 351506867199205715, 4557863017481180823, 2654635865597404598, 3394110221015017757, 3791841174141345598, 3513984727252394996.",
   "keywords": [
     "transformer",
@@ -606,8 +606,8 @@
     "attention mechanism",
     "regularization"
   ],
-  "conclusion": "This study tested whether cross-layer query consistency loss improves subject-disjoint generalization in time-series transformers. The results were inconclusive: the proposed condition did not exceed the preregistered worthwhile margin in either the primary or replication cohorts. Variation across observations is attributed to the seeds that produced them. For someone choosing between these methods, the evidence suggests standard training is sufficient for 2-block transformers on UCI HAR, as consistency loss adds complexity without accuracy gains. Future work should test deeper architectures and varying regularization strengths to settle whether layer-specific adaptation is essential or if consistency benefits other regimes.",
-  "discussion": "The principal finding is that enforcing cross-layer consistency in attention query projections did not improve held-out classification accuracy on the UCI HAR dataset. The mean difference was 0.00133 in the primary cohort and -0.00157 in the replication cohort, with confidence intervals including zero in both cases. This suggests that transformer depth does not benefit from query weight stability across blocks for this task. The result is consistent with literature reporting that approximations needed to make regularization tractable are where guarantees are lost. It aligns with findings that spectral entropy minimization of input projections does not yield robust accuracy gains over standard weight decay in this regime [2]. What this design does establish is that the intervention was implemented correctly, as confirmed by the negative control and harness logs. What it does not establish is that cross-layer consistency is useless for all time-series tasks; the UCI HAR setting involves short windows (128 timesteps) where deep hierarchical processing may not be required. A mechanism that would produce the observed result is that layer-specific adaptation is essential for this architecture class, allowing deeper blocks to refine attention patterns for complex temporal features rather than copying shallow projections. An alternative mechanism is that the regularization strength (0.01 coefficient) was too weak to constrain weights meaningfully, or too strong to allow necessary divergence. The pre-specified confirmatory replication on disjoint seeds adds confidence that the primary result was not a false positive, as the effect did not replicate in direction or magnitude. Variation across observations is attributed to the seeds that produced them, not subjects, because each observation is one seed. This distinction matters for generalization claims; we evaluated on people who appear nowhere in training, supporting a claim about unseen subjects, but not evidence about a different corpus, sensor, task or deployment distribution. The finding stands against specific cited papers by extending the null regularization results observed for input projections [2] to attention query projections. It agrees with work questioning the validity of Transformer-based solutions for time series analysis tasks where simpler models suffice [4]. Future work would settle the question by testing deeper architectures where layer hierarchy is more critical, or by varying the consistency coefficient. It would also test whether consistency helps in low-data regimes where overfitting is more severe. The inconclusive outcome owes the reader every one of those interpretations and is never rewritten as a positive finding. The results clarify that for standard 2-block transformers on human activity recognition, cross-layer query consistency is not a sufficient inductive bias for subject-disjoint generalization.",
+  "conclusion": "This study tested whether a cross-layer consistency loss on attention query weights improves subject-disjoint accuracy in a two-block time-series transformer on UCI HAR. Neither cohort supports a positive improvement: the paired contrasts were 0.00133 and -0.00157 (0.13 and -0.16 percentage points), both 95% intervals lie below the threshold of 0.0125098 (1.251 percentage points), and both cohorts remain inconclusive under the preregistered rule. Only accuracy was measured, so the study identifies no mechanism. Within this architecture, coefficient, training budget and split, the penalty offers no detectable accuracy benefit over standard training; whether it helps in deeper networks, at other strengths or under other distribution shifts remains open.",
+  "discussion": "The principal finding is that the cross-layer consistency loss on attention query weights did not produce a detectable improvement in held-out classification accuracy on UCI HAR. The paired contrast was 0.00133 in the primary cohort and -0.00157 in the replication cohort; both intervals include zero, and both lie entirely below the margin of 0.0125098. Neither cohort supports a positive improvement of the registered size, both remain inconclusive under the preregistered rule, and the study identifies no mechanism. The result sits alongside the earlier inconclusive test of spectral entropy minimization of input projections on the same testbed [2].\n\nThe harness records show the penalty acting at the registered point on every step in the proposed and negative-control conditions and never in the baseline. On this testbed, neither cohort shows an accuracy gain as large as the margin. The design does not establish that cross-layer consistency is ineffective in general. UCI HAR uses short windows of 128 timesteps and the model has two blocks, a setting in which deep hierarchical processing may not be needed.\n\nSeveral explanations are compatible with the result, and none was tested. Deeper blocks may need layer-specific query weights in this architecture, so pulling them toward the first block may remove useful adaptation. The coefficient 0.01 may be too small to change the weights meaningfully, or the penalty may not change accuracy at this scale whatever its size. Because only accuracy was measured, not attention patterns, weight distances or gradient contributions, the study cannot separate these explanations. The active negative control, which uses an unrelated fixed reference, reached similar accuracy; this is consistent with the specific cross-layer reference not mattering here, but no contrast with it was registered.\n\nThe confirmatory replication used new seeds with the same subjects, split and pipeline, so it shows that the inconclusive outcome repeats across training seeds; it is not a replication on a new population. The evaluation covers people who appear nowhere in training, which supports a statement about unseen subjects in this dataset only. The result is also compatible with work questioning Transformer-based solutions for time series where simpler models suffice [3].\n\nA decisive follow-up would measure the targeted property directly, for example the distance between the two blocks' query weights during training, and vary the coefficient.",
   "references": [
     {
       "doi": null,
@@ -640,27 +640,6 @@
       "resolved": true,
       "identifier": "454ed5f0-7550-46f0-a993-2d3148c93152",
       "citation_count": null
-    },
-    {
-      "doi": "10.48550/arxiv.2103.00112",
-      "url": "https://openalex.org/W3133696297",
-      "year": 2021,
-      "title": "Transformer in Transformer",
-      "venue": null,
-      "source": "openalex",
-      "authors": [
-        "Kai Han",
-        "An Xiao",
-        "Enhua Wu",
-        "Jianyuan Guo",
-        "Chunjing Xu",
-        "Yunhe Wang"
-      ],
-      "abstract": "Transformer is a new kind of neural architecture which encodes the input data as powerful features via the attention mechanism. Basically, the visual transformers first divide the input images into several local patches and then calculate both representations and their relationship. Since natural images are of high complexity with abundant detail and color information, the granularity of the patch dividing is not fine enough for excavating features of objects in different scales and locations. In this paper, we point out that the attention inside these local patches are also essential for building visual transformers with high performance and we explore a new architecture, namely, Transformer iN Transformer (TNT). Specifically, we regard the local patches (e.g., 16$\\times$16) as \"visual sentences\" and present to further divide them into smaller patches (e.g., 4$\\times$4) as \"visual words\". The attention of each word will be calculated with other words in the given visual sentence with negligible computational costs. Features of both words and sentences will be aggregated to enhance the representation ability. Experiments on several benchmarks demonstrate the effectiveness of the proposed TNT architecture, e.g., we achieve an 81.5% top-1 accuracy on the ImageNet, which is about 1.7% higher than that of the state-of-the-art visual transformer with similar computational cost. The PyTorch code is available at https://github.com/huawei-noah/CV-Backbones, and the MindSpore code is available at https://gitee.com/mindspore/models/tree/master/research/cv/TNT.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "https://openalex.org/W3133696297",
-      "citation_count": 1017
     },
     {
       "doi": "10.1609/aaai.v37i9.26317",
@@ -723,11 +702,11 @@
       "citation_count": 1105
     },
     {
-      "doi": "10.65215/2q58a426",
-      "url": "https://openalex.org/W2626778328",
-      "year": 2025,
+      "doi": null,
+      "url": "https://arxiv.org/abs/1706.03762",
+      "year": 2017,
       "title": "Attention Is All You Need",
-      "venue": null,
+      "venue": "Advances in Neural Information Processing Systems 30 (NeurIPS 2017)",
       "source": "openalex",
       "authors": [
         "Ashish Vaswani",
@@ -740,7 +719,7 @@
         "Illia Polosukhin"
       ],
       "abstract": "The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.",
-      "arxiv_id": null,
+      "arxiv_id": "1706.03762",
       "resolved": true,
       "identifier": "https://openalex.org/W2626778328",
       "citation_count": 7349
@@ -758,7 +737,7 @@
         "Yossi Matias"
       ],
       "abstract": "Unneeded elements in the attention\u2019s context degrade performance. We introduce Selective Attention, a simple parameter-free change to the standard attention mechanism which reduces attention to unneeded elements. Selective attention consistently improves language modeling and downstream task performance in a variety of model sizes and context lengths. For example, transformers trained with the language modeling objective on C4 with selective attention perform language modeling equivalently to standard transformers with ~2X more heads and parameters in their attention modules. Selective attention also allows decreasing the size of the attention\u2019s context buffer, leading to meaningful reductions in the memory and compute requirements during inference. For example, transformers trained on C4 with context sizes of 512, 1,024, and 2,048 need 16X, 25X, and 47X less memory for their attention module, respectively, when equipped with selective attention, as those without selective attention, with the same validation perplexity.",
-      "arxiv_id": null,
+      "arxiv_id": "2410.02703",
       "resolved": true,
       "identifier": "v0FzmPCd1e",
       "citation_count": null
@@ -827,140 +806,6 @@
       "citation_count": 1010
     },
     {
-      "doi": "10.3390/rs13030498",
-      "url": "https://openalex.org/W3128776197",
-      "year": 2021,
-      "title": "Spatial-Spectral Transformer for Hyperspectral Image Classification",
-      "venue": null,
-      "source": "openalex",
-      "authors": [
-        "Xin He",
-        "Yushi Chen",
-        "Zhouhan Lin"
-      ],
-      "abstract": "Recently, a great many deep convolutional neural network (CNN)-based methods have been proposed for hyperspectral image (HSI) classification. Although the proposed CNN-based methods have the advantages of spatial feature extraction, they are difficult to handle the sequential data with and CNNs are not good at modeling the long-range dependencies. However, the spectra of HSI are a kind of sequential data, and HSI usually contains hundreds of bands. Therefore, it is difficult for CNNs to handle HSI processing well. On the other hand, the Transformer model, which is based on an attention mechanism, has proved its advantages in processing sequential data. To address the issue of capturing relationships of sequential spectra in HSI in a long distance, in this study, Transformer is investigated for HSI classification. Specifically, in this study, a new classification framework titled spatial-spectral Transformer (SST) is proposed for HSI classification. In the proposed SST, a well-designed CNN is used to extract the spatial features, and a modified Transformer (a Transformer with dense connection, i.e., DenseTransformer) is proposed to capture sequential spectra relationships, and multilayer perceptron is used to finish the final classification task. Furthermore, dynamic feature augmentation, which aims to alleviate the overfitting problem and therefore generalize the model well, is proposed and added to the SST (SST-FA). In addition, to address the issue of limited training samples in HSI classification, transfer learning is combined with SST, and another classification framework titled transferring-SST (T-SST) is proposed. At last, to mitigate the overfitting problem and improve the classification accuracy, label smoothing is introduced for the T-SST-based classification framework (T-SST-L). The proposed SST, SST-FA, T-SST, and T-SST-L are tested on three widely used hyperspectral datasets. The obtained results reveal that the proposed models provide competitive results compared to the state-of-the-art methods, which shows that the concept of Transformer opens a new window for HSI classification.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "https://openalex.org/W3128776197",
-      "citation_count": 453
-    },
-    {
-      "doi": "10.1109/cvpr52688.2022.01181",
-      "url": "https://openalex.org/W4313007769",
-      "year": 2022,
-      "title": "CSWin Transformer: A General Vision Transformer Backbone with Cross-Shaped Windows",
-      "venue": null,
-      "source": "openalex",
-      "authors": [
-        "Xiaoyi Dong",
-        "Jianmin Bao",
-        "Dongdong Chen",
-        "Weiming Zhang",
-        "Nenghai Yu",
-        "Lu Yuan",
-        "Dong Chen",
-        "Baining Guo"
-      ],
-      "abstract": "We present CSWin Transformer, an efficient and effective Transformer-based backbone for general-purpose vision tasks. A challenging issue in Transformer design is that global self-attention is very expensive to compute whereas local self-attention often limits the field of interactions of each token. To address this issue, we develop the Cross-Shaped Window self-attention mechanism for computing self-attention in the horizontal and vertical stripes in parallel that form a cross-shaped window, with each stripe obtained by splitting the input feature into stripes of equal width. We provide a mathematical analysis of the effect of the stripe width and vary the stripe width for different layers of the Transformer network which achieves strong modeling capability while limiting the computation cost. We also introduce Locally-enhanced Positional Encoding (LePE), which handles the local positional information better than existing encoding schemes. LePE naturally supports arbitrary input resolutions, and is thus especially effective and friendly for downstream tasks. Incorporated with these designs and a hierarchical structure, CSWin Transformer demonstrates competitive performance on common vision tasks. Specifically, it achieves 85.4% Top-1 accuracy on ImageNet-1K without any extra training data or label, 53.9 box AP and 46.4 mask AP on the COCO detection task, and 52.2 mIOU on the ADE20K semantic segmentation task, surpassing previous state-of-the-art Swin Transformer backbone by +1.2, +2.0, +1.4, and +2.0 respectively under the similar FLOPs setting. By further pretraining on the larger dataset ImageNet-21K, we achieve 87.5% Top-1 accuracy on ImageNet-1K and high segmentation performance on ADE20K with 55.7 mIoU.11Code and pretrain model is available at https://github.com/microsoft/CSWin-Transformer",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "https://openalex.org/W4313007769",
-      "citation_count": 1305
-    },
-    {
-      "doi": "10.3390/rs14122861",
-      "url": "https://openalex.org/W4283029931",
-      "year": 2022,
-      "title": "Swin-Transformer-Enabled YOLOv5 with Attention Mechanism for Small Object Detection on Satellite Images",
-      "venue": null,
-      "source": "openalex",
-      "authors": [
-        "Hang Gong",
-        "Tingkui Mu",
-        "Qiuxia Li",
-        "Haishan Dai",
-        "Chunlai Li",
-        "Zhiping He",
-        "Wenjing Wang",
-        "Feng Han",
-        "Abudusalamu Tuniyazi",
-        "Haoyang Li",
-        "Xuechan Lang",
-        "Zhiyuan Li",
-        "Bin Wang"
-      ],
-      "abstract": "Object detection has made tremendous progress in natural images over the last decade. However, the results are hardly satisfactory when the natural image object detection algorithm is directly applied to satellite images. This is due to the intrinsic differences in the scale and orientation of objects generated by the bird\u2019s-eye perspective of satellite photographs. Moreover, the background of satellite images is complex and the object area is small; as a result, small objects tend to be missing due to the challenge of feature extraction. Dense objects overlap and occlusion also affects the detection performance. Although the self-attention mechanism was introduced to detect small objects, the computational complexity increased with the image\u2019s resolution. We modified the general one-stage detector YOLOv5 to adapt the satellite images to resolve the above problems. First, new feature fusion layers and a prediction head are added from the shallow layer for small object detection for the first time because it can maximally preserve the feature information. Second, the original convolutional prediction heads are replaced with Swin Transformer Prediction Heads (SPHs) for the first time. SPH represents an advanced self-attention mechanism whose shifted window design can reduce the computational complexity to linearity. Finally, Normalization-based Attention Modules (NAMs) are integrated into YOLOv5 to improve attention performance in a normalized way. The improved YOLOv5 is termed SPH-YOLOv5. It is evaluated on the NWPU-VHR10 dataset and DOTA dataset, which are widely used for satellite image object detection evaluations. Compared with the basal YOLOv5, SPH-YOLOv5 improves the mean Average Precision (mAP) by 0.071 on the DOTA dataset.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "https://openalex.org/W4283029931",
-      "citation_count": 216
-    },
-    {
-      "doi": "10.1109/jiot.2021.3100509",
-      "url": "https://openalex.org/W3184127157",
-      "year": 2021,
-      "title": "Learning Graph Structures with Transformer for Multivariate Time Series Anomaly Detection in IoT",
-      "venue": null,
-      "source": "openalex",
-      "authors": [
-        "Zekai Chen",
-        "Dingshuo Chen",
-        "Xiao Zhang",
-        "Zixuan Yuan",
-        "Xiuzhen Cheng"
-      ],
-      "abstract": "Many real-world IoT systems, which include a variety of internet-connected sensory devices, produce substantial amounts of multivariate time series data. Meanwhile, vital IoT infrastructures like smart power grids and water distribution networks are frequently targeted by cyber-attacks, making anomaly detection an important study topic. Modeling such relatedness is, nevertheless, unavoidable for any efficient and effective anomaly detection system, given the intricate topological and nonlinear connections that are originally unknown among sensors. Furthermore, detecting anomalies in multivariate time series is difficult due to their temporal dependency and stochasticity. This paper presented GTA, a new framework for multivariate time series anomaly detection that involves automatically learning a graph structure, graph convolution, and modeling temporal dependency using a Transformer-based architecture. The connection learning policy, which is based on the Gumbel-softmax sampling approach to learn bi-directed links among sensors directly, is at the heart of learning graph structure. To describe the anomaly information flow between network nodes, we introduced a new graph convolution called Influence Propagation convolution. In addition, to tackle the quadratic complexity barrier, we suggested a multi-branch attention mechanism to replace the original multi-head self-attention method. Extensive experiments on four publicly available anomaly detection benchmarks further demonstrate the superiority of our approach over alternative state-of-the-arts. Codes are available at https://github.com/ZEKAICHEN/GTA.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "https://openalex.org/W3184127157",
-      "citation_count": 585
-    },
-    {
-      "doi": "10.1101/2021.02.12.430858",
-      "url": "https://openalex.org/W3133458480",
-      "year": 2021,
-      "title": "MSA Transformer",
-      "venue": null,
-      "source": "openalex",
-      "authors": [
-        "Roshan Rao",
-        "Jason Liu",
-        "Robert Verkuil",
-        "Joshua Meier",
-        "John Canny",
-        "Pieter Abbeel",
-        "Tom Sercu",
-        "Alexander Rives"
-      ],
-      "abstract": "Abstract Unsupervised protein language models trained across millions of diverse sequences learn structure and function of proteins. Protein language models studied to date have been trained to perform inference from individual sequences. The longstanding approach in computational biology has been to make inferences from a family of evo lutionarily related sequences by fitting a model to each family independently. In this work we combine the two paradigms. We introduce a protein language model which takes as input a set of sequences in the form of a multiple sequence alignment. The model interleaves row and column attention across the input sequences and is trained with a variant of the masked language modeling objective across many protein families. The performance of the model surpasses current state-of-the-art unsupervised structure learning methods by a wide margin, with far greater parameter efficiency than prior state-of-the-art protein language models.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "https://openalex.org/W3133458480",
-      "citation_count": 366
-    },
-    {
-      "doi": "10.1609/aaai.v36i1.19967",
-      "url": "https://openalex.org/W3139434170",
-      "year": 2022,
-      "title": "TransFG: A Transformer Architecture for Fine-Grained Recognition",
-      "venue": null,
-      "source": "openalex",
-      "authors": [
-        "Ju He",
-        "Jie-Neng Chen",
-        "Shuai Liu",
-        "Adam Kortylewski",
-        "Cheng Yang",
-        "Yutong Bai",
-        "Changhu Wang"
-      ],
-      "abstract": "Fine-grained visual classification (FGVC) which aims at recognizing objects from subcategories is a very challenging task due to the inherently subtle inter-class differences. Most existing works mainly tackle this problem by reusing the backbone network to extract features of detected discriminative regions. However, this strategy inevitably complicates the pipeline and pushes the proposed regions to contain most parts of the objects thus fails to locate the really important parts. Recently, vision transformer (ViT) shows its strong performance in the traditional classification task. The self-attention mechanism of the transformer links every patch token to the classification token. In this work, we first evaluate the effectiveness of the ViT framework in the fine-grained recognition setting. Then motivated by the strength of the attention link can be intuitively considered as an indicator of the importance of tokens, we further propose a novel Part Selection Module that can be applied to most of the transformer architectures where we integrate all raw attention weights of the transformer into an attention map for guiding the network to effectively and accurately select discriminative image patches and compute their relations. A contrastive loss is applied to enlarge the distance between feature representations of confusing classes. We name the augmented transformer-based model TransFG and demonstrate the value of it by conducting experiments on five popular fine-grained benchmarks where we achieve state-of-the-art performance. Qualitative results are presented for better understanding of our model.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "https://openalex.org/W3139434170",
-      "citation_count": 518
-    },
-    {
       "doi": null,
       "url": "https://openreview.net/forum?id=vMMzjCr5Zj",
       "year": 2024,
@@ -972,216 +817,10 @@
         "B. Aditya Prakash"
       ],
       "abstract": "Large pre-trained models have been vital in recent advancements in domains like language and vision, making model training for individual downstream tasks more efficient and provide superior performance. However, tackling time-series analysis tasks usually involves designing and training a separate model from scratch leveraging training data and domain expertise specific to the task. We tackle a significant challenge for pre-training a foundational time-series model from multi-domain time-series datasets: extracting semantically useful tokenized inputs to the model across heterogeneous time-series from different domains. We propose Large Pre-trained Time-series Models (LPTM) that introduces a novel method of adaptive segmentation that automatically identifies optimal dataset-specific segmentation strategy during pre-training. This enables LPTM to perform similar to or better than domain-specific state-of-art model when fine-tuned to different downstream time-series analysis tasks and under zero-shot settings. LPTM achieves superior forecasting and time-series classification results taking up to 40% less data and 50% less training time compared to state-of-art baselines.",
-      "arxiv_id": null,
+      "arxiv_id": "2311.11413",
       "resolved": true,
       "identifier": "vMMzjCr5Zj",
       "citation_count": null
-    },
-    {
-      "doi": null,
-      "url": "https://openreview.net/forum?id=yZ3bgXK8PA",
-      "year": 2024,
-      "title": "Shape analysis for time series",
-      "venue": "NeurIPS 2024",
-      "source": "openreview",
-      "authors": [
-        "Thibaut Germain",
-        "Samuel Gruffaz",
-        "Charles Truong",
-        "Alain Durmus",
-        "Laurent Oudre"
-      ],
-      "abstract": "Analyzing inter-individual variability of physiological functions is particularly appealing in medical and biological contexts to describe or quantify health conditions. Such analysis can be done by comparing individuals to a reference one with time series as biomedical data.This paper introduces an unsupervised representation learning (URL) algorithm for time series tailored to inter-individual studies. The idea is to represent time series as deformations of a reference time series. The deformations are diffeomorphisms parameterized and learned by our method called TS-LDDMM. Once the deformations and the reference time series are learned, the vector representations of individual time series are given by the parametrization of their corresponding deformation. At the crossroads between URL for time series and shape analysis, the proposed algorithm handles irregularly sampled multivariate time series of variable lengths and provides shape-based representations of temporal data.In this work, we establish a representation theorem for the graph of a time series and derive its consequences on the LDDMM framework. We showcase the advantages of our representation compared to existing methods using synthetic data and real-world examples motivated by biomedical applications.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "yZ3bgXK8PA",
-      "citation_count": null
-    },
-    {
-      "doi": null,
-      "url": "https://openreview.net/forum?id=ukCo8z1Af8",
-      "year": 2020,
-      "title": "Fuzzy Clustering Stability Evaluation of Time Series",
-      "venue": "Crossref",
-      "source": "openreview",
-      "authors": [
-        "{'fullname': 'Gerhard Klassen', 'username': 'https://orcid.org/orcid-search/search?searchQuery=Gerhard%20Klassen'}",
-        "{'fullname': 'Martha Tatusch', 'username': 'https://orcid.org/orcid-search/search?searchQuery=Martha%20Tatusch'}",
-        "{'fullname': 'Ludmila Himmelspach', 'username': 'https://orcid.org/orcid-search/search?searchQuery=Ludmila%20Himmelspach'}",
-        "{'fullname': 'Stefan Conrad', 'username': '~Stefan_Conrad2'}"
-      ],
-      "abstract": "The discovery of knowledge by analyzing time series is an important field of research. In this paper we investigate multiple multivariate time series, because we assume a higher information value than regarding only one time series at a time. There are several approaches which make use of the granger causality or the cross correlation in order to analyze the influence of time series on each other. In this paper we extend the idea of mutual influence and present FCSETS (Fuzzy Clustering Stability Evaluation of Time Series), a new approach which makes use of the membership degree produced by the fuzzy c-means (FCM) algorithm. We first cluster time series per timestamp and then compare the relative assignment agreement (introduced by Eyke H\u00fcllermeier and Maria Rifqi) of all subsequences. This leads us to a stability score for every time series which itself can be used to evaluate single time series in the data set. It is then used to rate the stability of the entire clustering. The stability score of a time series is higher the more the time series sticks to its peers over time. This not only reveals a new idea of mutual time series impact but also enables the identification of an optimal amount of clusters per timestamp. We applied our model on different data, such as financial, country related economy and generated data, and present the results.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "ukCo8z1Af8",
-      "citation_count": null
-    },
-    {
-      "doi": "10.1007/s41095-021-0229-5",
-      "url": "https://openalex.org/W3111535274",
-      "year": 2021,
-      "title": "PCT: Point cloud transformer",
-      "venue": null,
-      "source": "openalex",
-      "authors": [
-        "Meng-Hao Guo",
-        "Jun-Xiong Cai",
-        "Zheng-Ning Liu",
-        "Tai-Jiang Mu",
-        "Ralph R. Martin",
-        "Shi-Min Hu"
-      ],
-      "abstract": "The irregular domain and lack of ordering make it challenging to design deep neural networks for point cloud processing. This paper presents a novel framework named Point Cloud Transformer (PCT) for point cloud learning. PCT is based on Transformer, which achieves huge success in natural language processing and displays great potential in image processing. It is inherently permutation invariant for processing a sequence of points, making it well-suited for point cloud learning. To better capture local context within the point cloud, we enhance input embedding with the support of farthest point sampling and nearest neighbor search. Extensive experiments demonstrate that the PCT achieves the state-of-the-art performance on shape classification, part segmentation, semantic segmentation, and normal estimation tasks.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "https://openalex.org/W3111535274",
-      "citation_count": 1880
-    },
-    {
-      "doi": "10.15607/rss.2023.xix.025",
-      "url": "https://openalex.org/W4385430679",
-      "year": 2023,
-      "title": "RT-1: Robotics Transformer for Real-World Control at Scale",
-      "venue": null,
-      "source": "openalex",
-      "authors": [
-        "Anthony Brohan",
-        "Noah Brown",
-        "Justice Carbajal",
-        "Yevgen Chebotar",
-        "Joseph Dabis",
-        "Chelsea Finn",
-        "Keerthana Gopalakrishnan",
-        "Karol Hausman",
-        "Alexander Herzog",
-        "Jasmine Hsu",
-        "Julian Ibarz",
-        "Brian Ichter",
-        "Alex Irpan",
-        "Tomas Jackson",
-        "Sally Jesmonth",
-        "Nikhil Joshi",
-        "Ryan Julian",
-        "Dmitry Kalashnikov",
-        "Yuheng Kuang",
-        "Isabel Leal",
-        "Kuang-Huei Lee",
-        "Sergey Levine",
-        "Yao Lu",
-        "Utsav Malla",
-        "Deeksha Manjunath",
-        "Igor Mordatch",
-        "Ofir Nachum",
-        "Carolina Parada",
-        "Jodilyn Peralta",
-        "Emily P\u00e9rez",
-        "Karl Pertsch",
-        "Jornell Quiambao",
-        "Kanishka Rao",
-        "Michael S. Ryoo",
-        "Grecia Salazar",
-        "Pannag Sanketi",
-        "Kevin Sayed",
-        "Jaspiar Singh",
-        "Sumedh Sontakke",
-        "Austin V. Stone",
-        "Clayton Tan",
-        "Huong Tran",
-        "Vincent Vanhoucke",
-        "Steve Vega",
-        "Quan Vuong",
-        "Fei Xia",
-        "Ted Xiao",
-        "Peng Xu",
-        "Sichun Xu",
-        "Tianhe Yu",
-        "Brianna Zitkovich"
-      ],
-      "abstract": "By transferring knowledge from large, diverse, taskagnostic datasets, modern machine learning models can solve specific downstream tasks either zero-shot or with small taskspecific datasets to a high level of performance.While this capability has been demonstrated in other fields such as computer vision, natural language processing or speech recognition, it remains to be shown in robotics, where the generalization capabilities of the models are particularly critical due to the difficulty of collecting real-world robotic data.We argue that one of the keys to the success of such general robotic models lies with open-ended task-agnostic training, combined with highcapacity architectures that can absorb all of the diverse, robotic data.In this paper, we present a model class, dubbed Robotics Transformer, that exhibits promising scalable model properties.We verify our conclusions in a study of different model classes and their ability to generalize as a function of the data size, model size, and data diversity based on a large-scale data collection on real robots performing real-world tasks.How would you bring me two sodas?How would you move three cokes to the trash can?How would you throw away two cokes?How would you bring me two different sodas?How would you bring me an apple, a coke, and water bottle?I spilled my coke on the table, how would you throw it away and then bring me something to help clean?I just worked out, can you bring me a drink and a snack to recover?How would you bring me a fruit, a soda, and a bag of chips for lunchTABLE XI: List of SayCan instructions evaluated in Sec.IV-D",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "https://openalex.org/W4385430679",
-      "citation_count": 611
-    },
-    {
-      "doi": "10.18653/v1/p17-1021",
-      "url": "https://openalex.org/W2739716023",
-      "year": 2017,
-      "title": "An End-to-End Model for Question Answering over Knowledge Base with Cross-Attention Combining Global Knowledge",
-      "venue": null,
-      "source": "openalex",
-      "authors": [
-        "Yanchao Hao",
-        "Yuanzhe Zhang",
-        "Kang Liu",
-        "Shizhu He",
-        "Zhanyi Liu",
-        "Hua Wu",
-        "Jun Zhao"
-      ],
-      "abstract": "With the rapid growth of knowledge bases (KBs) on the web, how to take full advantage of them becomes increasingly important.Question answering over knowledge base (KB-QA) is one of the promising approaches to access the substantial knowledge.Meanwhile, as the neural networkbased (NN-based) methods develop, NNbased KB-QA has already achieved impressive results.However, previous work did not put more emphasis on question representation, and the question is converted into a fixed vector regardless of its candidate answers.This simple representation strategy is not easy to express the proper information in the question.Hence, we present an end-to-end neural network model to represent the questions and their corresponding scores dynamically according to the various candidate answer aspects via cross-attention mechanism.In addition, we leverage the global knowledge inside the underlying KB, aiming at integrating the rich KB information into the representation of the answers.As a result, it could alleviates the out-of-vocabulary (OOV) problem, which helps the crossattention model to represent the question more precisely.The experimental results on WebQuestions demonstrate the effectiveness of the proposed approach.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "https://openalex.org/W2739716023",
-      "citation_count": 383
-    },
-    {
-      "doi": "10.1109/tip.2018.2886767",
-      "url": "https://openalex.org/W2904483377",
-      "year": 2018,
-      "title": "Occlusion Aware Facial Expression Recognition Using CNN With Attention Mechanism",
-      "venue": null,
-      "source": "openalex",
-      "authors": [
-        "Yong Li",
-        "Jiabei Zeng",
-        "Shiguang Shan",
-        "Xilin Chen"
-      ],
-      "abstract": "Facial expression recognition in the wild is challenging due to various un-constrained conditions. Although existing facial expression classifiers have been almost perfect on analyzing constrained frontal faces, they fail to perform well on partially occluded faces that are common in the wild. In this paper, we propose a Convolution Neutral Network with attention mechanism (ACNN) that can perceive the occlusion regions of the face and focus on the most discriminative unoccluded regions. ACNN is an end to end learning framework. It combines the multiple representations from facial regions of interest (ROIs). Each representation is weighed via a proposed Gate Unit that computes an adaptive weight from the region itself according to the unobstructed-ness and importance. Considering different RoIs, we introduce two versions of ACNN: patch based ACNN (pACNN) and global-local based ACNN (gACNN). pACNN only pays attention to local facial patches. gACNN integrates local representations at patch-level with global representation at image-level. The proposed ACNNs are evaluated on both real and synthetic occlusions, including a self-collected facial expression dataset with real-world occlusions (FED-RO), two largest in-the-wild facial expression datasets (RAF-DB and AffectNet) and their modifications with synthesized facial occlusions. Experimental results show that ACNNs improve the recognition accuracy on both the non-occluded faces and occluded faces. Visualization results demonstrate that, compared with the CNN without Gate Unit, ACNNs are capable of shifting the attention from the occluded patches to other related but unobstructed ones. ACNNs also outperform other state-of-the-art methods on several widely used in-the-lab facial expression datasets under the cross-dataset evaluation protocol.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "https://openalex.org/W2904483377",
-      "citation_count": 918
-    },
-    {
-      "doi": "10.3390/rs15071860",
-      "url": "https://openalex.org/W4362519158",
-      "year": 2023,
-      "title": "Transformers in Remote Sensing: A Survey",
-      "venue": null,
-      "source": "openalex",
-      "authors": [
-        "Abdulaziz Amer Aleissaee",
-        "Amandeep Kumar",
-        "Rao Muhammad Anwer",
-        "Salman Khan",
-        "Hisham Cholakkal",
-        "Gui-Song Xia",
-        "Fahad Shahbaz Khan"
-      ],
-      "abstract": "Deep learning-based algorithms have seen a massive popularity in different areas of remote sensing image analysis over the past decade. Recently, transformer-based architectures, originally introduced in natural language processing, have pervaded computer vision field where the self-attention mechanism has been utilized as a replacement to the popular convolution operator for capturing long-range dependencies. Inspired by recent advances in computer vision, the remote sensing community has also witnessed an increased exploration of vision transformers for a diverse set of tasks. Although a number of surveys have focused on transformers in computer vision in general, to the best of our knowledge we are the first to present a systematic review of recent advances based on transformers in remote sensing. Our survey covers more than 60 recent transformer-based methods for different remote sensing problems in sub-areas of remote sensing: very high-resolution (VHR), hyperspectral (HSI) and synthetic aperture radar (SAR) imagery. We conclude the survey by discussing different challenges and open issues of transformers in remote sensing.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "https://openalex.org/W4362519158",
-      "citation_count": 411
-    },
-    {
-      "doi": "10.3390/biology12071033",
-      "url": "https://openalex.org/W4385201870",
-      "year": 2023,
-      "title": "Transformer Architecture and Attention Mechanisms in Genome Data Analysis: A Comprehensive Review",
-      "venue": null,
-      "source": "openalex",
-      "authors": [
-        "Sanghyuk Roy Choi",
-        "Minhyeok Lee"
-      ],
-      "abstract": "The emergence and rapid development of deep learning, specifically transformer-based architectures and attention mechanisms, have had transformative implications across several domains, including bioinformatics and genome data analysis. The analogous nature of genome sequences to language texts has enabled the application of techniques that have exhibited success in fields ranging from natural language processing to genomic data. This review provides a comprehensive analysis of the most recent advancements in the application of transformer architectures and attention mechanisms to genome and transcriptome data. The focus of this review is on the critical evaluation of these techniques, discussing their advantages and limitations in the context of genome data analysis. With the swift pace of development in deep learning methodologies, it becomes vital to continually assess and reflect on the current standing and future direction of the research. Therefore, this review aims to serve as a timely resource for both seasoned researchers and newcomers, offering a panoramic view of the recent advancements and elucidating the state-of-the-art applications in the field. Furthermore, this review paper serves to highlight potential areas of future investigation by critically evaluating studies from 2019 to 2023, thereby acting as a stepping-stone for further research endeavors.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "https://openalex.org/W4385201870",
-      "citation_count": 233
     },
     {
       "doi": "10.1007/s10618-024-01043-w",
@@ -1204,108 +843,6 @@
       "citation_count": 28
     },
     {
-      "doi": "10.1007/s41095-022-0271-y",
-      "url": "https://openalex.org/W3212386989",
-      "year": 2022,
-      "title": "Attention mechanisms in computer vision: A survey",
-      "venue": null,
-      "source": "openalex",
-      "authors": [
-        "Meng-Hao Guo",
-        "Tian-Xing Xu",
-        "Jiangjiang Liu",
-        "Zheng-Ning Liu",
-        "Peng-Tao Jiang",
-        "Tai\u2010Jiang Mu",
-        "Song\u2013Hai Zhang",
-        "Ralph R. Martin",
-        "Ming\u2010Ming Cheng",
-        "Shi\u2010Min Hu"
-      ],
-      "abstract": "Humans can naturally and effectively find salient regions in complex scenes. Motivated by this observation, attention mechanisms were introduced into computer vision with the aim of imitating this aspect of the human visual system. Such an attention mechanism can be regarded as a dynamic weight adjustment process based on features of the input image. Attention mechanisms have achieved great success in many visual tasks, including image classification, object detection, semantic segmentation, video understanding, image generation, 3D vision, multimodal tasks, and self-supervised learning. In this survey, we provide a comprehensive review of various attention mechanisms in computer vision and categorize them according to approach, such as channel attention, spatial attention, temporal attention, and branch attention; a related repository https://github.com/MenghaoGuo/Awesome-Vision-Attentions is dedicated to collecting related work. We also suggest future directions for attention mechanism research.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "https://openalex.org/W3212386989",
-      "citation_count": 2501
-    },
-    {
-      "doi": "10.4230/lipics.time.2024.17",
-      "url": "https://openalex.org/W3204263062",
-      "year": 2021,
-      "title": "Anomaly Transformer: Time Series Anomaly Detection with Association Discrepancy",
-      "venue": null,
-      "source": "openalex",
-      "authors": [
-        "Xu, Jiehui",
-        "Wu, Haixu",
-        "Jianmin Wang",
-        "Mingsheng Long"
-      ],
-      "abstract": "Anomaly detection in time series data is a critical task in various domains, including finance, healthcare, cybersecurity and industry. Traditional methods, such as time series decomposition, clustering, and density estimation, have provided robust solutions for identifying anomalies that exhibit distinct patterns or significant deviations from normal data distributions. Recent advancements in machine learning and deep learning have further enhanced these capabilities. This paper introduces a novel method for anomaly detection that combines the strengths of autoencoders and recurrent neural networks (RNNs) with an reconstruction error feedback mechanism based on Mean Squared Error. We compare our method against classical techniques and recent approaches like OmniAnomaly, which leverages stochastic recurrent neural networks, and the Anomaly Transformer, which introduces association discrepancy to capture long-range dependencies and DCDetector using contrastive representation learning with multi-scale dual attention. Experimental results demonstrate that our method achieves superior overall performance in terms of precision, recall, and F1 score. The source code is available at http://github.com/mribrahim/AE-FAR",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "https://openalex.org/W3204263062",
-      "citation_count": 245
-    },
-    {
-      "doi": "10.1609/aaai.v33i01.33016706",
-      "url": "https://openalex.org/W2903739847",
-      "year": 2019,
-      "title": "Neural Speech Synthesis with Transformer Network",
-      "venue": null,
-      "source": "openalex",
-      "authors": [
-        "Naihan Li",
-        "Shujie Liu",
-        "Yanqing Liu",
-        "Sheng Zhao",
-        "Ming Liu"
-      ],
-      "abstract": "Although end-to-end neural text-to-speech (TTS) methods (such as Tacotron2) are proposed and achieve state-of-theart performance, they still suffer from two problems: 1) low efficiency during training and inference; 2) hard to model long dependency using current recurrent neural networks (RNNs). Inspired by the success of Transformer network in neural machine translation (NMT), in this paper, we introduce and adapt the multi-head attention mechanism to replace the RNN structures and also the original attention mechanism in Tacotron2. With the help of multi-head self-attention, the hidden states in the encoder and decoder are constructed in parallel, which improves training efficiency. Meanwhile, any two inputs at different times are connected directly by a self-attention mechanism, which solves the long range dependency problem effectively. Using phoneme sequences as input, our Transformer TTS network generates mel spectrograms, followed by a WaveNet vocoder to output the final audio results. Experiments are conducted to test the efficiency and performance of our new network. For the efficiency, our Transformer TTS network can speed up the training about 4.25 times faster compared with Tacotron2. For the performance, rigorous human tests show that our proposed model achieves state-of-the-art performance (outperforms Tacotron2 with a gap of 0.048) and is very close to human quality (4.39 vs 4.44 in MOS).",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "https://openalex.org/W2903739847",
-      "citation_count": 742
-    },
-    {
-      "doi": "10.3390/s25247588",
-      "url": "https://openalex.org/W7115178706",
-      "year": 2025,
-      "title": "Cross-Attention Transformer for Coherent Detection in Radar Under Low-SNR Conditions",
-      "venue": null,
-      "source": "openalex",
-      "authors": [
-        "Xiang Lu",
-        "Zhiwen Pan",
-        "Hengliang Zhou"
-      ],
-      "abstract": "Detecting weak echoes from low-RCS targets in pulsed radar systems presents significant challenges, as conventional coherent accumulation methods require extended dwell times that reduce data rates and suffer from target-motion-induced migration. We propose RD-Transformer, an end-to-end attention-based architecture that reformulates coherent integration as a learned feature fusion problem. The framework integrates multi-pulse transpose preprocessing, dual-path self-attention encoders for transmitted and received signals, and a cross-attention decoder to extract transmit-receive interaction features. A tunable sigmoid-based gating mechanism enables flexible false alarm control during inference. Experiments on synthetic pulsed-radar data demonstrate that, under identical false alarm constraints (Pfa = 1 \u00d7 10\u22122 to 1 \u00d7 10\u22125) and using only 10 coherent pulses, RD-Transformer reduces the required SNR by 14\u201320 dB compared to optimal energy detection across Swerling I-IV target fluctuation models, validating the effectiveness of learned coherent accumulation for weak target detection.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "https://openalex.org/W7115178706",
-      "citation_count": 5
-    },
-    {
-      "doi": null,
-      "url": "https://openreview.net/forum?id=LR4PA1TJUS",
-      "year": 2023,
-      "title": "Multivariate Time Series Anomaly Detection with Fourier Time Series Transformer",
-      "venue": "CloudNet 2023",
-      "source": "openreview",
-      "authors": [
-        "Yufeng Ye",
-        "Qichao He",
-        "Peng Zhang",
-        "Jie Xiao",
-        "Zhao Li"
-      ],
-      "abstract": "Anomaly detection in time series data plays a key role in automatic industrial operations. Due to the intricate temporal dependencies within time series data and the difficulty in obtaining labeled data, recent anomaly detection methods have primarily focused on the temporal domain features of time series data, neglecting the frequency domain features. However, spectral analysis can better utilize periodic information within time series data such as seasonal patterns, which helps capturing multi-scale and multiple frequency features. In this paper, we present a Fourier Time Series Transformer model (FTST for short), which combines the features of both time and frequency domains for time series anomaly detection. Specifically, the attention mechanism is utilized for modeling the temporal domain, while the Fourier Transform is employed to transform time series data into frequency domain data. The frequency domain features are then modeled using a Temporal Convolutional Network. By making full use of the temporal and frequency domains of time series data, FTST can significantly enhance the performance of time series anomaly detection. Experimental results on popular benchmark datasets demonstrate the anomaly detection performance of the proposed method.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "LR4PA1TJUS",
-      "citation_count": null
-    },
-    {
       "doi": null,
       "url": "https://openreview.net/forum?id=V4K9h1qNxE",
       "year": 2024,
@@ -1320,176 +857,17 @@
         "Razvan Pascanu"
       ],
       "abstract": "Transformers can under some circumstances generalize to novel problem instances whose constituent parts might have been encountered during training, but whose compositions have not.\nWhat mechanisms underlie this ability for compositional generalization?\nBy reformulating multi-head attention as a hypernetwork, we reveal that a composable, low-dimensional latent code specifies key-query specific operations.\nWe find empirically that this latent code is predictive of the subtasks the network performs on unseen task compositions, revealing that latent codes acquired during training are reused to solve unseen problem instances.\nTo further examine the hypothesis that the intrinsic hypernetwork of multi-head attention supports compositional generalization, we ablate whether making the hypernetwork-generated linear value network nonlinear strengthens compositionality.\nWe find that this modification improves compositional generalization on abstract reasoning tasks.\nIn particular, we introduce a symbolic version of the Raven's Progressive Matrices human intelligence test, which gives us precise control over the problem compositions encountered during training and evaluation.\nWe demonstrate on this task how scaling model size and data enables compositional generalization in transformers and gives rise to a functionally structured latent space.",
-      "arxiv_id": null,
+      "arxiv_id": "2406.05816",
       "resolved": true,
       "identifier": "V4K9h1qNxE",
       "citation_count": null
-    },
-    {
-      "doi": "10.1016/j.imed.2022.07.002",
-      "url": "https://openalex.org/W4293163051",
-      "year": 2022,
-      "title": "Transformers in medical image analysis",
-      "venue": null,
-      "source": "openalex",
-      "authors": [
-        "Kelei He",
-        "Gan Chen",
-        "Zhuoyuan Li",
-        "Islem Rekik",
-        "Zihao Yin",
-        "Ji Wen",
-        "Yang Gao",
-        "Qian Wang",
-        "Junfeng Zhang",
-        "Dinggang Shen"
-      ],
-      "abstract": "Transformers have dominated the field of natural language processing and have recently made an impact in the area of computer vision. In the field of medical image analysis, transformers have also been successfully used in to full-stack clinical applications, including image synthesis/reconstruction, registration, segmentation, detection, and diagnosis. This paper aimed to promote awareness of the applications of transformers in medical image analysis. Specifically, we first provided an overview of the core concepts of the attention mechanism built into transformers and other basic components. Second, we reviewed various transformer architectures tailored for medical image applications and discuss their limitations. Within this review, we investigated key challenges including the use of transformers in different learning paradigms, improving model efficiency, and coupling with other techniques. We hope this review would provide a comprehensive picture of transformers to readers with an interest in medical image analysis.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "https://openalex.org/W4293163051",
-      "citation_count": 474
-    },
-    {
-      "doi": null,
-      "url": "https://openreview.net/forum?id=UUPh8qB9gB",
-      "year": 2024,
-      "title": "Contrastive Time-Series Anomaly Detection",
-      "venue": "IEEE Trans. Knowl. Data Eng. 2024",
-      "source": "openreview",
-      "authors": [
-        "HyunGi Kim",
-        "Siwon Kim",
-        "Seonwoo Min",
-        "Byunghan Lee"
-      ],
-      "abstract": "In addition to its success in representation learning, contrastive learning is effective in image anomaly detection. Although contrastive learning depends significantly on data augmentation methods, time-series data augmentation for time-series anomaly detection is not investigated sufficiently. Additionally, although time-series data share a temporal context, the existing contrastive loss contrasts temporally related samples, in which deteriorated anomaly detection performance is observed on time-series data. Herein, we propose contrastive multivariate time-series anomaly detection (CTAD), a multivariate time-series anomaly detection framework that addresses these challenges by incorporating a one-class learning scheme into the contrastive loss based on meticulously designed time-series data augmentations. Specifically, we propose seven types of general time-series data augmentations to be applied variable- and point-wise, and provide guidance on data augmentation methods for contrastive time-series anomaly detection. The superiority of the one-class contrastive loss and the appropriate selection of time-series data augmentation allow CTAD to achieve outstanding performance in multiple datasets, even using a simple long short-term memory network. Furthermore, CTAD is robust to noise as it trains a noise-invariant network. This enables up to 47\u00d7 faster and 20\u00d7 more memory-efficient anomaly detection performance compared with existing methods while affording robustness, which are essential considerations in real-world applications.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "UUPh8qB9gB",
-      "citation_count": null
-    },
-    {
-      "doi": null,
-      "url": "https://openreview.net/forum?id=UD76JhLswg",
-      "year": 2025,
-      "title": "Retrieval Augmented Time Series Forecasting",
-      "venue": "AISTATS 2026 Poster",
-      "source": "openreview",
-      "authors": [
-        "Kutay Tire",
-        "Ege Onur Taga",
-        "Muhammed Emrullah Ildiz",
-        "Samet Oymak"
-      ],
-      "abstract": "Retrieval-augmented generation (RAG) is a central component of modern LLM systems, particularly in scenarios where up-to-date information is crucial for accurately responding to user queries or when queries exceed the scope of the training data. The advent of time-series foundation models (TSFM), such as Chronos or Moirai, and the need for effective zero-shot forecasting performance across various time-series domains motivates the question: Do the benefits of RAG similarly carry over to time series forecasting? In this paper, we advocate that the dynamic and event-driven nature of time-series data makes RAG a crucial component of TSFMs and introduce a principled RAG framework for time-series forecasting, called Retrieval Augmented Forecasting (RAF). Within RAF, we develop efficient strategies for retrieving related time-series examples and incorporating them into the forecast. Through experiments and mechanistic studies, we demonstrate that RAF improves the forecasting accuracy across diverse time series domains and TSFMs, with gains that are more pronounced for larger models.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "UD76JhLswg",
-      "citation_count": null
-    },
-    {
-      "doi": "10.48550/arxiv.2102.04306",
-      "url": "https://openalex.org/W3127751679",
-      "year": 2021,
-      "title": "TransUNet: Transformers Make Strong Encoders for Medical Image Segmentation",
-      "venue": null,
-      "source": "openalex",
-      "authors": [
-        "Jieneng Chen",
-        "Yongyi Lu",
-        "Qihang Yu",
-        "Xiangde Luo",
-        "Ehsan Adeli",
-        "Yan Wang",
-        "Le L\u00fc",
-        "Alan Yuille",
-        "Yuyin Zhou"
-      ],
-      "abstract": "Medical image segmentation is an essential prerequisite for developing healthcare systems, especially for disease diagnosis and treatment planning. On various medical image segmentation tasks, the u-shaped architecture, also known as U-Net, has become the de-facto standard and achieved tremendous success. However, due to the intrinsic locality of convolution operations, U-Net generally demonstrates limitations in explicitly modeling long-range dependency. Transformers, designed for sequence-to-sequence prediction, have emerged as alternative architectures with innate global self-attention mechanisms, but can result in limited localization abilities due to insufficient low-level details. In this paper, we propose TransUNet, which merits both Transformers and U-Net, as a strong alternative for medical image segmentation. On one hand, the Transformer encodes tokenized image patches from a convolution neural network (CNN) feature map as the input sequence for extracting global contexts. On the other hand, the decoder upsamples the encoded features which are then combined with the high-resolution CNN feature maps to enable precise localization. We argue that Transformers can serve as strong encoders for medical image segmentation tasks, with the combination of U-Net to enhance finer details by recovering localized spatial information. TransUNet achieves superior performances to various competing methods on different medical applications including multi-organ segmentation and cardiac segmentation. Code and models are available at https://github.com/Beckschen/TransUNet.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "https://openalex.org/W3127751679",
-      "citation_count": 3956
-    },
-    {
-      "doi": null,
-      "url": "https://openreview.net/forum?id=0mHgnCaOmD",
-      "year": 2023,
-      "title": "An R-Transformer_BiLSTM Model Based on Attention for Multi-label Text Classification",
-      "venue": "Neural Process. Lett. 2023",
-      "source": "openreview",
-      "authors": [
-        "Yaoyao Yan",
-        "Fang'ai Liu",
-        "Xuqiang Zhuang",
-        "Jie Ju"
-      ],
-      "abstract": "Multi-label text classification task is one of the research hotspots in the field of natural language processing. However, most of the existing multi-label text classification models are only suitable for scenarios with a small number of labels and coarser granularity. Aiming at the problem of difficulty in obtaining sequence information and obvious lack of semantic information when the text sequence grows, this paper proposes an R-Transformer_BiLSTM model based on label embedding and attention mechanism for multi-label text classification. First, we use the R-Transformer model to obtain the global and local information of the text sequence in combination with part-of-speech embedding. At the same time, we use BiLSTM+CRF to obtain the entity information of the text, and use the self-attention mechanism to obtain the keywords of the entity information, and then use bidirectional attention and label embedding to further generate text representation and label representation. Finally, the classifier performs text classification according to the label representation and text representation. In order to evaluate the performance of the model, we conducted a lot of experiments on the RCV1-V2 and AAPD datasets. Experimental results show that the model can effectively improve the efficiency and accuracy of multi-label text classification task.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "0mHgnCaOmD",
-      "citation_count": null
-    },
-    {
-      "doi": "10.1093/jrsssb/qkae004",
-      "url": "https://openalex.org/W4390861825",
-      "year": 2024,
-      "title": "Automatic change-point detection in time series via deep learning",
-      "venue": null,
-      "source": "openalex",
-      "authors": [
-        "Jie Li",
-        "Paul Fearnhead",
-        "Piotr Fry\u017alewicz",
-        "Tengyao Wang"
-      ],
-      "abstract": "Abstract Detecting change points in data is challenging because of the range of possible types of change and types of behaviour of data when there is no change. Statistically efficient methods for detecting a change will depend on both of these features, and it can be difficult for a practitioner to develop an appropriate detection method for their application of interest. We show how to automatically generate new offline detection methods based on training a neural network. Our approach is motivated by many existing tests for the presence of a change point being representable by a simple neural network, and thus a neural network trained with sufficient data should have performance at least as good as these methods. We present theory that quantifies the error rate for such an approach, and how it depends on the amount of training data. Empirical results show that, even with limited training data, its performance is competitive with the standard cumulative sum (CUSUM) based classifier for detecting a change in mean when the noise is independent and Gaussian, and can substantially outperform it in the presence of auto-correlated or heavy-tailed noise. Our method also shows strong results in detecting and localizing changes in activity based on accelerometer data.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "https://openalex.org/W4390861825",
-      "citation_count": 34
-    },
-    {
-      "doi": "10.1109/cvpr.2019.00523",
-      "url": "https://openalex.org/W2962945761",
-      "year": 2019,
-      "title": "Semantically Tied Paired Cycle Consistency for Zero-Shot Sketch-Based Image Retrieval",
-      "venue": null,
-      "source": "openalex",
-      "authors": [
-        "Anjan Dutta",
-        "Zeynep Akata"
-      ],
-      "abstract": "Zero-shot sketch-based image retrieval (SBIR) is an emerging task in computer vision, allowing to retrieve natural images relevant to sketch queries that might not been seen in the training phase. Existing works either require aligned sketch-image pairs or inefficient memory fusion layer for mapping the visual information to a semantic space. In this work, we propose a semantically aligned paired cycle-consistent generative (SEM-PCYC) model for zero-shot SBIR, where each branch maps the visual information to a common semantic space via an adversarial training. Each of these branches maintains a cycle consistency that only requires supervision at category levels, and avoids the need of highly-priced aligned sketch-image pairs. A classification criteria on the generators' outputs ensures the visual to semantic space mapping to be discriminating. Furthermore, we propose to combine textual and hierarchical side information via a feature selection auto-encoder that selects discriminating side information within a same end-to-end model. Our results demonstrate a significant boost in zero-shot SBIR performance over the state-of-the-art on the challenging Sketchy and TU-Berlin datasets.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "https://openalex.org/W2962945761",
-      "citation_count": 169
-    },
-    {
-      "doi": "10.3390/rs15225331",
-      "url": "https://openalex.org/W4388633706",
-      "year": 2023,
-      "title": "TransHSI: A Hybrid CNN-Transformer Method for Disjoint Sample-Based Hyperspectral Image Classification",
-      "venue": null,
-      "source": "openalex",
-      "authors": [
-        "Ping Zhang",
-        "Haiyang Yu",
-        "Pengao Li",
-        "Ruili Wang"
-      ],
-      "abstract": "Hyperspectral images\u2019 (HSIs) classification research has seen significant progress with the use of convolutional neural networks (CNNs) and Transformer blocks. However, these studies primarily incorporated Transformer blocks at the end of their network architectures. Due to significant differences between the spectral and spatial features in HSIs, the extraction of both global and local spectral\u2013spatial features remains incomplete. To address this challenge, this paper introduces a novel method called TransHSI. This method incorporates a new spectral\u2013spatial feature extraction module that leverages 3D CNNs to fuse Transformer to extract the local and global spectral features of HSIs, then combining 2D CNNs and Transformer to capture the local and global spatial features of HSIs comprehensively. Furthermore, a fusion module is proposed, which not only integrates the learned shallow and deep features of HSIs but also applies a semantic tokenizer to transform the fused features, enhancing the discriminative power of the features. This paper conducts experiments on three public datasets: Indian Pines, Pavia University, and Data Fusion Contest 2018. The training and test sets are selected based on a disjoint sampling strategy. We perform a comparative analysis with 11 traditional and advanced HSI classification algorithms. The experimental results demonstrate that the proposed method, TransHSI algorithm, achieves the highest overall accuracies and kappa coefficients, indicating a competitive performance.",
-      "arxiv_id": null,
-      "resolved": true,
-      "identifier": "https://openalex.org/W4388633706",
-      "citation_count": 20
     }
   ],
-  "limitations": "This study has several limitations. First, we evaluated on a single dataset (UCI HAR) with short sequence lengths. Results may differ on longer time series where deep hierarchical processing is more beneficial. Second, the architecture was limited to 2 blocks; cross-layer consistency might matter more in deeper networks where divergence between layers is greater. Third, we tested only query projection consistency; key, value, or output projections might behave differently. Fourth, the regularization coefficient was fixed at 0.01; a hyperparameter search might find a regime where consistency helps. Finally, while we used subject-disjoint splits, we did not test cross-domain generalization (e.g., different sensor types). These limitations constrain the generalizability of the null result to other time-series benchmarks. Declared scope. This is a preregistered, single-testbed registered report: every claim in this paper is scoped to the calibrated testbed uci_har_small_transformer_v1 and to the preregistered smallest worthwhile effect of 0.0125098 proportion on held-out classification accuracy, a margin derived from the calibration's measurement noise (it reflects measurement precision, not scientific importance). Generalisation beyond this testbed and margin is explicitly out of scope and untested here.",
-  "introduction": "Time-series classification using deep learning has advanced significantly with the adoption of Transformer architectures, which offer the ability to capture long-range dependencies and interactions within sequential data [6]. In domains such as human activity recognition, models must generalize across subjects who exhibit different movement styles, sensor characteristics, and execution speeds. This subject-disjoint generalization is critical for deploying models in real-world settings where training data cannot cover all potential users. While Transformers have achieved superior performances in natural language processing and computer vision, their application to time series involves distinct challenges regarding temporal ordering and distribution shift [4]. Standard deterministic training often fails to provide calibrated confidence under distribution shift, prompting investigation into architectural inductive biases that might enhance robustness. Existing literature addresses time-series transformer architectures and general regularization techniques, but no provided work specifically tests whether a cross-layer query consistency loss regularizing deeper block projections toward earlier blocks improves subject-disjoint generalization. Some works propose tackling forecasting problems with Transformers, demanding high prediction capacity to capture precise long-range dependency coupling [10]. Others enhance locality to break memory bottlenecks [11], or propose efficient designs based on segmentation of time series into subseries-level patches [9]. However, the validity of Transformer-based solutions for time series analysis tasks is questioned by findings that simple linear models can outperform sophisticated architectures in certain forecasting regimes [4]. Furthermore, time series analysis is fundamentally different in nature to either vision or natural language processing with respect to self-supervised learning tasks, suggesting that mechanisms successful in other domains may not transfer directly [27]. This gap matters because answering it clarifies whether transformer depth should encode progressively refined or consistently stable attention patterns for out-of-distribution time-series tasks. A positive result would justify testing whether cross-layer consistency transfers to other subject-disjoint time-series benchmarks. A negative result would indicate layer-specific adaptation is essential for this architecture class. Current regularization designs for temporal feature learning often assume specific weight geometries facilitate generalization, yet recent studies testing spectral entropy minimization of input projections reported inconclusive results and null accuracy gains over standard weight decay [2]. Similarly, investigations into entropy maximization of multiplicative weight noise parameters carry retracted notices and cannot be relied upon for mechanistic conclusions [1]. This paper reports a calibrated testbed experiment evaluating cross-layer query consistency loss. We adhere to a preregistered design to ensure honest reporting of outcomes. Our contributions are:\n- We implement a cross-layer query consistency loss that penalizes differences between block query projection weights in a time-series transformer. - We evaluate this intervention against a baseline and negative control on the UCI Human Activity Recognition dataset using an official subject-disjoint split. - We report results from both a primary cohort and a pre-specified confirmatory replication on disjoint seeds, attributing variation to the seeds that produced them. - We provide inconclusive evidence regarding the efficacy of cross-layer consistency for subject-disjoint generalization in this regime. The preregistered prediction stated: The intervention is predicted to yield higher held-out classification accuracy than the comparator, with mean paired contrast in the hypothesised direction H_s exceeding the fixed worthwhile margin of 0.0125098 proportion. We report the observed results against this prediction without alteration.",
-  "related_work": "Transformers have triggered great interest in the time series community due to the ability to capture long-range dependencies and interactions [6]. Several works propose tackling forecasting problems with Transformers, such as those demanding high prediction capacity to capture precise long-range dependency coupling [10]. Others focus on enhancing locality and breaking the memory bottleneck of Transformer on time series forecasting by addressing locality-agnostics and memory costs [11]. Efficient designs based on segmentation of time series into subseries-level patches have been proposed to retain local semantic information while reducing computation [9]. However, research questions the validity of this line of research despite growing performance, noting that simple linear models can outperform Transformer-based solutions in long-term forecasting tasks [4]. Regarding architectural mechanisms, the original Transformer architecture connects the encoder and decoder through an attention mechanism, dispensing with recurrence and convolutions entirely [7]. Subsequent work introduces parameter-free changes to the standard attention mechanism which reduces attention to unneeded elements, consistently improving performance in various model sizes [8]. Investigations into mechanisms underlying the ability for compositional generalization reformulate multi-head attention as a hypernetwork, revealing latent codes that specify key-query specific operations [33]. In terms of position encoding, transformers require effective position encoding to capture the ordering of the time series data, yet the efficacy of absolute versus relative encoding remains controversial [5]. Self-supervised representation learning for time series argues that the domain is fundamentally different in nature to either vision or natural language processing with respect to meaningful tasks [27]. Large pre-trained time series models observe that tackling time-series analysis tasks usually involves designing and training a separate model, proposing adaptive segmentation to identify optimal dataset-specific strategies [18]. However, citation audits require careful alignment between claims and abstract content; for instance, some papers focus on shape analysis for time series by representing data as deformations of a reference, rather than architectural inductive biases broadly [19]. Similarly, clustering stability evaluation approaches extend mutual influence ideas using membership degrees, distinct from weight-space regularization comparisons [20]. Regularization for temporal feature learning often assumes specific weight geometries facilitate generalization under distribution shift. One study tests whether enforcing a low-entropy singular value spectrum on input projection weights enhances held-out classification accuracy, reporting inconclusive results where neither estimate exceeded the preregistered margin and confidence intervals included zero [2]. Another study investigates whether explicitly maximizing the entropy of multiplicative weight noise parameters improves out-of-distribution accuracy, but carries a retracted notice from the journal that published it due to implementation mismatches with the preregistered intervention [1]. These findings suggest that spectral entropy minimization of input projections does not yield robust accuracy gains over standard weight decay in this regime. Uncertainty estimates are agreed to be missing from standard networks and Bayesian formalisms are the usual answer, but the same literature reports that the approximations needed to make them tractable are where the guarantees are lost \u2014 precisely the regime this study operates in. The present work positions itself against this background by testing a specific cross-layer consistency bias. Unlike weight-space regularization that targets input projections [2], our intervention targets attention query projections across depth. Unlike segmentation-based approaches that modify input tokens [9], we modify the training objective to encourage stability across layers. This distinction is critical because layer-specific adaptation may be essential for architectures processing inertial signals where subject variability manifests in temporal dynamics rather than just input distribution.",
+  "study_kind": "original",
+  "limitations": "This study has several limitations. First, we evaluated a single dataset (UCI HAR) with short sequences; results may differ on longer time series, where deep hierarchical processing may be more beneficial. Second, the architecture has two blocks; cross-layer consistency might matter more in deeper networks, where layers may diverge more. Third, only query projection consistency was tested; key, value or output projections might behave differently. Fourth, the coefficient was fixed at 0.01, and the preregistered statement that this coefficient keeps the penalty from dominating the classification objective was not checked during the run. Fifth, held-out accuracy was the only outcome recorded, so every mechanism discussed above is an untested hypothesis. Sixth, the confirmatory replication reuses the same subjects and split, so it assesses repeatability over training seeds rather than generalization to a new population. Seventh, under the preregistered support rule a true effect equal to the margin would be declared supported only about one time in forty, although the preregistered power analysis assumed 90% power at that effect for rejecting zero; the classification is kept as registered. Finally, we did not test cross-domain generalization, such as different sensor types. Declared scope. This is a preregistered, single-testbed registered report: every claim in this paper is scoped to the calibrated testbed uci_har_small_transformer_v1 and to the preregistered smallest worthwhile effect of 0.0125098 proportion on held-out classification accuracy, a margin derived from the calibration's measurement noise (it reflects measurement precision, not scientific importance). Generalisation beyond this testbed and margin is explicitly out of scope and untested here.",
+  "replication": null,
+  "introduction": "Time-series classification using deep learning has advanced with the adoption of Transformer architectures, which can capture long-range dependencies and interactions within sequential data [5]. In human activity recognition, models must generalize across subjects who differ in movement style, sensor placement and execution speed, which matters for deployment because training data cannot cover all potential users. Applying Transformers to time series raises distinct challenges, among them preserving temporal ordering [3]. Prior work has proposed Transformer designs for long-sequence forecasting, a task that demands high prediction capacity to capture long-range dependency coupling [9], that enhance locality to break memory bottlenecks [10], or that segment time series into subseries-level patches [8]. At the same time, simple linear models can outperform sophisticated Transformer architectures in some forecasting regimes [3], and time series analysis differs in nature from vision and natural language processing with respect to self-supervised learning tasks [12], so mechanisms that help in other domains may not transfer. On the same testbed as this study, a test of spectral entropy minimization of input projections reported inconclusive results, with no gain exceeding its preregistered margin and confidence intervals that included zero [2], and a study of entropy-maximized multiplicative weight noise carries a retraction notice, so its conclusions cannot be relied on [1].\n\nIn the cited literature we found no test of whether a loss that pulls a deeper block's attention query weights toward an earlier block's improves subject-disjoint accuracy. This paper reports a preregistered test of that question on one calibrated testbed: a two-block pre-norm transformer encoder trained on the UCI Human Activity Recognition dataset and evaluated on its official subject-disjoint split. The intervention adds a cross-layer query-weight consistency penalty to the classification objective; it is compared with a paired baseline that adds nothing, and an active negative control pulls the same weights toward a fixed random matrix instead. A clear improvement would have motivated testing the penalty on other subject-disjoint benchmarks; an inconclusive result bounds the size of any benefit in this setting without identifying why.\n\nWe evaluate the penalty against the baseline and the negative control on 43 primary seeds and on 43 disjoint confirmatory-replication seeds. The preregistered prediction stated: The intervention is predicted to yield higher held-out classification accuracy than the comparator, with mean paired contrast in the hypothesised direction H_s exceeding the fixed worthwhile margin of 0.0125098 proportion. We report the observed results against this prediction without alteration: both cohorts are inconclusive, and neither supports an improvement of the registered size.",
+  "related_work": "Transformers have attracted wide interest in the time series community because they capture long-range dependencies and interactions [5]. Several works tackle forecasting problems with Transformers, including designs for long-sequence forecasting, a task that demands high prediction capacity to capture precise long-range dependency coupling [9], designs that enhance locality and break the memory bottleneck on time series forecasting [10], and designs that segment time series into subseries-level patches to retain local semantic information while reducing computation [8]. Other work questions this line of research, finding that simple linear models can outperform Transformer-based solutions in long-term forecasting [3].\n\nRegarding architectural mechanisms, the original Transformer is based solely on attention mechanisms, dispensing with recurrence and convolutions entirely [6]. Subsequent work introduces parameter-free changes to the standard attention mechanism that reduce attention to unneeded elements and improve performance across model sizes [7]. Work on compositional generalization reformulates multi-head attention as a hypernetwork, revealing latent codes that specify key-query specific operations [13]. Transformers also require position encoding to capture the ordering of time series data, and the efficacy of absolute versus relative encoding remains controversial [4]. Self-supervised representation learning for time series argues that the domain differs in nature from vision and natural language processing [12], and large pre-trained time series models address the need to design and train a separate model for each analysis task by learning dataset-specific segmentation strategies [11].\n\nTwo earlier studies used the same testbed. One tested whether enforcing a low-entropy singular value spectrum on input projection weights improves held-out classification accuracy and reported inconclusive results, with neither cohort's estimate exceeding the preregistered margin and both confidence intervals including zero [2]. Another investigated whether maximizing the entropy of multiplicative weight noise improves out-of-distribution accuracy, but it carries a retraction notice because the executed intervention did not implement the preregistered one [1]. The present study is a narrow, preregistered evaluation on one human activity recognition testbed. Unlike regularization that targets input projections [2], it targets the attention query projection of the second block and relates it to the first block's; unlike segmentation-based approaches that change the input tokens [8], it changes only the training objective. Whether deeper blocks need layer-specific query weights in this architecture is the question the intervention probes; the study does not measure that property directly.",
   "model_credits": {
     "ideation": "qwen3.5-397b-a17b",
     "coding": "qwen3.5-397b-a17b",
@@ -1497,10 +875,36 @@
     "review": "qwen3.5-122b-a10b",
     "review (2)": "qwen3.5-397b-a17b"
   },
-  "production_cost": null,
+  "production_cost": {
+    "currency": "EUR",
+    "llm": 2.32,
+    "gpu": 2.8,
+    "total": 5.12,
+    "prompt_tokens": 2513528,
+    "completion_tokens": 2209367,
+    "llm_calls": 284,
+    "gpu_hours": 1.217,
+    "usd_to_eur": 0.92,
+    "rate_source": "commercial list prices of a comparable hosted model service, per 1M tokens",
+    "complete": true,
+    "by_model": {
+      "qwen3.5-122b-a10b": {
+        "calls": 96,
+        "prompt_tokens": 927041,
+        "completion_tokens": 1187382,
+        "eur": 1.0998
+      },
+      "qwen3.5-397b-a17b": {
+        "calls": 188,
+        "prompt_tokens": 1586487,
+        "completion_tokens": 1021985,
+        "eur": 1.2214
+      }
+    }
+  },
   "ethics_statement": "This is a small-scale computational study on publicly released data used under its published licence: uci_har_smartphones (CC BY 4.0). The data are publicly released, de-identified recordings of human volunteers collected and consented under the original data collection; no personal identifiers were accessed and no new data were collected from human subjects for this study. It poses no foreseeable ethical or dual-use risks. Compute use was deliberately minimal.",
   "artifact_repo_url": "https://github.com/ABS-gmbh/ai-research-journal-papers/tree/385bd08f7863dc63384f84d8d93312f294b4b20d/papers/e5c7eb4e-f542-4c7d-bcd0-6ceff9b99e91",
-  "experimental_setup": "A subject-disjoint split tests what this question asks because it evaluates generalization to unseen subjects, whereas a random split would have hidden subject-specific overfitting. This design choice ensures that accuracy gains reflect robustness to inter-individual variability in movement styles and sensor characteristics rather than memorization of subject identities. We employed 43 primary seeds and 43 disjoint confirmatory-replication seeds. The identities are recorded in the appendix. We refer to the counts, never list them. Using this many seeds allows us to estimate the variation attributable to the seeds that produced them, rather than attributing variation to subjects. Each observation is one seed. Pairing every condition on one seed buys control over random initialization and batch ordering variance. The negative control rules out effects from the harness lifecycle machinery itself; without it, changes in evaluation paths would be indistinguishable from intervention effects. The first negative control uses the same harness but without the loss term active, ensuring the baseline is truly passive. Optimization uses SGD(lr=0.05,momentum=0.9). Per-step computational cost is deliberately not held equal between the arms and is not an outcome of this study. The analysis computes bootstrap 95% confidence intervals for mean accuracy and mean difference. We report both primary and confirmatory-replication cohorts separately. We never pool them or call a primary-only result replicated. The pre-specified confirmatory replication on disjoint seeds provides a second estimate of the effect size under identical design conditions but independent randomization. This setup justifies the design by ensuring that any observed difference is due to the consistency loss and not data split variance. The subject-disjoint split is the critical constraint; if we used a random split, the generalization claim would not hold for unseen subjects. The seed pairing ensures that the paired contrast H_s removes seed-specific noise. The negative control confirms that the harness does not introduce bias. The replication cohort confirms whether the primary result was a false positive or stable. Variation across observations is attributed to the seeds that produced them, as each seed generates one paired observation of proposed and baseline accuracy. Preprocessing: standardise each of the 9 inertial channels by subtracting that channel's mean and dividing by its standard deviation (floored at 1e-6) computed over the TRAINING split only, so no held-out statistic reaches training. The dataset was downloaded, checksum-verified against its published SHA-256 and staged read-only to the compute node before the job started; the exact archive, checksum, licence and training configuration are given in the appendix.",
-  "ai_generated_disclosure": "This paper \u2014 its topic, literature review, experiment code, execution, analysis, and text \u2014 was produced end to end by ABS AI RSE, an autonomous AI research system. All content is AI-generated and is explicitly labelled as such.",
+  "experimental_setup": "A subject-disjoint split matches the question because it evaluates accuracy on subjects who appear nowhere in training, whereas a random split could hide subject-specific overfitting. We used 43 primary seeds and 43 disjoint confirmatory-replication seeds; their identities are recorded in the appendix. Each observation is one seed, and every condition is trained on the same seed, which controls for random initialization and batch ordering. The confirmatory replication reuses the same subjects, the same split and the same pipeline with new seeds, so it measures repeatability over training seeds, not replication on a new population. The active negative control, described in the Method, pulls the second block's query weights toward a fixed random matrix with the same coefficient; comparing it with the proposed condition indicates whether the cross-layer reference specifically matters, and comparing it with the baseline indicates whether a penalty of this form and size changes accuracy at all. It is a diagnostic; it is not evidence that the harness is unbiased, and no contrast involving it was registered. Optimization uses SGD(lr=0.05,momentum=0.9). Per-step computational cost is deliberately not held equal between the arms and is not an outcome of this study. The analysis computes bootstrap 95% confidence intervals over seeds for each condition's mean accuracy and for the mean paired difference, and reports the primary and confirmatory-replication cohorts separately without pooling them. Conclusions are scoped to this architecture, the coefficient 0.01, the calibrated training budget and this split. Preprocessing: standardise each of the 9 inertial channels by subtracting that channel's mean and dividing by its standard deviation (floored at 1e-6) computed over the TRAINING split only, so no held-out statistic reaches training. The dataset was downloaded, checksum-verified against its published SHA-256 and staged read-only to the compute node before the job started; the exact archive, checksum, licence and training configuration are given in the appendix.",
+  "ai_generated_disclosure": "This paper \u2014 its topic, literature review, experiment code, execution, analysis, and text \u2014 was produced end to end by ABS AI RSE, an autonomous AI research system. After the autonomous run, the text was corrected at the direction of the journal's editor; the correcting text was drafted by an AI assistant (Claude, Anthropic), not written by a human: the correction rewrote the title, the abstract, the Related Work, the Discussion and the Conclusion, revised sentences in the Introduction, Method, Experimental Setup, Results and Limitations, added two paragraphs to the Introduction, three paragraphs to the Method and one paragraph to the Results, and corrected the reference list. Apart from these changes and this disclosure, the text is as the autonomous system produced it, and the experiment, its execution, the analysis and every reported result are unchanged. CORRECTION.md lists every changed sentence.",
   "reproducibility_statement": "All results were produced by an automated pipeline running the experiment on containerised GPU compute. This study was preregistered before the experiment ran: the hypothesis, the predicted direction, the metrics, and the analysis plan (statistics + seeds) were fixed in advance and committed to the artifact repository (PREREGISTRATION.md). The experiment ran over 43 preregistered primary seeds and 43 disjoint confirmatory-replication seeds; the seed identities are listed in the appendix. Compute job id: 16152821. Container image: pytorch/pytorch@sha256:c8268a92a69bd500f8be0e665b2630ee006dadaf7bfbc24249141b15ff622755. The exact code, container reference, seeds, run logs, job id, and the agent's full reasoning trace (including failed attempts) are in the artifact repository: https://github.com/ABS-gmbh/ai-research-journal-papers/tree/385bd08f7863dc63384f84d8d93312f294b4b20d/papers/e5c7eb4e-f542-4c7d-bcd0-6ceff9b99e91."
 }

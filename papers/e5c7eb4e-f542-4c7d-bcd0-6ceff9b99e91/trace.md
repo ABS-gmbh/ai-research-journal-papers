@@ -3047,3 +3047,762 @@ _2026-09-24T19:24:02.762773+00:00_
 
 ## [orchestrator] OUTPUT — reproducibility verification: verified
 _2026-09-24T19:59:34.027443+00:00_
+
+## [orchestrator] OUTPUT — published to GitHub
+_2026-09-24T20:00:16.879896+00:00_
+
+## [orchestrator] INFO — published
+_2026-09-24T20:00:16.951491+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-11-16T00:30:30.512960+00:00_
+
+## [llm] OUTPUT — writing provider completion (attempt 1)
+_2026-11-16T00:34:31.117320+00:00_
+
+## [writing] OUTPUT — writing:writing text output
+_2026-11-16T00:34:31.149258+00:00_
+
+## [writing] OUTPUT — methodology diagram accepted
+_2026-11-16T00:34:31.543897+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-11-16T00:34:31.560108+00:00_
+
+## [llm] OUTPUT — writing provider completion (attempt 1)
+_2026-11-16T00:38:37.287869+00:00_
+
+## [writing] OUTPUT — writing:writing text output
+_2026-11-16T00:38:37.311083+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-11-16T00:38:38.137085+00:00_
+
+## [llm] OUTPUT — writing provider completion (attempt 1)
+_2026-11-16T00:42:47.119337+00:00_
+
+## [writing] OUTPUT — writing:writing raw output (attempt 1)
+_2026-11-16T00:42:47.137227+00:00_
+
+## [writing] OUTPUT — writing: parsed _SentenceRepairs
+_2026-11-16T00:42:47.150434+00:00_
+
+## [writing] DECISION — self-repaired 10 sentence(s) the claim ledger would hold (pass 1); the rest of the draft is unchanged
+_2026-11-16T00:42:47.162082+00:00_
+
+## [writing] OUTPUT — paper written
+_2026-11-16T00:42:47.460136+00:00_
+
+## [orchestrator] INFO — paper written
+_2026-11-16T00:42:49.143952+00:00_
+
+## [citation_check] PROMPT — citation_check:review prompt
+_2026-11-16T00:51:27.168865+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T00:52:53.035502+00:00_
+
+## [citation_check] OUTPUT — citation_check:review text output
+_2026-11-16T00:52:53.060526+00:00_
+
+## [citation_check] OUTPUT — citation audit: 16 error(s), 0 warning(s) in citations.
+_2026-11-16T00:52:53.075150+00:00_
+
+## [review] INFO — citation faithfulness verdicts: 0 reused, 21 judged
+_2026-11-16T00:52:53.087931+00:00_
+
+## [plagiarism_check] OUTPUT — plagiarism/text-overlap check: Text overlap 6% is within the 18% threshold; no plagiarism detected.
+_2026-11-16T00:52:53.116007+00:00_
+
+## [preregistration_check] PROMPT — preregistration_check:review prompt
+_2026-11-16T00:52:53.130171+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T00:53:08.920846+00:00_
+
+## [preregistration_check] OUTPUT — preregistration_check:review text output
+_2026-11-16T00:53:08.945816+00:00_
+
+## [preregistration_check] OUTPUT — preregistration audit: The paper is faithful to its preregistration.
+_2026-11-16T00:53:08.957068+00:00_
+
+## [review] PROMPT — review:review prompt
+_2026-11-16T00:53:09.325595+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T00:53:36.906450+00:00_
+
+## [review] OUTPUT — review:review text output
+_2026-11-16T00:53:36.925196+00:00_
+
+## [review] DECISION — review decision: revise (target=writing; citations_ok=False; artifact_repairs=2; overlap_ok=True; prereg_ok=True)
+_2026-11-16T00:53:36.986683+00:00_
+
+## [orchestrator] DECISION — publication held: mandatory evidence could not be verified; the experiment is neither validated nor refuted and the registered result is NOT rejected
+_2026-11-16T00:53:38.483906+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-11-16T01:36:57.341470+00:00_
+
+## [llm] OUTPUT — writing provider completion (attempt 1)
+_2026-11-16T01:37:50.758805+00:00_
+
+## [writing] OUTPUT — writing:writing text output
+_2026-11-16T01:37:50.774663+00:00_
+
+## [writing] OUTPUT — methodology diagram accepted
+_2026-11-16T01:37:50.968740+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-11-16T01:37:50.983068+00:00_
+
+## [llm] OUTPUT — writing provider completion (attempt 1)
+_2026-11-16T01:39:29.725750+00:00_
+
+## [writing] OUTPUT — writing:writing text output
+_2026-11-16T01:39:29.756143+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-11-16T01:39:31.509292+00:00_
+
+## [llm] OUTPUT — writing provider completion (attempt 1)
+_2026-11-16T01:41:24.106985+00:00_
+
+## [writing] OUTPUT — writing:writing raw output (attempt 1)
+_2026-11-16T01:41:24.128280+00:00_
+
+## [writing] OUTPUT — writing: parsed _SentenceRepairs
+_2026-11-16T01:41:24.140767+00:00_
+
+## [writing] DECISION — self-repaired 12 sentence(s) the claim ledger would hold (pass 1); the rest of the draft is unchanged
+_2026-11-16T01:41:24.152405+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-11-16T01:41:24.400220+00:00_
+
+## [llm] OUTPUT — writing provider completion (attempt 1)
+_2026-11-16T01:43:19.602742+00:00_
+
+## [writing] OUTPUT — writing:writing raw output (attempt 1)
+_2026-11-16T01:43:19.619841+00:00_
+
+## [writing] OUTPUT — writing: parsed _SentenceRepairs
+_2026-11-16T01:43:19.630918+00:00_
+
+## [writing] DECISION — self-repaired 4 sentence(s) the claim ledger would hold (pass 2); the rest of the draft is unchanged
+_2026-11-16T01:43:19.641171+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-11-16T01:43:19.909626+00:00_
+
+## [llm] OUTPUT — writing provider completion (attempt 1)
+_2026-11-16T01:45:26.255565+00:00_
+
+## [writing] OUTPUT — writing:writing raw output (attempt 1)
+_2026-11-16T01:45:26.279079+00:00_
+
+## [writing] OUTPUT — writing: parsed _SentenceRepairs
+_2026-11-16T01:45:26.294450+00:00_
+
+## [writing] DECISION — self-repaired 2 sentence(s) the claim ledger would hold (pass 3); the rest of the draft is unchanged
+_2026-11-16T01:45:26.306884+00:00_
+
+## [writing] DECISION — removed 2 self-repaired sentence(s) the claim ledger still holds
+_2026-11-16T01:45:26.576862+00:00_
+
+## [writing] OUTPUT — paper written
+_2026-11-16T01:45:26.587641+00:00_
+
+## [orchestrator] INFO — paper written
+_2026-11-16T01:45:28.012664+00:00_
+
+## [citation_check] PROMPT — citation_check:review prompt
+_2026-11-16T02:05:16.005832+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T02:06:09.060452+00:00_
+
+## [citation_check] OUTPUT — citation_check:review text output
+_2026-11-16T02:06:09.078643+00:00_
+
+## [citation_check] OUTPUT — citation audit: 4 error(s), 0 warning(s) in citations.
+_2026-11-16T02:06:09.095785+00:00_
+
+## [review] INFO — citation faithfulness verdicts: 1 reused, 17 judged
+_2026-11-16T02:06:09.108989+00:00_
+
+## [plagiarism_check] OUTPUT — plagiarism/text-overlap check: Text overlap 7% is within the 18% threshold; no plagiarism detected.
+_2026-11-16T02:06:09.140730+00:00_
+
+## [preregistration_check] PROMPT — preregistration_check:review prompt
+_2026-11-16T02:06:09.154793+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T02:06:35.401205+00:00_
+
+## [preregistration_check] OUTPUT — preregistration_check:review text output
+_2026-11-16T02:06:35.419139+00:00_
+
+## [preregistration_check] OUTPUT — preregistration audit: The paper is faithful to its preregistration.
+_2026-11-16T02:06:35.432896+00:00_
+
+## [review] PROMPT — review:review prompt
+_2026-11-16T02:06:35.754906+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T02:07:10.676527+00:00_
+
+## [review] OUTPUT — review:review text output
+_2026-11-16T02:07:10.697131+00:00_
+
+## [review] DECISION — review decision: revise (target=writing; citations_ok=False; artifact_repairs=0; overlap_ok=True; prereg_ok=True)
+_2026-11-16T02:07:10.770756+00:00_
+
+## [orchestrator] DECISION — publication held: mandatory evidence could not be verified; the experiment is neither validated nor refuted and the registered result is NOT rejected
+_2026-11-16T02:07:12.269331+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-11-16T02:32:36.667558+00:00_
+
+## [llm] OUTPUT — writing provider completion (attempt 1)
+_2026-11-16T02:33:48.520538+00:00_
+
+## [writing] OUTPUT — writing:writing text output
+_2026-11-16T02:33:48.536700+00:00_
+
+## [writing] DECISION — no methodology diagram: The procedure is concisely described as a sentence involving standard training with a specific loss term and data split, so a diagram would be ornamental.
+_2026-11-16T02:33:48.549092+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-11-16T02:33:48.559968+00:00_
+
+## [llm] OUTPUT — writing provider completion (attempt 1)
+_2026-11-16T02:35:50.100826+00:00_
+
+## [writing] OUTPUT — writing:writing text output
+_2026-11-16T02:35:50.125191+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-11-16T02:35:50.755390+00:00_
+
+## [llm] OUTPUT — writing provider completion (attempt 1)
+_2026-11-16T02:37:33.466839+00:00_
+
+## [writing] OUTPUT — writing:writing raw output (attempt 1)
+_2026-11-16T02:37:33.488077+00:00_
+
+## [writing] OUTPUT — writing: parsed _SentenceRepairs
+_2026-11-16T02:37:33.501171+00:00_
+
+## [writing] DECISION — self-repaired 10 sentence(s) the claim ledger would hold (pass 1); the rest of the draft is unchanged
+_2026-11-16T02:37:33.513127+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-11-16T02:37:33.776745+00:00_
+
+## [llm] OUTPUT — writing provider completion (attempt 1)
+_2026-11-16T02:38:33.855774+00:00_
+
+## [writing] OUTPUT — writing:writing raw output (attempt 1)
+_2026-11-16T02:38:33.869977+00:00_
+
+## [writing] OUTPUT — writing: parsed _SentenceRepairs
+_2026-11-16T02:38:33.882834+00:00_
+
+## [writing] DECISION — self-repaired 1 sentence(s) the claim ledger would hold (pass 2); the rest of the draft is unchanged
+_2026-11-16T02:38:33.893841+00:00_
+
+## [writing] OUTPUT — paper written
+_2026-11-16T02:38:34.161990+00:00_
+
+## [orchestrator] INFO — paper written
+_2026-11-16T02:38:35.212904+00:00_
+
+## [citation_check] PROMPT — citation_check:review prompt
+_2026-11-16T02:53:50.785432+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T02:56:01.765735+00:00_
+
+## [citation_check] OUTPUT — citation_check:review text output
+_2026-11-16T02:56:01.785929+00:00_
+
+## [citation_check] OUTPUT — citation audit: 5 error(s), 0 warning(s) in citations.
+_2026-11-16T02:56:01.800172+00:00_
+
+## [review] INFO — citation faithfulness verdicts: 0 reused, 18 judged
+_2026-11-16T02:56:01.813571+00:00_
+
+## [plagiarism_check] OUTPUT — plagiarism/text-overlap check: Text overlap 6% is within the 18% threshold; no plagiarism detected.
+_2026-11-16T02:56:01.841184+00:00_
+
+## [preregistration_check] PROMPT — preregistration_check:review prompt
+_2026-11-16T02:56:01.855013+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T02:56:27.997505+00:00_
+
+## [preregistration_check] OUTPUT — preregistration_check:review text output
+_2026-11-16T02:56:28.013025+00:00_
+
+## [preregistration_check] OUTPUT — preregistration audit: The paper is faithful to its preregistration.
+_2026-11-16T02:56:28.025031+00:00_
+
+## [review] PROMPT — review:review prompt
+_2026-11-16T02:56:28.350742+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T02:57:02.384722+00:00_
+
+## [review] OUTPUT — review:review text output
+_2026-11-16T02:57:02.398351+00:00_
+
+## [review] DECISION — review decision: revise (target=writing; citations_ok=False; artifact_repairs=0; overlap_ok=True; prereg_ok=True)
+_2026-11-16T02:57:02.464965+00:00_
+
+## [orchestrator] DECISION — publication held: mandatory evidence could not be verified; the experiment is neither validated nor refuted and the registered result is NOT rejected
+_2026-11-16T02:57:03.847413+00:00_
+
+## [orchestrator] DECISION — withheld 5 reference(s) whose identity no available record can verify
+_2026-11-16T03:21:27.469567+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-11-16T03:21:27.484922+00:00_
+
+## [llm] OUTPUT — writing provider completion (attempt 1)
+_2026-11-16T03:22:39.019432+00:00_
+
+## [writing] OUTPUT — writing:writing text output
+_2026-11-16T03:22:39.038481+00:00_
+
+## [writing] OUTPUT — methodology diagram accepted
+_2026-11-16T03:22:39.286815+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-11-16T03:22:39.301283+00:00_
+
+## [llm] OUTPUT — writing provider completion (attempt 1)
+_2026-11-16T03:24:27.866079+00:00_
+
+## [writing] OUTPUT — writing:writing text output
+_2026-11-16T03:24:27.887213+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-11-16T03:24:28.548977+00:00_
+
+## [llm] OUTPUT — writing provider completion (attempt 1)
+_2026-11-16T03:26:01.686714+00:00_
+
+## [writing] OUTPUT — writing:writing raw output (attempt 1)
+_2026-11-16T03:26:01.702933+00:00_
+
+## [writing] OUTPUT — writing: parsed _SentenceRepairs
+_2026-11-16T03:26:01.715545+00:00_
+
+## [writing] DECISION — self-repaired 9 sentence(s) the claim ledger would hold (pass 1); the rest of the draft is unchanged
+_2026-11-16T03:26:01.727532+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-11-16T03:26:02.019936+00:00_
+
+## [llm] OUTPUT — writing provider completion (attempt 1)
+_2026-11-16T03:28:03.536789+00:00_
+
+## [writing] OUTPUT — writing:writing raw output (attempt 1)
+_2026-11-16T03:28:03.556837+00:00_
+
+## [writing] OUTPUT — writing: parsed _SentenceRepairs
+_2026-11-16T03:28:03.569198+00:00_
+
+## [writing] DECISION — self-repaired 2 sentence(s) the claim ledger would hold (pass 2); the rest of the draft is unchanged
+_2026-11-16T03:28:03.582060+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-11-16T03:28:03.871328+00:00_
+
+## [llm] OUTPUT — writing provider completion (attempt 1)
+_2026-11-16T03:30:24.640554+00:00_
+
+## [writing] OUTPUT — writing:writing raw output (attempt 1)
+_2026-11-16T03:30:24.659990+00:00_
+
+## [writing] OUTPUT — writing: parsed _SentenceRepairs
+_2026-11-16T03:30:24.675240+00:00_
+
+## [writing] DECISION — self-repaired 2 sentence(s) the claim ledger would hold (pass 3); the rest of the draft is unchanged
+_2026-11-16T03:30:24.687393+00:00_
+
+## [writing] DECISION — removed 1 self-repaired sentence(s) the claim ledger still holds
+_2026-11-16T03:30:24.964544+00:00_
+
+## [writing] OUTPUT — paper written
+_2026-11-16T03:30:24.978117+00:00_
+
+## [orchestrator] INFO — paper written
+_2026-11-16T03:30:26.348082+00:00_
+
+## [citation_check] PROMPT — citation_check:review prompt
+_2026-11-16T03:48:44.213538+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T03:49:11.755573+00:00_
+
+## [citation_check] OUTPUT — citation_check:review text output
+_2026-11-16T03:49:11.776969+00:00_
+
+## [citation_check] OUTPUT — citation audit: 2 error(s), 22 warning(s) in citations.
+_2026-11-16T03:49:11.787426+00:00_
+
+## [review] INFO — citation faithfulness verdicts: 2 reused, 17 judged
+_2026-11-16T03:49:11.799862+00:00_
+
+## [plagiarism_check] OUTPUT — plagiarism/text-overlap check: Text overlap 8% is within the 18% threshold; no plagiarism detected.
+_2026-11-16T03:49:11.825583+00:00_
+
+## [preregistration_check] PROMPT — preregistration_check:review prompt
+_2026-11-16T03:49:11.836482+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T03:49:34.632693+00:00_
+
+## [preregistration_check] OUTPUT — preregistration_check:review text output
+_2026-11-16T03:49:34.646258+00:00_
+
+## [preregistration_check] OUTPUT — preregistration audit: The paper is faithful to its preregistration.
+_2026-11-16T03:49:34.658472+00:00_
+
+## [review] PROMPT — review:review prompt
+_2026-11-16T03:49:34.985808+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T03:50:02.037528+00:00_
+
+## [review] OUTPUT — review:review text output
+_2026-11-16T03:50:02.056032+00:00_
+
+## [review] DECISION — review decision: revise (target=writing; citations_ok=False; artifact_repairs=0; overlap_ok=True; prereg_ok=True)
+_2026-11-16T03:50:02.127971+00:00_
+
+## [orchestrator] DECISION — publication held for claim correction: the manuscript states what the run's records contradict or do not support (the registered result is unaffected)
+_2026-11-16T03:50:03.246295+00:00_
+
+## [orchestrator] DECISION — withheld 5 reference(s) whose identity no available record can verify
+_2026-11-16T03:52:52.127066+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-11-16T03:52:52.143982+00:00_
+
+## [llm] OUTPUT — writing provider completion (attempt 1)
+_2026-11-16T03:54:01.880154+00:00_
+
+## [writing] OUTPUT — writing:writing text output
+_2026-11-16T03:54:01.905084+00:00_
+
+## [writing] OUTPUT — methodology diagram accepted
+_2026-11-16T03:54:02.159689+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-11-16T03:54:02.184362+00:00_
+
+## [llm] OUTPUT — writing provider completion (attempt 1)
+_2026-11-16T03:56:22.168832+00:00_
+
+## [writing] OUTPUT — writing:writing text output
+_2026-11-16T03:56:22.195139+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-11-16T03:56:22.807968+00:00_
+
+## [llm] OUTPUT — writing provider completion (attempt 1)
+_2026-11-16T03:59:14.301259+00:00_
+
+## [writing] OUTPUT — writing:writing raw output (attempt 1)
+_2026-11-16T03:59:14.320813+00:00_
+
+## [writing] OUTPUT — writing: parsed _SentenceRepairs
+_2026-11-16T03:59:14.332138+00:00_
+
+## [writing] DECISION — self-repaired 8 sentence(s) the claim ledger would hold (pass 1); the rest of the draft is unchanged
+_2026-11-16T03:59:14.343715+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-11-16T03:59:14.625629+00:00_
+
+## [llm] OUTPUT — writing provider completion (attempt 1)
+_2026-11-16T04:04:05.195015+00:00_
+
+## [writing] OUTPUT — writing:writing raw output (attempt 1)
+_2026-11-16T04:04:05.210571+00:00_
+
+## [writing] OUTPUT — writing: parsed _SentenceRepairs
+_2026-11-16T04:04:05.223007+00:00_
+
+## [writing] DECISION — self-repaired 4 sentence(s) the claim ledger would hold (pass 2); the rest of the draft is unchanged
+_2026-11-16T04:04:05.238000+00:00_
+
+## [writing] PROMPT — writing:writing prompt
+_2026-11-16T04:04:05.509264+00:00_
+
+## [llm] OUTPUT — writing provider completion (attempt 1)
+_2026-11-16T04:06:19.164817+00:00_
+
+## [writing] OUTPUT — writing:writing raw output (attempt 1)
+_2026-11-16T04:06:19.181451+00:00_
+
+## [writing] OUTPUT — writing: parsed _SentenceRepairs
+_2026-11-16T04:06:19.191998+00:00_
+
+## [writing] DECISION — self-repaired 2 sentence(s) the claim ledger would hold (pass 3); the rest of the draft is unchanged
+_2026-11-16T04:06:19.203094+00:00_
+
+## [writing] DECISION — removed 2 self-repaired sentence(s) the claim ledger still holds
+_2026-11-16T04:06:19.488565+00:00_
+
+## [writing] OUTPUT — paper written
+_2026-11-16T04:06:19.503766+00:00_
+
+## [orchestrator] INFO — paper written
+_2026-11-16T04:06:20.845200+00:00_
+
+## [citation_check] PROMPT — citation_check:review prompt
+_2026-11-16T04:06:57.293602+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T04:08:17.744343+00:00_
+
+## [citation_check] OUTPUT — citation_check:review text output
+_2026-11-16T04:08:17.772765+00:00_
+
+## [citation_check] OUTPUT — citation audit: 2 error(s), 0 warning(s) in citations.
+_2026-11-16T04:08:17.785972+00:00_
+
+## [review] INFO — citation faithfulness verdicts: 0 reused, 16 judged
+_2026-11-16T04:08:17.797820+00:00_
+
+## [plagiarism_check] OUTPUT — plagiarism/text-overlap check: Text overlap 2% is within the 18% threshold; no plagiarism detected.
+_2026-11-16T04:08:17.823128+00:00_
+
+## [preregistration_check] PROMPT — preregistration_check:review prompt
+_2026-11-16T04:08:17.837045+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T04:08:43.334713+00:00_
+
+## [preregistration_check] OUTPUT — preregistration_check:review text output
+_2026-11-16T04:08:43.351409+00:00_
+
+## [preregistration_check] OUTPUT — preregistration audit: The paper is faithful to its preregistration.
+_2026-11-16T04:08:43.364531+00:00_
+
+## [review] PROMPT — review:review prompt
+_2026-11-16T04:08:43.687568+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T04:09:05.396055+00:00_
+
+## [review] OUTPUT — review:review text output
+_2026-11-16T04:09:05.410834+00:00_
+
+## [review] DECISION — review decision: revise (target=writing; citations_ok=False; artifact_repairs=0; overlap_ok=True; prereg_ok=True)
+_2026-11-16T04:09:05.472757+00:00_
+
+## [orchestrator] DECISION — publication held for claim correction: the manuscript states what the run's records contradict or do not support (the registered result is unaffected)
+_2026-11-16T04:09:06.620973+00:00_
+
+## [orchestrator] DECISION — review cap reached; failing closed
+_2026-11-16T04:09:07.274820+00:00_
+
+## [orchestrator] DECISION — failure category: review_rejected
+_2026-11-16T04:09:07.928101+00:00_
+
+## [editorial_correction] DECISION — editorial correction of the published version of record submitted for independent review
+_2026-11-16T10:18:53.394767+00:00_
+
+## [citation_check] PROMPT — citation_check:review prompt
+_2026-11-16T10:19:10.757880+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T10:20:39.043892+00:00_
+
+## [citation_check] OUTPUT — citation_check:review text output
+_2026-11-16T10:20:39.068597+00:00_
+
+## [citation_check] OUTPUT — citation audit: 3 error(s), 1 warning(s) in citations.
+_2026-11-16T10:20:39.084045+00:00_
+
+## [review] INFO — citation faithfulness verdicts: 0 reused, 14 judged
+_2026-11-16T10:20:39.095546+00:00_
+
+## [plagiarism_check] OUTPUT — plagiarism/text-overlap check: Text overlap 1% is within the 18% threshold; no plagiarism detected.
+_2026-11-16T10:20:39.121943+00:00_
+
+## [preregistration_check] PROMPT — preregistration_check:review prompt
+_2026-11-16T10:20:39.136855+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T10:20:58.673320+00:00_
+
+## [preregistration_check] OUTPUT — preregistration_check:review text output
+_2026-11-16T10:20:58.694551+00:00_
+
+## [preregistration_check] OUTPUT — preregistration audit: The paper is faithful to its preregistration.
+_2026-11-16T10:20:58.705927+00:00_
+
+## [review] PROMPT — review:review prompt
+_2026-11-16T10:20:59.040126+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T10:21:50.740470+00:00_
+
+## [review] OUTPUT — review:review text output
+_2026-11-16T10:21:50.758743+00:00_
+
+## [review] DECISION — review decision: revise (target=writing; citations_ok=False; artifact_repairs=0; overlap_ok=True; prereg_ok=True)
+_2026-11-16T10:21:50.824862+00:00_
+
+## [orchestrator] DECISION — publication held: mandatory evidence could not be verified; the experiment is neither validated nor refuted and the registered result is NOT rejected
+_2026-11-16T10:21:52.883599+00:00_
+
+## [editorial_correction] DECISION — editorial correction of the published version of record submitted for independent review
+_2026-11-16T10:34:32.195453+00:00_
+
+## [citation_check] PROMPT — citation_check:review prompt
+_2026-11-16T10:34:53.739407+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T10:36:20.937633+00:00_
+
+## [citation_check] OUTPUT — citation_check:review text output
+_2026-11-16T10:36:20.964097+00:00_
+
+## [citation_check] OUTPUT — citation audit: 0 error(s), 1 warning(s) in citations.
+_2026-11-16T10:36:20.974191+00:00_
+
+## [review] INFO — citation faithfulness verdicts: 11 reused, 3 judged
+_2026-11-16T10:36:20.986775+00:00_
+
+## [plagiarism_check] OUTPUT — plagiarism/text-overlap check: Text overlap 1% is within the 18% threshold; no plagiarism detected.
+_2026-11-16T10:36:21.012024+00:00_
+
+## [preregistration_check] PROMPT — preregistration_check:review prompt
+_2026-11-16T10:36:21.026097+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T10:36:44.872733+00:00_
+
+## [preregistration_check] OUTPUT — preregistration_check:review text output
+_2026-11-16T10:36:44.890731+00:00_
+
+## [preregistration_check] OUTPUT — preregistration audit: The paper is faithful to its preregistration.
+_2026-11-16T10:36:44.904042+00:00_
+
+## [review] PROMPT — review:review prompt
+_2026-11-16T10:36:45.227917+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T10:37:49.699018+00:00_
+
+## [review] OUTPUT — review:review text output
+_2026-11-16T10:37:49.717995+00:00_
+
+## [review] DECISION — review decision: revise (target=writing; citations_ok=True; artifact_repairs=0; overlap_ok=True; prereg_ok=True)
+_2026-11-16T10:37:49.770986+00:00_
+
+## [orchestrator] DECISION — registered report: every integrity check passed, so a subjective revise request is recorded as an editorial note rather than blocking publication
+_2026-11-16T10:37:51.145644+00:00_
+
+## [orchestrator] DECISION — copy-edited the manuscript before publication
+_2026-11-16T10:37:51.564261+00:00_
+
+## [orchestrator] DECISION — parked for editorial publication approval
+_2026-11-16T10:37:51.655478+00:00_
+
+## [editorial_correction] DECISION — editorial correction of the published version of record submitted for independent review
+_2026-11-16T10:44:29.917435+00:00_
+
+## [citation_check] OUTPUT — citation audit: 0 error(s), 1 warning(s) in citations.
+_2026-11-16T10:44:53.917621+00:00_
+
+## [review] INFO — citation faithfulness verdicts: 14 reused, 0 judged
+_2026-11-16T10:44:53.936504+00:00_
+
+## [plagiarism_check] OUTPUT — plagiarism/text-overlap check: Text overlap 1% is within the 18% threshold; no plagiarism detected.
+_2026-11-16T10:44:53.967005+00:00_
+
+## [preregistration_check] PROMPT — preregistration_check:review prompt
+_2026-11-16T10:44:53.986566+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T10:45:08.449255+00:00_
+
+## [preregistration_check] OUTPUT — preregistration_check:review text output
+_2026-11-16T10:45:08.471695+00:00_
+
+## [preregistration_check] OUTPUT — preregistration audit: The paper is faithful to its preregistration.
+_2026-11-16T10:45:08.484170+00:00_
+
+## [review] PROMPT — review:review prompt
+_2026-11-16T10:45:08.816478+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T10:46:15.783254+00:00_
+
+## [review] OUTPUT — review:review text output
+_2026-11-16T10:46:15.802589+00:00_
+
+## [review] DECISION — review decision: revise (target=writing; citations_ok=True; artifact_repairs=0; overlap_ok=True; prereg_ok=True)
+_2026-11-16T10:46:15.862399+00:00_
+
+## [orchestrator] DECISION — registered report: every integrity check passed, so a subjective revise request is recorded as an editorial note rather than blocking publication
+_2026-11-16T10:46:16.826745+00:00_
+
+## [orchestrator] DECISION — copy-edited the manuscript before publication
+_2026-11-16T10:46:17.236911+00:00_
+
+## [orchestrator] DECISION — parked for editorial publication approval
+_2026-11-16T10:46:17.326637+00:00_
+
+## [editorial_correction] DECISION — editorial correction of the published version of record submitted for independent review
+_2026-11-16T10:50:05.208857+00:00_
+
+## [citation_check] OUTPUT — citation audit: 0 error(s), 1 warning(s) in citations.
+_2026-11-16T10:50:28.656599+00:00_
+
+## [review] INFO — citation faithfulness verdicts: 14 reused, 0 judged
+_2026-11-16T10:50:28.668168+00:00_
+
+## [plagiarism_check] OUTPUT — plagiarism/text-overlap check: Text overlap 1% is within the 18% threshold; no plagiarism detected.
+_2026-11-16T10:50:28.693838+00:00_
+
+## [preregistration_check] PROMPT — preregistration_check:review prompt
+_2026-11-16T10:50:28.706511+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T10:51:35.305631+00:00_
+
+## [preregistration_check] OUTPUT — preregistration_check:review text output
+_2026-11-16T10:51:35.323566+00:00_
+
+## [preregistration_check] OUTPUT — preregistration audit: The paper is faithful to its preregistration.
+_2026-11-16T10:51:35.336158+00:00_
+
+## [review] PROMPT — review:review prompt
+_2026-11-16T10:51:35.647211+00:00_
+
+## [llm] OUTPUT — review provider completion (attempt 1)
+_2026-11-16T10:52:19.576966+00:00_
+
+## [review] OUTPUT — review:review text output
+_2026-11-16T10:52:19.598169+00:00_
+
+## [review] DECISION — review decision: revise (target=writing; citations_ok=True; artifact_repairs=0; overlap_ok=True; prereg_ok=True)
+_2026-11-16T10:52:19.650797+00:00_
+
+## [orchestrator] DECISION — registered report: every integrity check passed, so a subjective revise request is recorded as an editorial note rather than blocking publication
+_2026-11-16T10:52:20.868923+00:00_
+
+## [orchestrator] DECISION — copy-edited the manuscript before publication
+_2026-11-16T10:52:21.287314+00:00_
+
+## [orchestrator] DECISION — parked for editorial publication approval
+_2026-11-16T10:52:21.428363+00:00_

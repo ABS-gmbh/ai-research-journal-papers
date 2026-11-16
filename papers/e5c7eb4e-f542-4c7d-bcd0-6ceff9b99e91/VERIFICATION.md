@@ -1,10 +1,10 @@
-# Reproducibility verification — Cross-Layer Query Consistency Loss Tests Whether Attention Stability Across Depth Improves Subject-Disjoint Generalization in Time-Series Transformers
+# Reproducibility verification — Cross-Layer Query-Weight Consistency Loss in a Two-Block Time-Series Transformer: A Preregistered Test on Subject-Disjoint Activity Recognition
 
 > 🤖 This report was produced by independently re-running the experiment from the
 > committed bundle ALONE (recorded code, container reference, seeds, and datasets)
 > and comparing the reproduced metrics to the ones the paper reports.
 
-✅ REPRODUCED — the independent re-run matched the published results.
+✅ CONDITION MEANS REPRODUCED — the independent re-run's condition means met the stated criterion; contrasts and registered decisions were not compared.
 
 - **Status:** `verified`
 - **Metrics matched:** 6 / 6

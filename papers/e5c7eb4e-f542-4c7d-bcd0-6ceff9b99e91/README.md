@@ -1,6 +1,6 @@
-# Cross-Layer Query Consistency Loss Tests Whether Attention Stability Across Depth Improves Subject-Disjoint Generalization in Time-Series Transformers
+# Cross-Layer Query-Weight Consistency Loss in a Two-Block Time-Series Transformer: A Preregistered Test on Subject-Disjoint Activity Recognition
 
-> 🤖 **AI-GENERATED.** This paper — its topic, literature review, experiment code, execution, analysis, and text — was produced end to end by ABS AI RSE, an autonomous AI research system. All content is AI-generated and is explicitly labelled as such.
+> 🤖 **AI-GENERATED.** This paper — its topic, literature review, experiment code, execution, analysis, and text — was produced end to end by ABS AI RSE, an autonomous AI research system. After the autonomous run, the text was corrected at the direction of the journal's editor; the correcting text was drafted by an AI assistant (Claude, Anthropic), not written by a human: the correction rewrote the title, the abstract, the Related Work, the Discussion and the Conclusion, revised sentences in the Introduction, Method, Experimental Setup, Results and Limitations, added two paragraphs to the Introduction, three paragraphs to the Method and one paragraph to the Results, and corrected the reference list. Apart from these changes and this disclosure, the text is as the autonomous system produced it, and the experiment, its execution, the analysis and every reported result are unchanged. CORRECTION.md lists every changed sentence.
 
 This repository is the reproducibility bundle for an automatically generated research
 paper: the study's own experiment code, SHA-256 digests of the platform components that ran,
@@ -26,7 +26,9 @@ An independent re-run is performed by the journal from the complete frozen input
 is reported in `VERIFICATION.md`. Reproducing the experiment outside the journal requires the
 platform components, so contact the journal to arrange it.
 
-
+- **Entrypoint module:** `experiment`
+- **Run arguments:** recorded in `metadata.json` and `reproduction.json`
+- **Datasets:** `uci_har_smartphones` (sha256 `c00b803081a5c797cd5e4b83700a9810b38d53d9d84e01917e090e1fdbc81031`)
 - **Random seeds:** `{'primary': [2615122547193570606, 252200600861128310, 634766601307347027, 2289833669515924996, 1075721894937126869, 2219905518708798979, 1472572688149772095, 3154489071090469597, 2567160067431731676, 375878476100283907, 3680443165500893007, 2412595240837917458, 2601790489635802822, 1913826313556203271, 710938911890137278, 4578385222592080447, 3998799165023144543, 3601994374998462166, 517409047000623439, 3812347621373549969, 3406080211412548461, 772595819596432589, 3615834778985602079, 1415494652153299218, 2062219541250864404, 142389970181333221, 4434070341016929754, 1135820606004933817, 3780975103128256366, 4407244770048434366, 4376044843392817728, 3255929081425547334, 3574102472552171439, 19016511533479923, 2933058706039751666, 3462839959629419857, 4607211731052019561, 2779871998158610606, 1485808255187976782, 3471275713396068135, 4429899216283540008, 1385236021301736380, 1330453660667172384], 'replication': [2340648136914159678, 4191649941990144526, 914975885928187538, 3493291245950488, 3092035777930482330, 3033986887553884854, 1948116001888441515, 3721334120068172834, 1629568842510008, 3605262731553156275, 3904049989082932630, 892823242471123166, 3725427329689760378, 3555864911429215929, 3606907749333550835, 2155528049710964782, 2789562881046154133, 1853921749424354694, 1745680992267274019, 841184256946095993, 3464957341317932123, 775787681821570599, 3309282745006621851, 146154474434366067, 2391332672707033902, 706889780011171718, 2426763361766452408, 3736121309580882765, 479020209906455928, 1963761814288298963, 2233713330617425866, 2745262338024609657, 2296843351460209463, 2142392810908805088, 1468658092695416100, 2052272999620538285, 3506933794820522738, 351506867199205715, 4557863017481180823, 2654635865597404598, 3394110221015017757, 3791841174141345598, 3513984727252394996]}`
 - **compute job id:** `16152821`
 - **Partition:** `[redacted]`
@@ -46,9 +48,12 @@ platform components, so contact the journal to arrange it.
 | `reproduction.json` | public form of the frozen inputs: invocation, container checksum, dataset inputs, the study's code, the SHA-256 of every code file, and the reference outputs |
 | `REPRODUCTION_SOURCE.json` | the private archive of the complete frozen packet the journal re-runs from, and its checksum |
 | `metrics.json` | the real results |
-| `metrics.png` | results figure |
+| declared `*.png` figures | every figure referenced by the paper, with available SVG copies |
 | `seeds.json` | random seeds |
 | `PREREGISTRATION.md` / `preregistration.json` | hypothesis + analysis plan, fixed before the experiment ran |
+| `SEMANTIC_LOCK.md` / `semantic_contract.json` | the locked scientific contract and what was machine-verified against it |
+| `EXPERIMENT_SELECTION.md` / `experiment_selection.json` | why this study was selected: its expected information and cost, and the prior evidence it responds to (fixed before the experiment ran) |
+| `CLAIMS.md` / `claim_ledger.json` | every material claim in the paper, checked against the run's own records |
 | `datasets.json` | staged dataset provenance (source, sha256, paths) |
 | `logs/run.log` | compute run logs |
 | `trace.json` | the agent's reasoning trace (incl. failures); platform prompts replaced by their SHA-256 |
@@ -56,11 +61,6 @@ platform components, so contact the journal to arrange it.
 | `MANIFEST.sha256` | SHA-256 of every bundle file |
 | `VERIFICATION.md` / `verification.json` | independent reproduction re-run report (if verified) |
 
-## Public history rewrite (2026-11-16)
+## Reporting correction
 
-This repository's history was rewritten on 2026-11-16 to remove the journal's platform source
-code and prompts, which are not open source. Files and records are otherwise unchanged, and
-author dates and messages are preserved. Commit identifiers recorded inside files before that
-date (for example the preregistration anchor commit above) name commits of the ORIGINAL
-history, which the journal keeps privately; `HISTORY_REWRITE.json` at the repository root maps
-each original commit to its rewritten counterpart.
+See [CORRECTION.md](CORRECTION.md) for the version history and change note, and [correction.json](correction.json) for its structured metadata.
