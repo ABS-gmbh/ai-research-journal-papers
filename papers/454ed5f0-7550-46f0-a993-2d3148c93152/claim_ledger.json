@@ -1,0 +1,5945 @@
+{
+  "assist": null,
+  "claims": [
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-91daa822ac18",
+      "claim_type": "causal_mechanistic",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [
+        "representation"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "title",
+      "sentence": "Spectral Entropy Minimization of Input Projections for Temporal Feature Learning",
+      "sentence_index": 0,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "Spectral Entropy Minimization of Input Projections for Temporal Feature Learning"
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-1a1ea3814af8",
+      "claim_type": "causal_mechanistic",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [
+        "representation",
+        "weight_structure"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "abstract",
+      "sentence": "Regularization design for temporal feature learning often assumes specific weight geometries facilitate generalization under distribution shift.",
+      "sentence_index": 0,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "Regularization design for temporal feature learning often assumes specific weight geometries facilitate generalization under distribution shift."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-2919426a092d",
+      "claim_type": "hypothesis",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "speculative",
+      "consequence": "none",
+      "constructs": [
+        "weight_structure"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "method_split_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the recipe's held-out cohort is subject-disjoint"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "method_split_matches"
+      ],
+      "section": "abstract",
+      "sentence": "This study tests whether enforcing a low-entropy singular value spectrum on input projection weights enhances held-out classification accuracy compared to standard weight decay in a subject-disjoint time-series setting.",
+      "sentence_index": 1,
+      "server_owned": false,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "assumption",
+          "node": "assumption:subject_disjoint_split",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "This study tests whether enforcing a low-entropy singular value spectrum on input projection weights enhances held-out classification accuracy compared to standard weight decay in a subject-disjoint time-series setting."
+    },
+    {
+      "arms": [
+        "proposed"
+      ],
+      "citations": [],
+      "claim_id": "c-9172bdf476c4",
+      "claim_type": "experimental_result",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "number_margin_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "registration:margin",
+          "recorded": 0.012509797746985206,
+          "role": "margin",
+          "text": "0.0125098",
+          "value": 0.0125098
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "0.0125098 (margin) matches registration:margin"
+      ],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "number_margin_matches"
+      ],
+      "section": "abstract",
+      "sentence": "We preregistered a hypothesis that the intervention would exceed a fixed worthwhile margin of 0.0125098 proportion in accuracy gain.",
+      "sentence_index": 2,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "registration",
+          "node": "registration:margin",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "We preregistered a hypothesis that the intervention would exceed a fixed worthwhile margin of 0.0125098 proportion in accuracy gain."
+    },
+    {
+      "arms": [
+        "baseline_1",
+        "proposed"
+      ],
+      "citations": [],
+      "claim_id": "c-af745bd627f2",
+      "claim_type": "experimental_result",
+      "cohorts": [
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "number_count_matches",
+        "number_matches_record"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "design:seeds",
+          "recorded": 43.0,
+          "role": "other",
+          "text": "43",
+          "value": 43.0
+        },
+        {
+          "matched": true,
+          "node": "design:seeds",
+          "recorded": 43.0,
+          "role": "count",
+          "text": "43",
+          "value": 43.0
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "43 matches design:seeds",
+        "43 (count) matches design:seeds"
+      ],
+      "registered_outcome": {
+        "cohort": "replication",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "number_count_matches",
+        "number_matches_record"
+      ],
+      "section": "abstract",
+      "sentence": "Using a Transformer architecture on the UCI Human Activity Recognition dataset, we evaluated the proposed condition against a baseline across 43 primary and 43 confirmatory-replication seeds.",
+      "sentence_index": 3,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.00550027225163942,
+        "ci_low": -0.0003314367784345101,
+        "effect_size": 0.2532760565104226,
+        "mean_diff": 0.002548906653198761,
+        "n": 43,
+        "p_value": 0.10617876424715057
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "design",
+          "node": "design:seeds",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "design",
+          "node": "design:seeds",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "Using a Transformer architecture on the UCI Human Activity Recognition dataset, we evaluated the proposed condition against a baseline across 43 primary and 43 confirmatory-replication seeds."
+    },
+    {
+      "arms": [
+        "baseline_1",
+        "negative_control_1",
+        "negative_control_2"
+      ],
+      "citations": [],
+      "claim_id": "c-3e4a551a2f60",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "advisory",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "control_agreement_by_construction"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [
+        "state that the control never acted, so it tested nothing"
+      ],
+      "reasons": [
+        "the control never acted, so its agreement with the baseline holds by construction and carries no diagnostic information"
+      ],
+      "registered_outcome": {
+        "cohort": "replication",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "State that the control never acted, so its agreement with the baseline is by construction. (state that the control never acted, so it tested nothing)",
+      "rules": [
+        "control_agreement_by_construction"
+      ],
+      "section": "abstract",
+      "sentence": "Two declared negative controls turned out to be inert as implemented: their accuracies are identical to the baseline's on every seed, so they carry no diagnostic information.",
+      "sentence_index": 4,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.00550027225163942,
+        "ci_low": -0.0003314367784345101,
+        "effect_size": 0.2532760565104226,
+        "mean_diff": 0.002548906653198761,
+        "n": 43,
+        "p_value": 0.10617876424715057
+      },
+      "status": "supported_under_conditions",
+      "supporting": [
+        {
+          "kind": "assumption",
+          "node": "assumption:arm_acted:negative_control_1",
+          "note": "",
+          "relation": "qualifies",
+          "value": false
+        },
+        {
+          "kind": "assumption",
+          "node": "assumption:arm_acted:negative_control_2",
+          "note": "",
+          "relation": "qualifies",
+          "value": false
+        }
+      ],
+      "text": "Two declared negative controls turned out to be inert as implemented: their accuracies are identical to the baseline's on every seed, so they carry no diagnostic information."
+    },
+    {
+      "arms": [
+        "proposed"
+      ],
+      "citations": [],
+      "claim_id": "c-4d348cc1933b",
+      "claim_type": "experimental_result",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "decision_matches",
+        "direction_point_estimate",
+        "number_difference_matches",
+        "number_interval_matches",
+        "number_matches_record",
+        "number_p_value_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "finding:primary:held-out classification accuracy",
+          "recorded": 0.0004419157045793504,
+          "role": "difference",
+          "text": "0.0004419",
+          "value": 0.0004419
+        },
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        },
+        {
+          "matched": true,
+          "node": "finding:primary:held-out classification accuracy",
+          "recorded": -0.002130862288018561,
+          "role": "interval_low",
+          "text": "-0.00213",
+          "value": -0.00213
+        },
+        {
+          "matched": true,
+          "node": "finding:primary:held-out classification accuracy",
+          "recorded": 0.003101498567719651,
+          "role": "interval_high",
+          "text": "0.0031",
+          "value": 0.0031
+        },
+        {
+          "matched": true,
+          "node": "finding:primary:held-out classification accuracy",
+          "recorded": 0.7498500299940012,
+          "role": "p_value",
+          "text": "0.75",
+          "value": 0.75
+        },
+        {
+          "matched": true,
+          "node": "finding:replication:held-out classification accuracy",
+          "recorded": 0.002548906653198761,
+          "role": "other",
+          "text": "0.002549",
+          "value": 0.002549
+        },
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        },
+        {
+          "matched": true,
+          "node": "finding:replication:held-out classification accuracy",
+          "recorded": -0.0003314367784345101,
+          "role": "interval_low",
+          "text": "-0.000331",
+          "value": -0.000331
+        },
+        {
+          "matched": true,
+          "node": "finding:replication:held-out classification accuracy",
+          "recorded": 0.00550027225163942,
+          "role": "interval_high",
+          "text": "0.0055",
+          "value": 0.0055
+        },
+        {
+          "matched": true,
+          "node": "finding:replication:held-out classification accuracy",
+          "recorded": 0.10617876424715057,
+          "role": "p_value",
+          "text": "0.106",
+          "value": 0.106
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "0.0004419 (difference) matches finding:primary:held-out classification accuracy",
+        "interval [-0.00213, 0.0031] matches finding:primary:held-out classification accuracy",
+        "0.75 (p_value) matches finding:primary:held-out classification accuracy",
+        "0.002549 matches finding:replication:held-out classification accuracy",
+        "interval [-0.000331, 0.0055] matches finding:replication:held-out classification accuracy",
+        "0.106 (p_value) matches finding:replication:held-out classification accuracy"
+      ],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "decision_matches",
+        "direction_point_estimate",
+        "number_difference_matches",
+        "number_interval_matches",
+        "number_matches_record",
+        "number_p_value_matches"
+      ],
+      "section": "abstract",
+      "sentence": "The results were inconclusive: the proposed condition improved accuracy by 0.0004419 (95% CI [-0.00213, 0.0031], p=0.75) in the primary cohort and 0.002549 (95% CI [-0.000331, 0.0055], p=0.106) in the replication cohort.",
+      "sentence_index": 5,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "finding",
+          "node": "finding:primary:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:primary:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:primary:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:replication:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:replication:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:replication:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:primary:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:replication:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "The results were inconclusive: the proposed condition improved accuracy by 0.0004419 (95% CI [-0.00213, 0.0031], p=0.75) in the primary cohort and 0.002549 (95% CI [-0.000331, 0.0055], p=0.106) in the replication cohort."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-4ac30a3e298d",
+      "claim_type": "methodological_description",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "abstract",
+      "sentence": "Neither estimate exceeded the preregistered margin, and confidence intervals included zero.",
+      "sentence_index": 6,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "Neither estimate exceeded the preregistered margin, and confidence intervals included zero."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-e0ae7dd89f30",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "hypothesis_not_supported_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "no cohort's registered decision supports the hypothesis"
+      ],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "hypothesis_not_supported_matches"
+      ],
+      "section": "abstract",
+      "sentence": "Neither cohort supports an accuracy gain of the registered size from spectral entropy minimization over standard weight decay on this testbed.",
+      "sentence_index": 7,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "decision",
+          "node": "decision:primary",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "decision",
+          "node": "decision:replication",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "Neither cohort supports an accuracy gain of the registered size from spectral entropy minimization over standard weight decay on this testbed."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-7f5d416dbc13",
+      "claim_type": "causal_mechanistic",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [
+        "representation",
+        "weight_structure"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "introduction",
+      "sentence": "Regularization techniques aim to mitigate this fragility by constraining the hypothesis space, yet the specific weight geometries that facilitate robust feature learning versus kernel regime behavior in finite-width networks remain poorly understood.",
+      "sentence_index": 1,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "Regularization techniques aim to mitigate this fragility by constraining the hypothesis space, yet the specific weight geometries that facilitate robust feature learning versus kernel regime behavior in finite-width networks remain poorly understood."
+    },
+    {
+      "arms": [],
+      "citations": [
+        1,
+        5
+      ],
+      "claim_id": "c-2bb8e650445f",
+      "claim_type": "literature",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [
+        "weight_structure"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "literature_lexically_supported"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the cited source resolves, carries no undisclosed notice, and shares the claim's terms (70%)"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "literature_lexically_supported"
+      ],
+      "section": "introduction",
+      "sentence": "A study that tried to maximize the entropy of multiplicative weight noise carries a retraction notice [1], and low-rank Bayesian parameterizations have been argued to suffice when weight matrices exhibit fast singular value decay [5], but we found no investigation into whether minimizing the spectral entropy of input projections specifically improves subject-disjoint generalization in time-series transformers.",
+      "sentence_index": 2,
+      "server_owned": false,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "reference",
+          "node": "reference:1",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "reference",
+          "node": "reference:5",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "A study that tried to maximize the entropy of multiplicative weight noise carries a retraction notice [1], and low-rank Bayesian parameterizations have been argued to suffice when weight matrices exhibit fast singular value decay [5]"
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-be840522b601",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "evidential",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "method_split_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the recipe's held-out cohort is subject-disjoint"
+      ],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "method_split_matches",
+        "scope_generalization_hedged"
+      ],
+      "section": "introduction",
+      "sentence": "A study that tried to maximize the entropy of multiplicative weight noise carries a retraction notice [1], and low-rank Bayesian parameterizations have been argued to suffice when weight matrices exhibit fast singular value decay [5], but we found no investigation into whether minimizing the spectral entropy of input projections specifically improves subject-disjoint generalization in time-series transformers.",
+      "sentence_index": 2,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "assumption",
+          "node": "assumption:subject_disjoint_split",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "but we found no investigation into whether minimizing the spectral entropy of input projections specifically improves subject-disjoint generalization in time-series transformers."
+    },
+    {
+      "arms": [
+        "proposed"
+      ],
+      "citations": [
+        5
+      ],
+      "claim_id": "c-a10dd5b8fc96",
+      "claim_type": "literature",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "negated",
+      "consequence": "none",
+      "constructs": [
+        "weight_structure"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "literature_lexically_supported"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the cited source resolves, carries no undisclosed notice, and shares the claim's terms (45%)"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "literature_lexically_supported"
+      ],
+      "section": "introduction",
+      "sentence": "Similarly, while low-rank parameterizations have been proposed to reduce parameter costs when weight matrices exhibit fast singular value decay [5], the impact of actively minimizing spectral entropy on discriminative accuracy remains untested.",
+      "sentence_index": 7,
+      "server_owned": false,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "reference",
+          "node": "reference:5",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "Similarly, while low-rank parameterizations have been proposed to reduce parameter costs when weight matrices exhibit fast singular value decay [5], the impact of actively minimizing spectral entropy on discriminative accuracy remains untested."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-1cca8185737d",
+      "claim_type": "hypothesis",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "speculative",
+      "consequence": "none",
+      "constructs": [
+        "representation"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "mechanism_unmeasured_hedged"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the claim invokes representation, which the run never measured \u2014 it would need a probe, similarity or geometry measurement of the learned representations; an outcome contrast is evidence about the outcome, not about why \u2014 offered as an untested possibility, which is the register an unestablished claim belongs in"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "mechanism_unmeasured_hedged"
+      ],
+      "section": "introduction",
+      "sentence": "This paper presents a preregistered experiment testing whether spectral entropy minimization of input projections enhances feature learning for hard temporal tasks compared to standard weight decay.",
+      "sentence_index": 8,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "This paper presents a preregistered experiment testing whether spectral entropy minimization of input projections enhances feature learning for hard temporal tasks compared to standard weight decay."
+    },
+    {
+      "arms": [],
+      "citations": [
+        4
+      ],
+      "claim_id": "c-f5cccd446e50",
+      "claim_type": "literature",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "introduction",
+      "sentence": "The study employs a subject-disjoint split to ensure evaluation reflects robustness to unseen users, a condition where distribution shifts are prevalent [4].",
+      "sentence_index": 10,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "The study employs a subject-disjoint split to ensure evaluation reflects robustness to unseen users, a condition where distribution shifts are prevalent [4]."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-dde8dedb298a",
+      "claim_type": "methodological_description",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "introduction",
+      "sentence": "We report results from both a primary cohort and a confirmatory-replication cohort to ensure reliability.",
+      "sentence_index": 11,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "We report"
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-233f6fd49ff1",
+      "claim_type": "methodological_description",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "method_split_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the recipe's held-out cohort is subject-disjoint"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "method_split_matches"
+      ],
+      "section": "introduction",
+      "sentence": "We formulate and test a hypothesis that minimizing spectral entropy of input projection weights improves subject-disjoint generalization accuracy beyond standard weight decay.",
+      "sentence_index": 13,
+      "server_owned": false,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "assumption",
+          "node": "assumption:subject_disjoint_split",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "We formulate and test a hypothesis that minimizing spectral entropy of input projection weights improves subject-disjoint generalization accuracy beyond standard weight decay."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-794363e5aeda",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "decision_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the primary decision is recorded as inconclusive",
+        "the replication decision is recorded as inconclusive"
+      ],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "decision_matches"
+      ],
+      "section": "introduction",
+      "sentence": "- We report an inconclusive result from 86 seeds across two cohorts, with exact effect sizes and confidence intervals.",
+      "sentence_index": 14,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "decision",
+          "node": "decision:primary",
+          "note": "",
+          "relation": "supports",
+          "value": "inconclusive"
+        },
+        {
+          "kind": "decision",
+          "node": "decision:replication",
+          "note": "",
+          "relation": "supports",
+          "value": "inconclusive"
+        }
+      ],
+      "text": "- We report an inconclusive"
+    },
+    {
+      "arms": [
+        "proposed"
+      ],
+      "citations": [],
+      "claim_id": "c-37d106cbac73",
+      "claim_type": "causal_mechanistic",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [
+        "weight_structure"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "decision_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the primary decision is recorded as inconclusive",
+        "the replication decision is recorded as inconclusive"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "decision_matches"
+      ],
+      "section": "introduction",
+      "sentence": "- We report the inconclusive outcome of one preregistered spectral entropy intervention on one calibrated testbed, distinguishing spectral decay observed in trained networks from an active entropy minimization intervention.",
+      "sentence_index": 15,
+      "server_owned": false,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "decision",
+          "node": "decision:primary",
+          "note": "",
+          "relation": "supports",
+          "value": "inconclusive"
+        },
+        {
+          "kind": "decision",
+          "node": "decision:replication",
+          "note": "",
+          "relation": "supports",
+          "value": "inconclusive"
+        }
+      ],
+      "text": "- We report the inconclusive outcome of one preregistered spectral entropy intervention on one calibrated testbed, distinguishing spectral decay observed in trained networks from an active entropy minimization intervention."
+    },
+    {
+      "arms": [],
+      "citations": [
+        4
+      ],
+      "claim_id": "c-5fd6bda5d4f9",
+      "claim_type": "literature",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [
+        "training_dynamics"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "literature_lexically_supported"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the cited source resolves, carries no undisclosed notice, and shares the claim's terms (100%)"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "literature_lexically_supported"
+      ],
+      "section": "related_work",
+      "sentence": "Time series frequently manifest distribution shifts and non-stationary learning dynamics that pose challenges for out-of-distribution generalization [4].",
+      "sentence_index": 0,
+      "server_owned": false,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "reference",
+          "node": "reference:4",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "Time series frequently manifest distribution shifts and non-stationary learning dynamics that pose challenges for out-of-distribution generalization [4]."
+    },
+    {
+      "arms": [],
+      "citations": [
+        1
+      ],
+      "claim_id": "c-1dacfd0159c8",
+      "claim_type": "literature",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "speculative",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "literature_lexically_supported"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the cited source resolves, carries no undisclosed notice, and shares the claim's terms (76%)"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "literature_lexically_supported"
+      ],
+      "section": "related_work",
+      "sentence": "Prior work attempted to test whether explicitly maximizing the entropy of multiplicative weight-noise parameters during training improves held-out classification accuracy on subject-disjoint splits [1].",
+      "sentence_index": 2,
+      "server_owned": false,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "reference",
+          "node": "reference:1",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "Prior work attempted to test whether explicitly maximizing the entropy of multiplicative weight-noise parameters during training improves held-out classification accuracy on subject-disjoint splits [1]."
+    },
+    {
+      "arms": [],
+      "citations": [
+        2
+      ],
+      "claim_id": "c-0f4f56c172d3",
+      "claim_type": "literature",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "literature_lexically_supported"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the cited source resolves, carries no undisclosed notice, and shares the claim's terms (83%)"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "literature_lexically_supported"
+      ],
+      "section": "related_work",
+      "sentence": "The relationship between the entropy of intermediate representations and a model's robustness to distributional shift has been studied, showing that removal of low-entropy bits can benefit out-of-distribution performance [2].",
+      "sentence_index": 4,
+      "server_owned": false,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "reference",
+          "node": "reference:2",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "showing that removal of low-entropy bits can benefit out-of-distribution performance [2]."
+    },
+    {
+      "arms": [],
+      "citations": [
+        5
+      ],
+      "claim_id": "c-af5c68fdf058",
+      "claim_type": "literature",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [
+        "weight_structure"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "literature_lexically_supported"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the cited source resolves, carries no undisclosed notice, and shares the claim's terms (83%)"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "literature_lexically_supported"
+      ],
+      "section": "related_work",
+      "sentence": "In Bayesian neural networks, low-rank parameterization has been argued to make the standard parameter cost unnecessary when weight matrices exhibit fast singular value decay [5].",
+      "sentence_index": 5,
+      "server_owned": false,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "reference",
+          "node": "reference:5",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "In Bayesian neural networks, low-rank parameterization has been argued to make the standard parameter cost unnecessary when weight matrices exhibit fast singular value decay [5]."
+    },
+    {
+      "arms": [],
+      "citations": [
+        3
+      ],
+      "claim_id": "c-3a8b62cdc966",
+      "claim_type": "literature",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "literature_lexically_supported"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the cited source resolves, carries no undisclosed notice, and shares the claim's terms (100%)"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "literature_lexically_supported"
+      ],
+      "section": "related_work",
+      "sentence": "Regularization characterizes optimal learning in settings where empirical risk minimization fails, with maximum entropy programs exhibiting optimal learners in multiclass settings [3].",
+      "sentence_index": 6,
+      "server_owned": false,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "reference",
+          "node": "reference:3",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "Regularization characterizes optimal learning in settings where empirical risk minimization fails, with maximum entropy programs exhibiting optimal learners in multiclass settings [3]."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-519d3c0674a4",
+      "claim_type": "causal_mechanistic",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "evidential",
+      "consequence": "none",
+      "constructs": [
+        "representation",
+        "weight_structure"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "related_work",
+      "sentence": "Together, this literature suggests entropy and spectral properties are relevant to robustness, but the direction of effect (minimization versus maximization) and the target (weights versus representations) remain distinct questions.",
+      "sentence_index": 7,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "Together, this literature suggests entropy and spectral properties are relevant to robustness, but the direction of effect (minimization versus maximization) and the target (weights versus representations) remain distinct questions."
+    },
+    {
+      "arms": [],
+      "citations": [
+        1
+      ],
+      "claim_id": "c-90dabb61af33",
+      "claim_type": "literature",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "literature_lexically_supported"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the cited source resolves, carries no undisclosed notice, and shares the claim's terms (40%)"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "literature_lexically_supported"
+      ],
+      "section": "related_work",
+      "sentence": "Unlike the retracted attempt to maximize weight-noise entropy [1], it minimizes spectral entropy on deterministic weights; unlike low-rank Bayesian methods [5], it operates in a standard deterministic training regime with a specific entropy term.",
+      "sentence_index": 9,
+      "server_owned": false,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "reference",
+          "node": "reference:1",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "Unlike the retracted attempt to maximize weight-noise entropy [1], it minimizes spectral entropy on deterministic weights"
+    },
+    {
+      "arms": [],
+      "citations": [
+        5
+      ],
+      "claim_id": "c-5bb7790ee9c5",
+      "claim_type": "literature",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "literature_lexically_supported"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the cited source resolves, carries no undisclosed notice, and shares the claim's terms (50%)"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "literature_lexically_supported"
+      ],
+      "section": "related_work",
+      "sentence": "Unlike the retracted attempt to maximize weight-noise entropy [1], it minimizes spectral entropy on deterministic weights; unlike low-rank Bayesian methods [5], it operates in a standard deterministic training regime with a specific entropy term.",
+      "sentence_index": 9,
+      "server_owned": false,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "reference",
+          "node": "reference:5",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "unlike low-rank Bayesian methods [5], it operates in a standard deterministic training regime with a specific entropy term."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-203b72e67dec",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "evidential",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "method_split_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the recipe's held-out cohort is subject-disjoint"
+      ],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "method_split_matches"
+      ],
+      "section": "related_work",
+      "sentence": "In the literature reviewed here we found no test of whether minimizing the spectral entropy of input projections improves subject-disjoint generalization in time-series transformers.",
+      "sentence_index": 10,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "assumption",
+          "node": "assumption:subject_disjoint_split",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "In the literature reviewed here we found no test of whether minimizing the spectral entropy of input projections improves subject-disjoint generalization in time-series transformers."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-e26fb28f509d",
+      "claim_type": "hypothesis",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [
+        "weight_structure"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "method",
+      "sentence": "The experiment tests the hypothesis that enforcing a low-entropy singular value spectrum on input projection weights improves held-out classification accuracy compared to standard weight decay.",
+      "sentence_index": 0,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "The experiment tests the hypothesis that enforcing a low-entropy singular value spectrum on input projection weights improves held-out classification accuracy compared to standard weight decay."
+    },
+    {
+      "arms": [
+        "baseline_1",
+        "proposed"
+      ],
+      "citations": [],
+      "claim_id": "c-62adc408950c",
+      "claim_type": "hypothesis",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "hypothesis_matches_registration",
+        "number_margin_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "registration:margin",
+          "recorded": 0.012509797746985206,
+          "role": "margin",
+          "text": "0.0125098",
+          "value": 0.0125098
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "0.0125098 (margin) matches registration:margin",
+        "the stated prediction has the preregistered direction"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "hypothesis_matches_registration",
+        "number_margin_matches"
+      ],
+      "section": "method",
+      "sentence": "The intervention is predicted to yield higher held-out classification accuracy than the comparator, with mean paired contrast in the hypothesised direction exceeding the fixed worthwhile margin of 0.0125098 proportion.",
+      "sentence_index": 1,
+      "server_owned": false,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "registration",
+          "node": "registration:margin",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "registration",
+          "node": "registration:hypothesis",
+          "note": "",
+          "relation": "supports",
+          "value": "intervention_better"
+        }
+      ],
+      "text": "The intervention is predicted to yield higher held-out classification accuracy than the comparator, with mean paired contrast in the hypothesised direction exceeding the fixed worthwhile margin of 0.0125098 proportion."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-fee05b39316a",
+      "claim_type": "causal_mechanistic",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [
+        "weight_structure"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "method",
+      "sentence": "This prediction rests on the assumption that concentrating energy into dominant temporal modes via spectral entropy minimization facilitates more robust feature extraction than distributing energy uniformly, which standard weight decay permits.",
+      "sentence_index": 2,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "This prediction rests on the assumption that concentrating energy into dominant temporal modes via spectral entropy minimization facilitates more robust feature extraction than distributing energy uniformly, which standard weight decay permits."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-7c6dfa835ac1",
+      "claim_type": "causal_mechanistic",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [
+        "weight_structure"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "method_phase_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the operator is registered and recorded acting at loss_term"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "method_phase_matches"
+      ],
+      "section": "method",
+      "sentence": "The core operator is a regularization term added to the training objective that enforces low-entropy singular value spectra on the input projection weights.",
+      "sentence_index": 3,
+      "server_owned": false,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "assumption",
+          "node": "assumption:operator_conformance",
+          "note": "",
+          "relation": "supports",
+          "value": "loss_term"
+        }
+      ],
+      "text": "The core operator is a regularization term added to the training objective that enforces low-entropy singular value spectra on the input projection weights."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-89cd7f7e1cb6",
+      "claim_type": "causal_mechanistic",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [
+        "weight_structure"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "method",
+      "sentence": "During each optimization step, the operator computes the singular value decomposition (SVD) of the input projection weight matrix.",
+      "sentence_index": 4,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "During each optimization step, the operator computes the singular value decomposition (SVD) of the input projection weight matrix."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-89da406dd63b",
+      "claim_type": "causal_mechanistic",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [
+        "weight_structure"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "method",
+      "sentence": "The resulting singular values are normalized to form a probability distribution.",
+      "sentence_index": 5,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "The resulting singular values are normalized to form a probability distribution."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-2bca507ad59e",
+      "claim_type": "methodological_description",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "method",
+      "sentence": "The operator then calculates the Shannon entropy of this distribution and adds it to the loss function with a positive coefficient, such that minimizing the total loss requires minimizing the spectral entropy.",
+      "sentence_index": 6,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "The operator then calculates the Shannon entropy of this distribution and adds it to the loss function with a positive coefficient, such that minimizing the total loss requires minimizing the spectral entropy."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-b9246d99c609",
+      "claim_type": "causal_mechanistic",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [
+        "weight_structure"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "method",
+      "sentence": "This encourages the model to select dominant temporal modes rather than distributing energy uniformly across all singular vectors.",
+      "sentence_index": 7,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "This encourages the model to select dominant temporal modes rather than distributing energy uniformly across all singular vectors."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-4d91a8b4193f",
+      "claim_type": "causal_mechanistic",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [
+        "weight_structure"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "method",
+      "sentence": "The hypothesis targets the mechanistic role of weight spectra in generalization.",
+      "sentence_index": 9,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "The hypothesis targets the mechanistic role of weight spectra in generalization."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-77cf077ac35f",
+      "claim_type": "hypothesis",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "speculative",
+      "consequence": "none",
+      "constructs": [
+        "weight_structure"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "method_split_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the recipe's held-out cohort is subject-disjoint"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "method_split_matches"
+      ],
+      "section": "method",
+      "sentence": "Conversely, a result without a gain would be consistent with the possibilities that standard weight decay already suffices to manage spectral properties or that spectral entropy is not the critical factor for subject-disjoint robustness in this architecture.",
+      "sentence_index": 11,
+      "server_owned": false,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "assumption",
+          "node": "assumption:subject_disjoint_split",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "Conversely, a result without a gain would be consistent with the possibilities that standard weight decay already suffices to manage spectral properties or that spectral entropy is not the critical factor for subject-disjoint robustness in this architecture."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-956b0341f2e5",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [],
+      "section": "method",
+      "sentence": "Under the preregistered rule, a cohort supports the hypothesis only if the lower bound of its 95% confidence interval exceeds the margin, the direction is refuted if the whole interval lies at or below zero, and the result is otherwise inconclusive.",
+      "sentence_index": 12,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "Under the preregistered rule, a cohort supports the hypothesis only if the lower bound of its 95% confidence interval exceeds the margin, the direction is refuted if the whole interval lies at or below zero, and the result is otherwise inconclusive."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-c15880b9dce6",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {
+        "cohort": "replication",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [],
+      "section": "method",
+      "sentence": "We report the primary and confirmatory-replication cohorts separately; the replication reuses the same subjects, split and pipeline with new seeds, so it measures repeatability over training seeds.",
+      "sentence_index": 13,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.00550027225163942,
+        "ci_low": -0.0003314367784345101,
+        "effect_size": 0.2532760565104226,
+        "mean_diff": 0.002548906653198761,
+        "n": 43,
+        "p_value": 0.10617876424715057
+      },
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "We report the primary and confirmatory-replication cohorts separately"
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-a4ae0a7537ee",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {
+        "cohort": "replication",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [],
+      "section": "method",
+      "sentence": "We report the primary and confirmatory-replication cohorts separately; the replication reuses the same subjects, split and pipeline with new seeds, so it measures repeatability over training seeds.",
+      "sentence_index": 13,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.00550027225163942,
+        "ci_low": -0.0003314367784345101,
+        "effect_size": 0.2532760565104226,
+        "mean_diff": 0.002548906653198761,
+        "n": 43,
+        "p_value": 0.10617876424715057
+      },
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "the replication reuses the same subjects, split and pipeline with new seeds, so it measures repeatability over training seeds."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-7dced8ac1ef7",
+      "claim_type": "causal_mechanistic",
+      "cohorts": [
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [
+        "weight_structure"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "method",
+      "sentence": "The method avoids conflating spectral entropy with weight magnitude.",
+      "sentence_index": 14,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "The method avoids conflating spectral entropy with weight magnitude."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-784043586fd9",
+      "claim_type": "causal_mechanistic",
+      "cohorts": [
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [
+        "weight_structure"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "method",
+      "sentence": "Standard weight decay constrains the norm of weights but does not constrain the distribution of singular values; a matrix can have small norm but high spectral entropy (uniform singular values) or low spectral entropy (one dominant singular value).",
+      "sentence_index": 15,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "Standard weight decay constrains the norm of weights but does not constrain the distribution of singular values"
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-0a0791364d6d",
+      "claim_type": "causal_mechanistic",
+      "cohorts": [
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [
+        "weight_structure"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "method",
+      "sentence": "Standard weight decay constrains the norm of weights but does not constrain the distribution of singular values; a matrix can have small norm but high spectral entropy (uniform singular values) or low spectral entropy (one dominant singular value).",
+      "sentence_index": 15,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "a matrix can have small norm but high spectral entropy (uniform singular values) or low spectral entropy (one dominant singular value)."
+    },
+    {
+      "arms": [
+        "baseline_1",
+        "proposed"
+      ],
+      "citations": [],
+      "claim_id": "c-71e11bf690d1",
+      "claim_type": "methodological_description",
+      "cohorts": [
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "method",
+      "sentence": "Comparing the proposed condition with a weight decay baseline is designed to isolate the spectral distribution effect.",
+      "sentence_index": 16,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "Comparing the proposed condition with a weight decay baseline is designed to isolate the spectral distribution effect."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-eb9d3d064e9a",
+      "claim_type": "methodological_description",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "experimental_setup",
+      "sentence": "Pairing every condition on one seed buys comparability across conditions by controlling for random initialization and data ordering effects, though it costs independence between condition estimates within a seed.",
+      "sentence_index": 1,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "Pairing every condition on one seed buys comparability across conditions by controlling for random initialization and data ordering effects, though it costs independence between condition estimates within a seed."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-c8d2a197ae5f",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "number_count_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "design:seeds",
+          "recorded": 43.0,
+          "role": "count",
+          "text": "43",
+          "value": 43.0
+        },
+        {
+          "matched": true,
+          "node": "design:seeds",
+          "recorded": 43.0,
+          "role": "count",
+          "text": "43",
+          "value": 43.0
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "43 (count) matches design:seeds",
+        "43 (count) matches design:seeds"
+      ],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "number_count_matches"
+      ],
+      "section": "experimental_setup",
+      "sentence": "We use 43 primary seeds and 43 disjoint confirmatory-replication seeds.",
+      "sentence_index": 2,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "design",
+          "node": "design:seeds",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "design",
+          "node": "design:seeds",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "We use 43 primary seeds and 43 disjoint confirmatory-replication seeds."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-3d905fa11d92",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "advisory",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "power_zero_null_only"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [
+        "say what the power calculation targeted"
+      ],
+      "reasons": [
+        "the planning power is for rejecting a zero-effect null at a true effect equal to the margin, not for clearing the margin"
+      ],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "Say what the power calculation targeted. (say what the power calculation targeted)",
+      "rules": [
+        "power_zero_null_only"
+      ],
+      "section": "experimental_setup",
+      "sentence": "The preregistered 90% power refers to rejecting a zero effect when the true effect equals the margin; under the support rule, an effect exactly equal to the margin would give a lower bound above the margin only about one time in forty.",
+      "sentence_index": 3,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "supported_under_conditions",
+      "supporting": [
+        {
+          "kind": "registration",
+          "node": "registration:margin",
+          "note": "",
+          "relation": "qualifies",
+          "value": null
+        }
+      ],
+      "text": "The preregistered 90% power refers to rejecting a zero effect when the true effect equals the margin"
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-e30c946de054",
+      "claim_type": "methodological_description",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "experimental_setup",
+      "sentence": "The preregistered 90% power refers to rejecting a zero effect when the true effect equals the margin; under the support rule, an effect exactly equal to the margin would give a lower bound above the margin only about one time in forty.",
+      "sentence_index": 3,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "under the support rule, an effect exactly equal to the margin would give a lower bound above the margin only about one time in forty."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-386ae4270be4",
+      "claim_type": "methodological_description",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "experimental_setup",
+      "sentence": "The identities of these seeds are recorded in the appendix; we refer to the counts in the prose.",
+      "sentence_index": 5,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "The identities of these seeds are recorded in the appendix"
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-5497f74cba05",
+      "claim_type": "methodological_description",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "experimental_setup",
+      "sentence": "This many seeds allows us to construct bootstrap confidence intervals over the paired contrasts, providing a robust estimate of uncertainty beyond single-split evaluations.",
+      "sentence_index": 6,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "This many seeds allows us to construct bootstrap confidence intervals over the paired contrasts, providing a robust estimate of uncertainty beyond single-split evaluations."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-632fc72b34bd",
+      "claim_type": "methodological_description",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "experimental_setup",
+      "sentence": "As implemented, neither control changed training: the first computed a value that never entered the training objective, and the second applied only the weight decay that the optimizer already applies in every condition.",
+      "sentence_index": 10,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "As implemented, neither control changed training: the first computed a value that never entered the training objective, and the second applied only the weight decay that the optimizer already applies in every condition."
+    },
+    {
+      "arms": [
+        "baseline_1",
+        "proposed"
+      ],
+      "citations": [],
+      "claim_id": "c-5730988182f4",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "advisory",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "absence_equivalence_within_margin"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "design:seeds",
+          "recorded": 43.0,
+          "role": "count",
+          "text": "43",
+          "value": 43.0
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [
+        "effects larger than the registered margin (0.01251) are excluded in both directions; smaller effects are not"
+      ],
+      "reasons": [
+        "an equivalence or universal-absence claim from an inconclusive contrast; it holds only relative to the registered margin"
+      ],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "State the margin the absence is relative to. (effects larger than the registered margin (0.01251) are excluded in both directions; smaller effects are not)",
+      "rules": [
+        "absence_equivalence_within_margin",
+        "number_count_matches"
+      ],
+      "section": "experimental_setup",
+      "sentence": "The harness recorded zero intervention activations for both controls on every seed, and their held-out accuracies are identical to the baseline's on all 43 seeds of both cohorts.",
+      "sentence_index": 11,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "supported_under_conditions",
+      "supporting": [
+        {
+          "kind": "design",
+          "node": "design:seeds",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:primary:held-out classification accuracy",
+          "note": "",
+          "relation": "qualifies",
+          "value": [
+            -0.002130862288018561,
+            0.003101498567719651
+          ]
+        },
+        {
+          "kind": "finding",
+          "node": "finding:replication:held-out classification accuracy",
+          "note": "",
+          "relation": "qualifies",
+          "value": [
+            -0.0003314367784345101,
+            0.00550027225163942
+          ]
+        }
+      ],
+      "text": "The harness recorded zero intervention activations for both controls on every seed, and their held-out accuracies are identical to the baseline's on all 43 seeds of both cohorts."
+    },
+    {
+      "arms": [
+        "baseline_1",
+        "proposed"
+      ],
+      "citations": [],
+      "claim_id": "c-f30bdb83c38a",
+      "claim_type": "methodological_description",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "experimental_setup",
+      "sentence": "The controls therefore carry no diagnostic information, and the paired contrast between the proposed condition and the baseline is the only informative comparison in this study.",
+      "sentence_index": 12,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "The controls therefore carry no diagnostic information, and the paired contrast between the proposed condition and the baseline is the only informative comparison in this study."
+    },
+    {
+      "arms": [
+        "baseline_1",
+        "proposed"
+      ],
+      "citations": [],
+      "claim_id": "c-e944878dbadc",
+      "claim_type": "methodological_description",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "experimental_setup",
+      "sentence": "The analysis computes the mean held-out classification accuracy for each condition and the paired contrast between the proposed condition and the baseline.",
+      "sentence_index": 13,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "The analysis computes the mean held-out classification accuracy for each condition and the paired contrast between the proposed condition and the baseline."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-8b9503f99b60",
+      "claim_type": "methodological_description",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "experimental_setup",
+      "sentence": "We report 95% bootstrap confidence intervals over seeds for all metrics.",
+      "sentence_index": 14,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "We report 95% bootstrap confidence intervals over seeds for all metrics."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-b52faf282d30",
+      "claim_type": "experimental_result",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "method_split_matches",
+        "number_count_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "design:windows",
+          "recorded": 2947.0,
+          "role": "count",
+          "text": "2,947",
+          "value": 2947.0
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "2,947 (count) matches design:windows",
+        "the recipe's held-out cohort is subject-disjoint"
+      ],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "method_split_matches",
+        "number_count_matches"
+      ],
+      "section": "experimental_setup",
+      "sentence": "The outcome is defined as the number of correct activity predictions divided by 2,947 windows in the official subject-disjoint test split.",
+      "sentence_index": 15,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "design",
+          "node": "design:windows",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "assumption",
+          "node": "assumption:subject_disjoint_split",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "The outcome is defined as the number of correct activity predictions divided by 2,947 windows in the official subject-disjoint test split."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-d512e0cbeb51",
+      "claim_type": "experimental_result",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": null,
+          "node": "",
+          "recorded": null,
+          "role": "other",
+          "text": "256",
+          "value": 256.0
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [],
+      "section": "experimental_setup",
+      "sentence": "The dataset was downloaded, checksum-verified against its published SHA-256 and staged read-only to the compute node before the job started; the exact archive, checksum, licence and training configuration are given in the appendix.",
+      "sentence_index": 18,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "The dataset was downloaded, checksum-verified against its published SHA-256 and staged read-only to the compute node before the job started"
+    },
+    {
+      "arms": [
+        "baseline_1",
+        "proposed"
+      ],
+      "citations": [],
+      "claim_id": "c-91815dfbb356",
+      "claim_type": "experimental_result",
+      "cohorts": [
+        "primary"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "number_count_matches",
+        "number_interval_matches",
+        "number_mean_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "design:conditions",
+          "recorded": 4.0,
+          "role": "count",
+          "text": "4",
+          "value": 4.0
+        },
+        {
+          "matched": true,
+          "node": "design:seeds",
+          "recorded": 43.0,
+          "role": "count",
+          "text": "43",
+          "value": 43.0
+        },
+        {
+          "matched": true,
+          "node": "observation:primary:proposed:held-out classification accuracy",
+          "recorded": 0.9053432343494762,
+          "role": "mean",
+          "text": "0.9053",
+          "value": 0.9053
+        },
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        },
+        {
+          "matched": true,
+          "node": "observation:primary:proposed:held-out classification accuracy",
+          "recorded": 0.9022650152697661,
+          "role": "interval_low",
+          "text": "0.902",
+          "value": 0.902
+        },
+        {
+          "matched": true,
+          "node": "observation:primary:proposed:held-out classification accuracy",
+          "recorded": 0.9084684069727985,
+          "role": "interval_high",
+          "text": "0.908",
+          "value": 0.908
+        },
+        {
+          "matched": true,
+          "node": "observation:primary:baseline_1:held-out classification accuracy",
+          "recorded": 0.904901318644897,
+          "role": "mean",
+          "text": "0.9049",
+          "value": 0.9049
+        },
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        },
+        {
+          "matched": true,
+          "node": "observation:primary:baseline_1:held-out classification accuracy",
+          "recorded": 0.9013184476132605,
+          "role": "interval_low",
+          "text": "0.901",
+          "value": 0.901
+        },
+        {
+          "matched": true,
+          "node": "observation:primary:baseline_1:held-out classification accuracy",
+          "recorded": 0.908492081028401,
+          "role": "interval_high",
+          "text": "0.908",
+          "value": 0.908
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "4 (count) matches design:conditions",
+        "43 (count) matches design:seeds",
+        "0.9053 (mean) matches observation:primary:proposed:held-out classification accuracy",
+        "interval [0.902, 0.908] matches observation:primary:proposed:held-out classification accuracy",
+        "0.9049 (mean) matches observation:primary:baseline_1:held-out classification accuracy",
+        "interval [0.901, 0.908] matches observation:primary:baseline_1:held-out classification accuracy"
+      ],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "number_count_matches",
+        "number_interval_matches",
+        "number_mean_matches"
+      ],
+      "section": "results",
+      "sentence": "In the primary cohort, across 4 conditions and 43 seeds, the proposed condition achieved a mean held-out classification accuracy of 0.9053 (95% CI [0.902, 0.908]), while the baseline achieved 0.9049 (95% CI [0.901, 0.908]).",
+      "sentence_index": 1,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "design",
+          "node": "design:conditions",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "design",
+          "node": "design:seeds",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "observation",
+          "node": "observation:primary:proposed:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "observation",
+          "node": "observation:primary:proposed:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "observation",
+          "node": "observation:primary:baseline_1:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "observation",
+          "node": "observation:primary:baseline_1:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "In the primary cohort, across 4 conditions and 43 seeds, the proposed condition achieved a mean held-out classification accuracy of 0.9053 (95% CI [0.902, 0.908]), while the baseline achieved 0.9049 (95% CI [0.901, 0.908])."
+    },
+    {
+      "arms": [
+        "baseline_1",
+        "negative_control_1",
+        "negative_control_2"
+      ],
+      "citations": [],
+      "claim_id": "c-6b4f172db00f",
+      "claim_type": "experimental_result",
+      "cohorts": [
+        "primary"
+      ],
+      "commitment": "asserted",
+      "consequence": "advisory",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "control_agreement_by_construction"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "observation:primary:baseline_1:held-out classification accuracy",
+          "recorded": 0.904901318644897,
+          "role": "other",
+          "text": "0.9049",
+          "value": 0.9049
+        },
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        },
+        {
+          "matched": true,
+          "node": "observation:primary:baseline_1:held-out classification accuracy",
+          "recorded": 0.9013184476132605,
+          "role": "interval_low",
+          "text": "0.901",
+          "value": 0.901
+        },
+        {
+          "matched": true,
+          "node": "observation:primary:baseline_1:held-out classification accuracy",
+          "recorded": 0.908492081028401,
+          "role": "interval_high",
+          "text": "0.908",
+          "value": 0.908
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [
+        "state that the control never acted, so it tested nothing"
+      ],
+      "reasons": [
+        "the control never acted, so its agreement with the baseline holds by construction and carries no diagnostic information"
+      ],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "State that the control never acted, so its agreement with the baseline is by construction. (state that the control never acted, so it tested nothing)",
+      "rules": [
+        "control_agreement_by_construction",
+        "number_interval_matches",
+        "number_matches_record"
+      ],
+      "section": "results",
+      "sentence": "Both negative controls returned accuracies identical to the baseline's on every seed (0.9049, 95% CI [0.901, 0.908]) because, as implemented, neither changed training.",
+      "sentence_index": 2,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "supported_under_conditions",
+      "supporting": [
+        {
+          "kind": "observation",
+          "node": "observation:primary:baseline_1:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "observation",
+          "node": "observation:primary:baseline_1:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "assumption",
+          "node": "assumption:arm_acted:negative_control_1",
+          "note": "",
+          "relation": "qualifies",
+          "value": false
+        },
+        {
+          "kind": "assumption",
+          "node": "assumption:arm_acted:negative_control_2",
+          "note": "",
+          "relation": "qualifies",
+          "value": false
+        }
+      ],
+      "text": "Both negative controls returned accuracies identical to the baseline's on every seed (0.9049, 95% CI [0.901, 0.908])"
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-3e6f4b67f3fc",
+      "claim_type": "causal_mechanistic",
+      "cohorts": [
+        "primary"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "results",
+      "sentence": "Both negative controls returned accuracies identical to the baseline's on every seed (0.9049, 95% CI [0.901, 0.908]) because, as implemented, neither changed training.",
+      "sentence_index": 2,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "because, as implemented, neither changed training."
+    },
+    {
+      "arms": [
+        "baseline_1",
+        "proposed"
+      ],
+      "citations": [],
+      "claim_id": "c-92a8142c8401",
+      "claim_type": "experimental_result",
+      "cohorts": [
+        "primary"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "direction_point_estimate",
+        "number_difference_matches",
+        "number_effect_size_matches",
+        "number_interval_matches",
+        "number_p_value_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "finding:primary:held-out classification accuracy",
+          "recorded": 0.0004419157045793504,
+          "role": "difference",
+          "text": "0.0004419",
+          "value": 0.0004419
+        },
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        },
+        {
+          "matched": true,
+          "node": "finding:primary:held-out classification accuracy",
+          "recorded": -0.002130862288018561,
+          "role": "interval_low",
+          "text": "-0.00213",
+          "value": -0.00213
+        },
+        {
+          "matched": true,
+          "node": "finding:primary:held-out classification accuracy",
+          "recorded": 0.003101498567719651,
+          "role": "interval_high",
+          "text": "0.0031",
+          "value": 0.0031
+        },
+        {
+          "matched": true,
+          "node": "finding:primary:held-out classification accuracy",
+          "recorded": 0.7498500299940012,
+          "role": "p_value",
+          "text": "0.75",
+          "value": 0.75
+        },
+        {
+          "matched": true,
+          "node": "finding:primary:held-out classification accuracy",
+          "recorded": 0.04868227854497401,
+          "role": "effect_size",
+          "text": "0.05",
+          "value": 0.05
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "0.0004419 (difference) matches finding:primary:held-out classification accuracy",
+        "interval [-0.00213, 0.0031] matches finding:primary:held-out classification accuracy",
+        "0.75 (p_value) matches finding:primary:held-out classification accuracy",
+        "0.05 (effect_size) matches finding:primary:held-out classification accuracy",
+        "the stated direction matches the recorded point estimate"
+      ],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "direction_point_estimate",
+        "number_difference_matches",
+        "number_effect_size_matches",
+        "number_interval_matches",
+        "number_p_value_matches"
+      ],
+      "section": "results",
+      "sentence": "On held-out classification accuracy, the proposed condition improved the contrast in the hypothesised direction by 0.0004419 versus the baseline condition (95% CI [-0.00213, 0.0031], paired randomisation p=0.75, Cohen's dz=0.05).",
+      "sentence_index": 3,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "finding",
+          "node": "finding:primary:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:primary:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:primary:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:primary:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:primary:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "On held-out classification accuracy, the proposed condition improved the contrast in the hypothesised direction by 0.0004419 versus the baseline condition (95% CI [-0.00213, 0.0031], paired randomisation p=0.75, Cohen's dz=0.05)."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-3cc114ef0981",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "primary"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "significance_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the significance statement matches the recorded interval"
+      ],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "significance_matches"
+      ],
+      "section": "results",
+      "sentence": "This difference is not statistically significant as the 95% CI includes zero.",
+      "sentence_index": 4,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "finding",
+          "node": "finding:primary:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "This difference is not statistically significant as the 95% CI includes zero."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-22262153ac05",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "primary"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "decision_matches",
+        "number_margin_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "registration:margin",
+          "recorded": 0.012509797746985206,
+          "role": "margin",
+          "text": "0.0125098",
+          "value": 0.0125098
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "0.0125098 (margin) matches registration:margin",
+        "the primary decision is recorded as inconclusive"
+      ],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "decision_matches",
+        "number_margin_matches"
+      ],
+      "section": "results",
+      "sentence": "The preregistered decision was inconclusive: the interval's lower bound does not exceed the margin of 0.0125098 proportion, and the interval does not lie at or below zero.",
+      "sentence_index": 5,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "registration",
+          "node": "registration:margin",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "decision",
+          "node": "decision:primary",
+          "note": "",
+          "relation": "supports",
+          "value": "inconclusive"
+        }
+      ],
+      "text": "The preregistered decision was inconclusive: the interval's lower bound does not exceed the margin of 0.0125098 proportion, and the interval does not lie at or below zero."
+    },
+    {
+      "arms": [
+        "baseline_1",
+        "proposed"
+      ],
+      "citations": [],
+      "claim_id": "c-f69fd6aa2f6b",
+      "claim_type": "methodological_description",
+      "cohorts": [
+        "primary"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "results",
+      "sentence": "Figure 1 displays the final metric values per condition with 95% bootstrap confidence intervals over seeds for the primary cohort, illustrating the overlap between the proposed condition and the baseline.",
+      "sentence_index": 6,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "Figure 1 displays the final metric values per condition with 95% bootstrap confidence intervals over seeds for the primary cohort, illustrating the overlap between the proposed condition and the baseline."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-edb2fe5851fa",
+      "claim_type": "methodological_description",
+      "cohorts": [
+        "primary"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "results",
+      "sentence": "Figure 2 shows the mean held-out classification accuracy over training steps for each condition, indicating that learning curves tracked closely throughout training without divergence.",
+      "sentence_index": 7,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "Figure 2 shows the mean held-out classification accuracy over training steps for each condition"
+    },
+    {
+      "arms": [
+        "baseline_1",
+        "proposed"
+      ],
+      "citations": [],
+      "claim_id": "c-532e99c21625",
+      "claim_type": "experimental_result",
+      "cohorts": [
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "number_count_matches",
+        "number_interval_matches",
+        "number_mean_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "design:conditions",
+          "recorded": 4.0,
+          "role": "count",
+          "text": "4",
+          "value": 4.0
+        },
+        {
+          "matched": true,
+          "node": "design:seeds",
+          "recorded": 43.0,
+          "role": "count",
+          "text": "43",
+          "value": 43.0
+        },
+        {
+          "matched": true,
+          "node": "observation:replication:proposed:held-out classification accuracy",
+          "recorded": 0.9086812761894238,
+          "role": "mean",
+          "text": "0.9087",
+          "value": 0.9087
+        },
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        },
+        {
+          "matched": true,
+          "node": "observation:replication:proposed:held-out classification accuracy",
+          "recorded": 0.9057220192391159,
+          "role": "interval_low",
+          "text": "0.906",
+          "value": 0.906
+        },
+        {
+          "matched": true,
+          "node": "observation:replication:proposed:held-out classification accuracy",
+          "recorded": 0.9116168590841297,
+          "role": "interval_high",
+          "text": "0.912",
+          "value": 0.912
+        },
+        {
+          "matched": true,
+          "node": "observation:replication:baseline_1:held-out classification accuracy",
+          "recorded": 0.9061323695362251,
+          "role": "mean",
+          "text": "0.9061",
+          "value": 0.9061
+        },
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        },
+        {
+          "matched": true,
+          "node": "observation:replication:baseline_1:held-out classification accuracy",
+          "recorded": 0.9021864963186843,
+          "role": "interval_low",
+          "text": "0.902",
+          "value": 0.902
+        },
+        {
+          "matched": true,
+          "node": "observation:replication:baseline_1:held-out classification accuracy",
+          "recorded": 0.909936395703948,
+          "role": "interval_high",
+          "text": "0.91",
+          "value": 0.91
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "4 (count) matches design:conditions",
+        "43 (count) matches design:seeds",
+        "0.9087 (mean) matches observation:replication:proposed:held-out classification accuracy",
+        "interval [0.906, 0.912] matches observation:replication:proposed:held-out classification accuracy",
+        "0.9061 (mean) matches observation:replication:baseline_1:held-out classification accuracy",
+        "interval [0.902, 0.91] matches observation:replication:baseline_1:held-out classification accuracy"
+      ],
+      "registered_outcome": {
+        "cohort": "replication",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "number_count_matches",
+        "number_interval_matches",
+        "number_mean_matches"
+      ],
+      "section": "results",
+      "sentence": "In the confirmatory replication cohort, across 4 conditions and 43 seeds, the proposed condition achieved a mean held-out classification accuracy of 0.9087 (95% CI [0.906, 0.912]), while the baseline achieved 0.9061 (95% CI [0.902, 0.91]).",
+      "sentence_index": 8,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.00550027225163942,
+        "ci_low": -0.0003314367784345101,
+        "effect_size": 0.2532760565104226,
+        "mean_diff": 0.002548906653198761,
+        "n": 43,
+        "p_value": 0.10617876424715057
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "design",
+          "node": "design:conditions",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "design",
+          "node": "design:seeds",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "observation",
+          "node": "observation:replication:proposed:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "observation",
+          "node": "observation:replication:proposed:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "observation",
+          "node": "observation:replication:baseline_1:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "observation",
+          "node": "observation:replication:baseline_1:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "In the confirmatory replication cohort, across 4 conditions and 43 seeds, the proposed condition achieved a mean held-out classification accuracy of 0.9087 (95% CI [0.906, 0.912]), while the baseline achieved 0.9061 (95% CI [0.902, 0.91])."
+    },
+    {
+      "arms": [
+        "baseline_1",
+        "negative_control_1",
+        "negative_control_2"
+      ],
+      "citations": [],
+      "claim_id": "c-476500ff9047",
+      "claim_type": "experimental_result",
+      "cohorts": [
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "advisory",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "control_agreement_by_construction"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "observation:replication:baseline_1:held-out classification accuracy",
+          "recorded": 0.9061323695362251,
+          "role": "other",
+          "text": "0.9061",
+          "value": 0.9061
+        },
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        },
+        {
+          "matched": true,
+          "node": "observation:replication:baseline_1:held-out classification accuracy",
+          "recorded": 0.9021864963186843,
+          "role": "interval_low",
+          "text": "0.902",
+          "value": 0.902
+        },
+        {
+          "matched": true,
+          "node": "observation:replication:baseline_1:held-out classification accuracy",
+          "recorded": 0.909936395703948,
+          "role": "interval_high",
+          "text": "0.91",
+          "value": 0.91
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [
+        "state that the control never acted, so it tested nothing"
+      ],
+      "reasons": [
+        "the control never acted, so its agreement with the baseline holds by construction and carries no diagnostic information"
+      ],
+      "registered_outcome": {
+        "cohort": "replication",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "State that the control never acted, so its agreement with the baseline is by construction. (state that the control never acted, so it tested nothing)",
+      "rules": [
+        "control_agreement_by_construction",
+        "number_interval_matches",
+        "number_matches_record"
+      ],
+      "section": "results",
+      "sentence": "Both negative controls were again identical to the baseline on every seed (0.9061, 95% CI [0.902, 0.91]).",
+      "sentence_index": 9,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.00550027225163942,
+        "ci_low": -0.0003314367784345101,
+        "effect_size": 0.2532760565104226,
+        "mean_diff": 0.002548906653198761,
+        "n": 43,
+        "p_value": 0.10617876424715057
+      },
+      "status": "supported_under_conditions",
+      "supporting": [
+        {
+          "kind": "observation",
+          "node": "observation:replication:baseline_1:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "observation",
+          "node": "observation:replication:baseline_1:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "assumption",
+          "node": "assumption:arm_acted:negative_control_1",
+          "note": "",
+          "relation": "qualifies",
+          "value": false
+        },
+        {
+          "kind": "assumption",
+          "node": "assumption:arm_acted:negative_control_2",
+          "note": "",
+          "relation": "qualifies",
+          "value": false
+        }
+      ],
+      "text": "Both negative controls were again identical to the baseline on every seed (0.9061, 95% CI [0.902, 0.91])."
+    },
+    {
+      "arms": [
+        "baseline_1",
+        "proposed"
+      ],
+      "citations": [],
+      "claim_id": "c-1a50f6c3bf70",
+      "claim_type": "experimental_result",
+      "cohorts": [
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "direction_point_estimate",
+        "number_difference_matches",
+        "number_effect_size_matches",
+        "number_interval_matches",
+        "number_p_value_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "finding:replication:held-out classification accuracy",
+          "recorded": 0.002548906653198761,
+          "role": "difference",
+          "text": "0.002549",
+          "value": 0.002549
+        },
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        },
+        {
+          "matched": true,
+          "node": "finding:replication:held-out classification accuracy",
+          "recorded": -0.0003314367784345101,
+          "role": "interval_low",
+          "text": "-0.000331",
+          "value": -0.000331
+        },
+        {
+          "matched": true,
+          "node": "finding:replication:held-out classification accuracy",
+          "recorded": 0.00550027225163942,
+          "role": "interval_high",
+          "text": "0.0055",
+          "value": 0.0055
+        },
+        {
+          "matched": true,
+          "node": "finding:replication:held-out classification accuracy",
+          "recorded": 0.10617876424715057,
+          "role": "p_value",
+          "text": "0.106",
+          "value": 0.106
+        },
+        {
+          "matched": true,
+          "node": "finding:replication:held-out classification accuracy",
+          "recorded": 0.2532760565104226,
+          "role": "effect_size",
+          "text": "0.25",
+          "value": 0.25
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "0.002549 (difference) matches finding:replication:held-out classification accuracy",
+        "interval [-0.000331, 0.0055] matches finding:replication:held-out classification accuracy",
+        "0.106 (p_value) matches finding:replication:held-out classification accuracy",
+        "0.25 (effect_size) matches finding:replication:held-out classification accuracy",
+        "the stated direction matches the recorded point estimate"
+      ],
+      "registered_outcome": {
+        "cohort": "replication",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "direction_point_estimate",
+        "number_difference_matches",
+        "number_effect_size_matches",
+        "number_interval_matches",
+        "number_p_value_matches"
+      ],
+      "section": "results",
+      "sentence": "On held-out classification accuracy, the proposed condition improved the contrast in the hypothesised direction by 0.002549 versus the baseline condition (95% CI [-0.000331, 0.0055], paired randomisation p=0.106, Cohen's dz=0.25).",
+      "sentence_index": 10,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.00550027225163942,
+        "ci_low": -0.0003314367784345101,
+        "effect_size": 0.2532760565104226,
+        "mean_diff": 0.002548906653198761,
+        "n": 43,
+        "p_value": 0.10617876424715057
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "finding",
+          "node": "finding:replication:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:replication:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:replication:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:replication:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:replication:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "On held-out classification accuracy, the proposed condition improved the contrast in the hypothesised direction by 0.002549 versus the baseline condition (95% CI [-0.000331, 0.0055], paired randomisation p=0.106, Cohen's dz=0.25)."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-39ece1674b8e",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "significance_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the significance statement matches the recorded interval"
+      ],
+      "registered_outcome": {
+        "cohort": "replication",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "significance_matches"
+      ],
+      "section": "results",
+      "sentence": "This difference is also not statistically significant, with the 95% CI including zero.",
+      "sentence_index": 11,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.00550027225163942,
+        "ci_low": -0.0003314367784345101,
+        "effect_size": 0.2532760565104226,
+        "mean_diff": 0.002548906653198761,
+        "n": 43,
+        "p_value": 0.10617876424715057
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "finding",
+          "node": "finding:replication:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "This difference is also not statistically significant, with the 95% CI including zero."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-8cb6061f28bd",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "decision_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the replication decision is recorded as inconclusive"
+      ],
+      "registered_outcome": {
+        "cohort": "replication",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "decision_matches"
+      ],
+      "section": "results",
+      "sentence": "The preregistered decision was inconclusive.",
+      "sentence_index": 12,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.00550027225163942,
+        "ci_low": -0.0003314367784345101,
+        "effect_size": 0.2532760565104226,
+        "mean_diff": 0.002548906653198761,
+        "n": 43,
+        "p_value": 0.10617876424715057
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "decision",
+          "node": "decision:replication",
+          "note": "",
+          "relation": "supports",
+          "value": "inconclusive"
+        }
+      ],
+      "text": "The preregistered decision was inconclusive."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-aba9f93ddb7b",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {
+        "cohort": "replication",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [],
+      "section": "results",
+      "sentence": "Figure 3 displays the final metric values per condition with 95% bootstrap confidence intervals over seeds for the replication cohort, confirming the pattern observed in the primary cohort.",
+      "sentence_index": 13,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.00550027225163942,
+        "ci_low": -0.0003314367784345101,
+        "effect_size": 0.2532760565104226,
+        "mean_diff": 0.002548906653198761,
+        "n": 43,
+        "p_value": 0.10617876424715057
+      },
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "Figure 3 displays the final metric values per condition with 95% bootstrap confidence intervals over seeds for the replication cohort"
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-7e9b173c006f",
+      "claim_type": "methodological_description",
+      "cohorts": [
+        "primary"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "results",
+      "sentence": "Figure 3 displays the final metric values per condition with 95% bootstrap confidence intervals over seeds for the replication cohort, confirming the pattern observed in the primary cohort.",
+      "sentence_index": 13,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "confirming the pattern observed in the primary cohort."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-10519060646f",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {
+        "cohort": "replication",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [],
+      "section": "results",
+      "sentence": "Figure 4 shows the mean held-out classification accuracy over training steps for each condition in replication, again showing parallel learning trajectories.",
+      "sentence_index": 14,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.00550027225163942,
+        "ci_low": -0.0003314367784345101,
+        "effect_size": 0.2532760565104226,
+        "mean_diff": 0.002548906653198761,
+        "n": 43,
+        "p_value": 0.10617876424715057
+      },
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "Figure 4 shows the mean held-out classification accuracy over training steps for each condition in replication, again showing parallel learning trajectories."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-445de0424af7",
+      "claim_type": "experimental_result",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "number_effect_size_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "finding:replication:held-out classification accuracy",
+          "recorded": 0.2532760565104226,
+          "role": "effect_size",
+          "text": "0.25",
+          "value": 0.25
+        },
+        {
+          "matched": true,
+          "node": "finding:primary:held-out classification accuracy",
+          "recorded": 0.04868227854497401,
+          "role": "effect_size",
+          "text": "0.05",
+          "value": 0.05
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "0.25 (effect_size) matches finding:replication:held-out classification accuracy",
+        "0.05 (effect_size) matches finding:primary:held-out classification accuracy"
+      ],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "number_effect_size_matches"
+      ],
+      "section": "results",
+      "sentence": "The effect size in the replication cohort (dz=0.25) was larger than in the primary cohort (dz=0.05), but the confidence interval still included zero and fell short of the preregistered margin.",
+      "sentence_index": 15,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "finding",
+          "node": "finding:replication:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "finding",
+          "node": "finding:primary:held-out classification accuracy",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "The effect size in the replication cohort (dz=0.25) was larger than in the primary cohort (dz=0.05), but the confidence interval still included zero and fell short of the preregistered margin."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-42f695039884",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [],
+      "section": "results",
+      "sentence": "We do not pool the cohorts or call a primary-only result replicated; neither cohort supports the hypothesis.",
+      "sentence_index": 16,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "We do not pool the cohorts or call a primary-only result replicated"
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-6536c6dac312",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "hypothesis_not_supported_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "no cohort's registered decision supports the hypothesis"
+      ],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "hypothesis_not_supported_matches"
+      ],
+      "section": "results",
+      "sentence": "We do not pool the cohorts or call a primary-only result replicated; neither cohort supports the hypothesis.",
+      "sentence_index": 16,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "decision",
+          "node": "decision:primary",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        },
+        {
+          "kind": "decision",
+          "node": "decision:replication",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "neither cohort supports the hypothesis."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-049aeb780b1f",
+      "claim_type": "methodological_description",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "results",
+      "sentence": "Neither cohort shows an accuracy gain of the registered size; both 95% intervals lie below the margin.",
+      "sentence_index": 17,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "Neither cohort shows an accuracy gain of the registered size"
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-d5fcfb036c55",
+      "claim_type": "methodological_description",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "results",
+      "sentence": "Neither cohort shows an accuracy gain of the registered size; both 95% intervals lie below the margin.",
+      "sentence_index": 17,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "both 95% intervals lie below the margin."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-5db26a04d944",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "decision_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the primary decision is recorded as inconclusive",
+        "the replication decision is recorded as inconclusive"
+      ],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "decision_matches"
+      ],
+      "section": "results",
+      "sentence": "Registered-report decision: the primary cohort was classified as **inconclusive** and the pre-specified confirmatory replication cohort, on a disjoint set of seeds, was classified as **inconclusive** under the preregistered confidence-interval rule.",
+      "sentence_index": 18,
+      "server_owned": true,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "decision",
+          "node": "decision:primary",
+          "note": "",
+          "relation": "supports",
+          "value": "inconclusive"
+        },
+        {
+          "kind": "decision",
+          "node": "decision:replication",
+          "note": "",
+          "relation": "supports",
+          "value": "inconclusive"
+        }
+      ],
+      "text": "Registered-report decision: the primary cohort was classified as **inconclusive** and the pre-specified confirmatory replication cohort, on a disjoint set of seeds, was classified as **inconclusive** under the preregistered confidence-interval rule."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-b2a02ea0083e",
+      "claim_type": "methodological_description",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "method_split_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the recipe's held-out cohort is subject-disjoint"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "method_split_matches"
+      ],
+      "section": "discussion",
+      "sentence": "Minimizing the spectral entropy of input projections did not produce a detectable improvement in subject-disjoint accuracy over standard weight decay in this transformer architecture; both 95% intervals lie below the margin.",
+      "sentence_index": 0,
+      "server_owned": false,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "assumption",
+          "node": "assumption:subject_disjoint_split",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "Minimizing the spectral entropy of input projections did not produce a detectable improvement in subject-disjoint accuracy over standard weight decay in this transformer architecture"
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-a68a10493d35",
+      "claim_type": "methodological_description",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [
+        {
+          "matched": true,
+          "node": "analysis:ci_level",
+          "recorded": 95.0,
+          "role": "level",
+          "text": "95",
+          "value": 95.0
+        }
+      ],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "discussion",
+      "sentence": "Minimizing the spectral entropy of input projections did not produce a detectable improvement in subject-disjoint accuracy over standard weight decay in this transformer architecture; both 95% intervals lie below the margin.",
+      "sentence_index": 0,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "both 95% intervals lie below the margin."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-c6d5cfa1f70f",
+      "claim_type": "causal_mechanistic",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [
+        "representation",
+        "weight_structure"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "discussion",
+      "sentence": "This result contrasts with the hypothesis that concentrating energy into dominant temporal modes would facilitate feature learning.",
+      "sentence_index": 1,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "This result contrasts with the hypothesis that concentrating energy into dominant temporal modes would facilitate feature learning."
+    },
+    {
+      "arms": [],
+      "citations": [
+        5
+      ],
+      "claim_id": "c-bb67a41e40e7",
+      "claim_type": "literature",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [
+        "weight_structure"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "literature_lexically_supported"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the cited source resolves, carries no undisclosed notice, and shares the claim's terms (44%)"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "literature_lexically_supported"
+      ],
+      "section": "discussion",
+      "sentence": "While low-rank parameterization has been argued to suffice when weight matrices exhibit fast singular value decay [5], adding the spectral entropy penalty did not translate to discriminative gains; whether the penalty actually lowered the spectral entropy was not measured.",
+      "sentence_index": 2,
+      "server_owned": false,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "reference",
+          "node": "reference:5",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "While low-rank parameterization has been argued to suffice when weight matrices exhibit fast singular value decay [5], adding the spectral entropy penalty did not translate to discriminative gains"
+    },
+    {
+      "arms": [],
+      "citations": [
+        1
+      ],
+      "claim_id": "c-d055a97b5422",
+      "claim_type": "literature",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "speculative",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "literature_lexically_supported"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the cited source resolves, carries no undisclosed notice, and shares the claim's terms (57%)"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "literature_lexically_supported"
+      ],
+      "section": "discussion",
+      "sentence": "Previous work attempted to test whether maximizing entropy of weight noise improves accuracy but carries a retraction notice rendering its result uninterpretable [1].",
+      "sentence_index": 5,
+      "server_owned": false,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "reference",
+          "node": "reference:1",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "Previous work attempted to test whether maximizing entropy of weight noise improves accuracy but carries a retraction notice rendering its result uninterpretable [1]."
+    },
+    {
+      "arms": [
+        "proposed"
+      ],
+      "citations": [],
+      "claim_id": "c-0e1d1d7ae417",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "absence_detection_framed"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the clause reports what was detected, which the recorded interval establishes"
+      ],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "absence_detection_framed"
+      ],
+      "section": "discussion",
+      "sentence": "The harness records the intervention acting at its registered point on every step, and no benefit of the registered size was detected for minimization.",
+      "sentence_index": 6,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "finding",
+          "node": "finding:primary:held-out classification accuracy",
+          "note": "",
+          "relation": "qualifies",
+          "value": [
+            -0.002130862288018561,
+            0.003101498567719651
+          ]
+        },
+        {
+          "kind": "finding",
+          "node": "finding:replication:held-out classification accuracy",
+          "note": "",
+          "relation": "qualifies",
+          "value": [
+            -0.0003314367784345101,
+            0.00550027225163942
+          ]
+        }
+      ],
+      "text": "The harness records the intervention acting at its registered point on every step, and no benefit of the registered size was detected for minimization."
+    },
+    {
+      "arms": [],
+      "citations": [
+        2
+      ],
+      "claim_id": "c-26c999c559d2",
+      "claim_type": "literature",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [
+        "representation"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "literature_lexically_supported"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the cited source resolves, carries no undisclosed notice, and shares the claim's terms (88%)"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "literature_lexically_supported"
+      ],
+      "section": "discussion",
+      "sentence": "Work on latent variable entropy shows that removal of low-entropy bits can benefit out-of-distribution performance [2]; this study did not examine whether the same holds for input weight spectra.",
+      "sentence_index": 8,
+      "server_owned": false,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "reference",
+          "node": "reference:2",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "Work on latent variable entropy shows that removal of low-entropy bits can benefit out-of-distribution performance [2]"
+    },
+    {
+      "arms": [],
+      "citations": [
+        3
+      ],
+      "claim_id": "c-dba3e13c3555",
+      "claim_type": "literature",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "literature_lexically_supported"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the cited source resolves, carries no undisclosed notice, and shares the claim's terms (100%)"
+      ],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [
+        "literature_lexically_supported"
+      ],
+      "section": "discussion",
+      "sentence": "Regularization characterizes optimal learning where empirical risk minimization fails [3].",
+      "sentence_index": 9,
+      "server_owned": false,
+      "statistic": {},
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "reference",
+          "node": "reference:3",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "Regularization characterizes optimal learning where empirical risk minimization fails [3]."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-77415848f7d3",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "absence_detection_framed",
+        "method_split_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the clause reports what was detected, which the recorded interval establishes",
+        "the recipe's held-out cohort is subject-disjoint"
+      ],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "absence_detection_framed",
+        "method_split_matches"
+      ],
+      "section": "discussion",
+      "sentence": "The subject-disjoint split evaluates the model on users absent from training, and no improvement of the registered size was detected there.",
+      "sentence_index": 11,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "finding",
+          "node": "finding:primary:held-out classification accuracy",
+          "note": "",
+          "relation": "qualifies",
+          "value": [
+            -0.002130862288018561,
+            0.003101498567719651
+          ]
+        },
+        {
+          "kind": "finding",
+          "node": "finding:replication:held-out classification accuracy",
+          "note": "",
+          "relation": "qualifies",
+          "value": [
+            -0.0003314367784345101,
+            0.00550027225163942
+          ]
+        },
+        {
+          "kind": "assumption",
+          "node": "assumption:subject_disjoint_split",
+          "note": "",
+          "relation": "supports",
+          "value": null
+        }
+      ],
+      "text": "The subject-disjoint split evaluates the model on users absent from training, and no improvement of the registered size was detected there."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-945cf22f8a76",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "decision_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the primary decision is recorded as inconclusive",
+        "the replication decision is recorded as inconclusive"
+      ],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "decision_matches"
+      ],
+      "section": "discussion",
+      "sentence": "The inconclusive outcome repeated across the primary and replication cohorts, which reuse the same subjects and split; this is repeatability over training seeds, not replication on a new population.",
+      "sentence_index": 12,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "decision",
+          "node": "decision:primary",
+          "note": "",
+          "relation": "supports",
+          "value": "inconclusive"
+        },
+        {
+          "kind": "decision",
+          "node": "decision:replication",
+          "note": "",
+          "relation": "supports",
+          "value": "inconclusive"
+        }
+      ],
+      "text": "The inconclusive outcome repeated across the primary and replication cohorts, which reuse the same subjects and split"
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-e4f1d894fd98",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {
+        "cohort": "replication",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [],
+      "section": "discussion",
+      "sentence": "The inconclusive outcome repeated across the primary and replication cohorts, which reuse the same subjects and split; this is repeatability over training seeds, not replication on a new population.",
+      "sentence_index": 12,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.00550027225163942,
+        "ci_low": -0.0003314367784345101,
+        "effect_size": 0.2532760565104226,
+        "mean_diff": 0.002548906653198761,
+        "n": 43,
+        "p_value": 0.10617876424715057
+      },
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "this is repeatability over training seeds, not replication on a new population."
+    },
+    {
+      "arms": [
+        "proposed"
+      ],
+      "citations": [],
+      "claim_id": "c-716d2d8dfb57",
+      "claim_type": "statistical_inference",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "asserted",
+      "consequence": "none",
+      "constructs": [],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [
+        "decision_matches"
+      ],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [
+        "the primary decision is recorded as inconclusive",
+        "the replication decision is recorded as inconclusive"
+      ],
+      "registered_outcome": {
+        "cohort": "primary",
+        "decision": "inconclusive",
+        "metric": "held-out classification accuracy"
+      },
+      "remedy": "",
+      "rules": [
+        "decision_matches"
+      ],
+      "section": "conclusion",
+      "sentence": "The results were inconclusive: the proposed condition did not exceed the preregistered worthwhile margin in either the primary or replication cohort, and confidence intervals included zero.",
+      "sentence_index": 1,
+      "server_owned": false,
+      "statistic": {
+        "ci_high": 0.003101498567719651,
+        "ci_low": -0.002130862288018561,
+        "effect_size": 0.04868227854497401,
+        "mean_diff": 0.0004419157045793504,
+        "n": 43,
+        "p_value": 0.7498500299940012
+      },
+      "status": "supported",
+      "supporting": [
+        {
+          "kind": "decision",
+          "node": "decision:primary",
+          "note": "",
+          "relation": "supports",
+          "value": "inconclusive"
+        },
+        {
+          "kind": "decision",
+          "node": "decision:replication",
+          "note": "",
+          "relation": "supports",
+          "value": "inconclusive"
+        }
+      ],
+      "text": "The results were inconclusive: the proposed condition did not exceed the preregistered worthwhile margin in either the primary or replication cohort, and confidence intervals included zero."
+    },
+    {
+      "arms": [],
+      "citations": [],
+      "claim_id": "c-bf428a124e65",
+      "claim_type": "hypothesis",
+      "cohorts": [
+        "primary",
+        "replication"
+      ],
+      "commitment": "speculative",
+      "consequence": "none",
+      "constructs": [
+        "weight_structure"
+      ],
+      "contradicting": [],
+      "dataset": "uci_har_small_transformer_v1",
+      "deciding_rules": [],
+      "material": true,
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "numbers": [],
+      "origin": "machine",
+      "qualifiers": [],
+      "reasons": [],
+      "registered_outcome": {},
+      "remedy": "",
+      "rules": [],
+      "section": "conclusion",
+      "sentence": "Future work should investigate whether spectral constraints on deeper layers or in combination with other regularization techniques might yield benefits, or whether spectral properties are merely epiphenomenal to generalization in this regime.",
+      "sentence_index": 3,
+      "server_owned": false,
+      "statistic": {},
+      "status": "unverifiable",
+      "supporting": [],
+      "text": "Future work should investigate whether spectral constraints on deeper layers or in combination with other regularization techniques might yield benefits, or whether spectral properties are merely epiphenomenal to generalization in this regime."
+    }
+  ],
+  "cost": {
+    "clauses_read": 143,
+    "llm_calls": 0,
+    "sentences_read": 117,
+    "wall_ms": 242.46
+  },
+  "diff": {
+    "evidence_changed": false,
+    "introduced": [],
+    "persisting": [],
+    "previous_manuscript_sha256": "fc30153e8e0982a2986285b86c84e5e7588112649a77c6f6828283d9959241bc",
+    "resolved": []
+  },
+  "enforced": true,
+  "evidence_sha256": "a7ba44ed5947410cec3457cc46804f463bceccf7afc7af49fa69a15f7f24036b",
+  "graph": {
+    "edges": [
+      [
+        "observation:primary:proposed:held-out classification accuracy",
+        "finding:primary:held-out classification accuracy",
+        "derives"
+      ],
+      [
+        "observation:primary:baseline_1:held-out classification accuracy",
+        "finding:primary:held-out classification accuracy",
+        "derives"
+      ],
+      [
+        "assumption:paired_design",
+        "finding:primary:held-out classification accuracy",
+        "licenses_causal_reading"
+      ],
+      [
+        "finding:primary:held-out classification accuracy",
+        "decision:primary",
+        "classified_by_registered_rule"
+      ],
+      [
+        "observation:replication:proposed:held-out classification accuracy",
+        "finding:replication:held-out classification accuracy",
+        "derives"
+      ],
+      [
+        "observation:replication:baseline_1:held-out classification accuracy",
+        "finding:replication:held-out classification accuracy",
+        "derives"
+      ],
+      [
+        "assumption:paired_design",
+        "finding:replication:held-out classification accuracy",
+        "licenses_causal_reading"
+      ],
+      [
+        "finding:replication:held-out classification accuracy",
+        "decision:replication",
+        "classified_by_registered_rule"
+      ],
+      [
+        "registration:margin",
+        "decision:primary",
+        "threshold"
+      ],
+      [
+        "registration:margin",
+        "decision:replication",
+        "threshold"
+      ]
+    ],
+    "nodes": [
+      {
+        "id": "observation:primary:baseline_1:held-out classification accuracy",
+        "kind": "observation",
+        "value": {
+          "ci": [
+            0.9013184476132605,
+            0.908492081028401
+          ],
+          "mean": 0.904901318644897,
+          "n": 43
+        }
+      },
+      {
+        "id": "observation:primary:negative_control_1:held-out classification accuracy",
+        "kind": "observation",
+        "value": {
+          "ci": [
+            0.9013184476132605,
+            0.908492081028401
+          ],
+          "mean": 0.904901318644897,
+          "n": 43
+        }
+      },
+      {
+        "id": "observation:primary:negative_control_2:held-out classification accuracy",
+        "kind": "observation",
+        "value": {
+          "ci": [
+            0.9013184476132605,
+            0.908492081028401
+          ],
+          "mean": 0.904901318644897,
+          "n": 43
+        }
+      },
+      {
+        "id": "observation:primary:proposed:held-out classification accuracy",
+        "kind": "observation",
+        "value": {
+          "ci": [
+            0.9022650152697661,
+            0.9084684069727985
+          ],
+          "mean": 0.9053432343494762,
+          "n": 43
+        }
+      },
+      {
+        "id": "observation:replication:baseline_1:held-out classification accuracy",
+        "kind": "observation",
+        "value": {
+          "ci": [
+            0.9021864963186843,
+            0.909936395703948
+          ],
+          "mean": 0.9061323695362251,
+          "n": 43
+        }
+      },
+      {
+        "id": "observation:replication:negative_control_1:held-out classification accuracy",
+        "kind": "observation",
+        "value": {
+          "ci": [
+            0.9021864963186843,
+            0.909936395703948
+          ],
+          "mean": 0.9061323695362251,
+          "n": 43
+        }
+      },
+      {
+        "id": "observation:replication:negative_control_2:held-out classification accuracy",
+        "kind": "observation",
+        "value": {
+          "ci": [
+            0.9021864963186843,
+            0.909936395703948
+          ],
+          "mean": 0.9061323695362251,
+          "n": 43
+        }
+      },
+      {
+        "id": "observation:replication:proposed:held-out classification accuracy",
+        "kind": "observation",
+        "value": {
+          "ci": [
+            0.9057220192391159,
+            0.9116168590841297
+          ],
+          "mean": 0.9086812761894238,
+          "n": 43
+        }
+      },
+      {
+        "id": "finding:primary:held-out classification accuracy",
+        "kind": "finding",
+        "value": {
+          "ci": [
+            -0.002130862288018561,
+            0.003101498567719651
+          ],
+          "effect_size": 0.04868227854497401,
+          "mean_diff": 0.0004419157045793504,
+          "p_value": 0.7498500299940012,
+          "significant": false
+        }
+      },
+      {
+        "id": "finding:replication:held-out classification accuracy",
+        "kind": "finding",
+        "value": {
+          "ci": [
+            -0.0003314367784345101,
+            0.00550027225163942
+          ],
+          "effect_size": 0.2532760565104226,
+          "mean_diff": 0.002548906653198761,
+          "p_value": 0.10617876424715057,
+          "significant": false
+        }
+      },
+      {
+        "id": "decision:primary",
+        "kind": "decision",
+        "value": "inconclusive"
+      },
+      {
+        "id": "decision:replication",
+        "kind": "decision",
+        "value": "inconclusive"
+      },
+      {
+        "id": "registration:margin",
+        "kind": "registration",
+        "value": {
+          "basis": "Versioned policy accuracy_fraction_v1 in proportion: max(absolute floor 0.005, fixed SD multiplier).",
+          "margin": 0.012509797746985206,
+          "noise_derived": true
+        }
+      },
+      {
+        "id": "registration:hypothesis",
+        "kind": "registration",
+        "value": {
+          "direction": "intervention_better",
+          "hypothesis": "The intervention is predicted to yield higher held-out classification accuracy than the comparator, with mean hypothesis-positive paired contrast H_s exceeding the fixed worthwhile margin of 0.0125098 proportion."
+        }
+      },
+      {
+        "id": "assumption:paired_design",
+        "kind": "assumption",
+        "value": true
+      },
+      {
+        "id": "assumption:subject_disjoint_split",
+        "kind": "assumption",
+        "value": true
+      },
+      {
+        "id": "assumption:single_testbed",
+        "kind": "assumption",
+        "value": "uci_har_small_transformer_v1"
+      },
+      {
+        "id": "assumption:operator_conformance",
+        "kind": "assumption",
+        "value": true
+      },
+      {
+        "id": "assumption:arm_acted:proposed",
+        "kind": "assumption",
+        "value": {
+          "acted": true,
+          "phases": [
+            "loss_term"
+          ]
+        }
+      },
+      {
+        "id": "assumption:arm_acted:baseline_1",
+        "kind": "assumption",
+        "value": {
+          "acted": false,
+          "phases": []
+        }
+      },
+      {
+        "id": "assumption:arm_acted:negative_control_1",
+        "kind": "assumption",
+        "value": {
+          "acted": false,
+          "phases": []
+        }
+      },
+      {
+        "id": "assumption:arm_acted:negative_control_2",
+        "kind": "assumption",
+        "value": {
+          "acted": false,
+          "phases": []
+        }
+      },
+      {
+        "id": "assumption:reproduction",
+        "kind": "assumption",
+        "value": "verified"
+      },
+      {
+        "id": "construct:accuracy",
+        "kind": "construct",
+        "value": "measured"
+      },
+      {
+        "id": "construct:training_dynamics",
+        "kind": "construct",
+        "value": "proxy"
+      },
+      {
+        "id": "reference:1",
+        "kind": "reference",
+        "value": {
+          "notice": "retracted",
+          "resolved": true,
+          "title": "Entropy-Maximized Multiplicative Weight Noise for Subject-Disjoint Robustness",
+          "year": null
+        }
+      },
+      {
+        "id": "reference:2",
+        "kind": "reference",
+        "value": {
+          "notice": "",
+          "resolved": true,
+          "title": "Low-Entropy Latent Variables Hurt Out-of-Distribution Performance",
+          "year": 2023
+        }
+      },
+      {
+        "id": "reference:3",
+        "kind": "reference",
+        "value": {
+          "notice": "",
+          "resolved": true,
+          "title": "Regularization and Optimal Multiclass Learning",
+          "year": 2024
+        }
+      },
+      {
+        "id": "reference:4",
+        "kind": "reference",
+        "value": {
+          "notice": "",
+          "resolved": true,
+          "title": "Out-of-Distribution Generalization in Time Series: A Survey",
+          "year": 2025
+        }
+      },
+      {
+        "id": "reference:5",
+        "kind": "reference",
+        "value": {
+          "notice": "",
+          "resolved": true,
+          "title": "Singular Bayesian Neural Networks",
+          "year": 2026
+        }
+      }
+    ]
+  },
+  "manuscript_checks": [],
+  "manuscript_sha256": "fc30153e8e0982a2986285b86c84e5e7588112649a77c6f6828283d9959241bc",
+  "qualifications": [],
+  "references": [
+    {
+      "cited": true,
+      "index": 1,
+      "reasons": [
+        "carries a retracted notice"
+      ],
+      "rules": [
+        "reference_editorial_notice"
+      ],
+      "status": "supported_under_conditions",
+      "title": "Entropy-Maximized Multiplicative Weight Noise for Subject-Disjoint Robustness"
+    },
+    {
+      "cited": true,
+      "index": 2,
+      "reasons": [],
+      "rules": [],
+      "status": "supported",
+      "title": "Low-Entropy Latent Variables Hurt Out-of-Distribution Performance"
+    },
+    {
+      "cited": true,
+      "index": 3,
+      "reasons": [],
+      "rules": [],
+      "status": "supported",
+      "title": "Regularization and Optimal Multiclass Learning"
+    },
+    {
+      "cited": true,
+      "index": 4,
+      "reasons": [],
+      "rules": [],
+      "status": "supported",
+      "title": "Out-of-Distribution Generalization in Time Series: A Survey"
+    },
+    {
+      "cited": true,
+      "index": 5,
+      "reasons": [],
+      "rules": [],
+      "status": "supported",
+      "title": "Singular Bayesian Neural Networks"
+    }
+  ],
+  "registered_outcome": {
+    "decisions": {
+      "primary": "inconclusive",
+      "replication": "inconclusive"
+    },
+    "hypothesized_direction": "intervention_better",
+    "margin": 0.012509797746985206,
+    "primary": {
+      "ci_high": 0.003101498567719651,
+      "ci_low": -0.002130862288018561,
+      "decision": "inconclusive",
+      "mean_diff": 0.0004419157045793504,
+      "p_value": 0.7498500299940012
+    },
+    "primary_metric": "held-out classification accuracy",
+    "replication": {
+      "ci_high": 0.00550027225163942,
+      "ci_low": -0.0003314367784345101,
+      "decision": "inconclusive",
+      "mean_diff": 0.002548906653198761,
+      "p_value": 0.10617876424715057
+    }
+  },
+  "schema_version": 1,
+  "verifier_version": "grounding-2.5"
+}

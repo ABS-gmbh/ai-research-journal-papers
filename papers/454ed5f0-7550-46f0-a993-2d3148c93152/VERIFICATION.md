@@ -4,7 +4,7 @@
 > committed bundle ALONE (recorded code, container reference, seeds, and datasets)
 > and comparing the reproduced metrics to the ones the paper reports.
 
-✅ REPRODUCED — the independent re-run matched the published results.
+✅ CONDITION MEANS REPRODUCED — the independent re-run's condition means met the stated criterion; contrasts and registered decisions were not compared.
 
 - **Status:** `verified`
 - **Metrics matched:** 8 / 8
