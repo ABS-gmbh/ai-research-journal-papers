@@ -1,0 +1,76 @@
+{
+  "schema": "staging-provenance/1",
+  "statement": "Before editorial approval these files were committed to the journal's PRIVATE staging repository, not to this public one. The commits below record when: the preregistration anchor before any experiment compute was submitted, the frozen reproduction inputs before independent verification. Each staged preregistration file is copied into this bundle; staged_sha256 is the SHA-256 of the bytes in the staging commit and published_sha256 of the bytes here (they differ only where publication redaction replaced an infrastructure name). The frozen reproduction packet is NOT copied: it contains the journal's platform source, so it stays in the private repository and this bundle's reproduction.json is its public form (every input and every code file's SHA-256, without the platform source text).",
+  "staging_repository": "ABS-gmbh/ai-research-journal-staging",
+  "staging_repository_private": true,
+  "commits": [
+    {
+      "role": "preregistration_anchor",
+      "commit_sha": "3d0ad11bbdbe04409d0df78923e0a7ae53821e0f",
+      "committed_at": "2026-11-16T07:32:57Z",
+      "preregistration_sha256": "23c30c0abe523a9dfc9eae304ec9bd0cac7dfa83a1f6f4a717da364cfec2b467",
+      "registered_at": "2026-11-16T07:32:41.521674+00:00",
+      "files": [
+        {
+          "staged_path": "papers/e251b9bc-1f60-41a5-bf70-add700372a8a/EXPERIMENT_SELECTION.md",
+          "bundle_path": "staging/preregistration/EXPERIMENT_SELECTION.md",
+          "staged_sha256": "595e377f7e8cc479d5844e786ee9a2bc5613905178eec2341fe803aa64991986",
+          "published_sha256": "d4e62257d9e5002b581ea9818faad0e3032f4f7bd0a7f39b62643ed15e0a2dc7",
+          "redacted": true
+        },
+        {
+          "staged_path": "papers/e251b9bc-1f60-41a5-bf70-add700372a8a/PREREGISTRATION.md",
+          "bundle_path": "staging/preregistration/PREREGISTRATION.md",
+          "staged_sha256": "8180692e507b1e62cb373511c39e9d6cfbce56f7eb6b6c8ab7ac8f6191d58f05",
+          "published_sha256": "8180692e507b1e62cb373511c39e9d6cfbce56f7eb6b6c8ab7ac8f6191d58f05",
+          "redacted": false
+        },
+        {
+          "staged_path": "papers/e251b9bc-1f60-41a5-bf70-add700372a8a/PREREGISTRATION_ANCHOR.json",
+          "bundle_path": "staging/preregistration/PREREGISTRATION_ANCHOR.json",
+          "staged_sha256": "2d54eaa7e2032d6185a3d783a2f0dfb2d5e368242c4dce35acebc92216f2c3e0",
+          "published_sha256": "2d54eaa7e2032d6185a3d783a2f0dfb2d5e368242c4dce35acebc92216f2c3e0",
+          "redacted": false
+        },
+        {
+          "staged_path": "papers/e251b9bc-1f60-41a5-bf70-add700372a8a/experiment_selection.json",
+          "bundle_path": "staging/preregistration/experiment_selection.json",
+          "staged_sha256": "1110d6854327cfce5c15216b789212e9832cf66782ee7a3d43e79722f642eb61",
+          "published_sha256": "a6a1bc5176ff1d94ceeccb0e011717e552e817a879709a11eb9d0b0fa038ba6d",
+          "redacted": true
+        },
+        {
+          "staged_path": "papers/e251b9bc-1f60-41a5-bf70-add700372a8a/preregistration.json",
+          "bundle_path": "staging/preregistration/preregistration.json",
+          "staged_sha256": "e688ab60108d4de3fb2f67d61dc8014e58ec80e2073ad8f2e5e1403444f3e4af",
+          "published_sha256": "e688ab60108d4de3fb2f67d61dc8014e58ec80e2073ad8f2e5e1403444f3e4af",
+          "redacted": false
+        },
+        {
+          "staged_path": "papers/e251b9bc-1f60-41a5-bf70-add700372a8a/semantic_contract.json",
+          "bundle_path": "staging/preregistration/semantic_contract.json",
+          "staged_sha256": "c3d29b462ec64a9f00a6abbf821f0e0b870faeb405851de58c995c9d1d8a954e",
+          "published_sha256": "c3d29b462ec64a9f00a6abbf821f0e0b870faeb405851de58c995c9d1d8a954e",
+          "redacted": false
+        }
+      ]
+    },
+    {
+      "role": "reproduction_inputs",
+      "commit_sha": "28e3da0ccea3b93e76e632d5cfe8add28dab89b9",
+      "committed_at": "2026-11-16T13:03:19Z",
+      "files": [
+        {
+          "staged_path": "papers/e251b9bc-1f60-41a5-bf70-add700372a8a/reproduction.json",
+          "bundle_path": "reproduction.json",
+          "staged_sha256": "312c527b7f726f7bd7bf6c707caafedb767b838a415e344decc67d868aa92539",
+          "published_form": "public_reproduction_record",
+          "published_sha256": "96fd3b821ac4c737e24ee6224ddc9c80c4c63dfd94ebd1d4008b89b6ff71ed7c",
+          "redacted": false
+        }
+      ]
+    }
+  ],
+  "first_compute_submitted_at": "2026-11-16T08:26:23.601240+00:00",
+  "anchor_precedes_compute": true
+}
