@@ -1,0 +1,260 @@
+{
+  "assumptions": [
+    "undetected-flaw rate 0.05 (sensitivity 0-0.15), a planning assumption",
+    "failure rate 0.400: 1 of 3 executed registered studies ended without a publishable outcome; Beta(1,1) posterior mean",
+    "Episteme's effect model A1-A4; information is expected reduction in entropy (bits)"
+  ],
+  "belief_revision": 7,
+  "belief_state_sha256": "41e695f424f0b9e56198a6199d1ae55d15ac5dab4d4fc181ffff1448bde4e5f7",
+  "chosen_matches_planner": null,
+  "chosen_valuation": {
+    "constraints": [
+      {
+        "detail": "a new registered study on fresh seeds",
+        "id": "new_registration",
+        "status": "pass"
+      },
+      {
+        "detail": "the harness records every quantity this study measures",
+        "id": "observables_recorded",
+        "status": "pass"
+      },
+      {
+        "detail": "uses the calibrated recipe as registered",
+        "id": "recipe_unchanged",
+        "status": "pass"
+      },
+      {
+        "detail": "uci_har_small_transformer_v1 has an offerable calibration record",
+        "id": "testbed_calibrated",
+        "status": "pass"
+      },
+      {
+        "detail": "not closed by a scientific rejection",
+        "id": "direction_open",
+        "status": "pass"
+      },
+      {
+        "detail": "expected 1.24 GPU-h within the per-run cap 12",
+        "id": "within_run_cap",
+        "status": "pass"
+      },
+      {
+        "detail": "expected $3.10 vs per-run cap $50",
+        "id": "within_run_cap_usd",
+        "status": "pass"
+      },
+      {
+        "detail": "expected $3.10 vs $993.19 left this month",
+        "id": "within_monthly_budget",
+        "status": "pass"
+      }
+    ],
+    "contrast": "MomentumOrthogonalProjection on blocks.0.attn.q_proj.weight [uci_har_small_transformer_v1]",
+    "cost": {
+      "basis": "8.64 GPU-seconds per training measured on 8 completed job(s) of uci_har_small_transformer_v1; 258 trainings per job x 2 job(s) (incl. the mandatory pre-publication reproduction); 90% prediction interval from 8 jobs (t, df=7); wall-clock adds the queue wait measured from the scheduler's start time on 4 of 8 job(s); the rest submission-to-settlement minus runtime, which includes polling",
+      "ceiling_gpu_hours": 2.0,
+      "gpu_hours": 1.2389,
+      "gpu_hours_high": 1.341,
+      "gpu_hours_low": 1.1368,
+      "jobs": 2,
+      "queue_hours": 0.961,
+      "reliability": "measured",
+      "runtime_hours": 1.239,
+      "trainings_per_job": 258,
+      "usd": 3.1
+    },
+    "discriminates": [
+      "worthwhile benefit",
+      "negligible",
+      "worthwhile harm"
+    ],
+    "index": 1,
+    "matched_frame": null,
+    "notes": [],
+    "prior_evidence": [],
+    "probe": "new_intervention",
+    "resolves": "which effect region holds for MomentumOrthogonalProjection on blocks.0.attn.q_proj.weight [uci_har_small_transformer_v1], which has no evidence yet",
+    "testbed_id": "uci_har_small_transformer_v1",
+    "title": "Momentum-Orthogonal Projection Tests Whether Optimizer-State Geometry Improves Subject-Disjoint Generalization",
+    "value": {
+      "bits": 0.700674,
+      "discrimination_bits": null,
+      "estimator": "region_grid",
+      "high": 0.824909,
+      "interval_basis": "undetected-flaw rate 0-0.15 (point 0.05); failure rate 0.400 applied exactly",
+      "low": 0.531988,
+      "shadow": {},
+      "unvaluable_reason": null
+    },
+    "value_per_gpu_hour": 0.565561
+  },
+  "contrast": "MomentumOrthogonalProjection on blocks.0.attn.q_proj.weight [uci_har_small_transformer_v1]",
+  "expected_to_resolve": "which effect region holds for MomentumOrthogonalProjection on blocks.0.attn.q_proj.weight [uci_har_small_transformer_v1], which has no evidence yet",
+  "mode": "advisory",
+  "plan_sha256": "c1a323ba41b11f53769823a86ee302a72681135c955938f83bb2b3c47d7bb287",
+  "planner_selected": null,
+  "planner_selected_title": "",
+  "portfolio": [
+    {
+      "constraints": [
+        {
+          "detail": "a new registered study on fresh seeds",
+          "id": "new_registration",
+          "status": "pass"
+        },
+        {
+          "detail": "the harness records every quantity this study measures",
+          "id": "observables_recorded",
+          "status": "pass"
+        },
+        {
+          "detail": "uses the calibrated recipe as registered",
+          "id": "recipe_unchanged",
+          "status": "pass"
+        },
+        {
+          "detail": "uci_letter_small_mlp_v1 has an offerable calibration record",
+          "id": "testbed_calibrated",
+          "status": "pass"
+        },
+        {
+          "detail": "not closed by a scientific rejection",
+          "id": "direction_open",
+          "status": "pass"
+        },
+        {
+          "detail": "unmeasured; at the default walltime (2.00 GPU-h) it fits the per-run cap 12",
+          "id": "within_run_cap",
+          "status": "pass"
+        }
+      ],
+      "contrast": "FrobeniusScaleRegularization on second_layer.weight [uci_letter_small_mlp_v1]",
+      "cost": {
+        "basis": "no completed job on uci_letter_small_mlp_v1 has been measured; value per cost is computed against the configured default walltime (2.00 GPU-h for 2 job(s)) \u2014 a scheduling default, not a measured runtime",
+        "ceiling_gpu_hours": 2.0,
+        "gpu_hours": null,
+        "gpu_hours_high": null,
+        "gpu_hours_low": null,
+        "jobs": 2,
+        "queue_hours": null,
+        "reliability": "bound_only",
+        "runtime_hours": null,
+        "trainings_per_job": 344,
+        "usd": null
+      },
+      "discriminates": [
+        "worthwhile benefit",
+        "negligible",
+        "worthwhile harm"
+      ],
+      "index": 0,
+      "matched_frame": null,
+      "notes": [],
+      "prior_evidence": [],
+      "probe": "new_intervention",
+      "resolves": "which effect region holds for FrobeniusScaleRegularization on second_layer.weight [uci_letter_small_mlp_v1], which has no evidence yet",
+      "testbed_id": "uci_letter_small_mlp_v1",
+      "title": "Frobenius Scale-Regularization of Output Projections Tests Whether Weight Magnitude Constraints Improve Generalization in Small MLPs",
+      "value": {
+        "bits": 0.700674,
+        "discrimination_bits": null,
+        "estimator": "region_grid",
+        "high": 0.824909,
+        "interval_basis": "undetected-flaw rate 0-0.15 (point 0.05); failure rate 0.400 applied exactly",
+        "low": 0.531988,
+        "shadow": {},
+        "unvaluable_reason": null
+      },
+      "value_per_gpu_hour": 0.350337
+    },
+    {
+      "constraints": [
+        {
+          "detail": "a new registered study on fresh seeds",
+          "id": "new_registration",
+          "status": "pass"
+        },
+        {
+          "detail": "the harness records every quantity this study measures",
+          "id": "observables_recorded",
+          "status": "pass"
+        },
+        {
+          "detail": "uses the calibrated recipe as registered",
+          "id": "recipe_unchanged",
+          "status": "pass"
+        },
+        {
+          "detail": "uci_har_small_transformer_v1 has an offerable calibration record",
+          "id": "testbed_calibrated",
+          "status": "pass"
+        },
+        {
+          "detail": "not closed by a scientific rejection",
+          "id": "direction_open",
+          "status": "pass"
+        },
+        {
+          "detail": "expected 1.24 GPU-h within the per-run cap 12",
+          "id": "within_run_cap",
+          "status": "pass"
+        },
+        {
+          "detail": "expected $3.10 vs per-run cap $50",
+          "id": "within_run_cap_usd",
+          "status": "pass"
+        },
+        {
+          "detail": "expected $3.10 vs $993.19 left this month",
+          "id": "within_monthly_budget",
+          "status": "pass"
+        }
+      ],
+      "contrast": "MomentumOrthogonalProjection on blocks.0.attn.q_proj.weight [uci_har_small_transformer_v1]",
+      "cost": {
+        "basis": "8.64 GPU-seconds per training measured on 8 completed job(s) of uci_har_small_transformer_v1; 258 trainings per job x 2 job(s) (incl. the mandatory pre-publication reproduction); 90% prediction interval from 8 jobs (t, df=7); wall-clock adds the queue wait measured from the scheduler's start time on 4 of 8 job(s); the rest submission-to-settlement minus runtime, which includes polling",
+        "ceiling_gpu_hours": 2.0,
+        "gpu_hours": 1.2389,
+        "gpu_hours_high": 1.341,
+        "gpu_hours_low": 1.1368,
+        "jobs": 2,
+        "queue_hours": 0.961,
+        "reliability": "measured",
+        "runtime_hours": 1.239,
+        "trainings_per_job": 258,
+        "usd": 3.1
+      },
+      "discriminates": [
+        "worthwhile benefit",
+        "negligible",
+        "worthwhile harm"
+      ],
+      "index": 1,
+      "matched_frame": null,
+      "notes": [],
+      "prior_evidence": [],
+      "probe": "new_intervention",
+      "resolves": "which effect region holds for MomentumOrthogonalProjection on blocks.0.attn.q_proj.weight [uci_har_small_transformer_v1], which has no evidence yet",
+      "testbed_id": "uci_har_small_transformer_v1",
+      "title": "Momentum-Orthogonal Projection Tests Whether Optimizer-State Geometry Improves Subject-Disjoint Generalization",
+      "value": {
+        "bits": 0.700674,
+        "discrimination_bits": null,
+        "estimator": "region_grid",
+        "high": 0.824909,
+        "interval_basis": "undetected-flaw rate 0-0.15 (point 0.05); failure rate 0.400 applied exactly",
+        "low": 0.531988,
+        "shadow": {},
+        "unvaluable_reason": null
+      },
+      "value_per_gpu_hour": 0.565561
+    }
+  ],
+  "prior_evidence": [],
+  "recorded_at": "2026-11-16T07:17:20.765442+00:00",
+  "requires_new_registration": true,
+  "run_id": "e251b9bc-1f60-41a5-bf70-add700372a8a",
+  "schema_version": 1,
+  "topic_title": "Momentum-Orthogonal Projection Tests Whether Optimizer-State Geometry Improves Subject-Disjoint Generalization"
+}

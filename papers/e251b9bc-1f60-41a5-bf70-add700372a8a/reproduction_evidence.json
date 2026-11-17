@@ -1,0 +1,1094 @@
+{
+  "margin": 0.012509797746985206,
+  "run_id": "e251b9bc-1f60-41a5-bf70-add700372a8a",
+  "status": "verified_identity",
+  "n_seeds": {
+    "primary": 43,
+    "replication": 43
+  },
+  "reasons": [],
+  "version": 1,
+  "hardware": {
+    "original": {
+      "torch": "2.5.1+cu124",
+      "devices": [
+        "NVIDIA A100-SXM4-80GB"
+      ],
+      "hostname": "[redacted]",
+      "started_at": "2026-11-16T08:27:25.228977+00:00",
+      "finished_at": "2026-11-16T09:07:29.039254+00:00",
+      "device_count": 1,
+      "metadata_digest": "canonical_json",
+      "metadata_sha256": "6269ebf210f5b6a91bd743de7eab5608af9eb52c32fe15ee0ac974326af4355d",
+      "numeric_environment": {
+        "cudnn": 90100,
+        "torch": "2.5.1+cu124",
+        "driver": "580.178.04",
+        "gpu_names": [
+          "NVIDIA A100-SXM4-80GB"
+        ],
+        "cuda_runtime": "12.4",
+        "cudnn_benchmark": false,
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false,
+        "cudnn_deterministic": true,
+        "cublas_workspace_config": ":4096:8",
+        "deterministic_algorithms": true
+      }
+    },
+    "reproduction": {
+      "torch": "2.5.1+cu124",
+      "devices": [
+        "NVIDIA A100-SXM4-80GB"
+      ],
+      "hostname": "[redacted]",
+      "started_at": "2026-11-16T13:08:24.457158+00:00",
+      "finished_at": "2026-11-16T13:47:01.194084+00:00",
+      "device_count": 1,
+      "metadata_digest": "canonical_json",
+      "metadata_sha256": "50d2d6a0e73be913e98e302885a5ea2f51d66c6f78c8a24dfacf51bde5ecde2e",
+      "numeric_environment": {
+        "cudnn": 90100,
+        "torch": "2.5.1+cu124",
+        "driver": "580.178.04",
+        "gpu_names": [
+          "NVIDIA A100-SXM4-80GB"
+        ],
+        "cuda_runtime": "12.4",
+        "cudnn_benchmark": false,
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false,
+        "cudnn_deterministic": true,
+        "cublas_workspace_config": ":4096:8",
+        "deterministic_algorithms": true
+      }
+    }
+  },
+  "criterion": {
+    "n_ok": 6,
+    "rule": "each condition mean inside the published 95% CI or within the relative tolerance",
+    "status": "verified",
+    "compares": "condition means",
+    "tolerance": 0.05,
+    "within_ci": [
+      "primary / baseline_1 / held-out classification accuracy",
+      "primary / negative_control_1 / held-out classification accuracy",
+      "primary / proposed / held-out classification accuracy",
+      "replication / baseline_1 / held-out classification accuracy",
+      "replication / negative_control_1 / held-out classification accuracy",
+      "replication / proposed / held-out classification accuracy"
+    ],
+    "n_compared": 6,
+    "tolerance_only": []
+  },
+  "comparison": {
+    "primary": {
+      "original": {
+        "n": 43,
+        "ci_low": -0.017439887627149396,
+        "metric": "held-out classification accuracy",
+        "ci_high": -0.00663662692055776,
+        "p_value": 0.0001999600079984003,
+        "decision": "direction_refuted",
+        "mean_diff": -0.011710766171352804
+      },
+      "reproduced": {
+        "n": 43,
+        "ci_low": -0.017439887627149396,
+        "metric": "held-out classification accuracy",
+        "ci_high": -0.00663662692055776,
+        "p_value": 0.0001999600079984003,
+        "decision": "direction_refuted",
+        "mean_diff": -0.011710766171352804
+      },
+      "same_decision": true,
+      "original_includes_zero": false,
+      "reproduced_includes_zero": false
+    },
+    "replication": {
+      "original": {
+        "n": 43,
+        "ci_low": -0.021811893845534672,
+        "metric": "held-out classification accuracy",
+        "ci_high": -0.012988967890089251,
+        "p_value": 0.0001999600079984003,
+        "decision": "direction_refuted",
+        "mean_diff": -0.017574040608896706
+      },
+      "reproduced": {
+        "n": 43,
+        "ci_low": -0.021811893845534672,
+        "metric": "held-out classification accuracy",
+        "ci_high": -0.012988967890089251,
+        "p_value": 0.0001999600079984003,
+        "decision": "direction_refuted",
+        "mean_diff": -0.017574040608896706
+      },
+      "same_decision": true,
+      "original_includes_zero": false,
+      "reproduced_includes_zero": false
+    }
+  },
+  "computed_with": "app.modules.analysis.Analyzer (the registered analysis plan)",
+  "analysis_stats": {
+    "shape": "confirmatory",
+    "primary": {
+      "shape": "structured",
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "n_seeds": 43,
+      "baseline": "baseline_1",
+      "proposed": "proposed",
+      "conditions": {
+        "proposed": {
+          "held-out classification accuracy": {
+            "n": 43,
+            "std": 0.013722139571454548,
+            "mean": 0.8951160423292114,
+            "ci_low": 0.8905702290859447,
+            "ci_high": 0.8988015009351251
+          }
+        },
+        "baseline_1": {
+          "held-out classification accuracy": {
+            "n": 43,
+            "std": 0.01142282291683318,
+            "mean": 0.9068268085005643,
+            "ci_low": 0.9034327380623575,
+            "ci_high": 0.9099283070682839
+          }
+        },
+        "negative_control_1": {
+          "held-out classification accuracy": {
+            "n": 43,
+            "std": 0.01191363926659974,
+            "mean": 0.889757814411187,
+            "ci_low": 0.8863949148128567,
+            "ci_high": 0.8933091200353531
+          }
+        }
+      },
+      "comparisons": {
+        "held-out classification accuracy": {
+          "n_a": 43,
+          "n_b": 43,
+          "ci_low": -0.017439887627149396,
+          "paired": true,
+          "ci_high": -0.00663662692055776,
+          "p_value": 0.0001999600079984003,
+          "cohens_d": -0.6342987243609163,
+          "contrast": "hypothesis-positive proposed versus baseline",
+          "decision": "direction_refuted",
+          "mean_diff": -0.011710766171352804,
+          "significant": true,
+          "identical_pairs": 1,
+          "p_value_adjusted": 0.0001999600079984003,
+          "operator_inactive": false,
+          "all_pairs_identical": false,
+          "multiplicity_method": "preregistered primary (unadjusted)",
+          "significant_adjusted": true,
+          "smallest_worthwhile_effect_value": 0.012509797746985206
+        }
+      },
+      "manipulation": {
+        "reason": "no manipulation check was registered; observables are descriptive",
+        "status": "not_measured",
+        "contrast": null,
+        "registered": null,
+        "descriptive": {
+          "mean_abs": {
+            "label": "mean absolute entry",
+            "ci_low": -0.011988471171496965,
+            "paired": true,
+            "ci_high": -0.011542647560187509,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.0007965800058587902,
+              "mean": 0.0672153770408065,
+              "ci_low": 0.06698936844671886,
+              "ci_high": 0.06744470742426426
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.0005286576814833909,
+              "mean": 0.055455443033504,
+              "ci_low": 0.05530516320208215,
+              "ci_high": 0.05561638854772099
+            },
+            "mean_diff": -0.011759934007302485
+          },
+          "effective_rank": {
+            "label": "effective rank",
+            "ci_low": -2.633264277995946,
+            "paired": true,
+            "ci_high": -2.4360093850293865,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.34167309595604506,
+              "mean": 50.24440559198727,
+              "ci_low": 50.139061666475015,
+              "ci_high": 50.339194501316506
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.2950155777738852,
+              "mean": 47.70896869769162,
+              "ci_low": 47.614656067848756,
+              "ci_high": 47.78748687940722
+            },
+            "mean_diff": -2.535436894295642
+          },
+          "frobenius_norm": {
+            "label": "Frobenius norm",
+            "ci_low": -0.8690250072346427,
+            "paired": true,
+            "ci_high": -0.8339256100080048,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.06248994971538808,
+              "mean": 5.070749074117382,
+              "ci_low": 5.052825228200972,
+              "ci_high": 5.088787182556766
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.030814523996382962,
+              "mean": 4.219980012872018,
+              "ci_low": 4.2111520650591725,
+              "ci_high": 4.228992411618938
+            },
+            "mean_diff": -0.8507690612453647
+          },
+          "spectral_entropy": {
+            "label": "normalised singular-value entropy",
+            "ci_low": -0.012927707530432167,
+            "paired": true,
+            "ci_high": -0.011962992904231643,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.001637976738261208,
+              "mean": 0.9418097345370026,
+              "ci_low": 0.9413051660461198,
+              "ci_high": 0.9422639450588739
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.0014901384061591703,
+              "mean": 0.9293602625199683,
+              "ci_low": 0.9288836718151856,
+              "ci_high": 0.9297560080930389
+            },
+            "mean_diff": -0.012449472017034242
+          },
+          "row_norm_variance": {
+            "label": "variance of the row L2 norms",
+            "ci_low": -0.00320673389750929,
+            "paired": true,
+            "ci_high": -0.002601474769453256,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.0010305629480746503,
+              "mean": 0.004160638023428296,
+              "ci_low": 0.003868952707396301,
+              "ci_high": 0.0044687666445684116
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.0001810460892531929,
+              "mean": 0.0012635791997477521,
+              "ci_low": 0.0012106912746184164,
+              "ci_high": 0.0013196454310853256
+            },
+            "mean_diff": -0.002897058823680544
+          },
+          "sparsity_fraction": {
+            "label": "fraction of near-zero entries (|w| < 1e-3)",
+            "ci_low": 0.001663562863372093,
+            "paired": true,
+            "ci_high": 0.003077449355014533,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.0015443159883779397,
+              "mean": 0.007613780886627907,
+              "ci_low": 0.007165243459302325,
+              "ci_high": 0.008085029069767442
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.0016599630064820438,
+              "mean": 0.009987054869186046,
+              "ci_low": 0.009504309365915698,
+              "ci_high": 0.010469658430232558
+            },
+            "mean_diff": 0.0023732739825581394
+          },
+          "column_norm_variance": {
+            "label": "variance of the column L2 norms",
+            "ci_low": -0.0012321393298254269,
+            "paired": true,
+            "ci_high": -0.0009065312098785782,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.0005396812122603458,
+              "mean": 0.0026311757035607885,
+              "ci_low": 0.002462663928741641,
+              "ci_high": 0.0027848891825305584
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.00024744096289260596,
+              "mean": 0.0015564997183573515,
+              "ci_low": 0.0014846977729261186,
+              "ci_high": 0.0016304435235620118
+            },
+            "mean_diff": -0.0010746759852034366
+          }
+        }
+      },
+      "n_conditions": 3,
+      "primary_metric": "held-out classification accuracy",
+      "training_outcome": {
+        "metric": "held-out classification accuracy",
+        "conditions": {
+          "proposed": {
+            "training": {
+              "n": 43,
+              "std": 0.005555607952889118,
+              "mean": 0.9568223802414152,
+              "ci_low": 0.9551107751094465,
+              "ci_high": 0.9583597723764457
+            },
+            "generalization_gap": {
+              "n": 43,
+              "std": 0.011095368641877768,
+              "mean": 0.06170633791220366,
+              "ci_low": 0.058652339416807114,
+              "ci_high": 0.0650749824082532
+            }
+          },
+          "baseline_1": {
+            "training": {
+              "n": 43,
+              "std": 0.006729675414624888,
+              "mean": 0.9633828478882505,
+              "ci_low": 0.9612539381785056,
+              "ci_high": 0.9652681915378191
+            },
+            "generalization_gap": {
+              "n": 43,
+              "std": 0.009234753164981064,
+              "mean": 0.05655603938768641,
+              "ci_low": 0.05394838914946332,
+              "ci_high": 0.05924388463057385
+            }
+          },
+          "negative_control_1": {
+            "training": {
+              "n": 43,
+              "std": 0.006273692651354082,
+              "mean": 0.9543234557279147,
+              "ci_low": 0.9523939064200218,
+              "ci_high": 0.9561330408431814
+            },
+            "generalization_gap": {
+              "n": 43,
+              "std": 0.009685393618831794,
+              "mean": 0.06456564131672778,
+              "ci_low": 0.06160214958063475,
+              "ci_high": 0.06740720426027554
+            }
+          }
+        }
+      },
+      "manipulation_status": "not_measured"
+    },
+    "replication": {
+      "shape": "structured",
+      "metrics": [
+        "held-out classification accuracy"
+      ],
+      "n_seeds": 43,
+      "baseline": "baseline_1",
+      "proposed": "proposed",
+      "conditions": {
+        "proposed": {
+          "held-out classification accuracy": {
+            "n": 43,
+            "std": 0.013114212023769814,
+            "mean": 0.8905548409498032,
+            "ci_low": 0.8865535309853931,
+            "ci_high": 0.8946587384884905
+          }
+        },
+        "baseline_1": {
+          "held-out classification accuracy": {
+            "n": 43,
+            "std": 0.012519737242218661,
+            "mean": 0.9081288815587,
+            "ci_low": 0.9042846094964531,
+            "ci_high": 0.9117825774733469
+          }
+        },
+        "negative_control_1": {
+          "held-out classification accuracy": {
+            "n": 43,
+            "std": 0.014928481848059073,
+            "mean": 0.8868222315164812,
+            "ci_low": 0.8821975047545394,
+            "ci_high": 0.8912812398892055
+          }
+        }
+      },
+      "comparisons": {
+        "held-out classification accuracy": {
+          "n_a": 43,
+          "n_b": 43,
+          "ci_low": -0.021811893845534672,
+          "paired": true,
+          "ci_high": -0.012988967890089251,
+          "p_value": 0.0001999600079984003,
+          "cohens_d": -1.1676847842416513,
+          "contrast": "hypothesis-positive proposed versus baseline",
+          "decision": "direction_refuted",
+          "mean_diff": -0.017574040608896706,
+          "significant": true,
+          "identical_pairs": 0,
+          "p_value_adjusted": 0.0001999600079984003,
+          "operator_inactive": false,
+          "all_pairs_identical": false,
+          "multiplicity_method": "preregistered primary (unadjusted)",
+          "significant_adjusted": true,
+          "smallest_worthwhile_effect_value": 0.012509797746985206
+        }
+      },
+      "manipulation": {
+        "reason": "no manipulation check was registered; observables are descriptive",
+        "status": "not_measured",
+        "contrast": null,
+        "registered": null,
+        "descriptive": {
+          "mean_abs": {
+            "label": "mean absolute entry",
+            "ci_low": -0.011812386502195323,
+            "paired": true,
+            "ci_high": -0.01138509228563701,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.0007462575329771137,
+              "mean": 0.0672989393958375,
+              "ci_low": 0.06708024861755665,
+              "ci_high": 0.06750798743145556
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.0004960336084488308,
+              "mean": 0.055698272449495906,
+              "ci_low": 0.05555145537908011,
+              "ci_high": 0.055839523953184374
+            },
+            "mean_diff": -0.0116006669463416
+          },
+          "effective_rank": {
+            "label": "effective rank",
+            "ci_low": -2.666483794532717,
+            "paired": true,
+            "ci_high": -2.462465668576659,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.3063662891987949,
+              "mean": 50.28852370577157,
+              "ci_low": 50.20199897368107,
+              "ci_high": 50.38174199572923
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.2640777212715955,
+              "mean": 47.72152239359912,
+              "ci_low": 47.64289317172278,
+              "ci_high": 47.80079941356555
+            },
+            "mean_diff": -2.5670013121724566
+          },
+          "frobenius_norm": {
+            "label": "Frobenius norm",
+            "ci_low": -0.8533871600079672,
+            "paired": true,
+            "ci_high": -0.8210905470475388,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.05469836981400779,
+              "mean": 5.070708047899427,
+              "ci_low": 5.054571615570392,
+              "ci_high": 5.0863811728274495
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.029777762027419687,
+              "mean": 4.233050430175304,
+              "ci_low": 4.224211114017721,
+              "ci_high": 4.241624399902026
+            },
+            "mean_diff": -0.8376576177241245
+          },
+          "spectral_entropy": {
+            "label": "normalised singular-value entropy",
+            "ci_low": -0.013082857278101774,
+            "paired": true,
+            "ci_high": -0.012086588757380215,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.0014628200971780788,
+              "mean": 0.9420218658824091,
+              "ci_low": 0.941609116847711,
+              "ci_high": 0.9424683513688836
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.001330184605001608,
+              "mean": 0.9294244326780574,
+              "ci_low": 0.9290283543469683,
+              "ci_high": 0.9298232023070314
+            },
+            "mean_diff": -0.012597433204351631
+          },
+          "row_norm_variance": {
+            "label": "variance of the row L2 norms",
+            "ci_low": -0.0029321873918786885,
+            "paired": true,
+            "ci_high": -0.002450743083812312,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.0008479422229785669,
+              "mean": 0.0039293686445343,
+              "ci_low": 0.0036772658176401447,
+              "ci_high": 0.004189294500289673
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.00023008435548079947,
+              "mean": 0.0012438642653222578,
+              "ci_low": 0.0011767973531847107,
+              "ci_high": 0.0013141118299742087
+            },
+            "mean_diff": -0.002685504379212042
+          },
+          "sparsity_fraction": {
+            "label": "fraction of near-zero entries (|w| < 1e-3)",
+            "ci_low": 0.0019190588662790697,
+            "paired": true,
+            "ci_high": 0.002958075944767442,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.0013125768799009743,
+              "mean": 0.007080078125,
+              "ci_low": 0.006716706031976744,
+              "ci_high": 0.007460483284883721
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.0013887415174420655,
+              "mean": 0.009515806686046511,
+              "ci_low": 0.009118368459302325,
+              "ci_high": 0.00994163335755814
+            },
+            "mean_diff": 0.0024357285610465116
+          },
+          "column_norm_variance": {
+            "label": "variance of the column L2 norms",
+            "ci_low": -0.0013328286093062757,
+            "paired": true,
+            "ci_high": -0.0009213423343171998,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.0005691053995896626,
+              "mean": 0.0027292116189595434,
+              "ci_low": 0.0025752789408783113,
+              "ci_high": 0.0029039541438280166
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.00031528773859111994,
+              "mean": 0.0016162303316803897,
+              "ci_low": 0.001524608826631652,
+              "ci_high": 0.001715045387591225
+            },
+            "mean_diff": -0.001112981287279153
+          }
+        }
+      },
+      "n_conditions": 3,
+      "primary_metric": "held-out classification accuracy",
+      "training_outcome": {
+        "metric": "held-out classification accuracy",
+        "conditions": {
+          "proposed": {
+            "training": {
+              "n": 43,
+              "std": 0.005472004809204946,
+              "mean": 0.9565977933547587,
+              "ci_low": 0.9547789558924008,
+              "ci_high": 0.9580720006579448
+            },
+            "generalization_gap": {
+              "n": 43,
+              "std": 0.011886254202231309,
+              "mean": 0.06604295240495561,
+              "ci_low": 0.06232213714548715,
+              "ci_high": 0.06959204932002179
+            }
+          },
+          "baseline_1": {
+            "training": {
+              "n": 43,
+              "std": 0.006485848247517851,
+              "mean": 0.9629969380266721,
+              "ci_low": 0.9609624497051901,
+              "ci_high": 0.9648792766404332
+            },
+            "generalization_gap": {
+              "n": 43,
+              "std": 0.009853807325238126,
+              "mean": 0.054868056467972263,
+              "ci_low": 0.05212554053613572,
+              "ci_high": 0.05785799936721492
+            }
+          },
+          "negative_control_1": {
+            "training": {
+              "n": 43,
+              "std": 0.009466158703492718,
+              "mean": 0.9537161221752665,
+              "ci_low": 0.9506857017233089,
+              "ci_high": 0.9563166643469898
+            },
+            "generalization_gap": {
+              "n": 43,
+              "std": 0.012848674410300277,
+              "mean": 0.06689389065878525,
+              "ci_low": 0.06296572291064417,
+              "ci_high": 0.07058609700382887
+            }
+          }
+        }
+      },
+      "manipulation_status": "not_measured"
+    },
+    "manipulation": {
+      "status": "not_measured",
+      "primary": {
+        "reason": "no manipulation check was registered; observables are descriptive",
+        "status": "not_measured",
+        "contrast": null,
+        "registered": null,
+        "descriptive": {
+          "mean_abs": {
+            "label": "mean absolute entry",
+            "ci_low": -0.011988471171496965,
+            "paired": true,
+            "ci_high": -0.011542647560187509,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.0007965800058587902,
+              "mean": 0.0672153770408065,
+              "ci_low": 0.06698936844671886,
+              "ci_high": 0.06744470742426426
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.0005286576814833909,
+              "mean": 0.055455443033504,
+              "ci_low": 0.05530516320208215,
+              "ci_high": 0.05561638854772099
+            },
+            "mean_diff": -0.011759934007302485
+          },
+          "effective_rank": {
+            "label": "effective rank",
+            "ci_low": -2.633264277995946,
+            "paired": true,
+            "ci_high": -2.4360093850293865,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.34167309595604506,
+              "mean": 50.24440559198727,
+              "ci_low": 50.139061666475015,
+              "ci_high": 50.339194501316506
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.2950155777738852,
+              "mean": 47.70896869769162,
+              "ci_low": 47.614656067848756,
+              "ci_high": 47.78748687940722
+            },
+            "mean_diff": -2.535436894295642
+          },
+          "frobenius_norm": {
+            "label": "Frobenius norm",
+            "ci_low": -0.8690250072346427,
+            "paired": true,
+            "ci_high": -0.8339256100080048,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.06248994971538808,
+              "mean": 5.070749074117382,
+              "ci_low": 5.052825228200972,
+              "ci_high": 5.088787182556766
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.030814523996382962,
+              "mean": 4.219980012872018,
+              "ci_low": 4.2111520650591725,
+              "ci_high": 4.228992411618938
+            },
+            "mean_diff": -0.8507690612453647
+          },
+          "spectral_entropy": {
+            "label": "normalised singular-value entropy",
+            "ci_low": -0.012927707530432167,
+            "paired": true,
+            "ci_high": -0.011962992904231643,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.001637976738261208,
+              "mean": 0.9418097345370026,
+              "ci_low": 0.9413051660461198,
+              "ci_high": 0.9422639450588739
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.0014901384061591703,
+              "mean": 0.9293602625199683,
+              "ci_low": 0.9288836718151856,
+              "ci_high": 0.9297560080930389
+            },
+            "mean_diff": -0.012449472017034242
+          },
+          "row_norm_variance": {
+            "label": "variance of the row L2 norms",
+            "ci_low": -0.00320673389750929,
+            "paired": true,
+            "ci_high": -0.002601474769453256,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.0010305629480746503,
+              "mean": 0.004160638023428296,
+              "ci_low": 0.003868952707396301,
+              "ci_high": 0.0044687666445684116
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.0001810460892531929,
+              "mean": 0.0012635791997477521,
+              "ci_low": 0.0012106912746184164,
+              "ci_high": 0.0013196454310853256
+            },
+            "mean_diff": -0.002897058823680544
+          },
+          "sparsity_fraction": {
+            "label": "fraction of near-zero entries (|w| < 1e-3)",
+            "ci_low": 0.001663562863372093,
+            "paired": true,
+            "ci_high": 0.003077449355014533,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.0015443159883779397,
+              "mean": 0.007613780886627907,
+              "ci_low": 0.007165243459302325,
+              "ci_high": 0.008085029069767442
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.0016599630064820438,
+              "mean": 0.009987054869186046,
+              "ci_low": 0.009504309365915698,
+              "ci_high": 0.010469658430232558
+            },
+            "mean_diff": 0.0023732739825581394
+          },
+          "column_norm_variance": {
+            "label": "variance of the column L2 norms",
+            "ci_low": -0.0012321393298254269,
+            "paired": true,
+            "ci_high": -0.0009065312098785782,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.0005396812122603458,
+              "mean": 0.0026311757035607885,
+              "ci_low": 0.002462663928741641,
+              "ci_high": 0.0027848891825305584
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.00024744096289260596,
+              "mean": 0.0015564997183573515,
+              "ci_low": 0.0014846977729261186,
+              "ci_high": 0.0016304435235620118
+            },
+            "mean_diff": -0.0010746759852034366
+          }
+        }
+      },
+      "registered": null,
+      "replication": {
+        "reason": "no manipulation check was registered; observables are descriptive",
+        "status": "not_measured",
+        "contrast": null,
+        "registered": null,
+        "descriptive": {
+          "mean_abs": {
+            "label": "mean absolute entry",
+            "ci_low": -0.011812386502195323,
+            "paired": true,
+            "ci_high": -0.01138509228563701,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.0007462575329771137,
+              "mean": 0.0672989393958375,
+              "ci_low": 0.06708024861755665,
+              "ci_high": 0.06750798743145556
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.0004960336084488308,
+              "mean": 0.055698272449495906,
+              "ci_low": 0.05555145537908011,
+              "ci_high": 0.055839523953184374
+            },
+            "mean_diff": -0.0116006669463416
+          },
+          "effective_rank": {
+            "label": "effective rank",
+            "ci_low": -2.666483794532717,
+            "paired": true,
+            "ci_high": -2.462465668576659,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.3063662891987949,
+              "mean": 50.28852370577157,
+              "ci_low": 50.20199897368107,
+              "ci_high": 50.38174199572923
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.2640777212715955,
+              "mean": 47.72152239359912,
+              "ci_low": 47.64289317172278,
+              "ci_high": 47.80079941356555
+            },
+            "mean_diff": -2.5670013121724566
+          },
+          "frobenius_norm": {
+            "label": "Frobenius norm",
+            "ci_low": -0.8533871600079672,
+            "paired": true,
+            "ci_high": -0.8210905470475388,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.05469836981400779,
+              "mean": 5.070708047899427,
+              "ci_low": 5.054571615570392,
+              "ci_high": 5.0863811728274495
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.029777762027419687,
+              "mean": 4.233050430175304,
+              "ci_low": 4.224211114017721,
+              "ci_high": 4.241624399902026
+            },
+            "mean_diff": -0.8376576177241245
+          },
+          "spectral_entropy": {
+            "label": "normalised singular-value entropy",
+            "ci_low": -0.013082857278101774,
+            "paired": true,
+            "ci_high": -0.012086588757380215,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.0014628200971780788,
+              "mean": 0.9420218658824091,
+              "ci_low": 0.941609116847711,
+              "ci_high": 0.9424683513688836
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.001330184605001608,
+              "mean": 0.9294244326780574,
+              "ci_low": 0.9290283543469683,
+              "ci_high": 0.9298232023070314
+            },
+            "mean_diff": -0.012597433204351631
+          },
+          "row_norm_variance": {
+            "label": "variance of the row L2 norms",
+            "ci_low": -0.0029321873918786885,
+            "paired": true,
+            "ci_high": -0.002450743083812312,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.0008479422229785669,
+              "mean": 0.0039293686445343,
+              "ci_low": 0.0036772658176401447,
+              "ci_high": 0.004189294500289673
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.00023008435548079947,
+              "mean": 0.0012438642653222578,
+              "ci_low": 0.0011767973531847107,
+              "ci_high": 0.0013141118299742087
+            },
+            "mean_diff": -0.002685504379212042
+          },
+          "sparsity_fraction": {
+            "label": "fraction of near-zero entries (|w| < 1e-3)",
+            "ci_low": 0.0019190588662790697,
+            "paired": true,
+            "ci_high": 0.002958075944767442,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.0013125768799009743,
+              "mean": 0.007080078125,
+              "ci_low": 0.006716706031976744,
+              "ci_high": 0.007460483284883721
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.0013887415174420655,
+              "mean": 0.009515806686046511,
+              "ci_low": 0.009118368459302325,
+              "ci_high": 0.00994163335755814
+            },
+            "mean_diff": 0.0024357285610465116
+          },
+          "column_norm_variance": {
+            "label": "variance of the column L2 norms",
+            "ci_low": -0.0013328286093062757,
+            "paired": true,
+            "ci_high": -0.0009213423343171998,
+            "n_pairs": 43,
+            "p_value": 0.0001999600079984003,
+            "baseline": {
+              "n": 43,
+              "std": 0.0005691053995896626,
+              "mean": 0.0027292116189595434,
+              "ci_low": 0.0025752789408783113,
+              "ci_high": 0.0029039541438280166
+            },
+            "proposed": {
+              "n": 43,
+              "std": 0.00031528773859111994,
+              "mean": 0.0016162303316803897,
+              "ci_low": 0.001524608826631652,
+              "ci_high": 0.001715045387591225
+            },
+            "mean_diff": -0.001112981287279153
+          }
+        }
+      }
+    },
+    "primary_decision": "direction_refuted",
+    "manipulation_status": "not_measured",
+    "replication_decision": "direction_refuted"
+  },
+  "identity_checks": {
+    "seed_ids_registered": {
+      "primary": true,
+      "replication": true
+    },
+    "conditions_registered": {
+      "primary": true,
+      "replication": true
+    },
+    "inputs_equal_original": true,
+    "verification_job_role": true,
+    "verification_reported": true,
+    "verification_job_matches": true,
+    "packet_hash_matches_commit": true,
+    "reproduced_metrics_present": true,
+    "verification_job_completed": true,
+    "job_metadata_seeds_registered": true,
+    "analyzer_reproduces_registered_analysis": true
+  },
+  "original_job_id": "17338534",
+  "reproduction_source": {
+    "path": "papers/e251b9bc-1f60-41a5-bf70-add700372a8a/reproduction.json",
+    "sha256": "312c527b7f726f7bd7bf6c707caafedb767b838a415e344decc67d868aa92539",
+    "staged": true,
+    "commit_sha": "28e3da0ccea3b93e76e632d5cfe8add28dab89b9",
+    "committed_at": "2026-11-16T13:03:19Z",
+    "repo_full_name": "ABS-gmbh/ai-research-journal-staging"
+  },
+  "verification_job_id": "17343557",
+  "analysis_stats_sha256": "188ec4d9d99d845b188cf51f2588f11a87698e0a57e84a11a0b22a250ea35adc",
+  "identical_seed_values": {
+    "primary": {
+      "proposed": 43,
+      "baseline_1": 43,
+      "negative_control_1": 43
+    },
+    "replication": {
+      "proposed": 43,
+      "baseline_1": 43,
+      "negative_control_1": 43
+    }
+  },
+  "reproduced_metrics_sha256": "9da8ea34e397600f25fdd176c574d5f7115147367b559ad01d8ee880d443025d"
+}

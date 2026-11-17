@@ -1,0 +1,227 @@
+{
+  "accepted": {
+    "bundle_sha256": "0c5daf68befcb0ccfb1e16a3aaf135d22b46881dfbb5d0d99c3d5da60cd707de",
+    "contract_hash": "ac9bac8680b443ae828ffe5ebdeb32ef6b177c17077329d38cb7662c2a60f806",
+    "decision": "accept",
+    "operator_sha256": "cb87504cfe1f7e94e1f6f21c702fc556d3550eb6c2d8a60f3d4716dee23522e3",
+    "runtime": {
+      "conditions": {
+        "baseline_1": {
+          "calls": 18,
+          "fingerprint": null,
+          "stochastic_calls": 0
+        },
+        "negative_control_1": {
+          "calls": 18,
+          "fingerprint": {
+            "post_step": [
+              {
+                "cos": 0.004000870958567553,
+                "mean": 1.4576073681382695e-10,
+                "rel_norm": 0.11825309041462534,
+                "std": 0.008619676122402548,
+                "step": 0
+              },
+              {
+                "cos": 0.05413369258312566,
+                "mean": -1.0363623914599884e-07,
+                "rel_norm": 0.14869849931253065,
+                "std": 0.010919544276761405,
+                "step": 1
+              },
+              {
+                "cos": 0.10096300786196936,
+                "mean": -1.7693604732471613e-06,
+                "rel_norm": 0.21890260774147918,
+                "std": 0.01637933367348369,
+                "step": 2
+              }
+            ]
+          },
+          "stochastic_calls": 6
+        },
+        "proposed": {
+          "calls": 18,
+          "fingerprint": {
+            "post_step": [
+              {
+                "cos": -0.1182531074232466,
+                "mean": 3.5420555377640994e-11,
+                "rel_norm": 0.11825309058057204,
+                "std": 0.008619676134498693,
+                "step": 0
+              },
+              {
+                "cos": -0.09674806736957339,
+                "mean": -6.69957245236219e-08,
+                "rel_norm": 0.09674806538380626,
+                "std": 0.007002563407483616,
+                "step": 1
+              },
+              {
+                "cos": -0.08808857220795567,
+                "mean": -4.1334798694947494e-07,
+                "rel_norm": 0.08808856381052148,
+                "std": 0.006345906351997426,
+                "step": 2
+              }
+            ]
+          },
+          "stochastic_calls": 0
+        }
+      },
+      "heldout_isolation": {
+        "conditions": {
+          "baseline_1": {
+            "deterministic": true,
+            "isolated": true,
+            "reference": "f61c34dfee7f7b0b",
+            "scrambled": "f61c34dfee7f7b0b"
+          },
+          "negative_control_1": {
+            "deterministic": true,
+            "isolated": true,
+            "reference": "62c7c4ccb6fd338f",
+            "scrambled": "62c7c4ccb6fd338f"
+          },
+          "proposed": {
+            "deterministic": true,
+            "isolated": true,
+            "reference": "1defadc48b78cb13",
+            "scrambled": "1defadc48b78cb13"
+          }
+        },
+        "seed": 3997813737653302303,
+        "status": "checked"
+      },
+      "smoke": true,
+      "version": 1
+    }
+  },
+  "checkpoints": {
+    "code:runtime": {
+      "blocking": [],
+      "checked_at": "2026-11-16T08:25:22.012297+00:00",
+      "decision": "accept",
+      "enforced": true,
+      "residual": [
+        "N1.static.semantics",
+        "I4.static.semantics"
+      ],
+      "summary": {
+        "clauses": {
+          "unverified": 2,
+          "verified": 8
+        },
+        "essential_clauses": 10,
+        "essential_unverified": 2,
+        "essential_verified": 8,
+        "essential_violated": 0,
+        "obligations": {
+          "unverified:review_only": 2,
+          "verified": 14
+        },
+        "residual_review_only": 2,
+        "violations": 0
+      },
+      "violations": []
+    },
+    "code:static": {
+      "blocking": [],
+      "checked_at": "2026-11-16T08:20:18.098460+00:00",
+      "decision": "accept",
+      "enforced": true,
+      "residual": [
+        "N1.static.semantics",
+        "I4.static.semantics"
+      ],
+      "summary": {
+        "clauses": {
+          "unverified": 2,
+          "verified": 8
+        },
+        "essential_clauses": 10,
+        "essential_unverified": 2,
+        "essential_verified": 8,
+        "essential_violated": 0,
+        "obligations": {
+          "unverified:review_only": 2,
+          "verified": 9
+        },
+        "residual_review_only": 2,
+        "violations": 0
+      },
+      "violations": []
+    },
+    "design": {
+      "blocking": [],
+      "checked_at": "2026-11-16T07:32:41.657760+00:00",
+      "decision": "accept",
+      "enforced": true,
+      "residual": [],
+      "summary": {
+        "clauses": {
+          "verified": 7
+        },
+        "essential_clauses": 7,
+        "essential_unverified": 0,
+        "essential_verified": 7,
+        "essential_violated": 0,
+        "obligations": {
+          "verified": 7
+        },
+        "residual_review_only": 0,
+        "violations": 0
+      },
+      "violations": []
+    },
+    "execution": {
+      "blocking": [],
+      "checked_at": "2026-11-16T09:08:10.345010+00:00",
+      "decision": "accept",
+      "enforced": true,
+      "residual": [],
+      "summary": {
+        "clauses": {
+          "verified": 12
+        },
+        "essential_clauses": 12,
+        "essential_unverified": 0,
+        "essential_verified": 12,
+        "essential_violated": 0,
+        "obligations": {
+          "verified": 13
+        },
+        "residual_review_only": 0,
+        "violations": 0
+      },
+      "violations": []
+    },
+    "publication": {
+      "blocking": [],
+      "checked_at": "2026-11-17T22:01:47.330324+00:00",
+      "decision": "accept",
+      "enforced": true,
+      "residual": [],
+      "summary": {
+        "clauses": {
+          "verified": 8
+        },
+        "essential_clauses": 8,
+        "essential_unverified": 0,
+        "essential_verified": 8,
+        "essential_violated": 0,
+        "obligations": {
+          "verified": 8
+        },
+        "residual_review_only": 0,
+        "violations": 0
+      },
+      "violations": []
+    }
+  },
+  "contract_id": "012c63d3-5d3c-4951-9f12-f991096b5e97",
+  "enforced": true,
+  "invariant_hash": "ac9bac8680b443ae828ffe5ebdeb32ef6b177c17077329d38cb7662c2a60f806",
+  "version": 1
+}
